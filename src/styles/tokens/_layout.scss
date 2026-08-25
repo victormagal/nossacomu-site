@@ -1,0 +1,21 @@
+:root {
+    --layout-max-width: 1200px;
+    --layout-page-padding: 1rem;
+    --layout-grid-columns: 12;
+    --layout-grid-gap: 1rem;
+    --section-padding-block: 5rem;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --layout-page-padding: 2rem;
+        --layout-grid-gap: 1.5rem;
+        --section-padding-block: 7rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --layout-page-padding: 3rem;
+    }
+}

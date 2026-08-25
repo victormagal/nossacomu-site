@@ -1,0 +1,10 @@
+.brands-section {
+    overflow: hidden;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(180px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
