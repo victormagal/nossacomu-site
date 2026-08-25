@@ -61,12 +61,30 @@
     grid-column: span 1;
 }
 
+/* Breakpoint-specific span utilities (md = >=768px, lg = >=1200px) Usage: add `md-span-6` alongside `span-2` to change span at md+. */
+@media (min-width: 768px) {
+    @for $i from 1 through 12 {
+        .md-span-#{$i} {
+            grid-column: span #{$i};
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    @for $i from 1 through 12 {
+        .lg-span-#{$i} {
+            grid-column: span #{$i};
+        }
+    }
+}
+
 .full-bleed {
     width: 100%;
 }
 
 @media (max-width: 767px) {
-    .grid > * {
-        grid-column: span 12;
+    /* On small screens, only force full-row for grid children that don't already declare an explicit span-* class. This lets `.span-2`, `.span-3` etc. keep their spans on mobile. */
+    .grid > *:not([class*="span-"]) {
+        grid-column: span var(--layout-grid-columns);
     }
 }

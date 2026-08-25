@@ -1,0 +1,12 @@
+/* Header-specific grid override to keep logo and hamburger side-by-side on small screens. Use by adding the class `header-grid` alongside `grid` on the wrapper. */
+.grid.header-grid {
+	align-items: center;
+	display: flex !important;
+	gap: var(--layout-grid-gap);
+	justify-content: space-between;
+}
+
+/* Prevent the global grid > * media rule from forcing a large span */
+.grid.header-grid > * {
+	grid-column: auto !important;
+}
