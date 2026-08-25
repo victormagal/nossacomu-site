@@ -4,23 +4,33 @@
     /* Default: mobile (portrait & landscape) use 4 columns */
     --layout-grid-columns: 4;
     --layout-grid-gap: 1rem;
-    --section-padding-block: 5rem;
+    --section-padding-block: 1rem;
 }
 
-/* Tablet breakpoint (md): portrait uses 6 columns, landscape uses 12 */
-@media (min-width: 768px) {
+/* Explicit mobile rule (keeps phones in portrait & small landscape at 4 cols) */
+@media (max-width: 767px) {
+    :root {
+        --layout-page-padding: 1rem;
+        --layout-grid-gap: 1rem;
+        --section-padding-block: 1rem;
+        --layout-grid-columns: 4;
+    }
+}
+
+/* Tablet portrait: 6 columns */
+@media (min-width: 768px) and (max-width: 1199px) {
     :root {
         --layout-page-padding: 2rem;
         --layout-grid-gap: 1.5rem;
-        --section-padding-block: 7rem;
+        --section-padding-block: 1.5rem;
         --layout-grid-columns: 6;
     }
+}
 
-    /* If tablet is in landscape orientation, use 12 columns (desktop-like) */
-    @media (orientation: landscape) {
-        :root {
-            --layout-grid-columns: 12;
-        }
+/* Tablet landscape (and medium-width landscape): behave like desktop with 12 columns */
+@media (min-width: 768px) and (orientation: landscape) and (max-width: 1199px) {
+    :root {
+        --layout-grid-columns: 12;
     }
 }
 

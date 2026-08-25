@@ -8,5 +8,9 @@
 
 /* Prevent the global grid > * media rule from forcing a large span */
 .grid.header-grid > * {
-	grid-column: auto !important;
+    grid-column: auto !important;
+}
+
+section {
+    background: var(--color-dark-gray);
 }
