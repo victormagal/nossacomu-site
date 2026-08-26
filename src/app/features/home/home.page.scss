@@ -1,3 +1,31 @@
+// General styles
+h3 {
+    font-weight: 700;
+}
+
+p {
+    color: var(--color-muted);
+}
+
+span {
+    color: var(--color-pink);
+    font: {
+        size: 0.75rem;
+        weight: 500;
+    }
+    text-transform: uppercase;
+}
+// General styles
+
+// Hero section
+.hero-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+// Hero section
+
+// Brands section
 .brands-section {
     overflow: hidden;
 }
@@ -8,3 +36,4 @@
     gap: 1rem;
     width: 100%;
 }
+// Brands section
