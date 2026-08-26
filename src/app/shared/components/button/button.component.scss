@@ -1,0 +1,56 @@
+:host { display: block; }
+
+a, span {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.default {
+    background-color: rgba(var(--color-white-rgb), 0.6);
+    border: 1px solid rgba(var(--color-black-rgb), 0.1);
+    border-radius: 5rem;
+    color: var(--color-dark-gray);
+    font: {
+        size: 0.75rem;
+        weight: 600;
+    }
+    padding: 0.625rem;
+}
+
+.pink {
+    background-color: rgba(var(--color-pink-rgb), 1);
+    border-radius: 5rem;
+    color: var(--color-white);
+    font: {
+        size: 0.75rem;
+        weight: 600;
+    }
+    padding: 0.625rem;
+}
+
+.rainbow {
+    background-clip: padding-box, border-box;
+    background-image:
+        // Layer 1: solid white fill (inside only)
+        linear-gradient(
+            rgba(var(--color-white-rgb), 1),
+            rgba(var(--color-white-rgb), 1)
+        ),
+        // Layer 2: vivid rainbow for the border ring
+        linear-gradient(
+            90deg,
+            #ff0000, #ff9900, #ffee00, #33ff00, #00ffee, #0066ff, #cc00ff, #ff0000
+        );
+    background-origin: border-box;
+    border: 1px solid transparent;
+    border-radius: 5rem;
+    color: var(--color-dark-gray);
+    font: {
+        size: 0.75rem;
+        weight: 600;
+    }
+    padding: 0.625rem 1.5rem;
+}

@@ -1,0 +1,12 @@
+@if (link() !== null) {
+    <a
+        [class]="type()"
+        [href]="link()"
+    >
+        {{ text() }}
+    </a>
+} @else {
+    <span [class]="type()">
+        {{ text() }}
+    </span>
+}

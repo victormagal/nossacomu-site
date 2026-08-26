@@ -1,10 +1,28 @@
 :root {
-    --color-blue: #3A3AFF;
-    --color-cream: #F8F7F3;
-    --color-dark-gray: #1F1F1F;
-    --color-pink: #F10064;
-    --color-light-beige: #FBF2EB;
-    --color-muted: #8A857D;
-    --color-seafoam-green: #00C8C6;
-    --color-white: #FFFFFF;
+    --color-white-rgb: 255, 255, 255;
+    --color-white: rgb(var(--color-white-rgb));
+
+    --color-black-rgb: 0, 0, 0;
+    --color-black: rgb(var(--color-black-rgb));
+
+    --color-dark-gray-rgb: 31, 31, 31;
+    --color-dark-gray: rgb(var(--color-dark-gray-rgb));
+
+    --color-pink-rgb: 241, 0, 100;
+    --color-pink: rgb(var(--color-pink-rgb));
+
+    --color-blue-rgb: 58, 58, 255;
+    --color-blue: rgb(var(--color-blue-rgb));
+
+    --color-cream-rgb: 248, 247, 243;
+    --color-cream: rgb(var(--color-cream-rgb));
+
+    --color-light-beige-rgb: 251, 242, 235;
+    --color-light-beige: rgb(var(--color-light-beige-rgb));
+
+    --color-muted-rgb: 138, 133, 125;
+    --color-muted: rgb(var(--color-muted-rgb));
+
+    --color-seafoam-green-rgb: 0, 200, 198;
+    --color-seafoam-green: rgb(var(--color-seafoam-green-rgb));
 }
