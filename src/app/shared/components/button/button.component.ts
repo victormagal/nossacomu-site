@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 
+type Size = 'small' | 'medium' | 'large';
 type Variant = 'default' | 'pink' | 'rainbow';
 
 @Component({
@@ -10,6 +11,7 @@ type Variant = 'default' | 'pink' | 'rainbow';
 })
 export class ButtonComponent {
     link = input<string | null>(null);
+    size = input<Size>('medium');
     text = input<string>('');
     type = input<Variant>('default');
 }
