@@ -4,6 +4,7 @@
     /* Default: mobile (portrait & landscape) use 4 columns */
     --layout-grid-columns: 4;
     --layout-grid-gap: 1rem;
+    --layout-grid-gap-2x: 2rem;
     --section-padding-block: 1rem;
 }
 
@@ -12,6 +13,7 @@
     :root {
         --layout-page-padding: 1rem;
         --layout-grid-gap: 1rem;
+        --layout-grid-gap-2x: 2rem;
         --section-padding-block: 1rem;
         --layout-grid-columns: 4;
     }
@@ -22,6 +24,7 @@
     :root {
         --layout-page-padding: 2rem;
         --layout-grid-gap: 1.5rem;
+        --layout-grid-gap-2x: 3rem;
         --section-padding-block: 1.5rem;
         --layout-grid-columns: 6;
     }

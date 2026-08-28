@@ -1,4 +1,8 @@
 // Grid containers
+.grid {
+    gap: var(--layout-grid-gap-2x);
+}
+
 .first-column {
     display: flex;
     flex-direction: column;
@@ -15,17 +19,19 @@
 }
 
 .third-column {
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: var(--layout-grid-gap);
 
     p {
+        border-top: 1px solid rgba(var(--color-muted-rgb), 0.5);
         color: var(--color-muted);
         font: {
             size: 0.75rem;
             weight: 400;
         }
-        padding: 0 1.5rem;
+        padding: 1.5rem 1.5rem 0;
         text-align: center;
     }
 }
