@@ -6,15 +6,6 @@ h3 {
 p {
     color: var(--color-muted);
 }
-
-span {
-    color: var(--color-pink);
-    font: {
-        size: 0.75rem;
-        weight: 500;
-    }
-    text-transform: uppercase;
-}
 // General styles
 
 // Hero section
@@ -22,6 +13,15 @@ span {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    span {
+        color: var(--color-pink);
+        font: {
+            size: 0.75rem;
+            weight: 500;
+        }
+        text-transform: uppercase;
+    }
 }
 
 .hero-pills {
@@ -37,6 +37,46 @@ span {
     }
 }
 // Hero section
+
+// Brand growth section
+.brand-growth {
+    background-color: var(--color-dark-gray);
+    padding: 4rem 2rem;
+
+    .brand-growth-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap-2x);
+        
+        h2 {
+            color: #F8FAFF;
+            text-align: center;
+        }
+    
+        p {
+            color: #A79F91;
+            text-align: center;
+        }
+    
+        span {
+            color: var(--color-pink);
+            font-weight: 700;
+        }
+    
+        .brand-growth-buttons, .brand-growth-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+    
+            app-button { display: block; }
+    
+            > * {
+                flex: 1 1 calc(50% - 0.25rem);
+                min-width: 0;
+            }
+        }
+    }
+}
 
 // Brands section
 .brands-section {
