@@ -8,4 +8,18 @@ import { ButtonComponent } from "../../shared/components/button/button.component
   templateUrl: './home.page.html',
   imports: [ButtonComponent],
 })
-export class HomePage {}
+export class HomePage {
+  openItems = new Set<number>();
+
+  toggle(index: number) {
+    if (this.openItems.has(index)) {
+      this.openItems.delete(index);
+    } else {
+      this.openItems.add(index);
+    }
+  }
+
+  isOpen(index: number) {
+    return this.openItems.has(index);
+  }
+}

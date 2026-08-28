@@ -308,33 +308,53 @@
         </div>
     </div>
 </section>
-<section class="section">
+<section class="faq section">
     <div class="container">
         <div class="grid">
-            <div class="span-4">
-                <h1>Perguntas Frequentes</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="question span-4">
-                <div class="question-header">
-                    <i class="fa-solid fa-circle-question"></i>
-                    <h5>Como funciona a Comu?</h5>
-                    <i class="fa-solid fa-plus"></i>
+            <div class="faq-content span-4">
+                <div class="faq-header">
+                    <h2>Perguntas Frequentes</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                 </div>
-                <div class="question-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
-                </div>
-            </div>
-            <div class="question span-4">
-                <div class="question-header">
-                    <i class="fa-solid fa-circle-question"></i>
-                    <h5>Como isso é sinal de graça?</h5>
-                    <i class="fa-solid fa-plus"></i>
-                </div>
-                <div class="question-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
+                <div class="faq-body">
+                    <div class="question" [class.open]="isOpen(0)">
+                        <div
+                            [attr.aria-expanded]="isOpen(0)"
+                            class="question-header"
+                            (click)="toggle(0)"
+                            (keydown.enter)="toggle(0)"
+                            role="button"
+                            tabindex="0"
+                        >
+                            <div class="title-question-header">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <h5>Como funciona a Comu?</h5>
+                            </div>
+                            <i class="fa-solid fa-plus toggle-icon"></i>
+                        </div>
+                        <div class="question-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
+                        </div>
+                    </div>
+                    <div class="question" [class.open]="isOpen(1)">
+                        <div
+                            [attr.aria-expanded]="isOpen(1)"
+                            class="question-header"
+                            (click)="toggle(1)"
+                            (keydown.enter)="toggle(1)"
+                            role="button"
+                            tabindex="0"
+                        >
+                            <div class="title-question-header">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <h5>Como isso é sinal de graça?</h5>
+                            </div>
+                            <i class="fa-solid fa-plus toggle-icon"></i>
+                        </div>
+                        <div class="question-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -38,6 +38,90 @@ p {
 }
 // Hero section
 
+// Faq section
+.faq {
+    background-color: var(--color-white);
+    padding: 4rem 2rem;
+
+    .faq-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap-2x);
+
+        .faq-header {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+            text-align: center;
+        }
+
+        .faq-body {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+            
+            .question {
+                border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.5);
+                display: flex;
+                flex-direction: column;
+                padding: 0 0 var(--layout-grid-gap) 0;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .question-header {
+                    align-items: center;
+                    cursor: pointer;
+                    display: flex;
+                    gap: var(--layout-grid-gap);
+                    justify-content: space-between;
+
+                    .title-question-header {
+                        align-items: center;
+                        display: flex;
+                        gap: 0.5rem;
+                        
+                        h5 {
+                            font-weight: 600;
+                        }
+                    }
+
+                    .toggle-icon {
+                        transition: transform 0.2s ease;
+                    }
+                }
+
+                .question-body {
+                    max-height: 0;
+                    overflow: hidden;
+                    padding-top: 0;
+                    transition: max-height 0.28s ease, padding-top 0.2s ease;
+
+                    p {
+                        color: var(--color-dark-gray);
+                        margin: 0;
+                    }
+                }
+
+                &.open {
+                    .question-body {
+                        max-height: 400px;
+                        padding-top: 0.5rem;
+                    }
+
+                    .question-header {
+                        .toggle-icon {
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// Faq section
+
 // Brand growth section
 .brand-growth {
     background-color: var(--color-dark-gray);
