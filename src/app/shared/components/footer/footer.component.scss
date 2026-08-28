@@ -1,0 +1,119 @@
+// Grid containers
+.first-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--layout-grid-gap);
+}
+
+.second-column {
+    display: flex;
+    gap: var(--layout-grid-gap);
+
+    * {
+        flex: 1;
+    }
+}
+
+.third-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--layout-grid-gap);
+
+    p {
+        color: var(--color-muted);
+        font: {
+            size: 0.75rem;
+            weight: 400;
+        }
+        padding: 0 1.5rem;
+        text-align: center;
+    }
+}
+// Grid containers
+
+.description-block {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--layout-grid-gap);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .form-box {
+        display: flex;
+        gap: 0.5rem;
+
+        * {
+            flex: 1;
+        }
+
+        input {
+            border: 1px solid rgba(var(--color-muted-rgb), 0.5);
+            border-radius: 5rem;
+            color: rgba(var(--color-dark-gray-rgb), 0.75);
+            font: {
+                family: var(--font-family-base);
+                size: 0.875rem;
+                weight: 400;
+            }
+            padding: 0.5rem 1rem;
+
+            &::placeholder {
+                color: var(--color-muted);
+                font-family: inherit;
+            }
+
+            &::-webkit-input-placeholder { font-family: inherit; }
+            &::-moz-placeholder { font-family: inherit; opacity: 1; }
+            &:-ms-input-placeholder { font-family: inherit; }
+        }
+    }
+}
+
+.nav-links {
+    li {
+        list-style: none;
+
+        a {
+            color: var(--color-muted);
+            font: {
+                size: 0.875rem;
+                weight: 400;
+            }
+
+            i {
+                color: var(--color-white);
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.socials {
+    ul {
+        display: flex;
+        gap: var(--layout-grid-gap);
+
+        li {
+            align-items: center;
+            background-color: rgba(var(--color-black-rgb), 0.45);
+            border-radius: 50%;
+            display: flex;
+            height: 2rem;
+            justify-content: center;
+            list-style: none;
+            width: 2rem;
+
+            a {
+                i {
+                    color: var(--color-white);
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
