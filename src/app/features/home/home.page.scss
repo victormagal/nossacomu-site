@@ -8,35 +8,74 @@ p {
 }
 // General styles
 
-// Hero section
-.hero-description {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+// Main section
+.main {
+    background-color: var(--color-cream);
+    padding: 1rem 0 4rem;
 
-    span {
-        color: var(--color-pink);
-        font: {
-            size: 0.75rem;
-            weight: 500;
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap-2x);
+        padding: 0 2rem;
+
+        .hero-main {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+            text-align: center;
+        
+            h6 {
+                color: var(--color-pink);
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+            
+            .hero-main-pills {
+                align-items: center;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            
+                app-button { display: block; }
+            
+                > * {
+                    flex: 1 1 calc(50% - 0.25rem);
+                    min-width: 0;
+                }
+            }
         }
-        text-transform: uppercase;
+
+        .content-main {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+
+            .content-main-pill {
+                align-items: center;
+                background-color: var(--color-white);
+                border-radius: 1rem;
+                box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.1);
+                display: flex;
+                gap: var(--layout-grid-gap);
+                justify-content: center;
+                padding: var(--layout-grid-gap);
+
+                p {
+                    color: var(--color-dark-gray);
+
+                    span {
+                        font: {
+                            size: 1.5rem;
+                            weight: 600;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-
-.hero-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-
-    app-button { display: block; }
-
-    > * {
-        flex: 1 1 calc(50% - 0.25rem);
-        min-width: 0;
-    }
-}
-// Hero section
+// Main section
 
 // Journey section
 .journey {
