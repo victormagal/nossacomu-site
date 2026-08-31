@@ -18,6 +18,12 @@ a, span {
     }
 }
 
+.blue {
+    background-color: rgba(var(--color-blue-rgb), 1);
+    border: 1px solid transparent;
+    color: var(--color-white);
+}
+
 
 .dark-rainbow {
     background-clip: padding-box, border-box;
@@ -65,4 +71,16 @@ a, span {
     background-origin: border-box;
     border: 1px solid transparent;
     color: var(--color-dark-gray);
+}
+
+.transparentMuted {
+    background-color: transparent;
+    border: 1px solid rgb(var(--color-muted-rgb));
+    color: var(--color-muted);
+}
+
+.transparentWhite {
+    background-color: transparent;
+    border: 1px solid rgb(var(--color-white-rgb));
+    color: var(--color-white);
 }

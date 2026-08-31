@@ -38,6 +38,226 @@ p {
 }
 // Hero section
 
+// Events section
+.events {
+    background-color: var(--color-blue);
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap-2x);
+        padding: 4rem 0;
+
+        .hero-events {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 0 2rem;
+            text-align: center;
+
+            h1 {
+                color: var(--color-white);
+            }
+            
+            h2 {
+                color: var(--color-white);
+                display: flex;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            h6 {
+                color: var(--color-muted);
+                text-transform: uppercase;
+            }
+        }
+
+        .main-event {
+            background-color: var(--color-white);
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap-2x);
+            padding: 2rem;
+
+            .main-event-body {
+                border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding-bottom: var(--layout-grid-gap-2x);
+
+                app-button {
+                    align-self: flex-start;
+                    display: inline-flex;
+                    flex: 0 0 auto;
+                    justify-content: center;
+                    width: auto;
+                }
+
+                h4 { font-weight: 600; }
+                h6 { color: var(--color-muted); }
+                p { color: var(--color-dark-gray); }
+            }
+        }
+
+        .regular-events {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap-2x);
+
+            .regular-events-header {
+                border-bottom: 1px solid rgba(var(--color-white-rgb), 0.45);
+                display: flex;
+                flex-direction: column;
+                gap: var(--layout-grid-gap);
+                padding-bottom: var(--layout-grid-gap);
+                text-align: center;
+
+                h2 { color: var(--color-white); }
+            }
+
+            .regular-events-body {
+                display: flex;
+                flex-direction: column;
+                gap: var(--layout-grid-gap-2x);
+                
+                .card-event {
+                    background-color: var(--color-white);
+                    border-radius: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--layout-grid-gap-2x);
+                    padding: 2rem;
+                    
+                    .card-event-header {
+                        position: relative;
+                        
+                        img {
+                            border-radius: 0.5rem;
+                            position: relative;
+                            width: 100%;
+                        }
+                        
+                        app-button {
+                            left: 1rem;
+                            position: absolute;
+                            top: 1rem;
+                        }
+                    }
+                    
+                    .card-event-body {
+                        border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5rem;
+                        padding-top: var(--layout-grid-gap);
+                        padding-bottom: var(--layout-grid-gap-2x);
+                        
+                        app-button {
+                            align-self: flex-start;
+                            display: inline-flex;
+                            flex: 0 0 auto;
+                            justify-content: center;
+                            width: auto;
+                        }
+
+                        h4 { font-weight: 600; }
+                        h6 { color: var(--color-muted); }
+                        p { color: var(--color-dark-gray); }
+                    }
+                }
+            }
+        }
+    }
+}
+// Events section
+
+// Sales section
+.sales {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap-2x);
+        padding: 4rem 0;
+    }
+
+    .hero-sale {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap);
+        padding: 0 2rem;
+        text-align: center;
+
+        .hero-sale-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            app-button { display: block; }
+
+            > * {
+                flex: 1 1 calc(50% - 0.25rem);
+                min-width: 0;
+            }
+        }
+    }
+
+    .card-sale {
+        background-color: var(--color-white);
+        border: 1px solid rgba(var(--color-muted-rgb), 0.45);
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap);
+        padding: 2rem;
+    
+        .card-sale-header {
+            border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+            padding-bottom: var(--layout-grid-gap);
+    
+            h6 {  font-weight: 600; }
+        }
+    
+        .card-sale-body {
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+    
+                li {
+                    align-items: center;
+                    display: flex;
+                    gap: var(--layout-grid-gap);
+                    list-style: none;
+                    
+                    i {
+                        color: var(--color-pink);
+                        display: inline-block;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    
+        .card-sale-footer {
+            display: flex;
+            justify-content: center;
+            app-button {
+                display: flex;
+                flex: 0 0 75%;
+                min-width: 0;
+                justify-content: center;
+            }
+        }
+    }
+
+}
+// Sales section
+
 // Faq section
 .faq {
     background-color: var(--color-white);
@@ -147,7 +367,7 @@ p {
             font-weight: 700;
         }
     
-        .brand-growth-buttons, .brand-growth-images {
+        .brand-growth-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
@@ -158,6 +378,17 @@ p {
                 flex: 1 1 calc(50% - 0.25rem);
                 min-width: 0;
             }
+        }
+    }
+
+    .brand-growth-images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        > * {
+            flex: 1 1 calc(50% - 0.25rem);
+            min-width: 0;
         }
     }
 }

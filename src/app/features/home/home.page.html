@@ -160,31 +160,39 @@
         </div>
     </div>
 </section>
-<section class="section">
+<section class="events section">
     <div class="container">
         <div class="grid">
-            <div class="span-4">
-                <p>Comece hoje</p>
-                <h1>Connect Eventos</h1>
+            <div class="hero-events span-4">
+                <h6>Comece hoje</h6>
+                <h2>
+                    <img
+                        alt="Comu"
+                        src="/images/logo-comu-white.svg"
+                    />
+                    Connect
+                </h2>
+                <h1>Eventos</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
             </div>
-        </div>
-        <div class="grid">
-            <div class="card-tiktok span-4">
-                <div class="card-tiktok-header">
-                    <img src="/images/logo-tiktok-shop.svg" alt="Tiktok Shop" />
+            <div class="main-event span-4">
+                <div class="main-event-header">
+                    <img
+                        alt="Disponível no TikTok Shop"
+                        src="/images/logo-tiktok-black.svg"
+                    />
                 </div>
-                <div class="card-tiktok-body">
+                <div class="main-event-body">
                     <app-button
                         text="Gratuito"
                         type="pink"
                     >
                     </app-button>
-                    <h3>IA no TikTok Shop</h3>
-                    <h4>Quinta-feira, 26 de fev. 20:30 - 21:30</h4>
+                    <h4>IA no TikTok Shop</h4>
+                    <h6>Quinta-feira, 26 de fev. 20:30 - 21:30</h6>
                     <p>Pode ser usada para turbinar suas estratégias no TikTok Shop.</p>
                 </div>
-                <div class="card-tiktok-footer">
+                <div class="main-event-footer">
                     <app-button
                         link="#this"
                         size="large"
@@ -194,40 +202,74 @@
                     </app-button>
                 </div>
             </div>
-        </div>
-        <div class="grid">
-            <div class="events span-4">
-                <div class="events-header">
+            <div class="regular-events span-4">
+                <div class="regular-events-header">
                     <h2>Próximos Eventos</h2>
                 </div>
-                <div class="events-body">
+                <div class="regular-events-body">
                     <div class="card-event">
                         <div class="card-event-header">
                             <img src="/images/event.png" alt="Evento" />
                             <app-button
                                 text="Webinar"
-                                type="pink"
+                                type="blue"
                             >
                             </app-button>
                         </div>
                         <div class="card-event-body">
                             <app-button
                                 text="19h00"
+                                type="transparentMuted"
+                            >
+                            </app-button>
+                            <h4>Engenharia do produto viral</h4>
+                            <h6>Critérios reais para acertar no TikTok Shop</h6>
+                            <p>Terça-feira, 24 de fevereiro</p>
+                        </div>
+                        <div class="card-event-footer">
+                            <app-button
+                                link="#this"
+                                text="Entrar para a comunidade"
                                 type="pink"
                             >
                             </app-button>
-                            <h3>Engenharia do produto viral</h3>
-                            <p>Critérios reais para acertar no TikTok Shop</p>
+                        </div>
+                    </div>
+                    <div class="card-event">
+                        <div class="card-event-header">
+                            <img src="/images/event.png" alt="Evento" />
+                            <app-button
+                                text="Webinar"
+                                type="blue"
+                            >
+                            </app-button>
+                        </div>
+                        <div class="card-event-body">
+                            <app-button
+                                text="19h00"
+                                type="transparentMuted"
+                            >
+                            </app-button>
+                            <h4>Engenharia do produto viral</h4>
+                            <h6>Critérios reais para acertar no TikTok Shop</h6>
                             <p>Terça-feira, 24 de fevereiro</p>
+                        </div>
+                        <div class="card-event-footer">
+                            <app-button
+                                link="#this"
+                                text="Entrar para a comunidade"
+                                type="pink"
+                            >
+                            </app-button>
                         </div>
                     </div>
                 </div>
-                <div class="events-footer">
+                <div class="regular-events-footer">
                     <app-button
                         link="#this"
                         size="large"
                         text="Visualizar mais"
-                        type="pink"
+                        type="transparentWhite"
                     >
                     </app-button>
                 </div>
@@ -235,13 +277,13 @@
         </div>
     </div>
 </section>
-<section class="section">
+<section class="sales section">
     <div class="container">
         <div class="grid">
-            <div class="span-4">
-                <h1>Soluções para criadores</h1>
+            <div class="hero-sale span-4">
+                <h2>Soluções para criadores</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                <div>
+                <div class="hero-sale-buttons">
                     <app-button
                         link="#this"
                         text="Criadores"
@@ -256,25 +298,35 @@
                     </app-button>
                 </div>
             </div>
-        </div>
-        <div class="grid">
             <div class="card-sale span-4">
                 <div class="card-sale-header">
-                    <img src="/images/logo-comu-free.svg" alt="Comu free" />
+                    <img
+                        alt="Comu free"
+                        src="/images/logo-comu-free.svg"
+                        width="116"
+                    />
                     <h6>Gratuito</h6>
                     <p>Dictum aliquet arcu egestas massa sed tellus sed arcu velit tincidunt orci.</p>
                 </div>
                 <div class="card-sale-body">
                     <ul>
-                        <li>Aulas</li>
-                        <li>Eventos</li>
-                        <li>Acesso a comunidade</li>
+                        <li>
+                            <i class="fa-solid fa-video"></i>
+                            Aulas
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-users"></i>
+                            Eventos
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-c"></i>
+                            Acesso a comunidade
+                        </li>
                     </ul>
                 </div>
                 <div class="card-sale-footer">
                     <app-button
                         link="#this"
-                        size="large"
                         text="Entrar na comunidade"
                         type="rainbow"
                     >
@@ -283,22 +335,40 @@
             </div>
             <div class="card-sale span-4">
                 <div class="card-sale-header">
-                    <img src="/images/logo-comu-mais.svg" alt="Comu mais" />
+                    <img
+                        alt="Comu mais"
+                        src="/images/logo-comu-mais.svg"
+                        width="130"
+                    />
                     <p>Dictum aliquet arcu egestas massa sed tellus sed arcu velit tincidunt orci.</p>
                 </div>
                 <div class="card-sale-body">
                     <ul>
-                        <li>Aulas [Acesso imediato a mais de 30 aulas gravadas]</li>
-                        <li>Eventos [mais]</li>
-                        <li>Acesso a comunidade</li>
-                        <li>Análise de perfil</li>
-                        <li>Mentorias exclusivas</li>
+                        <li>
+                            <i class="fa-solid fa-video"></i>
+                            Aulas [Acesso imediato a mais de 30 aulas gravadas]
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-users"></i>
+                            Eventos [mais]
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-c"></i>
+                            Acesso a comunidade
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-user"></i>
+                            Análise de perfil
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-star"></i>
+                            Mentorias exclusivas
+                        </li>
                     </ul>
                 </div>
                 <div class="card-sale-footer">
                     <app-button
                         link="#this"
-                        size="large"
                         text="Entrar na comunidade"
                         type="rainbow"
                     >
@@ -380,10 +450,10 @@
                     >
                     </app-button>
                 </div>
-                <div class="brand-growth-images">
-                    <img src="/images/growth-brand-1.png" alt="Brand growth" />
-                    <img src="/images/growth-brand-2.png" alt="Brand growth" />
-                </div>
+            </div>
+            <div class="brand-growth-images span-4">
+                <img src="/images/growth-brand-1.png" alt="Brand growth" />
+                <img src="/images/growth-brand-2.png" alt="Brand growth" />
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 
 type Size = 'small' | 'medium' | 'large';
-type Variant = 'dark-rainbow' | 'default' | 'pink' | 'rainbow';
+type Variant = 'blue' | 'dark-rainbow' | 'default' | 'pink' | 'rainbow' | 'transparentMuted' | 'transparentWhite';
 
 @Component({
     selector: 'app-button',
