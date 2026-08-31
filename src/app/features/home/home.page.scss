@@ -38,6 +38,64 @@ p {
 }
 // Hero section
 
+// Learning section
+.learning {
+    padding: 4rem 0;
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap-2x);
+
+        .hero-learning {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+            padding: 0 2rem;
+            text-align: center;
+
+            h6 { color: var(--color-muted); }
+            p { color: var(--color-dark-gray); }
+        }
+
+        .content-learning {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap-2x);
+
+            .card-learning {
+                background-color: var(--color-white);
+                border-radius: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: var(--layout-grid-gap);
+
+                .card-learning-header {
+                    img {
+                        border-radius: 1rem 1rem 0 0;
+                        width: 100%;
+                    }
+                }
+
+                .card-learning-body {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--layout-grid-gap);
+                    padding: var(--layout-grid-gap);
+
+                    h5 {
+                        color: var(--color-pink);
+                        font-weight: 600;
+                    }
+
+                    p { color: var(--color-dark-gray); }
+                }
+            }
+        }
+    }
+}
+// Learning section
+
 // Events section
 .events {
     background-color: var(--color-blue);
