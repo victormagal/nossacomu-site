@@ -38,6 +38,128 @@ p {
 }
 // Hero section
 
+// Journey section
+.journey {
+    background-color: var(--color-black);
+    padding: 4rem 0;
+    
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap-2x);
+
+        .hero-journey {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+            padding: 0 2rem;
+            text-align: center;
+    
+            h2 { color: var(--color-white); }
+            
+            h6 {
+                color: var(--color-pink);
+                text-transform: uppercase;
+            }
+        }
+    
+        .content-journey {
+            border: 1px solid rgba(var(--color-white-rgb), 0.15);
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+            padding: 2rem;
+    
+            .content-journey-header {
+                align-items: center;
+                display: flex;
+                gap: var(--layout-grid-gap);
+    
+                h4 { color: var(--color-white); }
+                
+                i {
+                    color: var(--color-white);
+                    font-size: 3rem;
+                }
+            }
+    
+            .content-journey-body {
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    li {
+                        color: var(--color-white);
+                        margin-left: 1rem;
+
+                        &::marker {
+                            color: var(--color-pink);
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+    
+            .content-journey-footer {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+    
+                > * {
+                    flex: 1 1 calc(50% - 0.25rem);
+                    min-width: 0;
+                }
+    
+                .journey-pill {
+                    align-items: center;
+                    background-color: var(--color-dark-gray);
+                    border-radius: 1rem;
+                    display: flex;
+                    gap: var(--layout-grid-gap);
+                    justify-content: center;
+                    padding: var(--layout-grid-gap);
+    
+                    h5 {
+                        color: var(--color-white);
+                        font-weight: 600;
+                    }
+                    
+                    span {
+                        background-color: var(--color-muted);
+                        border-radius: 1rem;
+                        color: var(--color-white);
+                        font: {
+                            size: 0.75rem;
+                            weight: 600;
+                        }
+                        padding: 0.25rem 0.5rem;
+                    }
+
+                    h6 {
+                        color: var(--color-pink);
+                        font: {
+                            size: 0.675rem;
+                            weight: 600;
+                        }
+                    }
+
+                    p {
+                        color: var(--color-muted);
+                        font: {
+                            size: 0.675rem;
+                            weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+// Journey section
+
 // Learning section
 .learning {
     padding: 4rem 0;
