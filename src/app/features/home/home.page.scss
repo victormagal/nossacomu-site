@@ -1,8 +1,4 @@
 // General styles
-h3 {
-    font-weight: 700;
-}
-
 p {
     color: var(--color-muted);
 }
@@ -11,7 +7,7 @@ p {
 // Main section
 .main {
     background-color: var(--color-cream);
-    padding: 1rem 0 4rem;
+    padding: 1rem 0 2rem;
 
     .grid {
         display: flex;
@@ -76,6 +72,120 @@ p {
     }
 }
 // Main section
+
+// Be part of section
+.be-part-of {
+    padding: 0 0 4rem;
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap-2x);
+
+        .hero-be-part-of {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+            padding: 0 2rem;
+            text-align: center;
+
+            .hero-be-part-of-logo {
+                align-items: baseline;
+                display: flex;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            .hero-be-part-of-buttons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+
+                app-button { display: block; }
+
+                > * {
+                    flex: 1 1 calc(50% - 0.25rem);
+                    min-width: 0;
+                }
+            }
+        }
+
+        .card-be-part-of {
+            background-color: var(--color-white);
+            border: 1px solid rgba(var(--color-muted-rgb), 0.45);
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            .card-be-part-of-header {
+                display: flex;
+                flex-direction: column;
+                gap: var(--layout-grid-gap);
+
+                img {
+                    border-radius: 1rem 1rem 0 0;
+                    display: block;
+                    height: 250px;
+                    object-fit: cover;
+                    object-position: center;
+                    width: 100%;
+                }
+            }
+
+            .card-be-part-of-body {
+                display: flex;
+                flex-direction: column;
+                gap: var(--layout-grid-gap);
+                padding: var(--layout-grid-gap-2x);
+
+                app-button {
+                    align-self: center;
+                    display: block;
+                    min-width: 0;
+                    width: 75%;
+                }
+            }
+        }
+    }
+}
+// Be part of section
+
+// Creators section
+.creators {
+    background-color: var(--color-pink);
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap-2x);
+        padding: 4rem 0;
+
+        .hero-creators {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+            padding: 0 2rem;
+            text-align: center;
+
+            h2, p { color: var(--color-white); }
+        }
+        
+        .stories {
+            display: flex;
+            flex-direction: column;
+            gap: var(--layout-grid-gap);
+
+            .story {
+                img {
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+// Creators section
 
 // Journey section
 .journey {
