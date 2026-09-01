@@ -77,9 +77,56 @@ p {
 }
 // Main section
 
+// Brands section
+.brands-section {
+    --cloud-w: 425px;
+    --cloud-h: 33px;
+    --cloud-rows: 3;
+    background: {
+        image: url('/images/cloud-brands.svg');
+        repeat: repeat-x;
+        position: 0 0;
+        size: var(--cloud-w) var(--cloud-h);
+    }
+    min-height: calc(var(--cloud-h) * var(--cloud-rows));
+    overflow: hidden;
+    position: relative;
+
+}
+
+/* second & third rows (stacked bands) */
+.brands-section::before, .brands-section::after {
+    background: {
+        image: url('/images/cloud-brands.svg');
+        repeat: repeat-x;
+        size: var(--cloud-w) var(--cloud-h);
+    }
+    content: "";
+    height: var(--cloud-h);
+    left: 0;
+    opacity: 1;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+
+/* second row */
+.brands-section::before {
+    background-position: -115px 0;
+    top: calc(var(--cloud-h) * 1);
+}
+
+/* third row */
+.brands-section::after {
+    background-position: -245px 0;
+    top: calc(var(--cloud-h) * 2);
+}
+// Brands section
+
 // Be part of section
 .be-part-of {
-    padding: 0 0 4rem;
+    padding: 2rem 0 4rem;
 
     .grid {
         gap: var(--layout-grid-gap-2x);
