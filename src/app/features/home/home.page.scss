@@ -10,8 +10,6 @@ p {
     padding: 1rem 0 2rem;
 
     .grid {
-        display: flex;
-        flex-direction: column;
         gap: var(--layout-grid-gap-2x);
         padding: 0 2rem;
 
@@ -20,6 +18,11 @@ p {
             flex-direction: column;
             gap: var(--layout-grid-gap);
             text-align: center;
+
+            @media (min-width: 1200px) {
+                justify-content: center;
+                text-align: left;
+            }
         
             h6 {
                 color: var(--color-pink);
@@ -56,6 +59,7 @@ p {
                 gap: var(--layout-grid-gap);
                 justify-content: center;
                 padding: var(--layout-grid-gap);
+                text-align: center;
 
                 p {
                     color: var(--color-dark-gray);
@@ -78,9 +82,11 @@ p {
     padding: 0 0 4rem;
 
     .grid {
-        display: flex;
-        flex-direction: column;
         gap: var(--layout-grid-gap-2x);
+        
+        @media (min-width: 1200px) {
+            gap: var(--layout-grid-gap);
+        }
 
         .hero-be-part-of {
             display: flex;
@@ -94,12 +100,21 @@ p {
                 display: flex;
                 gap: 0.5rem;
                 justify-content: center;
+
+                @media (min-width: 1200px) {
+                    flex-direction: column;
+                    gap: 0;
+                }
             }
 
             .hero-be-part-of-buttons {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0.5rem;
+
+                @media (min-width: 1200px) {
+                    flex-direction: column;
+                }
 
                 app-button { display: block; }
 
@@ -156,10 +171,15 @@ p {
     background-color: var(--color-pink);
 
     .grid {
-        display: flex;
-        flex-direction: column;
         gap: var(--layout-grid-gap-2x);
         padding: 4rem 0;
+
+        @media (min-width: 1200px) {
+            align-items: start;
+            display: grid;
+            gap: var(--layout-grid-gap);
+            grid-template-columns: repeat(var(--layout-grid-columns), minmax(0, 1fr));
+        }
 
         .hero-creators {
             display: flex;
@@ -168,19 +188,25 @@ p {
             padding: 0 2rem;
             text-align: center;
 
+            @media (min-width: 1200px) {
+                grid-column: 10 / span 3;
+                grid-row: 1;
+                text-align: left;
+            }
+
             h2, p { color: var(--color-white); }
         }
         
-        .stories {
-            display: flex;
-            flex-direction: column;
-            gap: var(--layout-grid-gap);
+        .story {
+            @media (min-width: 1200px) {
+                &:nth-child(2) { grid-column: 1 / span 3; grid-row: 1; }
+                &:nth-child(3) { grid-column: 4 / span 3; grid-row: 1; }
+                &:nth-child(4) { grid-column: 7 / span 3; grid-row: 1; }
+            }
 
-            .story {
-                img {
-                    height: auto;
-                    width: 100%;
-                }
+            img {
+                height: auto;
+                width: 100%;
             }
         }
     }
@@ -193,8 +219,6 @@ p {
     padding: 4rem 0;
     
     .grid {
-        display: flex;
-        flex-direction: column;
         gap: var(--layout-grid-gap-2x);
 
         .hero-journey {
@@ -203,6 +227,10 @@ p {
             gap: var(--layout-grid-gap);
             padding: 0 2rem;
             text-align: center;
+
+            @media (min-width: 1200px) {
+                text-align: left;
+            }
     
             h2 { color: var(--color-white); }
             
@@ -213,7 +241,7 @@ p {
         }
     
         .content-journey {
-            border: 1px solid rgba(var(--color-white-rgb), 0.15);
+            border: 1px solid rgba(var(--color-white-rgb), 0.45);
             border-radius: 1rem;
             display: flex;
             flex-direction: column;
@@ -314,9 +342,14 @@ p {
     padding: 4rem 0;
 
     .grid {
-        display: flex;
-        flex-direction: column;
         gap: var(--layout-grid-gap-2x);
+
+        @media (min-width: 1200px) {
+            align-items: start;
+            display: grid;
+            gap: var(--layout-grid-gap);
+            grid-template-columns: repeat(var(--layout-grid-columns), minmax(0, 1fr));
+        }
 
         .hero-learning {
             display: flex;
@@ -325,42 +358,48 @@ p {
             padding: 0 2rem;
             text-align: center;
 
+            @media (min-width: 1200px) {
+                grid-column: 10 / span 3;
+                grid-row: 1;
+                text-align: left;
+            }
+
             h6 { color: var(--color-muted); }
             p { color: var(--color-dark-gray); }
         }
 
-        .content-learning {
+        .card-learning {
+            background-color: var(--color-white);
+            border-radius: 1rem;
             display: flex;
             flex-direction: column;
-            gap: var(--layout-grid-gap-2x);
+            gap: var(--layout-grid-gap);
 
-            .card-learning {
-                background-color: var(--color-white);
-                border-radius: 1rem;
+            @media (min-width: 1200px) {
+                &:nth-child(2) { grid-column: 1  / span 3; grid-row: 1; };
+                &:nth-child(3) { grid-column: 4  / span 3; grid-row: 1; };
+                &:nth-child(4) { grid-column: 7  / span 3; grid-row: 1; };
+            }
+
+            .card-learning-header {
+                img {
+                    border-radius: 1rem 1rem 0 0;
+                    width: 100%;
+                }
+            }
+
+            .card-learning-body {
                 display: flex;
                 flex-direction: column;
                 gap: var(--layout-grid-gap);
+                padding: var(--layout-grid-gap);
 
-                .card-learning-header {
-                    img {
-                        border-radius: 1rem 1rem 0 0;
-                        width: 100%;
-                    }
+                h5 {
+                    color: var(--color-pink);
+                    font-weight: 600;
                 }
 
-                .card-learning-body {
-                    display: flex;
-                    flex-direction: column;
-                    gap: var(--layout-grid-gap);
-                    padding: var(--layout-grid-gap);
-
-                    h5 {
-                        color: var(--color-pink);
-                        font-weight: 600;
-                    }
-
-                    p { color: var(--color-dark-gray); }
-                }
+                p { color: var(--color-dark-gray); }
             }
         }
     }
