@@ -329,8 +329,10 @@ p {
                 gap: var(--layout-grid-gap);
                 overflow-x: auto;
                 padding-bottom: 1.5rem;
-                scroll-behavior: smooth;
-                scroll-snap-type: x mandatory;
+                scroll: {
+                    behavior: smooth;
+                    snap-type: x mandatory;
+                }
                 scrollbar-width: none;
 
                 &::-webkit-scrollbar {
@@ -380,8 +382,12 @@ p {
         
         .story {
             flex: 0 0 100%;
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
+            scroll: {
+                snap: {
+                    align: start;
+                    stop: always;
+                }
+            }
 
             @media (min-width: 768px) {
                 flex: initial;
