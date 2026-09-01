@@ -55,49 +55,80 @@
                     </app-button>
                 </div>
             </div>
-            <div class="card-be-part-of span-4 md-span-2 lg-span-3">
-                <div class="card-be-part-of-header">
-                    <img src="/images/card-faca-parte.png" alt="Faça parte" />
+            <div class="cards-carousel span-4">
+                <div
+                    #cardsCarousel
+                    aria-label="Opções para fazer parte da Comu"
+                    class="cards-carousel-track"
+                    id="be-part-of-carousel"
+                    role="region"
+                    tabindex="0"
+                >
+                    <div class="card-be-part-of span-4 md-span-2 lg-span-3">
+                        <div class="card-be-part-of-header">
+                            <img src="/images/card-faca-parte.png" alt="Faça parte" />
+                        </div>
+                        <div class="card-be-part-of-body">
+                            <h3>Comunidade</h3>
+                            <p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
+                            <app-button
+                                link="#this"
+                                text="Conheça mais"
+                                type="rainbow"
+                            >
+                            </app-button>
+                        </div>
+                    </div>
+                    <div class="card-be-part-of span-4 md-span-2 lg-span-3">
+                        <div class="card-be-part-of-header">
+                            <img src="/images/card-faca-parte.png" alt="Faça parte" />
+                        </div>
+                        <div class="card-be-part-of-body">
+                            <h3>Comunidade</h3>
+                            <p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
+                            <app-button
+                                link="#this"
+                                text="Conheça mais"
+                                type="rainbow"
+                            >
+                            </app-button>
+                        </div>
+                    </div>
+                    <div class="card-be-part-of span-4 md-span-2 lg-span-3">
+                        <div class="card-be-part-of-header">
+                            <img src="/images/card-faca-parte.png" alt="Faça parte" />
+                        </div>
+                        <div class="card-be-part-of-body">
+                            <h3>Comunidade</h3>
+                            <p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
+                            <app-button
+                                link="#this"
+                                text="Conheça mais"
+                                type="rainbow"
+                            >
+                            </app-button>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-be-part-of-body">
-                    <h3>Comunidade</h3>
-                    <p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
-                    <app-button
-                        link="#this"
-                        text="Conheça mais"
-                        type="rainbow"
+                <div class="cards-carousel-controls">
+                    <button
+                        aria-controls="be-part-of-carousel"
+                        aria-label="Mostrar card anterior"
+                        class="cards-carousel-button"
+                        type="button"
+                        (click)="scrollCards(-1)"
                     >
-                    </app-button>
-                </div>
-            </div>
-            <div class="card-be-part-of span-4 md-span-2 lg-span-3">
-                <div class="card-be-part-of-header">
-                    <img src="/images/card-faca-parte.png" alt="Faça parte" />
-                </div>
-                <div class="card-be-part-of-body">
-                    <h3>Comunidade</h3>
-                    <p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
-                    <app-button
-                        link="#this"
-                        text="Conheça mais"
-                        type="rainbow"
+                        <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button
+                        aria-controls="be-part-of-carousel"
+                        aria-label="Mostrar próximo card"
+                        class="cards-carousel-button"
+                        type="button"
+                        (click)="scrollCards(1)"
                     >
-                    </app-button>
-                </div>
-            </div>
-            <div class="card-be-part-of span-4 md-span-2 lg-span-3">
-                <div class="card-be-part-of-header">
-                    <img src="/images/card-faca-parte.png" alt="Faça parte" />
-                </div>
-                <div class="card-be-part-of-body">
-                    <h3>Comunidade</h3>
-                    <p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
-                    <app-button
-                        link="#this"
-                        text="Conheça mais"
-                        type="rainbow"
-                    >
-                    </app-button>
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
