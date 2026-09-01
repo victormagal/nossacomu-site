@@ -1,14 +1,47 @@
 <section class="section">
     <div class="container">
         <div class="grid header-grid">
-            <div class="span-2 md-span-3 lg-span-6">
-                <img src="/images/logo-comu-white.svg" alt="Comu" />
+            <div class="header-logo span-2 md-span-3 lg-span-6">
+                <a href="#" aria-label="Comu - página inicial">
+                    <img
+                        ngSrc="/images/logo-comu-white.svg"
+                        alt="Comu"
+                        height="24"
+                        width="106"
+                    />
+                </a>
             </div>
 
-            <div class="span-2 md-span-3 lg-span-6">
-                <button class="menu-btn" aria-label="Open menu">
-                    <i class="fa-solid fa-bars"></i>
+            <div class="header-menu span-2 md-span-3 lg-span-6">
+                <button
+                    [attr.aria-expanded]="menuOpen()"
+                    aria-controls="primary-navigation"
+                    aria-label="Abrir ou fechar menu"
+                    class="menu-btn"
+                    type="button"
+                    (click)="toggleMenu()"
+                >
+                    <i
+                        [class.fa-bars]="!menuOpen()"
+                        [class.fa-xmark]="menuOpen()"
+                        aria-hidden="true"
+                        class="fa-solid"
+                    ></i>
                 </button>
+
+                <nav
+                    [class.is-open]="menuOpen()"
+                    aria-label="Menu principal"
+                    class="primary-navigation"
+                    id="primary-navigation"
+                >
+                    <ul role="list">
+                        <li><a href="#link-1" (click)="closeMenu()">Link 1</a></li>
+                        <li><a href="#link-2" (click)="closeMenu()">Link 2</a></li>
+                        <li><a href="#link-3" (click)="closeMenu()">Link 3</a></li>
+                        <li><a href="#link-4" (click)="closeMenu()">Link 4</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
