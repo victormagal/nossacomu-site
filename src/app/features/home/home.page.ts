@@ -15,19 +15,27 @@ import { ButtonComponent } from "../../shared/components/button/button.component
 })
 export class HomePage {
   private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
+  private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
 
   openItems = new Set<number>();
 
   scrollCards(direction: -1 | 1) {
-    const carousel = this.cardsCarousel().nativeElement;
-    const card = carousel.querySelector<HTMLElement>('.card-be-part-of');
+    this.scrollCarousel(this.cardsCarousel().nativeElement, '.card-be-part-of', direction);
+  }
 
-    if (!card) {
+  scrollStories(direction: -1 | 1) {
+    this.scrollCarousel(this.storiesCarousel().nativeElement, '.story', direction);
+  }
+
+  private scrollCarousel(carousel: HTMLElement, itemSelector: string, direction: -1 | 1) {
+    const item = carousel.querySelector<HTMLElement>(itemSelector);
+
+    if (!item) {
       return;
     }
 
     const gap = Number.parseFloat(getComputedStyle(carousel).columnGap) || 0;
-    const distance = card.getBoundingClientRect().width + gap;
+    const distance = item.getBoundingClientRect().width + gap;
 
     carousel.scrollBy({
       behavior: 'smooth',

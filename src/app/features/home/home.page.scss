@@ -315,12 +315,76 @@ p {
 
             h2, p { color: var(--color-white); }
         }
+
+        .stories-carousel {
+            min-width: 0;
+
+            @media (min-width: 1200px) {
+                grid-column: 1 / span 9;
+                grid-row: 1;
+            }
+
+            .stories-carousel-track {
+                display: flex;
+                gap: var(--layout-grid-gap);
+                overflow-x: auto;
+                padding-bottom: 1.5rem;
+                scroll-behavior: smooth;
+                scroll-snap-type: x mandatory;
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                @media (min-width: 768px) {
+                    display: grid;
+                    grid-template-columns: repeat(6, minmax(0, 1fr));
+                    overflow: visible;
+                    padding-bottom: 0;
+                }
+
+                @media (min-width: 1200px) {
+                    grid-template-columns: repeat(9, minmax(0, 1fr));
+                }
+            }
+
+            .stories-carousel-controls {
+                display: flex;
+                gap: var(--layout-grid-gap);
+                justify-content: center;
+
+                @media (min-width: 768px) {
+                    display: none;
+                }
+
+                .stories-carousel-button {
+                    align-items: center;
+                    background-color: var(--color-white);
+                    border: 0;
+                    border-radius: 50%;
+                    color: var(--color-pink);
+                    cursor: pointer;
+                    display: inline-flex;
+                    height: 2.75rem;
+                    justify-content: center;
+                    width: 2.75rem;
+
+                    &:focus-visible {
+                        outline: 3px solid var(--color-white);
+                        outline-offset: 3px;
+                    }
+                }
+            }
+        }
         
         .story {
-            @media (min-width: 1200px) {
-                &:nth-child(2) { grid-column: 1 / span 3; grid-row: 1; }
-                &:nth-child(3) { grid-column: 4 / span 3; grid-row: 1; }
-                &:nth-child(4) { grid-column: 7 / span 3; grid-row: 1; }
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+
+            @media (min-width: 768px) {
+                flex: initial;
             }
 
             img {

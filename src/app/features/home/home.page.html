@@ -141,14 +141,45 @@
                 <h2>Veja as histórias dos criadores da comunidade</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipiscing elidolor mattis sit phasellus mollis</p>
             </div>
-            <div class="story span-4 md-span-2 lg-span-3">
-                <img src="/images/card-historia.png" alt="História" />
-            </div>
-            <div class="story span-4 md-span-2 lg-span-3">
-                <img src="/images/card-historia.png" alt="História" />
-            </div>
-            <div class="story span-4 md-span-2 lg-span-3">
-                <img src="/images/card-historia.png" alt="História" />
+            <div class="stories-carousel span-4 md-span-6 lg-span-9">
+                <div
+                    #storiesCarousel
+                    aria-label="Histórias dos criadores da comunidade"
+                    class="stories-carousel-track"
+                    id="stories-carousel"
+                    role="region"
+                    tabindex="0"
+                >
+                    <div class="story span-4 md-span-2 lg-span-3">
+                        <img src="/images/card-historia.png" alt="História" />
+                    </div>
+                    <div class="story span-4 md-span-2 lg-span-3">
+                        <img src="/images/card-historia.png" alt="História" />
+                    </div>
+                    <div class="story span-4 md-span-2 lg-span-3">
+                        <img src="/images/card-historia.png" alt="História" />
+                    </div>
+                </div>
+                <div class="stories-carousel-controls">
+                    <button
+                        aria-controls="stories-carousel"
+                        aria-label="Mostrar história anterior"
+                        class="stories-carousel-button"
+                        type="button"
+                        (click)="scrollStories(-1)"
+                    >
+                        <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button
+                        aria-controls="stories-carousel"
+                        aria-label="Mostrar próxima história"
+                        class="stories-carousel-button"
+                        type="button"
+                        (click)="scrollStories(1)"
+                    >
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
