@@ -1,627 +1,734 @@
 <section class="main section">
-    <div class="container">
-        <div class="grid">
-            <div class="hero-main span-4 md-span-3 lg-span-6">
-                <h6>Para criadores</h6>
-                <h2>Transforme seu conteúdo em um negócio</h2>
-                <p>A energia, o ambiente que faltava para você criar seu próprio ritmo e acreditar de uma vez por todas que nasceu para isso.</p>
-                <div class="hero-main-pills">
-                    <app-button text="+100 marcas"></app-button>
-                    <app-button text="+10.000 criadores"></app-button>
-                    <app-button text="+R$ 25 mi pagos a criadores"></app-button>
-                    <app-button text="+R$ 250 mi em GMV"></app-button>
-                </div>
-                <app-button
-                    link="#this"
-                    text="Entrar na comunidade"
-                    type="pink"
-                >
-                </app-button>
-            </div>
-            <div class="content-main span-4 md-span-3 lg-span-6">
-                <img src="/images/para-criadores.png" alt="Para criadores" />
-                <div class="content-main-pill">
-                    <p><span>+1.500 criadores</span> postando todos os dias para <span>+100 marcas</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="grid">
+			<div class="hero-main span-4 md-span-3 lg-span-6">
+				<h6>Para criadores</h6>
+				<h2>Transforme seu conteúdo em um negócio</h2>
+				<p>A energia, o ambiente que faltava para você criar seu próprio ritmo e acreditar de uma vez por todas que nasceu para isso.</p>
+				<div class="hero-main-pills">
+					<app-button text="+100 marcas"></app-button>
+					<app-button text="+10.000 criadores"></app-button>
+					<app-button text="+R$ 25 mi pagos a criadores"></app-button>
+					<app-button text="+R$ 250 mi em GMV"></app-button>
+				</div>
+				<app-button
+					link="#this"
+					text="Entrar na comunidade"
+					type="pink"
+				>
+				</app-button>
+			</div>
+			<div class="content-main span-4 md-span-3 lg-span-6">
+				<img src="/images/para-criadores.png" alt="Para criadores" />
+				<div class="content-main-pill">
+					<p><span>+1.500 criadores</span> postando todos os dias para <span>+100 marcas</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <section class="section brands-section">
 </section>
 <section class="be-part-of section">
-    <div class="container">
-        <div class="grid">
-            <div class="hero-be-part-of span-4 md-span-4 lg-span-3">
-                <div class="hero-be-part-of-logo">
-                    <h3>Faça parte da</h3>
-                    <img
-                        alt="Comu"
-                        src="/images/logo-comu-mais.svg"
-                    />
-                </div>
-                <div class="hero-be-part-of-buttons">
-                    <app-button
-                        link="#this"
-                        text="Entrar na comunidade"
-                        type="pink"
-                    >
-                    </app-button>
-                    <app-button
-                        link="#this"
-                        text="Conheça mais"
-                        type="rainbow"
-                    >
-                    </app-button>
-                </div>
-            </div>
-            <div class="cards-carousel span-4">
-                <div
-                    #cardsCarousel
-                    aria-label="Opções para fazer parte da Comu"
-                    class="cards-carousel-track"
-                    id="be-part-of-carousel"
-                    role="region"
-                    tabindex="0"
-                >
-                    <div class="card-be-part-of span-4 md-span-2 lg-span-3">
-                        <div class="card-be-part-of-header">
-                            <img src="/images/card-faca-parte.png" alt="Faça parte" />
-                        </div>
-                        <div class="card-be-part-of-body">
-                            <h3>Comunidade</h3>
-                            <p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
-                            <app-button
-                                link="#this"
-                                text="Conheça mais"
-                                type="rainbow"
-                            >
-                            </app-button>
-                        </div>
-                    </div>
-                    <div class="card-be-part-of span-4 md-span-2 lg-span-3">
-                        <div class="card-be-part-of-header">
-                            <img src="/images/card-faca-parte.png" alt="Faça parte" />
-                        </div>
-                        <div class="card-be-part-of-body">
-                            <h3>Comunidade</h3>
-                            <p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
-                            <app-button
-                                link="#this"
-                                text="Conheça mais"
-                                type="rainbow"
-                            >
-                            </app-button>
-                        </div>
-                    </div>
-                    <div class="card-be-part-of span-4 md-span-2 lg-span-3">
-                        <div class="card-be-part-of-header">
-                            <img src="/images/card-faca-parte.png" alt="Faça parte" />
-                        </div>
-                        <div class="card-be-part-of-body">
-                            <h3>Comunidade</h3>
-                            <p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
-                            <app-button
-                                link="#this"
-                                text="Conheça mais"
-                                type="rainbow"
-                            >
-                            </app-button>
-                        </div>
-                    </div>
-                </div>
-                <div class="cards-carousel-controls">
-                    <button
-                        aria-controls="be-part-of-carousel"
-                        aria-label="Mostrar card anterior"
-                        class="cards-carousel-button"
-                        type="button"
-                        (click)="scrollCards(-1)"
-                    >
-                        <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <button
-                        aria-controls="be-part-of-carousel"
-                        aria-label="Mostrar próximo card"
-                        class="cards-carousel-button"
-                        type="button"
-                        (click)="scrollCards(1)"
-                    >
-                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="grid">
+			<div class="hero-be-part-of span-4 md-span-4 lg-span-3">
+				<div class="hero-be-part-of-logo">
+					<h3>Faça parte da</h3>
+					<img
+						alt="Comu"
+						src="/images/logo-comu-mais.svg"
+					/>
+				</div>
+				<div class="hero-be-part-of-buttons">
+					<app-button
+						link="#this"
+						text="Entrar na comunidade"
+						type="pink"
+					>
+					</app-button>
+					<app-button
+						link="#this"
+						text="Conheça mais"
+						type="rainbow"
+					>
+					</app-button>
+				</div>
+			</div>
+			<div class="cards-carousel span-4">
+				<div
+					#cardsCarousel
+					aria-label="Opções para fazer parte da Comu"
+					class="cards-carousel-track"
+					id="be-part-of-carousel"
+					role="region"
+					tabindex="0"
+				>
+					<div class="card-be-part-of span-4 md-span-2 lg-span-3">
+						<div class="card-be-part-of-header">
+							<img src="/images/card-faca-parte.png" alt="Faça parte" />
+						</div>
+						<div class="card-be-part-of-body">
+							<h3>Comunidade</h3>
+							<p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
+							<app-button
+								link="#this"
+								text="Conheça mais"
+								type="rainbow"
+							>
+							</app-button>
+						</div>
+					</div>
+					<div class="card-be-part-of span-4 md-span-2 lg-span-3">
+						<div class="card-be-part-of-header">
+							<img src="/images/card-faca-parte.png" alt="Faça parte" />
+						</div>
+						<div class="card-be-part-of-body">
+							<h3>Comunidade</h3>
+							<p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
+							<app-button
+								link="#this"
+								text="Conheça mais"
+								type="rainbow"
+							>
+							</app-button>
+						</div>
+					</div>
+					<div class="card-be-part-of span-4 md-span-2 lg-span-3">
+						<div class="card-be-part-of-header">
+							<img src="/images/card-faca-parte.png" alt="Faça parte" />
+						</div>
+						<div class="card-be-part-of-body">
+							<h3>Comunidade</h3>
+							<p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
+							<app-button
+								link="#this"
+								text="Conheça mais"
+								type="rainbow"
+							>
+							</app-button>
+						</div>
+					</div>
+				</div>
+				<div class="cards-carousel-controls">
+					<button
+						aria-controls="be-part-of-carousel"
+						aria-label="Mostrar card anterior"
+						class="cards-carousel-button"
+						type="button"
+						(click)="scrollCards(-1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+					</button>
+					<button
+						aria-controls="be-part-of-carousel"
+						aria-label="Mostrar próximo card"
+						class="cards-carousel-button"
+						type="button"
+						(click)="scrollCards(1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <section class="creators section">
-    <div class="container">
-        <div class="grid">
-            <div class="hero-creators span-4 md-span-4 lg-span-3">
-                <h2>Veja as histórias dos criadores da comunidade</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elidolor mattis sit phasellus mollis</p>
-            </div>
-            <div class="stories-carousel span-4 md-span-6 lg-span-9">
-                <div
-                    #storiesCarousel
-                    aria-label="Histórias dos criadores da comunidade"
-                    class="stories-carousel-track"
-                    id="stories-carousel"
-                    role="region"
-                    tabindex="0"
-                >
-                    <div class="story span-4 md-span-2 lg-span-3">
-                        <img src="/images/card-historia.png" alt="História" />
-                    </div>
-                    <div class="story span-4 md-span-2 lg-span-3">
-                        <img src="/images/card-historia.png" alt="História" />
-                    </div>
-                    <div class="story span-4 md-span-2 lg-span-3">
-                        <img src="/images/card-historia.png" alt="História" />
-                    </div>
-                </div>
-                <div class="stories-carousel-controls">
-                    <button
-                        aria-controls="stories-carousel"
-                        aria-label="Mostrar história anterior"
-                        class="stories-carousel-button"
-                        type="button"
-                        (click)="scrollStories(-1)"
-                    >
-                        <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <button
-                        aria-controls="stories-carousel"
-                        aria-label="Mostrar próxima história"
-                        class="stories-carousel-button"
-                        type="button"
-                        (click)="scrollStories(1)"
-                    >
-                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="grid">
+			<div class="hero-creators span-4 md-span-4 lg-span-3">
+				<h2>Veja as histórias dos criadores da comunidade</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing elidolor mattis sit phasellus mollis</p>
+			</div>
+			<div class="stories-carousel span-4 md-span-6 lg-span-9">
+				<div
+					#storiesCarousel
+					aria-label="Histórias dos criadores da comunidade"
+					class="stories-carousel-track"
+					id="stories-carousel"
+					role="region"
+					tabindex="0"
+				>
+					<div class="story span-4 md-span-2 lg-span-3">
+						<img src="/images/card-historia.png" alt="História" />
+					</div>
+					<div class="story span-4 md-span-2 lg-span-3">
+						<img src="/images/card-historia.png" alt="História" />
+					</div>
+					<div class="story span-4 md-span-2 lg-span-3">
+						<img src="/images/card-historia.png" alt="História" />
+					</div>
+				</div>
+				<div class="stories-carousel-controls">
+					<button
+						aria-controls="stories-carousel"
+						aria-label="Mostrar história anterior"
+						class="stories-carousel-button"
+						type="button"
+						(click)="scrollStories(-1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+					</button>
+					<button
+						aria-controls="stories-carousel"
+						aria-label="Mostrar próxima história"
+						class="stories-carousel-button"
+						type="button"
+						(click)="scrollStories(1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <section class="journey section">
-    <div class="container">
-        <div class="grid">
-            <div class="hero-journey span-4 md-span-4 lg-span-6">
-                <h6>Sua jornada começa aqui</h6>
-                <h2>Cresça como criador e com a Comu</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elidolor mattis sit phasellus mollis</p>
-                <app-button
-                    link="#this"
-                    size="large"
-                    text="Entrar para a comunidade"
-                    type="pink"
-                >
-                </app-button>
-            </div>
-            <div class="content-journey span-4 md-span-4 lg-span-6">
-                <div class="content-journey-header">
-                    <h4>Como crescer na comunidade</h4>
-                    <i class="fa-solid fa-users"></i>
-                </div>
-                <div class="content-journey-body">
-                    <ul>
-                        <li>Faça parte da comunidade</li>
-                        <li>Alcance a quantidade de seguidores</li>
-                    </ul>
-                </div>
-                <div class="content-journey-footer">
-                    <div class="journey-pill">
-                        <h5>comu</h5>
-                        <span>1%</span>
-                    </div>
-                    <div class="journey-pill">
-                        <h5>50k</h5>
-                        <h6>TOP CREATOR</h6>
-                    </div>
-                    <div class="journey-pill">
-                        <h5>200k</h5>
-                        <p>star club</p>
-                    </div>
-                    <div class="journey-pill">
-                        <h5>1MM</h5>
-                        <p>comu elite</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="grid">
-        </div>
-    </div>
+	<div class="container">
+		<div class="grid">
+			<div class="hero-journey span-4 md-span-4 lg-span-6">
+				<h6>Sua jornada começa aqui</h6>
+				<h2>Cresça como criador e com a Comu</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing elidolor mattis sit phasellus mollis</p>
+				<app-button
+					link="#this"
+					size="large"
+					text="Entrar para a comunidade"
+					type="pink"
+				>
+				</app-button>
+			</div>
+			<div class="content-journey span-4 md-span-4 lg-span-6">
+				<div class="content-journey-header">
+					<h4>Como crescer na comunidade</h4>
+					<i class="fa-solid fa-users"></i>
+				</div>
+				<div class="content-journey-body">
+					<ul>
+						<li>Faça parte da comunidade</li>
+						<li>Alcance a quantidade de seguidores</li>
+					</ul>
+				</div>
+				<div class="content-journey-footer">
+					<div class="journey-pill">
+						<h5>comu</h5>
+						<span>1%</span>
+					</div>
+					<div class="journey-pill">
+						<h5>50k</h5>
+						<h6>TOP CREATOR</h6>
+					</div>
+					<div class="journey-pill">
+						<h5>200k</h5>
+						<p>star club</p>
+					</div>
+					<div class="journey-pill">
+						<h5>1MM</h5>
+						<p>comu elite</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid">
+		</div>
+	</div>
 </section>
 <section class="learning section">
-    <div class="container">
-        <div class="grid">
-            <div class="hero-learning span-4 md-span-4 lg-span-3">
-                <h6>Aprendizado</h6>
-                <h2>Educação</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-            </div>
-            <div class="learning-carousel span-4">
-                <div
-                    #learningCarousel
-                    aria-label="Conteúdos de aprendizado"
-                    class="learning-carousel-track"
-                    id="learning-carousel"
-                    role="region"
-                    tabindex="0"
-                >
-                    <div class="card-learning span-4 md-span-2 lg-span-3">
-                        <div class="card-learning-header">
-                            <img src="/images/card-learning.png" alt="Aprendizado" />
-                        </div>
-                        <div class="card-learning-body">
-                            <h5>Como conquistar 2.000 seguidores em uma semana</h5>
-                            <p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
-                        </div>
-                    </div>
-                    <div class="card-learning span-4 md-span-2 lg-span-3">
-                        <div class="card-learning-header">
-                            <img src="/images/card-learning.png" alt="Aprendizado" />
-                        </div>
-                        <div class="card-learning-body">
-                            <h5>Como conquistar 2.000 seguidores em uma semana</h5>
-                            <p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
-                        </div>
-                    </div>
-                    <div class="card-learning span-4 md-span-2 lg-span-3">
-                        <div class="card-learning-header">
-                            <img src="/images/card-learning.png" alt="Aprendizado" />
-                        </div>
-                        <div class="card-learning-body">
-                            <h5>Como conquistar 2.000 seguidores em uma semana</h5>
-                            <p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="learning-carousel-controls">
-                    <button
-                        aria-controls="learning-carousel"
-                        aria-label="Mostrar conteúdo anterior"
-                        class="learning-carousel-button"
-                        type="button"
-                        (click)="scrollLearning(-1)"
-                    >
-                        <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <button
-                        aria-controls="learning-carousel"
-                        aria-label="Mostrar próximo conteúdo"
-                        class="learning-carousel-button"
-                        type="button"
-                        (click)="scrollLearning(1)"
-                    >
-                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="grid">
+			<div class="hero-learning span-4 md-span-4 lg-span-3">
+				<h6>Aprendizado</h6>
+				<h2>Educação</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+			</div>
+			<div class="learning-carousel span-4">
+				<div
+					#learningCarousel
+					aria-label="Conteúdos de aprendizado"
+					class="learning-carousel-track"
+					id="learning-carousel"
+					role="region"
+					tabindex="0"
+				>
+					<div class="card-learning span-4 md-span-2 lg-span-3">
+						<div class="card-learning-header">
+							<img src="/images/card-learning.png" alt="Aprendizado" />
+						</div>
+						<div class="card-learning-body">
+							<h5>Como conquistar 2.000 seguidores em uma semana</h5>
+							<p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
+						</div>
+					</div>
+					<div class="card-learning span-4 md-span-2 lg-span-3">
+						<div class="card-learning-header">
+							<img src="/images/card-learning.png" alt="Aprendizado" />
+						</div>
+						<div class="card-learning-body">
+							<h5>Como conquistar 2.000 seguidores em uma semana</h5>
+							<p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
+						</div>
+					</div>
+					<div class="card-learning span-4 md-span-2 lg-span-3">
+						<div class="card-learning-header">
+							<img src="/images/card-learning.png" alt="Aprendizado" />
+						</div>
+						<div class="card-learning-body">
+							<h5>Como conquistar 2.000 seguidores em uma semana</h5>
+							<p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
+						</div>
+					</div>
+				</div>
+				<div class="learning-carousel-controls">
+					<button
+						aria-controls="learning-carousel"
+						aria-label="Mostrar conteúdo anterior"
+						class="learning-carousel-button"
+						type="button"
+						(click)="scrollLearning(-1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+					</button>
+					<button
+						aria-controls="learning-carousel"
+						aria-label="Mostrar próximo conteúdo"
+						class="learning-carousel-button"
+						type="button"
+						(click)="scrollLearning(1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <section class="events section">
-    <div class="container">
-        <div class="grid">
-            <div class="hero-events span-4 md-span-4 lg-span-6">
-                <h6>Comece hoje</h6>
-                <h2>
-                    <img
-                        alt="Comu"
-                        src="/images/logo-comu-white.svg"
-                    />
-                    Connect
-                </h2>
-                <h1>Eventos</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-            </div>
-            <div class="main-event span-4 md-span-4 lg-span-6">
-                <div class="main-event-header">
-                    <img
-                        alt="Disponível no TikTok Shop"
-                        src="/images/logo-tiktok-black.svg"
-                    />
-                </div>
-                <div class="main-event-body">
-                    <app-button
-                        text="Gratuito"
-                        type="pink"
-                    >
-                    </app-button>
-                    <h4>IA no TikTok Shop</h4>
-                    <h6>Quinta-feira, 26 de fev. 20:30 - 21:30</h6>
-                    <p>Pode ser usada para turbinar suas estratégias no TikTok Shop.</p>
-                </div>
-                <div class="main-event-footer">
-                    <app-button
-                        link="#this"
-                        size="large"
-                        text="Entrar para a comunidade"
-                        type="pink"
-                    >
-                    </app-button>
-                </div>
-            </div>
-            <div class="regular-events-header span-4 md-span-4 lg-span-6">
-                <h2>Próximos Eventos</h2>
-            </div>
-            <div class="card-event span-4 md-span-2 lg-span-4">
-                <div class="card-event-header">
-                    <img src="/images/event.png" alt="Evento" />
-                    <app-button
-                        text="Webinar"
-                        type="blue"
-                    >
-                    </app-button>
-                </div>
-                <div class="card-event-body">
-                    <app-button
-                        text="19h00"
-                        type="transparentMuted"
-                    >
-                    </app-button>
-                    <h4>Engenharia do produto viral</h4>
-                    <h6>Critérios reais para acertar no TikTok Shop</h6>
-                    <p>Terça-feira, 24 de fevereiro</p>
-                </div>
-                <div class="card-event-footer">
-                    <app-button
-                        link="#this"
-                        text="Entrar para a comunidade"
-                        type="pink"
-                    >
-                    </app-button>
-                </div>
-            </div>
-            <div class="card-event span-4 md-span-2 lg-span-4">
-                <div class="card-event-header">
-                    <img src="/images/event.png" alt="Evento" />
-                    <app-button
-                        text="Webinar"
-                        type="blue"
-                    >
-                    </app-button>
-                </div>
-                <div class="card-event-body">
-                    <app-button
-                        text="19h00"
-                        type="transparentMuted"
-                    >
-                    </app-button>
-                    <h4>Engenharia do produto viral</h4>
-                    <h6>Critérios reais para acertar no TikTok Shop</h6>
-                    <p>Terça-feira, 24 de fevereiro</p>
-                </div>
-                <div class="card-event-footer">
-                    <app-button
-                        link="#this"
-                        text="Entrar para a comunidade"
-                        type="pink"
-                    >
-                    </app-button>
-                </div>
-            </div>
-            <div class="card-event span-4 md-span-2 lg-span-4">
-                <div class="card-event-header">
-                    <img src="/images/event.png" alt="Evento" />
-                    <app-button
-                        text="Webinar"
-                        type="blue"
-                    >
-                    </app-button>
-                </div>
-                <div class="card-event-body">
-                    <app-button
-                        text="19h00"
-                        type="transparentMuted"
-                    >
-                    </app-button>
-                    <h4>Engenharia do produto viral</h4>
-                    <h6>Critérios reais para acertar no TikTok Shop</h6>
-                    <p>Terça-feira, 24 de fevereiro</p>
-                </div>
-                <div class="card-event-footer">
-                    <app-button
-                        link="#this"
-                        text="Entrar para a comunidade"
-                        type="pink"
-                    >
-                    </app-button>
-                </div>
-            </div>
-            <div class="regular-events-footer span-4">
-                <app-button
-                    link="#this"
-                    size="large"
-                    text="Visualizar mais"
-                    type="transparentWhite"
-                >
-                </app-button>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="grid">
+			<div class="hero-events span-4 md-span-4 lg-span-6">
+				<h6>Comece hoje</h6>
+				<h2>
+					<img
+						alt="Comu"
+						src="/images/logo-comu-white.svg"
+					/>
+					Connect
+				</h2>
+				<h1>Eventos</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+			</div>
+			<div class="main-event span-4 md-span-4 lg-span-6">
+				<div class="main-event-header">
+					<img
+						alt="Disponível no TikTok Shop"
+						src="/images/logo-tiktok-black.svg"
+					/>
+				</div>
+				<div class="main-event-body">
+					<app-button
+						text="Gratuito"
+						type="pink"
+					>
+					</app-button>
+					<h4>IA no TikTok Shop</h4>
+					<h6>Quinta-feira, 26 de fev. 20:30 - 21:30</h6>
+					<p>Pode ser usada para turbinar suas estratégias no TikTok Shop.</p>
+				</div>
+				<div class="main-event-footer">
+					<app-button
+						link="#this"
+						size="large"
+						text="Entrar para a comunidade"
+						type="pink"
+					>
+					</app-button>
+				</div>
+			</div>
+			<div class="regular-events-header span-4 md-span-4 lg-span-6">
+				<h2>Próximos Eventos</h2>
+			</div>
+			<div class="events-carousel span-4">
+				<div
+					#eventsCarousel
+					aria-label="Próximos eventos"
+					class="events-carousel-track"
+					id="events-carousel"
+					role="region"
+					tabindex="0"
+				>
+					<div class="card-event span-4 md-span-2 lg-span-4">
+						<div class="card-event-header">
+							<img src="/images/event.png" alt="Evento" />
+							<app-button
+								text="Webinar"
+								type="blue"
+							>
+							</app-button>
+						</div>
+						<div class="card-event-body">
+							<app-button
+								text="19h00"
+								type="transparentMuted"
+							>
+							</app-button>
+							<h4>Engenharia do produto viral</h4>
+							<h6>Critérios reais para acertar no TikTok Shop</h6>
+							<p>Terça-feira, 24 de fevereiro</p>
+						</div>
+						<div class="card-event-footer">
+							<app-button
+								link="#this"
+								text="Entrar para a comunidade"
+								type="pink"
+							>
+							</app-button>
+						</div>
+					</div>
+					<div class="card-event span-4 md-span-2 lg-span-4">
+						<div class="card-event-header">
+							<img src="/images/event.png" alt="Evento" />
+							<app-button
+								text="Webinar"
+								type="blue"
+							>
+							</app-button>
+						</div>
+						<div class="card-event-body">
+							<app-button
+								text="19h00"
+								type="transparentMuted"
+							>
+							</app-button>
+							<h4>Engenharia do produto viral</h4>
+							<h6>Critérios reais para acertar no TikTok Shop</h6>
+							<p>Terça-feira, 24 de fevereiro</p>
+						</div>
+						<div class="card-event-footer">
+							<app-button
+								link="#this"
+								text="Entrar para a comunidade"
+								type="pink"
+							>
+							</app-button>
+						</div>
+					</div>
+					<div class="card-event span-4 md-span-2 lg-span-4">
+						<div class="card-event-header">
+							<img src="/images/event.png" alt="Evento" />
+							<app-button
+								text="Webinar"
+								type="blue"
+							>
+							</app-button>
+						</div>
+						<div class="card-event-body">
+							<app-button
+								text="19h00"
+								type="transparentMuted"
+							>
+							</app-button>
+							<h4>Engenharia do produto viral</h4>
+							<h6>Critérios reais para acertar no TikTok Shop</h6>
+							<p>Terça-feira, 24 de fevereiro</p>
+						</div>
+						<div class="card-event-footer">
+							<app-button
+								link="#this"
+								text="Entrar para a comunidade"
+								type="pink"
+							>
+							</app-button>
+						</div>
+					</div>
+				</div>
+				<div class="events-carousel-controls">
+					<button
+						aria-controls="events-carousel"
+						aria-label="Mostrar evento anterior"
+						class="events-carousel-button"
+						type="button"
+						(click)="scrollEvents(-1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+					</button>
+					<button
+						aria-controls="events-carousel"
+						aria-label="Mostrar próximo evento"
+						class="events-carousel-button"
+						type="button"
+						(click)="scrollEvents(1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+					</button>
+				</div>
+			</div>
+			<div class="regular-events-footer span-4">
+				<app-button
+					link="#this"
+					size="large"
+					text="Visualizar mais"
+					type="transparentWhite"
+				>
+				</app-button>
+			</div>
+		</div>
+	</div>
 </section>
 <section class="sales section">
-    <div class="container">
-        <div class="grid">
-            <div class="hero-sale span-4 md-span-4 lg-span-6">
-                <h2>Soluções para criadores</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                <div class="hero-sale-buttons">
-                    <app-button
-                        link="#this"
-                        text="Criadores"
-                        type="pink"
-                    >
-                    </app-button>
-                    <app-button
-                        link="#this"
-                        text="Marcas"
-                        type="rainbow"
-                    >
-                    </app-button>
-                </div>
-            </div>
-            <div class="card-sale span-4 md-span-3 lg-span-4">
-                <div class="card-sale-header">
-                    <img
-                        alt="Comu free"
-                        src="/images/logo-comu-free.svg"
-                        width="116"
-                    />
-                    <h6>Gratuito</h6>
-                    <p>Dictum aliquet arcu egestas massa sed tellus sed arcu velit tincidunt orci.</p>
-                </div>
-                <div class="card-sale-body">
-                    <ul>
-                        <li>
-                            <i class="fa-solid fa-video"></i>
-                            Aulas
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-users"></i>
-                            Eventos
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-c"></i>
-                            Acesso a comunidade
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-sale-footer">
-                    <app-button
-                        link="#this"
-                        text="Entrar na comunidade"
-                        type="rainbow"
-                    >
-                    </app-button>
-                </div>
-            </div>
-            <div class="card-sale span-4 md-span-3 lg-span-4">
-                <div class="card-sale-header">
-                    <img
-                        alt="Comu mais"
-                        src="/images/logo-comu-mais.svg"
-                        width="130"
-                    />
-                    <p>Dictum aliquet arcu egestas massa sed tellus sed arcu velit tincidunt orci.</p>
-                </div>
-                <div class="card-sale-body">
-                    <ul>
-                        <li>
-                            <i class="fa-solid fa-video"></i>
-                            Aulas [Acesso imediato a mais de 30 aulas gravadas]
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-users"></i>
-                            Eventos [mais]
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-c"></i>
-                            Acesso a comunidade
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-user"></i>
-                            Análise de perfil
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-star"></i>
-                            Mentorias exclusivas
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-sale-footer">
-                    <app-button
-                        link="#this"
-                        text="Entrar na comunidade"
-                        type="rainbow"
-                    >
-                    </app-button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="grid">
+			<div class="hero-sale span-4 md-span-4 lg-span-6">
+				<h2>Soluções para criadores</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+				<div class="hero-sale-buttons">
+					<app-button
+						link="#this"
+						text="Criadores"
+						type="pink"
+					>
+					</app-button>
+					<app-button
+						link="#this"
+						text="Marcas"
+						type="rainbow"
+					>
+					</app-button>
+				</div>
+			</div>
+			<div class="card-sale span-4 md-span-3 lg-span-4">
+				<div class="card-sale-header">
+					<img
+						alt="Comu free"
+						src="/images/logo-comu-free.svg"
+						width="116"
+					/>
+					<h6>Gratuito</h6>
+					<p>Dictum aliquet arcu egestas massa sed tellus sed arcu velit tincidunt orci.</p>
+				</div>
+				<div class="card-sale-body">
+					<ul>
+						<li>
+							<i class="fa-solid fa-video"></i>
+							Aulas
+						</li>
+						<li>
+							<i class="fa-solid fa-users"></i>
+							Eventos
+						</li>
+						<li>
+							<i class="fa-solid fa-c"></i>
+							Acesso a comunidade
+						</li>
+					</ul>
+				</div>
+				<div class="card-sale-footer">
+					<app-button
+						link="#this"
+						text="Entrar na comunidade"
+						type="rainbow"
+					>
+					</app-button>
+				</div>
+			</div>
+			<div class="card-sale span-4 md-span-3 lg-span-4">
+				<div class="card-sale-header">
+					<img
+						alt="Comu mais"
+						src="/images/logo-comu-mais.svg"
+						width="130"
+					/>
+					<p>Dictum aliquet arcu egestas massa sed tellus sed arcu velit tincidunt orci.</p>
+				</div>
+				<div class="card-sale-body">
+					<ul>
+						<li>
+							<i class="fa-solid fa-video"></i>
+							Aulas [Acesso imediato a mais de 30 aulas gravadas]
+						</li>
+						<li>
+							<i class="fa-solid fa-users"></i>
+							Eventos [mais]
+						</li>
+						<li>
+							<i class="fa-solid fa-c"></i>
+							Acesso a comunidade
+						</li>
+						<li>
+							<i class="fa-solid fa-user"></i>
+							Análise de perfil
+						</li>
+						<li>
+							<i class="fa-solid fa-star"></i>
+							Mentorias exclusivas
+						</li>
+					</ul>
+				</div>
+				<div class="card-sale-footer">
+					<app-button
+						link="#this"
+						text="Entrar na comunidade"
+						type="rainbow"
+					>
+					</app-button>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <section class="faq section">
-    <div class="container">
-        <div class="grid">
-            <div class="faq-content span-4 md-span-4 lg-span-8">
-                <div class="faq-header">
-                    <h2>Perguntas Frequentes</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                </div>
-                <div class="faq-body">
-                    <div class="question" [class.open]="isOpen(0)">
-                        <div
-                            [attr.aria-expanded]="isOpen(0)"
-                            class="question-header"
-                            (click)="toggle(0)"
-                            (keydown.enter)="toggle(0)"
-                            role="button"
-                            tabindex="0"
-                        >
-                            <div class="title-question-header">
-                                <i class="fa-solid fa-circle-question"></i>
-                                <h5>Como funciona a Comu?</h5>
-                            </div>
-                            <i class="fa-solid fa-plus toggle-icon"></i>
-                        </div>
-                        <div class="question-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
-                        </div>
-                    </div>
-                    <div class="question" [class.open]="isOpen(1)">
-                        <div
-                            [attr.aria-expanded]="isOpen(1)"
-                            class="question-header"
-                            (click)="toggle(1)"
-                            (keydown.enter)="toggle(1)"
-                            role="button"
-                            tabindex="0"
-                        >
-                            <div class="title-question-header">
-                                <i class="fa-solid fa-circle-question"></i>
-                                <h5>Como isso é sinal de graça?</h5>
-                            </div>
-                            <i class="fa-solid fa-plus toggle-icon"></i>
-                        </div>
-                        <div class="question-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="grid">
+			<div class="faq-content span-4 md-span-4 lg-span-8">
+				<div class="faq-header">
+					<h2>Perguntas Frequentes</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+				</div>
+				<div class="faq-body">
+					<div class="question" [class.open]="isOpen(0)">
+						<div
+							[attr.aria-expanded]="isOpen(0)"
+							class="question-header"
+							(click)="toggle(0)"
+							(keydown.enter)="toggle(0)"
+							role="button"
+							tabindex="0"
+						>
+							<div class="title-question-header">
+								<i class="fa-solid fa-circle-question"></i>
+								<h5>Como funciona a Comu?</h5>
+							</div>
+							<i class="fa-solid fa-plus toggle-icon"></i>
+						</div>
+						<div class="question-body">
+							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
+						</div>
+					</div>
+					<div class="question" [class.open]="isOpen(1)">
+						<div
+							[attr.aria-expanded]="isOpen(1)"
+							class="question-header"
+							(click)="toggle(1)"
+							(keydown.enter)="toggle(1)"
+							role="button"
+							tabindex="0"
+						>
+							<div class="title-question-header">
+								<i class="fa-solid fa-circle-question"></i>
+								<h5>Como isso é sinal de graça?</h5>
+							</div>
+							<i class="fa-solid fa-plus toggle-icon"></i>
+						</div>
+						<div class="question-body">
+							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
+						</div>
+					</div>
+					<div class="question" [class.open]="isOpen(2)">
+						<div
+							[attr.aria-expanded]="isOpen(2)"
+							class="question-header"
+							(click)="toggle(2)"
+							(keydown.enter)="toggle(2)"
+							role="button"
+							tabindex="0"
+						>
+							<div class="title-question-header">
+								<i class="fa-solid fa-circle-question"></i>
+								<h5>Por que devo assinar com a Comu?</h5>
+							</div>
+							<i class="fa-solid fa-plus toggle-icon"></i>
+						</div>
+						<div class="question-body">
+							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
+						</div>
+					</div>
+					<div class="question" [class.open]="isOpen(3)">
+						<div
+							[attr.aria-expanded]="isOpen(3)"
+							class="question-header"
+							(click)="toggle(3)"
+							(keydown.enter)="toggle(3)"
+							role="button"
+							tabindex="0"
+						>
+							<div class="title-question-header">
+								<i class="fa-solid fa-circle-question"></i>
+								<h5>Como faço para fazer parte da Comu?</h5>
+							</div>
+							<i class="fa-solid fa-plus toggle-icon"></i>
+						</div>
+						<div class="question-body">
+							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
+						</div>
+					</div>
+					<div class="question" [class.open]="isOpen(4)">
+						<div
+							[attr.aria-expanded]="isOpen(4)"
+							class="question-header"
+							(click)="toggle(4)"
+							(keydown.enter)="toggle(4)"
+							role="button"
+							tabindex="0"
+						>
+							<div class="title-question-header">
+								<i class="fa-solid fa-circle-question"></i>
+								<h5>Como faço para fazer parte da Comu Free?</h5>
+							</div>
+							<i class="fa-solid fa-plus toggle-icon"></i>
+						</div>
+						<div class="question-body">
+							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
+						</div>
+					</div>
+					<div class="question" [class.open]="isOpen(5)">
+						<div
+							[attr.aria-expanded]="isOpen(5)"
+							class="question-header"
+							(click)="toggle(5)"
+							(keydown.enter)="toggle(5)"
+							role="button"
+							tabindex="0"
+						>
+							<div class="title-question-header">
+								<i class="fa-solid fa-circle-question"></i>
+								<h5>Como ser do time de criadores da Comu no TikTok Shop?</h5>
+							</div>
+							<i class="fa-solid fa-plus toggle-icon"></i>
+						</div>
+						<div class="question-body">
+							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <section class="brand-growth section">
-    <div class="container">
-        <div class="grid">
-            <div class="brand-growth-content span-4">
-                <h2>Tudo para sua marca <span>crescer</span></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-                <div class="brand-growth-buttons">
-                    <app-button
-                        link="#this"
-                        text="Para criadores"
-                        type="pink"
-                    >
-                    </app-button>
-                    <app-button
-                        link="#this"
-                        text="Para marcas"
-                        type="dark-rainbow"
-                    >
-                    </app-button>
-                </div>
-            </div>
-            <div class="brand-growth-images span-4">
-                <img src="/images/growth-brand-1.png" alt="Brand growth" />
-                <img src="/images/growth-brand-2.png" alt="Brand growth" />
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="grid">
+			<div class="brand-growth-content span-4">
+				<h2>Tudo para sua marca <span>crescer</span></h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+				<div class="brand-growth-buttons">
+					<app-button
+						link="#this"
+						text="Para criadores"
+						type="pink"
+					>
+					</app-button>
+					<app-button
+						link="#this"
+						text="Para marcas"
+						type="dark-rainbow"
+					>
+					</app-button>
+				</div>
+			</div>
+			<div class="brand-growth-images span-4">
+				<img src="/images/growth-brand-1.png" alt="Brand growth" />
+				<img src="/images/growth-brand-2.png" alt="Brand growth" />
+			</div>
+		</div>
+	</div>
 </section>

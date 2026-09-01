@@ -767,13 +767,76 @@ p {
             h2 { color: var(--color-white); }
         }
 
+        .events-carousel {
+            min-width: 0;
+
+            .events-carousel-track {
+                display: flex;
+                gap: var(--layout-grid-gap);
+                overflow-x: auto;
+                padding-bottom: 1.5rem;
+                scroll: {
+                    behavior: smooth;
+                    snap-type: x mandatory;
+                }
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            .events-carousel-controls {
+                display: flex;
+                gap: var(--layout-grid-gap);
+                justify-content: center;
+
+                .events-carousel-button {
+                    align-items: center;
+                    background-color: var(--color-white);
+                    border: 0;
+                    border-radius: 50%;
+                    color: var(--color-blue);
+                    cursor: pointer;
+                    display: inline-flex;
+                    height: 2.75rem;
+                    justify-content: center;
+                    width: 2.75rem;
+
+                    &:focus-visible {
+                        outline: 3px solid var(--color-white);
+                        outline-offset: 3px;
+                    }
+                }
+            }
+
+            @media (min-width: 768px) {
+                display: contents;
+
+                .events-carousel-track {
+                    display: contents;
+                }
+
+                .events-carousel-controls {
+                    display: none;
+                }
+            }
+        }
+
         .card-event {
             background-color: var(--color-white);
             border-radius: 1rem;
             display: flex;
+            flex: 0 0 100%;
             flex-direction: column;
             gap: var(--layout-grid-gap-2x);
             padding: 1rem;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+
+            @media (min-width: 768px) {
+                flex: initial;
+            }
             
             .card-event-header {
                 position: relative;
