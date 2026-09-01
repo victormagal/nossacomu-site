@@ -242,31 +242,62 @@
                 <h2>Educação</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
             </div>
-            <div class="card-learning span-4 md-span-2 lg-span-3">
-                <div class="card-learning-header">
-                    <img src="/images/card-learning.png" alt="Aprendizado" />
+            <div class="learning-carousel span-4">
+                <div
+                    #learningCarousel
+                    aria-label="Conteúdos de aprendizado"
+                    class="learning-carousel-track"
+                    id="learning-carousel"
+                    role="region"
+                    tabindex="0"
+                >
+                    <div class="card-learning span-4 md-span-2 lg-span-3">
+                        <div class="card-learning-header">
+                            <img src="/images/card-learning.png" alt="Aprendizado" />
+                        </div>
+                        <div class="card-learning-body">
+                            <h5>Como conquistar 2.000 seguidores em uma semana</h5>
+                            <p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
+                        </div>
+                    </div>
+                    <div class="card-learning span-4 md-span-2 lg-span-3">
+                        <div class="card-learning-header">
+                            <img src="/images/card-learning.png" alt="Aprendizado" />
+                        </div>
+                        <div class="card-learning-body">
+                            <h5>Como conquistar 2.000 seguidores em uma semana</h5>
+                            <p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
+                        </div>
+                    </div>
+                    <div class="card-learning span-4 md-span-2 lg-span-3">
+                        <div class="card-learning-header">
+                            <img src="/images/card-learning.png" alt="Aprendizado" />
+                        </div>
+                        <div class="card-learning-body">
+                            <h5>Como conquistar 2.000 seguidores em uma semana</h5>
+                            <p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-learning-body">
-                    <h5>Como conquistar 2.000 seguidores em uma semana</h5>
-                    <p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
-                </div>
-            </div>
-            <div class="card-learning span-4 md-span-2 lg-span-3">
-                <div class="card-learning-header">
-                    <img src="/images/card-learning.png" alt="Aprendizado" />
-                </div>
-                <div class="card-learning-body">
-                    <h5>Como conquistar 2.000 seguidores em uma semana</h5>
-                    <p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
-                </div>
-            </div>
-            <div class="card-learning span-4 md-span-2 lg-span-3">
-                <div class="card-learning-header">
-                    <img src="/images/card-learning.png" alt="Aprendizado" />
-                </div>
-                <div class="card-learning-body">
-                    <h5>Como conquistar 2.000 seguidores em uma semana</h5>
-                    <p>“Faucibus risus tortor eu dolor ullamcorper dui id est commodo vitae viverra pretium consequat ipsum et augue a elit vel facilisi.”</p>
+                <div class="learning-carousel-controls">
+                    <button
+                        aria-controls="learning-carousel"
+                        aria-label="Mostrar conteúdo anterior"
+                        class="learning-carousel-button"
+                        type="button"
+                        (click)="scrollLearning(-1)"
+                    >
+                        <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button
+                        aria-controls="learning-carousel"
+                        aria-label="Mostrar próximo conteúdo"
+                        class="learning-carousel-button"
+                        type="button"
+                        (click)="scrollLearning(1)"
+                    >
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>

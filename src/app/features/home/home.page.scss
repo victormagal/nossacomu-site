@@ -566,17 +566,80 @@ p {
             p { color: var(--color-dark-gray); }
         }
 
+        .learning-carousel {
+            min-width: 0;
+
+            .learning-carousel-track {
+                display: flex;
+                gap: var(--layout-grid-gap);
+                overflow-x: auto;
+                padding-bottom: 1.5rem;
+                scroll: {
+                    behavior: smooth;
+                    snap-type: x mandatory;
+                }
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            .learning-carousel-controls {
+                display: flex;
+                gap: var(--layout-grid-gap);
+                justify-content: center;
+
+                .learning-carousel-button {
+                    align-items: center;
+                    background-color: var(--color-white);
+                    border: 1px solid rgba(var(--color-muted-rgb), 0.45);
+                    border-radius: 50%;
+                    color: var(--color-pink);
+                    cursor: pointer;
+                    display: inline-flex;
+                    height: 2.75rem;
+                    justify-content: center;
+                    width: 2.75rem;
+
+                    &:focus-visible {
+                        outline: 3px solid var(--color-pink);
+                        outline-offset: 3px;
+                    }
+                }
+            }
+
+            @media (min-width: 768px) {
+                display: contents;
+
+                .learning-carousel-track {
+                    display: contents;
+                }
+
+                .learning-carousel-controls {
+                    display: none;
+                }
+            }
+        }
+
         .card-learning {
             background-color: var(--color-white);
             border-radius: 1rem;
             display: flex;
+            flex: 0 0 100%;
             flex-direction: column;
             gap: var(--layout-grid-gap);
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+
+            @media (min-width: 768px) {
+                flex: initial;
+            }
 
             @media (min-width: 1200px) {
-                &:nth-child(2) { grid-column: 1  / span 3; grid-row: 1; };
-                &:nth-child(3) { grid-column: 4  / span 3; grid-row: 1; };
-                &:nth-child(4) { grid-column: 7  / span 3; grid-row: 1; };
+                &:nth-child(1) { grid-column: 1  / span 3; grid-row: 1; };
+                &:nth-child(2) { grid-column: 4  / span 3; grid-row: 1; };
+                &:nth-child(3) { grid-column: 7  / span 3; grid-row: 1; };
             }
 
             .card-learning-header {

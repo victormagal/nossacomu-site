@@ -15,12 +15,17 @@ import { ButtonComponent } from "../../shared/components/button/button.component
 })
 export class HomePage {
   private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
+  private readonly learningCarousel = viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
   private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
 
   openItems = new Set<number>();
 
   scrollCards(direction: -1 | 1) {
     this.scrollCarousel(this.cardsCarousel().nativeElement, '.card-be-part-of', direction);
+  }
+
+  scrollLearning(direction: -1 | 1) {
+    this.scrollCarousel(this.learningCarousel().nativeElement, '.card-learning', direction);
   }
 
   scrollStories(direction: -1 | 1) {
