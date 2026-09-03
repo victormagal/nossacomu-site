@@ -669,7 +669,7 @@ p {
 
 // Events section
 .events {
-    background-color: var(--color-blue);
+    background-color: var(--color-pink);
 
     .grid {
         gap: var(--layout-grid-gap-2x);
@@ -706,9 +706,11 @@ p {
             }
 
             h6 {
-                color: var(--color-muted);
+                color: var(--color-white);
                 text-transform: uppercase;
             }
+
+            p { color: var(--color-white); }
         }
 
         .main-event {
@@ -796,7 +798,7 @@ p {
                     background-color: var(--color-white);
                     border: 0;
                     border-radius: 50%;
-                    color: var(--color-blue);
+                    color: var(--color-pink);
                     cursor: pointer;
                     display: inline-flex;
                     height: 2.75rem;

@@ -25,21 +25,9 @@ a, span {
 }
 
 
-.dark-rainbow {
-    background-clip: padding-box, border-box;
-    background-image:
-        // Layer 1: solid white fill (inside only)
-        linear-gradient(
-            rgba(var(--color-dark-gray-rgb), 1),
-            rgba(var(--color-dark-gray-rgb), 1)
-        ),
-        // Layer 2: vivid rainbow for the border ring
-        linear-gradient(
-            90deg,
-            #ff0000, #ff9900, #ffee00, #33ff00, #00ffee, #0066ff, #cc00ff, #ff0000
-        );
-    background-origin: border-box;
-    border: 1px solid transparent;
+.dark-pink-border {
+    background-color: rgba(var(--color-dark-gray-rgb), 1);
+    border: 1px solid rgba(var(--color-pink-rgb), 1);
     color: var(--color-white);
 }
 
@@ -55,21 +43,9 @@ a, span {
     color: var(--color-white);
 }
 
-.rainbow {
-    background-clip: padding-box, border-box;
-    background-image:
-        // Layer 1: solid white fill (inside only)
-        linear-gradient(
-            rgba(var(--color-white-rgb), 1),
-            rgba(var(--color-white-rgb), 1)
-        ),
-        // Layer 2: vivid rainbow for the border ring
-        linear-gradient(
-            90deg,
-            #ff0000, #ff9900, #ffee00, #33ff00, #00ffee, #0066ff, #cc00ff, #ff0000
-        );
-    background-origin: border-box;
-    border: 1px solid transparent;
+.pink-border {
+    background-color: rgba(var(--color-white-rgb), 0.6);
+    border: 1px solid rgba(var(--color-pink-rgb), 1);
     color: var(--color-dark-gray);
 }
 
