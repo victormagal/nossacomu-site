@@ -173,7 +173,51 @@
 				<p>”Lorem ipsum dolor sit amet consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat onare imperdiet bibendum eleifend quam feugiat sit semper fames id diam diam nisi mauris netus facilisi semper elementum quis turpis dui viverra nisl.”</p>
 			</div>
 			<div class="form-contact span-4 md-span-6 lg-span-6">
-				
+				<form class="contact-form" (submit)="submitForm($event)" novalidate>
+					<div class="form-row">
+						<label for="name">Nome</label>
+						<input
+							id="name"
+							(input)="name.set($any($event.target).value)"
+							name="name"
+							placeholder="Seu nome"
+							required
+							type="text"
+							[value]="name()"
+						/>
+					</div>
+					<div class="form-row">
+						<label for="mail">Email</label>
+						<input
+							id="mail"
+							(input)="mail.set($any($event.target).value)"
+							name="mail"
+							placeholder="seu@exemplo.com"
+							required
+							type="email"
+							[value]="mail()"
+						/>
+					</div>
+					<div class="form-row">
+						<label for="phone">Telefone</label>
+						<input
+							id="phone"
+							(input)="phone.set($any($event.target).value)"
+							name="phone"
+							placeholder="(00) 00000-0000"
+							required
+							type="tel"
+							[value]="phone()"
+						/>
+					</div>
+					<div class="form-row form-actions">
+						<app-button
+							link="#this"
+							text="Enviar"
+						>
+						</app-button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -182,49 +226,38 @@
 	<div class="container">
 		<div class="grid">
 			<div class="hero-journey span-4 md-span-4 lg-span-6">
-				<h6>Sua jornada começa aqui</h6>
-				<h2>Cresça como criador e com a Comu</h2>
+				<h2>Alguns números relevantes</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipiscing elidolor mattis sit phasellus mollis</p>
 				<app-button
 					link="#this"
 					size="large"
-					text="Entrar para a comunidade"
+					text="Entrar na comunidade"
 					type="pink"
 				>
 				</app-button>
 			</div>
 			<div class="content-journey span-4 md-span-4 lg-span-6">
-				<div class="content-journey-header">
-					<h4>Como crescer na comunidade</h4>
-					<i class="fa-solid fa-users"></i>
+				<div class="box-numbers">
+					<h3>200+</h3>
+					<h6>Websites build</h6>
+					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
 				</div>
-				<div class="content-journey-body">
-					<ul>
-						<li>Faça parte da comunidade</li>
-						<li>Alcance a quantidade de seguidores</li>
-					</ul>
+				<div class="box-numbers">
+					<h3>200+</h3>
+					<h6>Websites build</h6>
+					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
 				</div>
-				<div class="content-journey-footer">
-					<div class="journey-pill">
-						<h5>comu</h5>
-						<span>1%</span>
-					</div>
-					<div class="journey-pill">
-						<h5>50k</h5>
-						<h6>TOP CREATOR</h6>
-					</div>
-					<div class="journey-pill">
-						<h5>200k</h5>
-						<p>star club</p>
-					</div>
-					<div class="journey-pill">
-						<h5>1MM</h5>
-						<p>comu elite</p>
-					</div>
+				<div class="box-numbers">
+					<h3>200+</h3>
+					<h6>Websites build</h6>
+					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+				</div>
+				<div class="box-numbers">
+					<h3>200+</h3>
+					<h6>Websites build</h6>
+					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
 				</div>
 			</div>
-		</div>
-		<div class="grid">
 		</div>
 	</div>
 </section>
@@ -232,8 +265,7 @@
 	<div class="container">
 		<div class="grid">
 			<div class="hero-learning span-4 md-span-4 lg-span-3">
-				<h6>Aprendizado</h6>
-				<h2>Educação</h2>
+				<h2>Vantagens</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
 			</div>
 			<div class="learning-carousel span-4">

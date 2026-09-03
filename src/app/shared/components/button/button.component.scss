@@ -32,7 +32,7 @@ a, span {
 }
 
 .default {
-    background-color: rgba(var(--color-white-rgb), 0.6);
+    background-color: rgba(var(--color-white-rgb), 1);
     border: 1px solid rgba(var(--color-black-rgb), 0.1);
     color: var(--color-dark-gray);
 }
@@ -44,7 +44,7 @@ a, span {
 }
 
 .pink-border {
-    background-color: rgba(var(--color-white-rgb), 0.6);
+    background-color: rgba(var(--color-white-rgb), 1);
     border: 1px solid rgba(var(--color-pink-rgb), 1);
     color: var(--color-dark-gray);
 }

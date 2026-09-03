@@ -2,7 +2,8 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  viewChild
+  viewChild,
+  signal,
 } from '@angular/core';
 import { ButtonComponent } from "../../shared/components/button/button.component";
 
@@ -63,5 +64,29 @@ export class ForBrandsPage {
 
   isOpen(index: number) {
     return this.openItems.has(index);
+  }
+
+  // Signal-backed form fields
+  name = signal('');
+  mail = signal('');
+  phone = signal('');
+
+  submitForm(event?: Event) {
+    event?.preventDefault();
+
+    const payload = {
+      name: this.name(),
+      mail: this.mail(),
+      phone: this.phone(),
+    };
+
+    // For now just log — backend integration will come later
+    // eslint-disable-next-line no-console
+    console.log('contact form submitted', payload);
+
+    // reset
+    this.name.set('');
+    this.mail.set('');
+    this.phone.set('');
   }
 }
