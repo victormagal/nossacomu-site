@@ -23,6 +23,10 @@ p {
                 justify-content: center;
                 text-align: left;
             }
+
+            h4 {
+                span { font-weight: 700; }
+            }
         
             h6 {
                 color: var(--color-pink);
@@ -50,27 +54,9 @@ p {
             flex-direction: column;
             gap: var(--layout-grid-gap);
 
-            .content-main-pill {
-                align-items: center;
-                background-color: var(--color-white);
+            img {
                 border-radius: 1rem;
-                box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.1);
-                display: flex;
-                gap: var(--layout-grid-gap);
-                justify-content: center;
-                padding: var(--layout-grid-gap);
-                text-align: center;
-
-                p {
-                    color: var(--color-dark-gray);
-
-                    span {
-                        font: {
-                            size: 1.5rem;
-                            weight: 600;
-                        }
-                    }
-                }
+                box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
             }
         }
     }
@@ -279,8 +265,9 @@ p {
 // Be part of section
 
 // Creators section
-.creators {
+.contact {
     background-color: var(--color-pink);
+    margin: 2rem 0 0;
 
     .grid {
         gap: var(--layout-grid-gap-2x);
@@ -296,7 +283,7 @@ p {
             grid-template-columns: repeat(var(--layout-grid-columns), minmax(0, 1fr));
         }
 
-        .hero-creators {
+        .hero-contact {
             display: flex;
             flex-direction: column;
             gap: var(--layout-grid-gap);
@@ -308,94 +295,35 @@ p {
             }
 
             @media (min-width: 1200px) {
-                grid-column: 10 / span 3;
+                grid-column: 7 / span 6;
                 grid-row: 1;
                 text-align: left;
             }
 
-            h2, p { color: var(--color-white); }
+            h2, h5, li, p { color: var(--color-white); }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                li {
+                    font: {
+                        size: 0.875rem;
+                        weight: 600;
+                    }
+                    list-style: none;
+                }
+            }
         }
 
-        .stories-carousel {
-            min-width: 0;
+        .form-contact {
+            border: 1px solid rgba(var(--color-white-rgb), 0.45);
+            border-radius: 1rem;
 
             @media (min-width: 1200px) {
-                grid-column: 1 / span 9;
+                grid-column: 1 / span 6;
                 grid-row: 1;
-            }
-
-            .stories-carousel-track {
-                display: flex;
-                gap: var(--layout-grid-gap);
-                overflow-x: auto;
-                padding-bottom: 1.5rem;
-                scroll: {
-                    behavior: smooth;
-                    snap-type: x mandatory;
-                }
-                scrollbar-width: none;
-
-                &::-webkit-scrollbar {
-                    display: none;
-                }
-
-                @media (min-width: 768px) {
-                    display: grid;
-                    grid-template-columns: repeat(6, minmax(0, 1fr));
-                    overflow: visible;
-                    padding-bottom: 0;
-                }
-
-                @media (min-width: 1200px) {
-                    grid-template-columns: repeat(9, minmax(0, 1fr));
-                }
-            }
-
-            .stories-carousel-controls {
-                display: flex;
-                gap: var(--layout-grid-gap);
-                justify-content: center;
-
-                @media (min-width: 768px) {
-                    display: none;
-                }
-
-                .stories-carousel-button {
-                    align-items: center;
-                    background-color: var(--color-white);
-                    border: 0;
-                    border-radius: 50%;
-                    color: var(--color-pink);
-                    cursor: pointer;
-                    display: inline-flex;
-                    height: 2.75rem;
-                    justify-content: center;
-                    width: 2.75rem;
-
-                    &:focus-visible {
-                        outline: 3px solid var(--color-white);
-                        outline-offset: 3px;
-                    }
-                }
-            }
-        }
-        
-        .story {
-            flex: 0 0 100%;
-            scroll: {
-                snap: {
-                    align: start;
-                    stop: always;
-                }
-            }
-
-            @media (min-width: 768px) {
-                flex: initial;
-            }
-
-            img {
-                height: auto;
-                width: 100%;
             }
         }
     }
