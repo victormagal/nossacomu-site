@@ -146,15 +146,19 @@ p {
                 grid-column: 2 / span 4;
             }
 
+            @media (min-width: 1200px) {
+                text-align: left;
+            }
+
             .hero-be-part-of-logo {
-                align-items: baseline;
+                align-items: center;
                 display: flex;
+                flex-direction: column;
                 gap: 0.5rem;
-                justify-content: center;
 
                 @media (min-width: 1200px) {
                     flex-direction: column;
-                    gap: 0;
+                    align-items: flex-start;
                 }
             }
 
@@ -262,9 +266,14 @@ p {
 
             .card-be-part-of-body {
                 display: flex;
+                flex: 1;
                 flex-direction: column;
                 gap: var(--layout-grid-gap);
                 padding: var(--layout-grid-gap-2x);
+
+                > p {
+                    flex: 1;
+                }
 
                 app-button {
                     align-self: center;
@@ -491,38 +500,21 @@ p {
                     background-color: var(--color-dark-gray);
                     border-radius: 1rem;
                     display: flex;
-                    gap: var(--layout-grid-gap);
+                    flex-direction: column;
+                    gap: 0.5rem;
                     justify-content: center;
                     padding: var(--layout-grid-gap);
+                    text-align: center;
     
                     h5 {
-                        color: var(--color-white);
-                        font-weight: 600;
-                    }
-                    
-                    span {
-                        background-color: var(--color-muted);
-                        border-radius: 1rem;
-                        color: var(--color-white);
-                        font: {
-                            size: 0.75rem;
-                            weight: 600;
-                        }
-                        padding: 0.25rem 0.5rem;
-                    }
-
-                    h6 {
                         color: var(--color-pink);
-                        font: {
-                            size: 0.675rem;
-                            weight: 600;
-                        }
+                        font-weight: 600;
                     }
 
                     p {
                         color: var(--color-muted);
                         font: {
-                            size: 0.675rem;
+                            size: 0.75rem;
                             weight: 600;
                         }
                     }
@@ -651,8 +643,9 @@ p {
 
             .card-learning-body {
                 display: flex;
+                flex: 1;
                 flex-direction: column;
-                gap: var(--layout-grid-gap);
+                gap: 0.5rem;
                 padding: var(--layout-grid-gap);
 
                 h5 {
@@ -660,7 +653,12 @@ p {
                     font-weight: 600;
                 }
 
-                p { color: var(--color-dark-gray); }
+                h6 { font-weight: 600; }
+
+                p {
+                    color: var(--color-dark-gray);
+                    flex: 1;
+                }
             }
         }
     }
