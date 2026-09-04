@@ -411,6 +411,14 @@ p {
                 height: auto;
                 width: 100%;
             }
+
+            iframe {
+                aspect-ratio: 9 / 16;
+                border-radius: 1rem;;
+                border: 0;
+                display: block;
+                width: 100%;
+            }
         }
     }
 }
