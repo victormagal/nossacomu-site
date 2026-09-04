@@ -1144,18 +1144,81 @@ p {
             }
         }
 
-        .brand-growth-images {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+        .brand-growth-carousel {
+            min-width: 0;
 
-            @media (min-width: 768px) and (max-width: 1199px) {
-                grid-column: 2 / span 4;
+            @media (min-width: 768px) {
+                display: contents;
             }
-    
-            > * {
-                flex: 1 1 calc(50% - 0.25rem);
+
+            .brand-growth-carousel-track {
+                display: flex;
+                gap: var(--layout-grid-gap);
+                overflow-x: auto;
+                padding-bottom: 1.5rem;
+                scroll: {
+                    behavior: smooth;
+                    snap-type: x mandatory;
+                }
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                @media (min-width: 768px) {
+                    display: contents;
+                }
+            }
+
+            .brand-growth-image {
+                flex: 0 0 100%;
                 min-width: 0;
+                scroll: {
+                    snap: {
+                        align: start;
+                        stop: always;
+                    }
+                }
+                width: 100%;
+                
+                @media (min-width: 768px) {
+                    flex: initial;
+                }
+                
+                img {
+                    border-radius: 1rem;
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .brand-growth-carousel-controls {
+                display: flex;
+                gap: var(--layout-grid-gap);
+                justify-content: center;
+
+                @media (min-width: 768px) {
+                    display: none;
+                }
+
+                .brand-growth-carousel-button {
+                    align-items: center;
+                    background-color: var(--color-white);
+                    border: 0;
+                    border-radius: 50%;
+                    color: var(--color-pink);
+                    cursor: pointer;
+                    display: inline-flex;
+                    height: 2.75rem;
+                    justify-content: center;
+                    width: 2.75rem;
+
+                    &:focus-visible {
+                        outline: 3px solid var(--color-pink);
+                        outline-offset: 3px;
+                    }
+                }
             }
         }
     }
