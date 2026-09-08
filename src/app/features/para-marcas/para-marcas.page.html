@@ -24,146 +24,13 @@
 		</div>
 	</div>
 </section>
-<section class="section brands-section">
-</section>
-<!-- <section class="be-part-of section">
-	<div class="container">
-		<div class="grid">
-			<div class="hero-be-part-of span-4 md-span-4 lg-span-3">
-				<div class="hero-be-part-of-logo">
-					<h3>Faça parte da</h3>
-					<img
-						alt="Comu"
-						src="/images/logo-comu-mais.svg"
-					/>
-				</div>
-				<div class="hero-be-part-of-buttons">
-					<app-button
-						link="#this"
-						text="Entrar na comunidade"
-						type="pink"
-					>
-					</app-button>
-					<app-button
-						link="#this"
-						text="Conheça mais"
-						type="pink-border"
-					>
-					</app-button>
-				</div>
-			</div>
-			<div class="cards-carousel span-4">
-				<div
-					#cardsCarousel
-					aria-label="Opções para fazer parte da Comu"
-					class="cards-carousel-track"
-					id="be-part-of-carousel"
-					role="region"
-					tabindex="0"
-				>
-					<div class="card-be-part-of span-4 md-span-2 lg-span-3">
-						<div class="card-be-part-of-header">
-							<img src="/images/card-faca-parte.png" alt="Faça parte" />
-						</div>
-						<div class="card-be-part-of-body">
-							<h3>Comunidade</h3>
-							<p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
-							<app-button
-								link="#this"
-								text="Conheça mais"
-								type="pink-border"
-							>
-							</app-button>
-						</div>
-					</div>
-					<div class="card-be-part-of span-4 md-span-2 lg-span-3">
-						<div class="card-be-part-of-header">
-							<img src="/images/card-faca-parte.png" alt="Faça parte" />
-						</div>
-						<div class="card-be-part-of-body">
-							<h3>Comunidade</h3>
-							<p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
-							<app-button
-								link="#this"
-								text="Conheça mais"
-								type="pink-border"
-							>
-							</app-button>
-						</div>
-					</div>
-					<div class="card-be-part-of span-4 md-span-2 lg-span-3">
-						<div class="card-be-part-of-header">
-							<img src="/images/card-faca-parte.png" alt="Faça parte" />
-						</div>
-						<div class="card-be-part-of-body">
-							<h3>Comunidade</h3>
-							<p>Lorem ipsum elit semper dalar dolor elementum tempus hac.</p>
-							<app-button
-								link="#this"
-								text="Conheça mais"
-								type="pink-border"
-							>
-							</app-button>
-						</div>
-					</div>
-				</div>
-				<div class="cards-carousel-controls">
-					<button
-						aria-controls="be-part-of-carousel"
-						aria-label="Mostrar card anterior"
-						class="cards-carousel-button"
-						type="button"
-						(click)="scrollCards(-1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-					</button>
-					<button
-						aria-controls="be-part-of-carousel"
-						aria-label="Mostrar próximo card"
-						class="cards-carousel-button"
-						type="button"
-						(click)="scrollCards(1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</section> -->
+<section class="section brands-section"></section>
 <section class="contact section">
 	<div class="container">
 		<div class="grid">
 			<div class="hero-contact span-4 md-span-4 lg-span-8">
 				<h2>Vamos conversar?</h2>
 				<h5>O nosso time entrará em contato para entender seus objetivos e apresentar as melhores possibilidades.</h5>
-				<!-- <ul>
-					<li>
-						<i class="fa-solid fa-circle-check"></i>
-						Como a Comu pode te ajudar com suas campanhas
-					</li>
-					<li>
-						<i class="fa-solid fa-circle-check"></i>
-						Quanto tempo demora a produção de conteúdo
-					</li>
-					<li>
-						<i class="fa-solid fa-circle-check"></i>
-						Quais os custos?
-					</li>
-					<li>
-						<i class="fa-solid fa-circle-check"></i>
-						+100 marcas
-					</li>
-					<li>
-						<i class="fa-solid fa-circle-check"></i>
-						+10.000 criadores
-					</li>
-					<li>
-						<i class="fa-solid fa-circle-check"></i>
-						+1.500 criadores postando diariamente
-					</li>
-				</ul>
-				<p>”Lorem ipsum dolor sit amet consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat onare imperdiet bibendum eleifend quam feugiat sit semper fames id diam diam nisi mauris netus facilisi semper elementum quis turpis dui viverra nisl.”</p> -->
 			</div>
 			<div class="form-contact span-4 md-span-4 lg-span-8">
 				<form class="contact-form" (submit)="submitForm($event)" novalidate>
@@ -223,8 +90,7 @@
 							name="message"
 							placeholder="Escreva sua mensagem aqui"
 							[value]="message()"
-						>
-						</textarea>
+						></textarea>
 					</div>
 					<div class="form-row form-actions">
 						<app-button
@@ -277,11 +143,11 @@
 <section class="learning section">
 	<div class="container">
 		<div class="grid">
-			<div class="hero-learning span-4 md-span-4 lg-span-3">
+			<div class="hero-learning span-4 md-span-4 lg-span-6">
 				<h2>Mais do que uma campanha.</h2>
 				<p>Como estar com a Comu pode contribuir para a sua marca.</p>
 			</div>
-			<div class="learning-carousel span-4">
+			<div class="learning-carousel span-4 md-span-6 lg-span-12">
 				<div
 					#learningCarousel
 					aria-label="Conteúdos de aprendizado"
@@ -290,59 +156,35 @@
 					role="region"
 					tabindex="0"
 				>
-					<div class="card-learning span-4 md-span-2 lg-span-3">
-						<div class="card-learning-header">
-							<img src="/images/card-learning.png" alt="Aprendizado" />
-						</div>
-						<div class="card-learning-body">
-							<h5>Creators qualificados</h5>
-							<p>Nossa comunidade reúne creators em diferentes níveis de experiência, preparados para desenvolver conteúdos autênticos e alinhados aos objetivos da sua marca.</p>
-						</div>
+					<div class="card-learning span-4 md-span-2 lg-span-4">
+						<i class="fa-solid fa-file-pen"></i>
+						<h5>Creators qualificados</h5>
+						<p>Nossa comunidade reúne creators em diferentes níveis de experiência, preparados para desenvolver conteúdos autênticos e alinhados aos objetivos da sua marca.</p>
 					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-3">
-						<div class="card-learning-header">
-							<img src="/images/card-learning.png" alt="Aprendizado" />
-						</div>
-						<div class="card-learning-body">
-							<h5>Campanhas sob medida</h5>
-							<p>Cada projeto é estruturado de acordo com o momento, público e objetivos da marca, garantindo uma estratégia personalizada.</p>
-						</div>
+					<div class="card-learning span-4 md-span-2 lg-span-4">
+						<i class="fa-solid fa-file-pen"></i>
+						<h5>Campanhas sob medida</h5>
+						<p>Cada projeto é estruturado de acordo com o momento, público e objetivos da marca, garantindo uma estratégia personalizada.</p>
 					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-3">
-						<div class="card-learning-header">
-							<img src="/images/card-learning.png" alt="Aprendizado" />
-						</div>
-						<div class="card-learning-body">
-							<h5>Performance acompanhada</h5>
-							<p>Nossa equipe acompanha os resultados das campanhas para otimizar a execução e potencializar o desempenho dos creators.</p>
-						</div>
+					<div class="card-learning span-4 md-span-2 lg-span-4">
+						<i class="fa-solid fa-file-pen"></i>
+						<h5>Performance acompanhada</h5>
+						<p>Nossa equipe acompanha os resultados das campanhas para otimizar a execução e potencializar o desempenho dos creators.</p>
 					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-3">
-						<div class="card-learning-header">
-							<img src="/images/card-learning.png" alt="Aprendizado" />
-						</div>
-						<div class="card-learning-body">
-							<h5>Conteúdo em escala</h5>
-							<p>Mobilizamos centenas de creators para produzir conteúdos que ampliam alcance, presença e frequência de publicação.</p>
-						</div>
+					<div class="card-learning span-4 md-span-2 lg-span-4">
+						<i class="fa-solid fa-file-pen"></i>
+						<h5>Conteúdo em escala</h5>
+						<p>Mobilizamos centenas de creators para produzir conteúdos que ampliam alcance, presença e frequência de publicação.</p>
 					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-3">
-						<div class="card-learning-header">
-							<img src="/images/card-learning.png" alt="Aprendizado" />
-						</div>
-						<div class="card-learning-body">
-							<h5>Ecossistema próprio</h5>
-							<p>Sua marca se conecta a uma comunidade ativa, eventos, experiências presenciais e iniciativas de educação para creators.</p>
-						</div>
+					<div class="card-learning span-4 md-span-2 lg-span-4">
+						<i class="fa-solid fa-file-pen"></i>
+						<h5>Ecossistema próprio</h5>
+						<p>Sua marca se conecta a uma comunidade ativa, eventos, experiências presenciais e iniciativas de educação para creators.</p>
 					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-3">
-						<div class="card-learning-header">
-							<img src="/images/card-learning.png" alt="Aprendizado" />
-						</div>
-						<div class="card-learning-body">
-							<h5>Parceria de longo prazo</h5>
-							<p>Nosso objetivo não é realizar uma única ação, mas construir relações duradouras entre sua marca e creators.</p>
-						</div>
+					<div class="card-learning span-4 md-span-2 lg-span-4">
+						<i class="fa-solid fa-file-pen"></i>
+						<h5>Parceria de longo prazo</h5>
+						<p>Nosso objetivo não é realizar uma única ação, mas construir relações duradouras entre sua marca e creators.</p>
 					</div>
 				</div>
 				<div class="learning-carousel-controls">
