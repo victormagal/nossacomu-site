@@ -19,6 +19,7 @@ export class ForBrandsPage {
   private readonly eventsCarousel = viewChild.required<ElementRef<HTMLElement>>('eventsCarousel');
   private readonly learningCarousel = viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
   private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
+  private readonly partnerCarousel = viewChild.required<ElementRef<HTMLElement>>('partnerCarousel');
 
   openItems = new Set<number>();
 
@@ -32,6 +33,10 @@ export class ForBrandsPage {
 
   scrollLearning(direction: -1 | 1) {
     this.scrollCarousel(this.learningCarousel().nativeElement, '.card-learning', direction);
+  }
+
+  scrollPartner(direction: -1 | 1) {
+    this.scrollCarousel(this.partnerCarousel().nativeElement, '.card-partner', direction);
   }
 
   scrollStories(direction: -1 | 1) {
