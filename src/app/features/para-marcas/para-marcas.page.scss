@@ -363,6 +363,26 @@ p {
                         &:-ms-input-placeholder { font-family: inherit; }
                     }
 
+                    textarea {
+                        border: 1px solid rgba(var(--color-muted-rgb), 0.5);
+                        border-radius: 0.5rem;
+                        background-color: var(--color-white);
+                        color: rgba(var(--color-dark-gray-rgb), 0.75);
+                        font-family: var(--font-family-base);
+                        font-size: 0.875rem;
+                        padding: 0.5rem 1rem;
+                        width: 100%;
+
+                        &::placeholder {
+                            color: var(--color-muted);
+                            font-family: inherit;
+                        }
+
+                        &::-webkit-input-placeholder { font-family: inherit; }
+                        &::-moz-placeholder { font-family: inherit; opacity: 1; }
+                        &:-ms-input-placeholder { font-family: inherit; }
+                    }
+
                     &.form-actions {
                         display: flex;
                         justify-content: flex-end;

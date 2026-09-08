@@ -70,6 +70,8 @@ export class ForBrandsPage {
   name = signal('');
   mail = signal('');
   phone = signal('');
+  site = signal('');
+  message = signal('');
 
   submitForm(event?: Event) {
     event?.preventDefault();
@@ -78,6 +80,8 @@ export class ForBrandsPage {
       name: this.name(),
       mail: this.mail(),
       phone: this.phone(),
+      site: this.site(),
+      message: this.message(),
     };
 
     // For now just log — backend integration will come later
@@ -88,5 +92,7 @@ export class ForBrandsPage {
     this.name.set('');
     this.mail.set('');
     this.phone.set('');
+    this.site.set('');
+    this.message.set('');
   }
 }

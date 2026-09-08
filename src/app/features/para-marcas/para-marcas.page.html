@@ -3,27 +3,20 @@
 		<div class="grid">
 			<div class="hero-main span-4 md-span-3 lg-span-6">
 				<h6>Para marcas</h6>
-				<h2>Entregas constantes e com resultados expressivos</h2>
-				<p>A energia, o ambiente que faltava para você criar seu próprio ritmo e acreditar de uma vez por todas que nasceu para isso.</p>
-				<app-button
-					link="#this"
-					text="Entre em contato"
-					type="pink"
-				>
-				</app-button>
-				<app-button
-					link="#this"
-					text="Cases de sucesso"
-					type="pink-border"
-				>
-				</app-button>
+				<h2>Conecte sua marca aos creators certos.</h2>
+				<p>Conectamos sua marca a creators preparados para desenvolver campanhas, impulsionar vendas e fortalecer sua presença na creator economy.</p>
 				<div class="hero-main-pills">
 					<app-button text="+100 marcas"></app-button>
 					<app-button text="+10.000 criadores"></app-button>
 					<app-button text="+R$ 25 mi pagos a criadores"></app-button>
 					<app-button text="+R$ 250 mi em GMV"></app-button>
 				</div>
-				<h4><span>+1.500 criadores</span> postando todos os dias para <span>+100 marcas</span></h4>
+				<app-button
+					link="#this"
+					text="Conhecer nossos cases"
+					type="pink"
+				>
+				</app-button>
 			</div>
 			<div class="content-main span-4 md-span-3 lg-span-6">
 				<img src="/images/jade.png" alt="Para marcas" />
@@ -142,9 +135,9 @@
 	<div class="container">
 		<div class="grid">
 			<div class="hero-contact span-4 md-span-4 lg-span-6">
-				<h2>Agende uma conversa</h2>
-				<h5>E conheça como a Comu pode te ajudar no crescimento da sua marca. E entenda sobre:</h5>
-				<ul>
+				<h2>Vamos conversar?</h2>
+				<h5>O nosso time entrará em contato para entender seus objetivos e apresentar as melhores possibilidades.</h5>
+				<!-- <ul>
 					<li>
 						<i class="fa-solid fa-circle-check"></i>
 						Como a Comu pode te ajudar com suas campanhas
@@ -170,7 +163,7 @@
 						+1.500 criadores postando diariamente
 					</li>
 				</ul>
-				<p>”Lorem ipsum dolor sit amet consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat onare imperdiet bibendum eleifend quam feugiat sit semper fames id diam diam nisi mauris netus facilisi semper elementum quis turpis dui viverra nisl.”</p>
+				<p>”Lorem ipsum dolor sit amet consectetur eget maecenas sapien fusce egestas risus purus suspendisse turpis volutpat onare imperdiet bibendum eleifend quam feugiat sit semper fames id diam diam nisi mauris netus facilisi semper elementum quis turpis dui viverra nisl.”</p> -->
 			</div>
 			<div class="form-contact span-4 md-span-6 lg-span-6">
 				<form class="contact-form" (submit)="submitForm($event)" novalidate>
@@ -180,19 +173,19 @@
 							id="name"
 							(input)="name.set($any($event.target).value)"
 							name="name"
-							placeholder="Seu nome"
+							placeholder="Como podemos chamar você?"
 							required
 							type="text"
 							[value]="name()"
 						/>
 					</div>
 					<div class="form-row">
-						<label for="mail">Email</label>
+						<label for="mail">E-mail corporativo</label>
 						<input
 							id="mail"
 							(input)="mail.set($any($event.target).value)"
 							name="mail"
-							placeholder="seu@exemplo.com"
+							placeholder="Seu melhor e-mail."
 							required
 							type="email"
 							[value]="mail()"
@@ -204,16 +197,39 @@
 							id="phone"
 							(input)="phone.set($any($event.target).value)"
 							name="phone"
-							placeholder="(00) 00000-0000"
+							placeholder="(DDD) + número."
 							required
 							type="tel"
 							[value]="phone()"
 						/>
 					</div>
+					<div class="form-row">
+						<label for="site">Site da marca</label>
+						<input
+							id="site"
+							(input)="site.set($any($event.target).value)"
+							name="site"
+							placeholder="https://"
+							required
+							type="text"
+							[value]="site()"
+						/>
+					</div>
+					<div class="form-row">
+						<label for="message">Mensagem (opcional)</label>
+						<textarea
+							id="message"
+							(input)="message.set($any($event.target).value)"
+							name="message"
+							placeholder="Escreva sua mensagem aqui"
+							[value]="message()"
+						>
+						</textarea>
+					</div>
 					<div class="form-row form-actions">
 						<app-button
 							link="#this"
-							text="Enviar"
+							text="Enviar mensagem"
 						>
 						</app-button>
 					</div>
@@ -226,36 +242,35 @@
 	<div class="container">
 		<div class="grid">
 			<div class="hero-journey span-4 md-span-4 lg-span-6">
-				<h2>Alguns números relevantes</h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipiscing elidolor mattis sit phasellus mollis</p>
+				<h2>+1.500 criadores postando todos os dias para marcas</h2>
+				<p>Os números refletem o nosso impacto.</p>
 				<app-button
 					link="#this"
-					size="large"
-					text="Entrar na comunidade"
+					text="Falar com o nosso time"
 					type="pink"
 				>
 				</app-button>
 			</div>
 			<div class="content-journey span-4 md-span-4 lg-span-6">
 				<div class="box-numbers">
-					<h3>200+</h3>
-					<h6>Websites build</h6>
-					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+					<h3>R$ 250 milhões</h3>
+					<h6>Em GMV</h6>
+					<p>Movimentados pelos creators da Comu.</p>
 				</div>
 				<div class="box-numbers">
-					<h3>200+</h3>
-					<h6>Websites build</h6>
-					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+					<h3>+10 mil</h3>
+					<h6>Creators</h6>
+					<p>Fazem parte do ecossistema da Comu.</p>
 				</div>
 				<div class="box-numbers">
-					<h3>200+</h3>
-					<h6>Websites build</h6>
-					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+					<h3>+200</h3>
+					<h6>Marcas parceiras</h6>
+					<p>Conectadas aos nossos creators.</p>
 				</div>
 				<div class="box-numbers">
-					<h3>200+</h3>
-					<h6>Websites build</h6>
-					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+					<h3>R$ 25 milhões</h3>
+					<h6>Pagos a creators</h6>
+					<p>Em campanhas, vendas e oportunidades.</p>
 				</div>
 			</div>
 		</div>
