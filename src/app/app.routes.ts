@@ -13,6 +13,10 @@ export const routes: Routes = [
                 path: 'para-marcas',
                 loadComponent: () => import('./features/para-marcas/para-marcas.page').then(m => m.ForBrandsPage)
             },
+            {
+                path: 'solucoes-criadores',
+                loadComponent: () => import('./features/solucoes-criadores/solucoes-criadores.page').then(m => m.SolutionsForCriatorsPage)
+            },
         ],
     },
 ];
