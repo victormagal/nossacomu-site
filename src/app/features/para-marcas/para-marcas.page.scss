@@ -947,17 +947,13 @@ p {
             }
 
             .sales-table {
-                background-color: var(--color-white);
-                border: 1px solid rgba(var(--color-muted-rgb), 0.45);
                 border-collapse: collapse;
-                border-radius: 1rem;
                 overflow: hidden;
                 table-layout: fixed;
                 width: 100%;
 
                 th,
                 td {
-                    border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.3);
                     padding: 1rem;
                     text-align: left;
                     vertical-align: top;
@@ -1001,12 +997,25 @@ p {
                 }
 
                 th {
-                    background-color: rgba(var(--color-pink-rgb), 1);
+                    background-color: transparent;
+                    border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
                     
                     h6 {
-                        color: var(--color-white);
+                        color: var(--color-dark-gray);
                         font-weight: 700;
                     }
+                }
+
+                tbody tr {
+                    border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
+                }
+
+                tbody tr:nth-child(odd) {
+                    background-color: rgba(var(--color-muted-rgb), 0.1);
+                }
+
+                tbody tr:nth-child(even) {
+                    // background-color: rgba(var(--color-muted-rgb), 0.2);
                 }
 
                 i.fa-check {
@@ -1017,7 +1026,7 @@ p {
                     color: var(--color-muted);
                 }
 
-                tbody tr:last-child td {
+                tbody tr:last-child {
                     border-bottom: 0;
                 }
             }
