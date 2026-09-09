@@ -1,0 +1,221 @@
+<section class="sales section">
+	<div class="container">
+		<div class="grid">
+			<div class="hero-sale span-4 md-span-4 lg-span-6">
+				<h2>Por que escolher a Comu?</h2>
+				<p>Veja o que muda quando sua marca faz parte do nosso ecossistema.</p>
+			</div>
+			<div class="table-info span-4 md-span-6 lg-span-10">
+				<table class="sales-table">
+					<thead>
+						<tr>
+							<th scope="col"></th>
+							<th scope="col">
+								<img src="/images/logo-comu-black.svg" alt="Comu" />
+							</th>
+							<th scope="col"><h6>Busca independente</h6></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><h6>Comunidade ativa e qualificada</h6></td>
+							<td><i class="fa-solid fa-check"></i></td>
+							<td><i class="fa-solid fa-xmark"></i></td>
+						</tr>
+						<tr>
+							<td><h6>Acompanhamento estratégico</h6></td>
+							<td><i class="fa-solid fa-check"></i></td>
+							<td><i class="fa-solid fa-xmark"></i></td>
+						</tr>
+						<tr>
+							<td><h6>Produção de conteúdo em escala</h6></td>
+							<td><i class="fa-solid fa-check"></i></td>
+							<td><i class="fa-solid fa-xmark"></i></td>
+						</tr>
+						<tr>
+							<td><h6>Relacionamento contínuo com creators</h6></td>
+							<td><i class="fa-solid fa-check"></i></td>
+							<td><i class="fa-solid fa-xmark"></i></td>
+						</tr>
+						<tr>
+							<td><h6>Educação contínua dos creators</h6></td>
+							<td><i class="fa-solid fa-check"></i></td>
+							<td><i class="fa-solid fa-xmark"></i></td>
+						</tr>
+						<tr>
+							<td><h6>Ativações presenciais e eventos</h6></td>
+							<td><i class="fa-solid fa-check"></i></td>
+							<td><i class="fa-solid fa-xmark"></i></td>
+						</tr>
+						<tr>
+							<td><h6>Ecossistema completo para marcas e creators</h6></td>
+							<td><i class="fa-solid fa-check"></i></td>
+							<td><i class="fa-solid fa-xmark"></i></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section brands-section"></section>
+<section class="contact section">
+	<div class="container">
+		<div class="grid">
+			<div class="hero-contact span-4 md-span-4 lg-span-8">
+				<h2>Vamos conversar?</h2>
+				<h5>O nosso time entrará em contato para entender seus objetivos e apresentar as melhores possibilidades.</h5>
+			</div>
+			<div class="form-contact span-4 md-span-4 lg-span-8">
+				<form class="contact-form" (submit)="submitForm($event)" novalidate>
+					<div class="form-row">
+						<label for="name">Nome</label>
+						<input
+							id="name"
+							(input)="name.set($any($event.target).value)"
+							name="name"
+							placeholder="Como podemos chamar você?"
+							required
+							type="text"
+							[value]="name()"
+						/>
+					</div>
+					<div class="form-row">
+						<label for="mail">E-mail corporativo</label>
+						<input
+							id="mail"
+							(input)="mail.set($any($event.target).value)"
+							name="mail"
+							placeholder="Seu melhor e-mail."
+							required
+							type="email"
+							[value]="mail()"
+						/>
+					</div>
+					<div class="form-row">
+						<label for="phone">Telefone</label>
+						<input
+							id="phone"
+							(input)="phone.set($any($event.target).value)"
+							name="phone"
+							placeholder="(DDD) + número."
+							required
+							type="tel"
+							[value]="phone()"
+						/>
+					</div>
+					<div class="form-row">
+						<label for="site">Site da marca</label>
+						<input
+							id="site"
+							(input)="site.set($any($event.target).value)"
+							name="site"
+							placeholder="https://"
+							required
+							type="text"
+							[value]="site()"
+						/>
+					</div>
+					<div class="form-row">
+						<label for="message">Mensagem (opcional)</label>
+						<textarea
+							id="message"
+							(input)="message.set($any($event.target).value)"
+							name="message"
+							placeholder="Escreva sua mensagem aqui"
+							[value]="message()"
+						></textarea>
+					</div>
+					<div class="form-row form-actions">
+						<app-button
+							link="#this"
+							text="Enviar mensagem"
+						>
+						</app-button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="partners section">
+	<div class="container">
+		<div class="grid">
+			<div class="hero-partner span-4 md-span-4 lg-span-6">
+				<h2>Nossos cases</h2>
+				<p>Parcerias que fizeram a diferença com a Comu.</p>
+			</div>
+			<div class="partner-carousel span-4">
+				<div
+					#partnerCarousel
+					aria-label="Conteúdos de aprendizado"
+					class="partner-carousel-track"
+					id="partner-carousel"
+					role="region"
+					tabindex="0"
+				>
+					<div class="card-partner span-4 md-span-2 lg-span-3">
+						<div class="card-partner-header">
+							<img src="/images/case-loreal.jpg" alt="Loreal Paris" />
+						</div>
+						<div class="card-partner-body">
+							<h6>L'Oréal Paris</h6>
+							<h5>+500 mil produtos vendidos</h5>
+							<p>Campanha desenvolvida com creators da Comu durante uma ação no TikTok Shop.</p>
+						</div>
+					</div>
+					<div class="card-partner span-4 md-span-2 lg-span-3">
+						<div class="card-partner-header">
+							<img src="/images/case-guday.jpg" alt="Guday" />
+						</div>
+						<div class="card-partner-body">
+							<h6>Guday</h6>
+							<h5>+2 milhões em vendas</h5>
+							<p>Conteúdo criado em parceria com creators especializados em TikTok Shop.</p>
+						</div>
+					</div>
+					<div class="card-partner span-4 md-span-2 lg-span-3">
+						<div class="card-partner-header">
+							<img src="/images/case-aura.jpg" alt="Aura Beauty" />
+						</div>
+						<div class="card-partner-body">
+							<h6>Aura Beauty</h6>
+							<h5>+1.500 creators participantes</h5>
+							<p>Campanha focada em escala de conteúdo e fortalecimento da marca.</p>
+						</div>
+					</div>
+					<div class="card-partner span-4 md-span-2 lg-span-3">
+						<div class="card-partner-header">
+							<img src="/images/case-gummy.jpg" alt="Gummy Hair" />
+						</div>
+						<div class="card-partner-body">
+							<h6>Gummy Hair</h6>
+							<h5>+300 vídeos publicados</h5>
+							<p>Estratégia construída para ampliar alcance e conversão.</p>
+						</div>
+					</div>
+				</div>
+				<div class="partner-carousel-controls">
+					<button
+						aria-controls="partner-carousel"
+						aria-label="Mostrar conteúdo anterior"
+						class="partner-carousel-button"
+						type="button"
+						(click)="scrollPartner(-1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+					</button>
+					<button
+						aria-controls="partner-carousel"
+						aria-label="Mostrar próximo conteúdo"
+						class="partner-carousel-button"
+						type="button"
+						(click)="scrollPartner(1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
