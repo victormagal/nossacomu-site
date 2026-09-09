@@ -2,7 +2,7 @@
     <div class="container">
         <div class="grid header-grid">
             <div class="header-logo span-2 md-span-3 lg-span-6">
-                <a href="#" aria-label="Comu - página inicial">
+                <a href="/" aria-label="Comu - página inicial">
                     <img
                         ngSrc="/images/logo-comu-white.svg"
                         alt="Comu"
@@ -38,12 +38,42 @@
                     <ul role="list">
                         <li><a href="/" (click)="closeMenu()">Creators</a></li>
                         <li><a href="/para-marcas" (click)="closeMenu()">Marcas</a></li>
-                        <li><a href="#link-3" (click)="closeMenu()">Academy</a></li>
-                        <li><a href="/solucoes-criadores" (click)="closeMenu()">Soluções para criadores</a></li>
-                        <li><a href="/solucoes-marcas" (click)="closeMenu()">Soluções para marcas</a></li>
+                        <li class="nav-dropdown" [class.is-open]="solutionsOpen()">
+                            <button
+                                [attr.aria-expanded]="solutionsOpen()"
+                                aria-controls="solutions-navigation"
+                                class="nav-dropdown-trigger"
+                                type="button"
+                                (click)="toggleSolutions()"
+                            >
+                                <span>Soluções</span>
+                                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+
+                            <ul id="solutions-navigation" role="list">
+                                <li><a href="/solucoes-criadores" (click)="closeMenu()">Soluções para criadores</a></li>
+                                <li><a href="/solucoes-marcas" (click)="closeMenu()">Soluções para marcas</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#link-4" (click)="closeMenu()">Eventos</a></li>
                         <li><a href="#link-5" (click)="closeMenu()">Sobre nós</a></li>
-                        <li><a href="#link-6" (click)="closeMenu()">Quero fazer parte</a></li>
+                        <li class="nav-dropdown" [class.is-open]="participationOpen()">
+                            <button
+                                [attr.aria-expanded]="participationOpen()"
+                                aria-controls="participation-navigation"
+                                class="nav-dropdown-trigger"
+                                type="button"
+                                (click)="toggleParticipation()"
+                            >
+                                <span>Quero fazer parte</span>
+                                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+
+                            <ul id="participation-navigation" role="list">
+                                <li><a href="#link-6" (click)="closeMenu()">Vincular no TikTok Shop</a></li>
+                                <li><a href="#link-7" (click)="closeMenu()">Entrar na comunidade</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
