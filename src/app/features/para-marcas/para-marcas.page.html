@@ -19,7 +19,7 @@
 				</app-button>
 			</div>
 			<div class="content-main span-4 md-span-3 lg-span-6">
-				<img src="/images/jade.png" alt="Para marcas" />
+				<img src="/images/para-marcas-hero.jpg" alt="Para marcas" />
 			</div>
 		</div>
 	</div>
@@ -453,158 +453,80 @@
 		</div>
 	</div>
 </section>
-<section class="faq section">
+<section class="brand-growth section">
 	<div class="container">
 		<div class="grid">
-			<div class="faq-content span-4 md-span-4 lg-span-8">
-				<div class="faq-header">
-					<h2>Perguntas Frequentes</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+			<div class="brand-growth-content span-4 md-span-4 lg-span-6">
+				<h2>A Comu na mídia.</h2>
+				<p>Conheça algumas reportagens e entrevistas que mostram como estamos contribuindo para o crescimento da creator economy.</p>
+			</div>
+			<div class="brand-growth-carousel span-4 lg-span-8">
+				<div
+					#brandGrowthCarousel
+					aria-label="Campanhas de crescimento de marcas"
+					class="brand-growth-carousel-track"
+					id="brand-growth-carousel"
+					role="region"
+					tabindex="0"
+				>
+					<div class="brand-growth-image md-span-2 lg-span-4">
+						<img
+							src="/images/midia-1.jpg"
+							alt="Na mídia"
+						/>
+					</div>
+					<div class="brand-growth-image md-span-2 lg-span-4">
+						<img
+							src="/images/midia-2.jpg"
+							alt="Na mídia"
+						/>
+					</div>
+					<div class="brand-growth-image md-span-2 lg-span-4">
+						<img
+							src="/images/midia-3.jpg"
+							alt="Na mídia"
+						/>
+					</div>
 				</div>
-				<div class="faq-body">
-					<div class="question" [class.open]="isOpen(0)">
-						<div
-							[attr.aria-expanded]="isOpen(0)"
-							class="question-header"
-							(click)="toggle(0)"
-							(keydown.enter)="toggle(0)"
-							role="button"
-							tabindex="0"
-						>
-							<div class="title-question-header">
-								<i class="fa-solid fa-circle-question"></i>
-								<h5>Como funciona a Comu?</h5>
-							</div>
-							<i class="fa-solid fa-plus toggle-icon"></i>
-						</div>
-						<div class="question-body">
-							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
-						</div>
-					</div>
-					<div class="question" [class.open]="isOpen(1)">
-						<div
-							[attr.aria-expanded]="isOpen(1)"
-							class="question-header"
-							(click)="toggle(1)"
-							(keydown.enter)="toggle(1)"
-							role="button"
-							tabindex="0"
-						>
-							<div class="title-question-header">
-								<i class="fa-solid fa-circle-question"></i>
-								<h5>Como isso é sinal de graça?</h5>
-							</div>
-							<i class="fa-solid fa-plus toggle-icon"></i>
-						</div>
-						<div class="question-body">
-							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
-						</div>
-					</div>
-					<div class="question" [class.open]="isOpen(2)">
-						<div
-							[attr.aria-expanded]="isOpen(2)"
-							class="question-header"
-							(click)="toggle(2)"
-							(keydown.enter)="toggle(2)"
-							role="button"
-							tabindex="0"
-						>
-							<div class="title-question-header">
-								<i class="fa-solid fa-circle-question"></i>
-								<h5>Por que devo assinar com a Comu?</h5>
-							</div>
-							<i class="fa-solid fa-plus toggle-icon"></i>
-						</div>
-						<div class="question-body">
-							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
-						</div>
-					</div>
-					<div class="question" [class.open]="isOpen(3)">
-						<div
-							[attr.aria-expanded]="isOpen(3)"
-							class="question-header"
-							(click)="toggle(3)"
-							(keydown.enter)="toggle(3)"
-							role="button"
-							tabindex="0"
-						>
-							<div class="title-question-header">
-								<i class="fa-solid fa-circle-question"></i>
-								<h5>Como faço para fazer parte da Comu?</h5>
-							</div>
-							<i class="fa-solid fa-plus toggle-icon"></i>
-						</div>
-						<div class="question-body">
-							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
-						</div>
-					</div>
-					<div class="question" [class.open]="isOpen(4)">
-						<div
-							[attr.aria-expanded]="isOpen(4)"
-							class="question-header"
-							(click)="toggle(4)"
-							(keydown.enter)="toggle(4)"
-							role="button"
-							tabindex="0"
-						>
-							<div class="title-question-header">
-								<i class="fa-solid fa-circle-question"></i>
-								<h5>Como faço para fazer parte da Comu Free?</h5>
-							</div>
-							<i class="fa-solid fa-plus toggle-icon"></i>
-						</div>
-						<div class="question-body">
-							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
-						</div>
-					</div>
-					<div class="question" [class.open]="isOpen(5)">
-						<div
-							[attr.aria-expanded]="isOpen(5)"
-							class="question-header"
-							(click)="toggle(5)"
-							(keydown.enter)="toggle(5)"
-							role="button"
-							tabindex="0"
-						>
-							<div class="title-question-header">
-								<i class="fa-solid fa-circle-question"></i>
-								<h5>Como ser do time de criadores da Comu no TikTok Shop?</h5>
-							</div>
-							<i class="fa-solid fa-plus toggle-icon"></i>
-						</div>
-						<div class="question-body">
-							<p>Lorem ipsum dolor sit amet, consectetur cdolor col adipiscing elit. Integer mattis nunc augue vel lacinia erat euismod ut. Sed eleifend tellus nonole tincidunt aliquet. Fusce aliquam mi felis.</p>
-						</div>
-					</div>
+				<div class="brand-growth-carousel-controls">
+					<button
+						aria-controls="brand-growth-carousel"
+						aria-label="Mostrar campanha anterior"
+						class="brand-growth-carousel-button"
+						type="button"
+						(click)="scrollBrandGrowth(-1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+					</button>
+					<button
+						aria-controls="brand-growth-carousel"
+						aria-label="Mostrar próxima campanha"
+						class="brand-growth-carousel-button"
+						type="button"
+						(click)="scrollBrandGrowth(1)"
+					>
+						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+					</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<section class="brand-growth section">
+<section class="as-creator section">
 	<div class="container">
 		<div class="grid">
-			<div class="brand-growth-content span-4">
-				<h2>Tudo para sua marca <span>crescer</span></h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-				<div class="brand-growth-buttons">
-					<app-button
-						link="#this"
-						text="Para criadores"
-						type="pink"
-					>
-					</app-button>
-					<app-button
-						link="#this"
-						text="Para marcas"
-						type="dark-pink-border"
-					>
-					</app-button>
-				</div>
+			<div class="hero-as-creator span-4 md-span-3 lg-span-6">
+				<h2>Chegou aqui como creator?</h2>
+				<p>Conheça nossa comunidade para creators e descubra como transformar o seu conteúdo em vendas.</p>
+				<app-button
+					link="#this"
+					text="Para criadores"
+					type="pink"
+				>
+				</app-button>
 			</div>
-			<div class="brand-growth-images span-4">
-				<img src="/images/growth-brand-1.png" alt="Brand growth" />
-				<img src="/images/growth-brand-2.png" alt="Brand growth" />
+			<div class="content-as-creator span-4 md-span-3 lg-span-6">
+				<img src="/images/as-creators.jpg" alt="Para creators" />
 			</div>
 		</div>
 	</div>

@@ -15,6 +15,7 @@ import { ButtonComponent } from "../../shared/components/button/button.component
   imports: [ButtonComponent],
 })
 export class ForBrandsPage {
+  private readonly brandGrowthCarousel = viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
   private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
   private readonly eventsCarousel = viewChild.required<ElementRef<HTMLElement>>('eventsCarousel');
   private readonly learningCarousel = viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
@@ -41,6 +42,10 @@ export class ForBrandsPage {
 
   scrollStories(direction: -1 | 1) {
     this.scrollCarousel(this.storiesCarousel().nativeElement, '.story', direction);
+  }
+
+  scrollBrandGrowth(direction: -1 | 1) {
+    this.scrollCarousel(this.brandGrowthCarousel().nativeElement, '.brand-growth-image', direction);
   }
 
   private scrollCarousel(carousel: HTMLElement, itemSelector: string, direction: -1 | 1) {
