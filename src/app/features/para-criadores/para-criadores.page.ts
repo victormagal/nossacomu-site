@@ -8,12 +8,12 @@ import { ButtonComponent } from "../../shared/components/button/button.component
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'app-solucoes-criadores-page',
-  styleUrl: './solucoes-criadores.page.scss',
-  templateUrl: './solucoes-criadores.page.html',
+  selector: 'app-para-criadores-page',
+  styleUrl: './para-criadores.page.scss',
+  templateUrl: './para-criadores.page.html',
   imports: [ButtonComponent],
 })
-export class SolutionsForCriatorsPage {
+export class ForCreatorsPage {
   private readonly brandGrowthCarousel = viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
   private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
   private readonly eventsCarousel = viewChild.required<ElementRef<HTMLElement>>('eventsCarousel');

@@ -36,8 +36,7 @@
                     id="primary-navigation"
                 >
                     <ul role="list">
-                        <li><a href="/para-creators" (click)="closeMenu()">Creators</a></li>
-                        <li><a href="/para-marcas" (click)="closeMenu()">Marcas</a></li>
+                        <li><a href="/" (click)="closeMenu()">A Comu</a></li>
                         <li class="nav-dropdown" [class.is-open]="solutionsOpen()">
                             <button
                                 [attr.aria-expanded]="solutionsOpen()"
@@ -51,29 +50,12 @@
                             </button>
 
                             <ul id="solutions-navigation" role="list">
-                                <li><a href="/solucoes-criadores" (click)="closeMenu()">Soluções para criadores</a></li>
-                                <li><a href="/solucoes-marcas" (click)="closeMenu()">Soluções para marcas</a></li>
+                                <li><a href="/solucoes-para-criadores" (click)="closeMenu()">Soluções para criadores</a></li>
+                                <li><a href="/solucoes-para-marcas" (click)="closeMenu()">Soluções para marcas</a></li>
                             </ul>
                         </li>
                         <li><a href="#link-4" (click)="closeMenu()">Eventos</a></li>
-                        <li><a href="#link-5" (click)="closeMenu()">Sobre nós</a></li>
-                        <li class="nav-dropdown" [class.is-open]="participationOpen()">
-                            <button
-                                [attr.aria-expanded]="participationOpen()"
-                                aria-controls="participation-navigation"
-                                class="nav-dropdown-trigger"
-                                type="button"
-                                (click)="toggleParticipation()"
-                            >
-                                <span>Quero fazer parte</span>
-                                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                            </button>
-
-                            <ul id="participation-navigation" role="list">
-                                <li><a href="#link-6" (click)="closeMenu()">Vincular no TikTok Shop</a></li>
-                                <li><a href="#link-7" (click)="closeMenu()">Entrar na comunidade</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#link-5" (click)="closeMenu()">Quero me vincular</a></li>
                     </ul>
                 </nav>
             </div>
