@@ -10,6 +10,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./features/home/home.page').then(m => m.HomePage)
             },
             {
+                path: 'para-creators',
+                loadComponent: () => import('./features/para-creators/para-creators.page').then(m => m.ForCreatorsPage)
+            },
+            {
                 path: 'para-marcas',
                 loadComponent: () => import('./features/para-marcas/para-marcas.page').then(m => m.ForBrandsPage)
             },
