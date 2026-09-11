@@ -1,83 +1,119 @@
-// General styles
-p {
-    color: var(--color-muted);
-}
-// General styles
-
 // Main section
 .main {
-    background-color: var(--color-cream);
+    background: {
+        image: image-set(
+            url('/images/heros/creators-mobile.jpg') 1x,
+            url('/images/heros/creators-mobile-2x.jpg') 2x
+        );
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    margin-bottom: 2rem;
+    height: 575px;
     padding: 1rem 0 2rem;
+    position: relative;
 
-    .grid {
-        gap: var(--layout-grid-gap-2x);
-        padding: 0 2rem;
+    &::before {
+        background-color: rgba(var(--color-white-rgb), 0.15);
+        content: "";
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+    }
 
-        .hero-main {
-            display: flex;
-            flex-direction: column;
-            gap: var(--layout-grid-gap);
-            text-align: center;
+    .container {
+        height: 100%;
+        position: relative;
+        z-index: 1;
 
-            @media (min-width: 768px) {
-                justify-content: center;
-                text-align: left;
-            }
-        
-            h6 {
-                color: var(--color-pink);
-                font-weight: 400;
-                text-transform: uppercase;
-            }
-            
-            .hero-main-pills {
-                align-items: center;
+        .grid {
+            height: 100%;
+            gap: var(--layout-grid-gap-2x);
+            padding: 0 2rem;
+    
+            .hero-main {
                 display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
+                flex-direction: column;
+                gap: var(--layout-grid-gap);
+                text-align: center;
             
-                app-button { display: block; }
-            
-                > * {
-                    flex: 1 1 calc(50% - 0.25rem);
-                    min-width: 0;
+                h2, p {
+                    color: var(--color-dark-gray);
+                    font-weight: 400;
+                    text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
+                }
+                
+                .hero-main-pills {
+                    align-items: center;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                
+                    app-button { display: block; }
+                
+                    > * {
+                        flex: 1 1 calc(50% - 0.25rem);
+                        min-width: 0;
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    gap: 0.5rem;
+                    text-align: left;
                 }
             }
-        }
-
-        .content-main {
-            display: flex;
-            flex-direction: column;
-            gap: var(--layout-grid-gap);
-
-            img {
-                border-radius: 1rem;
-                box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
-            }
-
-            .content-main-pill {
-                align-items: center;
-                background-color: var(--color-white);
-                border-radius: 1rem;
-                box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.1);
+    
+            .content-main {
                 display: flex;
+                flex-direction: column;
                 gap: var(--layout-grid-gap);
-                justify-content: center;
-                padding: var(--layout-grid-gap);
-                text-align: center;
-
-                p {
-                    color: var(--color-dark-gray);
-
-                    span {
-                        font: {
-                            size: 1.5rem;
-                            weight: 600;
+    
+                img {
+                    border-radius: 1rem;
+                    box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
+                }
+    
+                .content-main-pill {
+                    align-items: center;
+                    background-color: var(--color-white);
+                    border-radius: 1rem;
+                    box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.1);
+                    display: flex;
+                    gap: var(--layout-grid-gap);
+                    justify-content: center;
+                    padding: var(--layout-grid-gap);
+                    text-align: center;
+    
+                    p {
+                        color: var(--color-dark-gray);
+    
+                        span {
+                            font: {
+                                size: 1.5rem;
+                                weight: 600;
+                            }
                         }
                     }
                 }
             }
         }
+    }
+
+    @media (min-width: 768px) {
+        background-image: image-set(
+            url('/images/heros/creators-tablet.jpg') 1x,
+            url('/images/heros/creators-tablet-2x.jpg') 2x
+        );
+        height: 445px;
+    }
+
+    @media (min-width: 1200px) {
+        background-image: image-set(
+            url('/images/heros/creators-desktop.jpg') 1x,
+            url('/images/heros/creators-desktop-2x.jpg') 2x
+        );
+        height: 560px;
     }
 }
 // Main section
@@ -150,9 +186,10 @@ p {
             @media (min-width: 768px) and (max-width: 1199px) {
                 grid-column: 2 / span 4;
             }
-
+            
             @media (min-width: 1200px) {
-                text-align: left;
+                grid-column: 4 / span 6;
+                grid-row: 1;
             }
 
             .hero-be-part-of-logo {
@@ -163,7 +200,12 @@ p {
 
                 @media (min-width: 1200px) {
                     flex-direction: column;
-                    align-items: flex-start;
+                }
+
+                h3 {
+                    font-weight: 300;
+
+                    span { font-weight: 600; }
                 }
             }
 
@@ -171,10 +213,6 @@ p {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0.5rem;
-
-                @media (min-width: 1200px) {
-                    flex-direction: column;
-                }
 
                 app-button { display: block; }
 
@@ -234,14 +272,26 @@ p {
             }
 
             @media (min-width: 768px) {
-                display: contents;
+                grid-column: 2 / span 4;
 
                 .cards-carousel-track {
-                    display: contents;
+                    display: grid;
+                    grid-template-columns: repeat(4, minmax(0, 1fr));
+                    overflow: visible;
+                    padding: 0;
                 }
 
                 .cards-carousel-controls {
                     display: none;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                grid-column: 1 / span 12;
+                grid-row: 2;
+
+                .cards-carousel-track {
+                    grid-template-columns: repeat(12, minmax(0, 1fr));
                 }
             }
         }
