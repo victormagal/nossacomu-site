@@ -2,15 +2,8 @@
 	<div class="container">
 		<div class="grid">
 			<div class="hero-main span-4 md-span-3 lg-span-6">
-				<h6>Para marcas</h6>
-				<h2>Conecte sua marca aos creators certos.</h2>
-				<p>Conectamos sua marca a creators preparados para desenvolver campanhas, impulsionar vendas e fortalecer sua presença na creator economy.</p>
-				<div class="hero-main-pills">
-					<app-button text="+100 marcas"></app-button>
-					<app-button text="+10.000 criadores"></app-button>
-					<app-button text="+R$ 25 mi pagos a criadores"></app-button>
-					<app-button text="+R$ 250 mi em GMV"></app-button>
-				</div>
+				<h2>Construa seu ecossistema de creators dentro da Comu.</h2>
+				<p>Sua marca entra em uma comunidade com creators de diferentes perfis e níveis de performance, criando novas possibilidades para testar produtos, gerar conteúdo e encontrar quem realmente vende.</p>
 				<app-button
 					link="#this"
 					text="Conhecer nossos cases"
@@ -25,84 +18,75 @@
 	</div>
 </section>
 <section class="section brands-section"></section>
-<section class="contact section">
-	<div class="container">
-		<div class="grid">
-			<div class="hero-contact span-4 md-span-4 lg-span-8">
-				<h2>Vamos conversar?</h2>
-				<h5>O nosso time entrará em contato para entender seus objetivos e apresentar as melhores possibilidades.</h5>
-			</div>
-			<div class="form-contact span-4 md-span-4 lg-span-8">
-				<form class="contact-form" (submit)="submitForm($event)" novalidate>
-					<div class="form-row">
-						<label for="name">Nome</label>
-						<input
-							id="name"
-							(input)="name.set($any($event.target).value)"
-							name="name"
-							placeholder="Como podemos chamar você?"
-							required
-							type="text"
-							[value]="name()"
-						/>
-					</div>
-					<div class="form-row">
-						<label for="mail">E-mail corporativo</label>
-						<input
-							id="mail"
-							(input)="mail.set($any($event.target).value)"
-							name="mail"
-							placeholder="Seu melhor e-mail."
-							required
-							type="email"
-							[value]="mail()"
-						/>
-					</div>
-					<div class="form-row">
-						<label for="phone">Telefone</label>
-						<input
-							id="phone"
-							(input)="phone.set($any($event.target).value)"
-							name="phone"
-							placeholder="(DDD) + número."
-							required
-							type="tel"
-							[value]="phone()"
-						/>
-					</div>
-					<div class="form-row">
-						<label for="site">Site da marca</label>
-						<input
-							id="site"
-							(input)="site.set($any($event.target).value)"
-							name="site"
-							placeholder="https://"
-							required
-							type="text"
-							[value]="site()"
-						/>
-					</div>
-					<div class="form-row">
-						<label for="message">Mensagem (opcional)</label>
-						<textarea
-							id="message"
-							(input)="message.set($any($event.target).value)"
-							name="message"
-							placeholder="Escreva sua mensagem aqui"
-							[value]="message()"
-						></textarea>
-					</div>
-					<div class="form-row form-actions">
-						<app-button
-							link="#this"
-							text="Enviar mensagem"
-						>
-						</app-button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+<section class="learning section">
+  <div class="container">
+    <div class="grid">
+      <div class="hero-learning span-4 md-span-4 lg-span-6">
+        <h2>Como podemos contribuir para a sua marca.</h2>
+      </div>
+      <div class="learning-carousel span-4 md-span-6 lg-span-12">
+        <div
+          #learningCarousel
+          aria-label="Conteúdos de aprendizado"
+          class="learning-carousel-track"
+          id="learning-carousel"
+          role="region"
+          tabindex="0"
+        >
+          <div class="card-learning span-4 md-span-2 lg-span-4">
+            <i class="fa-solid fa-user-check"></i>
+            <h5>Creators qualificados</h5>
+            <p>Nossa comunidade reúne creators em diferentes níveis de experiência, preparados para desenvolver conteúdos autênticos e alinhados aos objetivos da sua marca.</p>
+          </div>
+          <div class="card-learning span-4 md-span-2 lg-span-4">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h5>Campanhas sob medida</h5>
+            <p>Cada projeto é estruturado de acordo com o momento, público e objetivos da marca, garantindo uma estratégia personalizada.</p>
+          </div>
+          <div class="card-learning span-4 md-span-2 lg-span-4">
+            <i class="fa-solid fa-chart-line"></i>
+            <h5>Performance acompanhada</h5>
+            <p>Nossa equipe acompanha os resultados das campanhas para otimizar a execução e potencializar o desempenho dos creators.</p>
+          </div>
+          <div class="card-learning span-4 md-span-2 lg-span-4">
+            <i class="fa-solid fa-layer-group"></i>
+            <h5>Conteúdo em escala</h5>
+            <p>Mobilizamos centenas de creators para produzir conteúdos que ampliam alcance, presença e frequência de publicação.</p>
+          </div>
+          <div class="card-learning span-4 md-span-2 lg-span-4">
+            <i class="fa-solid fa-network-wired"></i>
+            <h5>Ecossistema próprio</h5>
+            <p>Sua marca se conecta a uma comunidade ativa, eventos, experiências presenciais e iniciativas de educação para creators.</p>
+          </div>
+          <div class="card-learning span-4 md-span-2 lg-span-4">
+            <i class="fa-solid fa-handshake"></i>
+            <h5>Parceria de longo prazo</h5>
+            <p>Nosso objetivo não é realizar uma única ação, mas construir relações duradouras entre sua marca e creators.</p>
+          </div>
+        </div>
+        <div class="learning-carousel-controls">
+          <button
+            aria-controls="learning-carousel"
+            aria-label="Mostrar conteúdo anterior"
+            class="learning-carousel-button"
+            type="button"
+            (click)="scrollLearning(-1)"
+          >
+            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            aria-controls="learning-carousel"
+            aria-label="Mostrar próximo conteúdo"
+            class="learning-carousel-button"
+            type="button"
+            (click)="scrollLearning(1)"
+          >
+            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <section class="journey section">
 	<div class="container">
@@ -117,22 +101,22 @@
 				>
 				</app-button>
 			</div>
-			<div class="box-number span-2 md-span-2 lg-span-3">
+			<div class="box-number span-4 md-span-2 lg-span-3">
 				<h3>R$ 250 milhões</h3>
 				<h6>Em GMV</h6>
 				<p>Movimentados pelos creators da Comu.</p>
 			</div>
-			<div class="box-number span-2 md-span-2 lg-span-3">
+			<div class="box-number span-4 md-span-2 lg-span-3">
 				<h3>+10 mil</h3>
 				<h6>Creators</h6>
 				<p>Fazem parte do ecossistema da Comu.</p>
 			</div>
-			<div class="box-number span-2 md-span-2 lg-span-3">
+			<div class="box-number span-4 md-span-2 lg-span-3">
 				<h3>+200</h3>
 				<h6>Marcas parceiras</h6>
 				<p>Conectadas aos nossos creators.</p>
 			</div>
-			<div class="box-number span-2 md-span-2 lg-span-3">
+			<div class="box-number span-4 md-span-2 lg-span-3">
 				<h3>R$ 25 milhões</h3>
 				<h6>Pagos a creators</h6>
 				<p>Em campanhas, vendas e oportunidades.</p>
@@ -140,76 +124,106 @@
 		</div>
 	</div>
 </section>
-<section class="learning section">
-	<div class="container">
-		<div class="grid">
-			<div class="hero-learning span-4 md-span-4 lg-span-6">
-				<h2>Mais do que uma campanha.</h2>
-				<p>Como estar com a Comu pode contribuir para a sua marca.</p>
-			</div>
-			<div class="learning-carousel span-4 md-span-6 lg-span-12">
-				<div
-					#learningCarousel
-					aria-label="Conteúdos de aprendizado"
-					class="learning-carousel-track"
-					id="learning-carousel"
-					role="region"
-					tabindex="0"
-				>
-					<div class="card-learning span-4 md-span-2 lg-span-4">
-						<i class="fa-solid fa-user-check"></i>
-						<h5>Creators qualificados</h5>
-						<p>Nossa comunidade reúne creators em diferentes níveis de experiência, preparados para desenvolver conteúdos autênticos e alinhados aos objetivos da sua marca.</p>
-					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-4">
-						<i class="fa-solid fa-wand-magic-sparkles"></i>
-						<h5>Campanhas sob medida</h5>
-						<p>Cada projeto é estruturado de acordo com o momento, público e objetivos da marca, garantindo uma estratégia personalizada.</p>
-					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-4">
-						<i class="fa-solid fa-chart-line"></i>
-						<h5>Performance acompanhada</h5>
-						<p>Nossa equipe acompanha os resultados das campanhas para otimizar a execução e potencializar o desempenho dos creators.</p>
-					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-4">
-						<i class="fa-solid fa-layer-group"></i>
-						<h5>Conteúdo em escala</h5>
-						<p>Mobilizamos centenas de creators para produzir conteúdos que ampliam alcance, presença e frequência de publicação.</p>
-					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-4">
-						<i class="fa-solid fa-network-wired"></i>
-						<h5>Ecossistema próprio</h5>
-						<p>Sua marca se conecta a uma comunidade ativa, eventos, experiências presenciais e iniciativas de educação para creators.</p>
-					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-4">
-						<i class="fa-solid fa-handshake"></i>
-						<h5>Parceria de longo prazo</h5>
-						<p>Nosso objetivo não é realizar uma única ação, mas construir relações duradouras entre sua marca e creators.</p>
-					</div>
-				</div>
-				<div class="learning-carousel-controls">
-					<button
-						aria-controls="learning-carousel"
-						aria-label="Mostrar conteúdo anterior"
-						class="learning-carousel-button"
-						type="button"
-						(click)="scrollLearning(-1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-					</button>
-					<button
-						aria-controls="learning-carousel"
-						aria-label="Mostrar próximo conteúdo"
-						class="learning-carousel-button"
-						type="button"
-						(click)="scrollLearning(1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+<section class="creators section">
+  <div class="container">
+    <div class="grid">
+      <div class="hero-creators span-4 md-span-4 lg-span-6">
+        <h2>Conteúdo que aproxima marcas de pessoas.</h2>
+        <p>Criados por creators da Comu que transformaram produtos em conversa, descoberta e venda.</p>
+      </div>
+      <div class="stories-carousel span-4 md-span-6 lg-span-9">
+        <div
+          #storiesCarousel
+          aria-label="Histórias dos criadores da comunidade"
+          class="stories-carousel-track"
+          id="stories-carousel"
+          role="region"
+          tabindex="0"
+        >
+          <div class="story span-4 md-span-2 lg-span-2">
+            <iframe
+              allow="fullscreen"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              src="https://www.tiktok.com/player/v1/7676486157621939463"
+              title="História de Luisa Soares no TikTok"
+            >
+            </iframe>
+          </div>
+          <div class="story span-4 md-span-2 lg-span-2">
+            <iframe
+              allow="fullscreen"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              src="https://www.tiktok.com/player/v1/7669808861049670920"
+              title="História de Laavsri no TikTok"
+            >
+            </iframe>
+          </div>
+          <div class="story span-4 md-span-2 lg-span-2">
+            <iframe
+              allow="fullscreen"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              src="https://www.tiktok.com/player/v1/7662099616799722773"
+              title="História de creator no TikTok"
+            >
+            </iframe>
+          </div>
+          <div class="story span-4 md-span-2 lg-span-2">
+            <iframe
+              allow="fullscreen"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              src="https://www.tiktok.com/player/v1/7671505147675102485"
+              title="História de Luisa Soares no TikTok"
+            >
+            </iframe>
+          </div>
+          <div class="story span-4 md-span-2 lg-span-2">
+            <iframe
+              allow="fullscreen"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              src="https://www.tiktok.com/player/v1/7672519515305200903"
+              title="História de Laavsri no TikTok"
+            >
+            </iframe>
+          </div>
+          <div class="story span-4 md-span-2 lg-span-2">
+            <iframe
+              allow="fullscreen"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              src="https://www.tiktok.com/player/v1/7661340346638519572"
+              title="História de creator no TikTok"
+            >
+            </iframe>
+          </div>
+        </div>
+        <div class="stories-carousel-controls">
+          <button
+            aria-controls="stories-carousel"
+            aria-label="Mostrar história anterior"
+            class="stories-carousel-button"
+            type="button"
+            (click)="scrollStories(-1)"
+          >
+            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            aria-controls="stories-carousel"
+            aria-label="Mostrar próxima história"
+            class="stories-carousel-button"
+            type="button"
+            (click)="scrollStories(1)"
+          >
+            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <section class="partners section">
 	<div class="container">
@@ -292,163 +306,78 @@
 		</div>
 	</div>
 </section>
-<section class="creators section">
-	<div class="container">
-		<div class="grid">
-			<div class="hero-creators span-4 md-span-4 lg-span-6">
-				<h2>Conteúdo que aproxima marcas de pessoas.</h2>
-				<p>Cada conteúdo é pensado para gerar conexão, confiança e vendas.</p>
-			</div>
-			<div class="stories-carousel span-4 md-span-6 lg-span-9">
-				<div
-					#storiesCarousel
-					aria-label="Histórias dos criadores da comunidade"
-					class="stories-carousel-track"
-					id="stories-carousel"
-					role="region"
-					tabindex="0"
-				>
-					<div class="story span-4 md-span-2 lg-span-2">
-						<iframe
-							allow="fullscreen"
-							loading="lazy"
-							referrerpolicy="strict-origin-when-cross-origin"
-							src="https://www.tiktok.com/player/v1/7676486157621939463"
-							title="História de Luisa Soares no TikTok"
-						>
-						</iframe>
-					</div>
-					<div class="story span-4 md-span-2 lg-span-2">
-						<iframe
-							allow="fullscreen"
-							loading="lazy"
-							referrerpolicy="strict-origin-when-cross-origin"
-							src="https://www.tiktok.com/player/v1/7669808861049670920"
-							title="História de Laavsri no TikTok"
-						>
-						</iframe>
-					</div>
-					<div class="story span-4 md-span-2 lg-span-2">
-						<iframe
-							allow="fullscreen"
-							loading="lazy"
-							referrerpolicy="strict-origin-when-cross-origin"
-							src="https://www.tiktok.com/player/v1/7662099616799722773"
-							title="História de creator no TikTok"
-						>
-						</iframe>
-					</div>
-					<div class="story span-4 md-span-2 lg-span-2">
-						<iframe
-							allow="fullscreen"
-							loading="lazy"
-							referrerpolicy="strict-origin-when-cross-origin"
-							src="https://www.tiktok.com/player/v1/7671505147675102485"
-							title="História de Luisa Soares no TikTok"
-						>
-						</iframe>
-					</div>
-					<div class="story span-4 md-span-2 lg-span-2">
-						<iframe
-							allow="fullscreen"
-							loading="lazy"
-							referrerpolicy="strict-origin-when-cross-origin"
-							src="https://www.tiktok.com/player/v1/7672519515305200903"
-							title="História de Laavsri no TikTok"
-						>
-						</iframe>
-					</div>
-					<div class="story span-4 md-span-2 lg-span-2">
-						<iframe
-							allow="fullscreen"
-							loading="lazy"
-							referrerpolicy="strict-origin-when-cross-origin"
-							src="https://www.tiktok.com/player/v1/7661340346638519572"
-							title="História de creator no TikTok"
-						>
-						</iframe>
-					</div>
-				</div>
-				<div class="stories-carousel-controls">
-					<button
-						aria-controls="stories-carousel"
-						aria-label="Mostrar história anterior"
-						class="stories-carousel-button"
-						type="button"
-						(click)="scrollStories(-1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-					</button>
-					<button
-						aria-controls="stories-carousel"
-						aria-label="Mostrar próxima história"
-						class="stories-carousel-button"
-						type="button"
-						(click)="scrollStories(1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+<section class="sales section">
+  <div class="container">
+    <div class="grid">
+      <div class="hero-sale span-4 md-span-4 lg-span-6">
+        <h2>Por que escolher a Comu?</h2>
+        <p>Veja o que muda quando sua marca faz parte do nosso ecossistema.</p>
+      </div>
+      <div class="table-info span-4 md-span-6 lg-span-10">
+        <table class="sales-table">
+          <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">
+              <img src="/images/logo-comu-black.svg" alt="Comu" />
+            </th>
+            <th scope="col"><h6>Busca independente</h6></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><h6>Comunidade ativa e qualificada</h6></td>
+            <td><i class="fa-solid fa-check"></i></td>
+            <td><i class="fa-solid fa-xmark"></i></td>
+          </tr>
+          <tr>
+            <td><h6>Acompanhamento estratégico</h6></td>
+            <td><i class="fa-solid fa-check"></i></td>
+            <td><i class="fa-solid fa-xmark"></i></td>
+          </tr>
+          <tr>
+            <td><h6>Produção de conteúdo em escala</h6></td>
+            <td><i class="fa-solid fa-check"></i></td>
+            <td><i class="fa-solid fa-xmark"></i></td>
+          </tr>
+          <tr>
+            <td><h6>Relacionamento contínuo com creators</h6></td>
+            <td><i class="fa-solid fa-check"></i></td>
+            <td><i class="fa-solid fa-xmark"></i></td>
+          </tr>
+          <tr>
+            <td><h6>Educação contínua dos creators</h6></td>
+            <td><i class="fa-solid fa-check"></i></td>
+            <td><i class="fa-solid fa-xmark"></i></td>
+          </tr>
+          <tr>
+            <td><h6>Ativações presenciais e eventos</h6></td>
+            <td><i class="fa-solid fa-check"></i></td>
+            <td><i class="fa-solid fa-xmark"></i></td>
+          </tr>
+          <tr>
+            <td><h6>Ecossistema completo para marcas e creators</h6></td>
+            <td><i class="fa-solid fa-check"></i></td>
+            <td><i class="fa-solid fa-xmark"></i></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </section>
 <section class="brand-growth section">
 	<div class="container">
 		<div class="grid">
 			<div class="brand-growth-content span-4 md-span-4 lg-span-6">
-				<h2>A Comu na mídia.</h2>
-				<p>Conheça algumas reportagens e entrevistas que mostram como estamos contribuindo para o crescimento da creator economy.</p>
-			</div>
-			<div class="brand-growth-carousel span-4 lg-span-8">
-				<div
-					#brandGrowthCarousel
-					aria-label="Campanhas de crescimento de marcas"
-					class="brand-growth-carousel-track"
-					id="brand-growth-carousel"
-					role="region"
-					tabindex="0"
-				>
-					<div class="brand-growth-image md-span-2 lg-span-4">
-						<img
-							src="/images/midia-1.jpg"
-							alt="Na mídia"
-						/>
-					</div>
-					<div class="brand-growth-image md-span-2 lg-span-4">
-						<img
-							src="/images/midia-2.jpg"
-							alt="Na mídia"
-						/>
-					</div>
-					<div class="brand-growth-image md-span-2 lg-span-4">
-						<img
-							src="/images/midia-3.jpg"
-							alt="Na mídia"
-						/>
-					</div>
-				</div>
-				<div class="brand-growth-carousel-controls">
-					<button
-						aria-controls="brand-growth-carousel"
-						aria-label="Mostrar campanha anterior"
-						class="brand-growth-carousel-button"
-						type="button"
-						(click)="scrollBrandGrowth(-1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-					</button>
-					<button
-						aria-controls="brand-growth-carousel"
-						aria-label="Mostrar próxima campanha"
-						class="brand-growth-carousel-button"
-						type="button"
-						(click)="scrollBrandGrowth(1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-					</button>
-				</div>
-			</div>
+				<h2>Vamos construir juntos?</h2>
+				<p>O nosso time entrará em contato para entender seus objetivos e apresentar as melhores possibilidades.</p>
+        <app-button
+          link="#this"
+          text="Quero minha marca na Comu"
+        >
+        </app-button>
+      </div>
 		</div>
 	</div>
 </section>
@@ -460,7 +389,7 @@
 				<p>Conheça nossa comunidade para creators e descubra como transformar o seu conteúdo em vendas.</p>
 				<app-button
 					link="#this"
-					text="Para criadores"
+					text="Saber mais"
 					type="pink"
 				>
 				</app-button>
