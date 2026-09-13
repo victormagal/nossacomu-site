@@ -90,6 +90,7 @@
     min-height: calc(var(--cloud-h) * var(--cloud-rows));
     overflow: hidden;
     position: relative;
+    animation: brands-left-to-right 24s linear infinite;
 
 }
 
@@ -108,18 +109,46 @@
     position: absolute;
     width: 100%;
     z-index: 0;
+    animation-duration: 24s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 /* second row */
 .brands-section::before {
     background-position: -115px 0;
     top: calc(var(--cloud-h) * 1);
+    animation-name: brands-right-to-left;
 }
 
 /* third row */
 .brands-section::after {
     background-position: -245px 0;
     top: calc(var(--cloud-h) * 2);
+    animation-name: brands-left-to-right-third;
+}
+
+@keyframes brands-left-to-right {
+    from { background-position: 0 0; }
+    to { background-position: var(--cloud-w) 0; }
+}
+
+@keyframes brands-right-to-left {
+    from { background-position: -115px 0; }
+    to { background-position: calc(-115px - var(--cloud-w)) 0; }
+}
+
+@keyframes brands-left-to-right-third {
+    from { background-position: -245px 0; }
+    to { background-position: calc(-245px + var(--cloud-w)) 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brands-section,
+    .brands-section::before,
+    .brands-section::after {
+        animation: none;
+    }
 }
 // Brands section
 
