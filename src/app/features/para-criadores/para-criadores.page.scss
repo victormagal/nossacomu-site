@@ -410,6 +410,7 @@
         }
 
         @media (min-width: 1200px) {
+          gap: var(--layout-grid-gap-2x);
           grid-template-columns: repeat(12, minmax(0, 1fr));
         }
       }
@@ -448,11 +449,9 @@
       border-radius: 1rem;
       box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
       flex: 0 0 100%;
-      scroll: {
-        snap: {
-          align: start;
-          stop: always;
-        }
+      scroll-snap: {
+        align: start;
+        stop: always;
       }
 
       @media (min-width: 768px) {
@@ -464,6 +463,7 @@
         border-radius: 1rem;
         border: 0;
         display: block;
+        max-height: 480px;
         width: 100%;
       }
 
