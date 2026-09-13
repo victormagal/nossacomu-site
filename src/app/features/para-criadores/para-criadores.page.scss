@@ -504,14 +504,8 @@
         text-align: left;
       }
 
-      h2 {
-        color: var(--color-white);
-      }
-
-      h6 {
-        color: var(--color-pink);
-        text-transform: uppercase;
-      }
+      h2 { color: var(--color-white); }
+      p { color: var(--color-muted); }
     }
 
     .content-journey {
