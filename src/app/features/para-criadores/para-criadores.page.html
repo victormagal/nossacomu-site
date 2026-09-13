@@ -284,8 +284,7 @@
 <section class="learning section">
 	<div class="container">
 		<div class="grid">
-			<div class="hero-learning span-4 md-span-4 lg-span-3">
-				<h6>Evolua no seu ritmo</h6>
+			<div class="hero-learning span-4 md-span-4 lg-span-4">
 				<h2>Aprenda o que faz sentido para o seu momento.</h2>
 				<p>Nem todo creator está na mesma fase. Por isso, desenvolvemos produtos que acompanham sua evolução, da primeira venda à construção de uma marca pessoal.</p>
 			</div>
@@ -298,10 +297,7 @@
 					role="region"
 					tabindex="0"
 				>
-					<div class="card-learning span-4 md-span-2 lg-span-3">
-						<div class="card-learning-header">
-							<img src="/images/learn-1.jpg" alt="Shop Creator" />
-						</div>
+					<div class="card-learning span-4 md-span-3 lg-span-4">
 						<div class="card-learning-body">
 							<h6>Shop Creator</h6>
 							<h5>Comece a vender no TikTok Shop.</h5>
@@ -314,30 +310,11 @@
 							</app-button>
 						</div>
 					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-3">
-						<div class="card-learning-header">
-							<img src="/images/learn-2.jpg" alt="Live Shop Pro" />
-						</div>
+					<div class="card-learning span-4 md-span-3 lg-span-4">
 						<div class="card-learning-body">
 							<h6>Live Shop Pro</h6>
 							<h5>Transforme suas lives em uma experiência.</h5>
 							<p>Estratégias para aumentar retenção, engajamento e resultados em cada transmissão.</p>
-							<app-button
-								link="#this"
-								text="Conhecer"
-								type="pink"
-							>
-							</app-button>
-						</div>
-					</div>
-					<div class="card-learning span-4 md-span-2 lg-span-3">
-						<div class="card-learning-header">
-							<img src="/images/learn-3.jpg" alt="Creator Capital" />
-						</div>
-						<div class="card-learning-body">
-							<h6>Creator Capital</h6>
-							<h5>Construa uma marca que ninguém pode copiar.</h5>
-							<p>Desenvolva posicionamento, autoridade e uma presença capaz de gerar oportunidades por muito mais tempo.</p>
 							<app-button
 								link="#this"
 								text="Conhecer"
@@ -406,132 +383,6 @@
 					</app-button>
 				</div>
 			</div>
-			<!-- <div class="regular-events-header span-4 md-span-4 lg-span-6">
-				<h2>Próximos Eventos</h2>
-			</div>
-			<div class="events-carousel span-4">
-				<div
-					#eventsCarousel
-					aria-label="Próximos eventos"
-					class="events-carousel-track"
-					id="events-carousel"
-					role="region"
-					tabindex="0"
-				>
-					<div class="card-event span-4 md-span-2 lg-span-4">
-						<div class="card-event-header">
-							<img src="/images/event.png" alt="Evento" />
-							<app-button
-								text="Webinar"
-								type="pink"
-							>
-							</app-button>
-						</div>
-						<div class="card-event-body">
-							<app-button
-								text="19h00"
-								type="transparentMuted"
-							>
-							</app-button>
-							<h4>Engenharia do produto viral</h4>
-							<h6>Critérios reais para acertar no TikTok Shop</h6>
-							<p>Terça-feira, 24 de fevereiro</p>
-						</div>
-						<div class="card-event-footer">
-							<app-button
-								link="#this"
-								text="Entrar para a comunidade"
-								type="pink-border"
-							>
-							</app-button>
-						</div>
-					</div>
-					<div class="card-event span-4 md-span-2 lg-span-4">
-						<div class="card-event-header">
-							<img src="/images/event.png" alt="Evento" />
-							<app-button
-								text="Webinar"
-								type="pink"
-							>
-							</app-button>
-						</div>
-						<div class="card-event-body">
-							<app-button
-								text="19h00"
-								type="transparentMuted"
-							>
-							</app-button>
-							<h4>Engenharia do produto viral</h4>
-							<h6>Critérios reais para acertar no TikTok Shop</h6>
-							<p>Terça-feira, 24 de fevereiro</p>
-						</div>
-						<div class="card-event-footer">
-							<app-button
-								link="#this"
-								text="Entrar para a comunidade"
-								type="pink-border"
-							>
-							</app-button>
-						</div>
-					</div>
-					<div class="card-event span-4 md-span-2 lg-span-4">
-						<div class="card-event-header">
-							<img src="/images/event.png" alt="Evento" />
-							<app-button
-								text="Webinar"
-								type="pink"
-							>
-							</app-button>
-						</div>
-						<div class="card-event-body">
-							<app-button
-								text="19h00"
-								type="transparentMuted"
-							>
-							</app-button>
-							<h4>Engenharia do produto viral</h4>
-							<h6>Critérios reais para acertar no TikTok Shop</h6>
-							<p>Terça-feira, 24 de fevereiro</p>
-						</div>
-						<div class="card-event-footer">
-							<app-button
-								link="#this"
-								text="Entrar para a comunidade"
-								type="pink-border"
-							>
-							</app-button>
-						</div>
-					</div>
-				</div>
-				<div class="events-carousel-controls">
-					<button
-						aria-controls="events-carousel"
-						aria-label="Mostrar evento anterior"
-						class="events-carousel-button"
-						type="button"
-						(click)="scrollEvents(-1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-					</button>
-					<button
-						aria-controls="events-carousel"
-						aria-label="Mostrar próximo evento"
-						class="events-carousel-button"
-						type="button"
-						(click)="scrollEvents(1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-					</button>
-				</div>
-			</div> -->
-			<!-- <div class="regular-events-footer span-4">
-				<app-button
-					link="#this"
-					text="Visualizar mais"
-					type="transparentWhite"
-				>
-				</app-button>
-			</div> -->
 		</div>
 	</div>
 </section>
@@ -539,24 +390,10 @@
 	<div class="container">
 		<div class="grid">
 			<div class="hero-sale span-4 md-span-4 lg-span-6">
-				<h2>Escolha o seu próximo passo.</h2>
+				<h2>Você não precisa fazer tudo sozinho.</h2>
 				<p>Comece gratuitamente ou acelere sua evolução com a Comu+.</p>
-				<!-- <div class="hero-sale-buttons">
-					<app-button
-						link="#this"
-						text="Criadores"
-						type="pink"
-					>
-					</app-button>
-					<app-button
-						link="#this"
-						text="Marcas"
-						type="pink-border"
-					>
-					</app-button>
-				</div> -->
 			</div>
-			<div class="card-sale span-4 md-span-3 lg-span-4">
+			<div class="card-sale span-4 md-span-3 lg-span-5">
 				<div class="card-sale-header">
 					<img
 						alt="Comu free"
@@ -565,6 +402,7 @@
 					/>
 					<h6>Gratuito</h6>
 					<p>Seu ponto de partida na creator economy.</p>
+          <p>O que você encontra:</p>
 				</div>
 				<div class="card-sale-body">
 					<ul>
@@ -576,6 +414,14 @@
 							<i class="fa-solid fa-users"></i>
 							Acesso gratuito à comunidade
 						</li>
+            <li>
+              <i class="fa-solid fa-users"></i>
+              Suporte com nossos especialistas
+            </li>
+            <li>
+              <i class="fa-solid fa-users"></i>
+              Aulas com marcas do TikTok Shop
+            </li>
 						<li>
 							<i class="fa-solid fa-c"></i>
 							Primeiras oportunidades
@@ -585,13 +431,13 @@
 				<div class="card-sale-footer">
 					<app-button
 						link="#this"
-						text="Entrar na comunidade"
+						text="Entrar na Comu Free"
 						type="pink-border"
 					>
 					</app-button>
 				</div>
 			</div>
-			<div class="card-sale span-4 md-span-3 lg-span-4">
+			<div class="card-sale span-4 md-span-3 lg-span-5">
 				<div class="card-sale-header">
 					<img
 						alt="Comu mais"
@@ -599,6 +445,7 @@
 						width="130"
 					/>
 					<p>Acelere seus resultados. Para creators que querem ir além do básico.</p>
+          <p>O que você encontra:</p>
 				</div>
 				<div class="card-sale-body">
 					<ul>
@@ -627,7 +474,7 @@
 				<div class="card-sale-footer">
 					<app-button
 						link="#this"
-						text="Entrar na comunidade"
+						text="Entrar na Comu+"
 						type="pink-border"
 					>
 					</app-button>
@@ -642,7 +489,6 @@
 			<div class="faq-content span-4 md-span-4 lg-span-8">
 				<div class="faq-header">
 					<h2>Ainda ficou alguma dúvida?</h2>
-					<!-- <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p> -->
 				</div>
 				<div class="faq-body">
 					<div class="question" [class.open]="isOpen(0)">
@@ -771,15 +617,9 @@
 				<h2>Sua marca também pode crescer com creators.</h2>
 				<p>A Comu conecta marcas aos creators certos para desenvolver campanhas, gerar conteúdo e resultados.</p>
 				<div class="brand-growth-buttons">
-					<!-- <app-button
-						link="#this"
-						text="Para criadores"
-						type="pink"
-					>
-					</app-button> -->
 					<app-button
 						link="#this"
-						text="Para marcas"
+						text="Saber mais"
 						type="dark-pink-border"
 					>
 					</app-button>
