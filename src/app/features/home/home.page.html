@@ -1,94 +1,86 @@
 <section class="main section">
-	<div class="container">
-		<div class="grid">
-			<div class="hero-main span-4 md-span-3 lg-span-6">
+  <div class="container">
+    <div class="grid">
+      <div class="hero-main span-4 md-span-3 lg-span-6">
         <h2>Conectando creators e marcas para transformar conteúdo em vendas</h2>
-				<p>A Comu é um ecossistema que cria oportunidades para gerar crescimento através do conteúdo.</p>
-				<app-button
-					link="#this"
-					text="Conhecer a Comu"
-					type="pink"
-				>
-				</app-button>
-			</div>
-			<div class="content-main span-4 md-span-3 lg-span-6">
-				<img src="/images/criadores.jpg" alt="Para criadores" />
-			</div>
-		</div>
-	</div>
+        <p>
+          A Comu é um ecossistema que cria oportunidades para gerar crescimento através do conteúdo.
+        </p>
+        <app-button link="#this" text="Conhecer a Comu" type="pink"> </app-button>
+      </div>
+      <div class="content-main span-4 md-span-3 lg-span-6">
+        <img src="/images/criadores.jpg" alt="Para criadores" />
+      </div>
+    </div>
+  </div>
 </section>
-<section class="section brands-section"></section>
+<app-brands-cloud-component></app-brands-cloud-component>
 <section class="be-part-of section">
-	<div class="container">
-		<div class="grid">
-			<div class="hero-be-part-of span-4 md-span-4 lg-span-4">
-				<div class="hero-be-part-of-logo">
-					<h3>Conheça o que oferecemos</h3>
-				</div>
-			</div>
-			<div class="cards-carousel span-4">
-				<div
-					#cardsCarousel
-					aria-label="Opções para fazer parte da Comu"
-					class="cards-carousel-track"
-					id="be-part-of-carousel"
-					role="region"
-					tabindex="0"
-				>
-					<div class="card-be-part-of span-4 md-span-2 lg-span-3">
-						<div class="card-be-part-of-header">
-							<img src="/images/be-part-1.jpg" alt="Comunidade" />
-						</div>
-						<div class="card-be-part-of-body">
-							<h3>Creators</h3>
-							<p>Se vincule com a Comu no TikTok Shop e/ou entre na nossa comunidade gratuita.</p>
-							<app-button
-								link="#this"
-								text="Benefícios para creators"
-								type="pink-border"
-							>
-							</app-button>
-						</div>
-					</div>
-					<div class="card-be-part-of span-4 md-span-2 lg-span-3">
-						<div class="card-be-part-of-header">
-							<img src="/images/be-part-2.jpg" alt="Aprendizado" />
-						</div>
-						<div class="card-be-part-of-body">
-							<h3>Marcas</h3>
-							<p>Confie sua marca a creators da Comu preparados para fortalecer sua presença no TikTok Shop.</p>
-							<app-button
-								link="#this"
-								text="Benefícios para marcas"
-								type="pink-border"
-							>
-							</app-button>
-						</div>
-					</div>
-				</div>
-				<div class="cards-carousel-controls">
-					<button
-						aria-controls="be-part-of-carousel"
-						aria-label="Mostrar card anterior"
-						class="cards-carousel-button"
-						type="button"
-						(click)="scrollCards(-1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-					</button>
-					<button
-						aria-controls="be-part-of-carousel"
-						aria-label="Mostrar próximo card"
-						class="cards-carousel-button"
-						type="button"
-						(click)="scrollCards(1)"
-					>
-						<i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="grid">
+      <div class="hero-be-part-of span-4 md-span-4 lg-span-4">
+        <div class="hero-be-part-of-logo">
+          <h3>Conheça o que oferecemos</h3>
+        </div>
+      </div>
+      <div class="cards-carousel span-4">
+        <div
+          #cardsCarousel
+          aria-label="Opções para fazer parte da Comu"
+          class="cards-carousel-track"
+          id="be-part-of-carousel"
+          role="region"
+          tabindex="0"
+        >
+          <div class="card-be-part-of span-4 md-span-2 lg-span-3">
+            <div class="card-be-part-of-header">
+              <img src="/images/be-part-1.jpg" alt="Comunidade" />
+            </div>
+            <div class="card-be-part-of-body">
+              <h3>Creators</h3>
+              <p>Se vincule com a Comu no TikTok Shop e/ou entre na nossa comunidade gratuita.</p>
+              <app-button link="#this" text="Benefícios para creators" type="pink-border">
+              </app-button>
+            </div>
+          </div>
+          <div class="card-be-part-of span-4 md-span-2 lg-span-3">
+            <div class="card-be-part-of-header">
+              <img src="/images/be-part-2.jpg" alt="Aprendizado" />
+            </div>
+            <div class="card-be-part-of-body">
+              <h3>Marcas</h3>
+              <p>
+                Confie sua marca a creators da Comu preparados para fortalecer sua presença no
+                TikTok Shop.
+              </p>
+              <app-button link="#this" text="Benefícios para marcas" type="pink-border">
+              </app-button>
+            </div>
+          </div>
+        </div>
+        <div class="cards-carousel-controls">
+          <button
+            aria-controls="be-part-of-carousel"
+            aria-label="Mostrar card anterior"
+            class="cards-carousel-button"
+            type="button"
+            (click)="scrollCards(-1)"
+          >
+            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            aria-controls="be-part-of-carousel"
+            aria-label="Mostrar próximo card"
+            class="cards-carousel-button"
+            type="button"
+            (click)="scrollCards(1)"
+          >
+            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <section class="journey section">
   <div class="container">
@@ -96,7 +88,9 @@
       <div class="hero-journey span-4 md-span-4 lg-span-6">
         <h2>Top 1 global em TikTok Shop</h2>
         <p>
-          Chegamos aqui com os creators que cresceram com a gente, com as marcas que confiaram no nosso trabalho e com um mercado que estamos ajudando a construir todos os dias. <span>Hoje, somos a agência Top 1 global do TikTok Shop.</span>
+          Chegamos aqui com os creators que cresceram com a gente, com as marcas que confiaram no
+          nosso trabalho e com um mercado que estamos ajudando a construir todos os dias.
+          <span>Hoje, somos a agência Top 1 global do TikTok Shop.</span>
         </p>
       </div>
       <div class="box-number span-4 md-span-2 lg-span-3">
@@ -191,7 +185,10 @@
     <div class="grid">
       <div class="hero-main span-4 md-span-3 lg-span-6">
         <h2>A comunidade acontece aqui</h2>
-        <p>A Comu está dentro do nosso aplicativo. É por lá que creators acessam aulas, conteúdos, avisos, oportunidades e tudo o que está acontecendo dentro da comunidade.</p>
+        <p>
+          A Comu está dentro do nosso aplicativo. É por lá que creators acessam aulas, conteúdos,
+          avisos, oportunidades e tudo o que está acontecendo dentro da comunidade.
+        </p>
         <div class="stores-bts">
           <a aria-label="Baixar o aplicativo na Apple Store" href="#this">
             <i aria-hidden="true" class="fa-brands fa-apple fa-4x"></i>
@@ -220,14 +217,22 @@
             <div class="timeline-item" role="listitem">
               <div class="timeline-content">
                 <h5>2022 | Tudo começou com conteúdo</h5>
-                <p>A Comu nasceu como uma comunidade para creators que queriam transformar a criação de conteúdo em carreira. Um espaço para aprender e trocar experiências.</p>
+                <p>
+                  A Comu nasceu como uma comunidade para creators que queriam transformar a criação
+                  de conteúdo em carreira. Um espaço para aprender e trocar experiências.
+                </p>
               </div>
               <div aria-hidden="true" class="timeline-dot"></div>
             </div>
             <div class="timeline-item" role="listitem">
               <div class="timeline-content">
                 <h5>2025 | O mercado mudou</h5>
-                <p>Com a chegada do TikTok Shop, surgiu uma nova oportunidade para creators: transformar influência em vendas. A Comu expandiu sua atuação para esse mercado, trazendo a experiência de profissionais que já trabalhavam com TikTok Shop nos Estados Unidos e ajudando creators a vender e crescer.</p>
+                <p>
+                  Com a chegada do TikTok Shop, surgiu uma nova oportunidade para creators:
+                  transformar influência em vendas. A Comu expandiu sua atuação para esse mercado,
+                  trazendo a experiência de profissionais que já trabalhavam com TikTok Shop nos
+                  Estados Unidos e ajudando creators a vender e crescer.
+                </p>
               </div>
               <div aria-hidden="true" class="timeline-dot"></div>
             </div>
@@ -235,9 +240,12 @@
               <div class="timeline-content">
                 <h5>Hoje | Um ecossistema completo</h5>
                 <p>
-                  Hoje, a Comu tem comunidade, educação, suporte, campanhas, produtos digitais, eventos e uma operação dedicada ao desenvolvimento de creators dentro do TikTok Shop.
+                  Hoje, a Comu tem comunidade, educação, suporte, campanhas, produtos digitais,
+                  eventos e uma operação dedicada ao desenvolvimento de creators dentro do TikTok
+                  Shop.
                   <br />
-                  Tudo com um objetivo: ajudar creators a construir uma carreira que vai além de um vídeo viral.
+                  Tudo com um objetivo: ajudar creators a construir uma carreira que vai além de um
+                  vídeo viral.
                 </p>
               </div>
               <div aria-hidden="true" class="timeline-dot"></div>
@@ -254,15 +262,10 @@
       <div class="hero-as-creator span-4 md-span-3 lg-span-6">
         <h2>Trabalhe Conosco</h2>
         <p>
-          Ajude creators a crescer, vender e construir uma carreira na creator economy.
-          Faça parte do time que está construindo esse mercado junto com creators e marcas.
+          Ajude creators a crescer, vender e construir uma carreira na creator economy. Faça parte
+          do time que está construindo esse mercado junto com creators e marcas.
         </p>
-        <app-button
-          link="#this"
-          text="Quero fazer parte"
-          type="pink"
-        >
-        </app-button>
+        <app-button link="#this" text="Quero fazer parte" type="pink"> </app-button>
       </div>
       <div class="content-as-creator span-4 md-span-3 lg-span-6">
         <img src="/images/as-creators.jpg" alt="Para creators" />
