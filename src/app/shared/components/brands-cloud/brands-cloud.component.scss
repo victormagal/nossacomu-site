@@ -1,6 +1,6 @@
 .brands-section {
-  --cloud-w: 425px;
-  --cloud-h: 33px;
+  --cloud-w: 670px;
+  --cloud-h: 48px;
   --cloud-rows: 3;
   background: {
     image: url('/images/cloud-brands.svg');
@@ -37,14 +37,14 @@
 
 /* second row */
 .brands-section::before {
-  background-position: -115px 0;
+  background-position: -181px 0;
   top: calc(var(--cloud-h) * 1);
   animation-name: brands-right-to-left;
 }
 
 /* third row */
 .brands-section::after {
-  background-position: -245px 0;
+  background-position: -386px 0;
   top: calc(var(--cloud-h) * 2);
   animation-name: brands-left-to-right-third;
 }
@@ -60,19 +60,19 @@
 
 @keyframes brands-right-to-left {
   from {
-    background-position: -115px 0;
+    background-position: -181px 0;
   }
   to {
-    background-position: calc(-115px - var(--cloud-w)) 0;
+    background-position: calc(-181px - var(--cloud-w)) 0;
   }
 }
 
 @keyframes brands-left-to-right-third {
   from {
-    background-position: -245px 0;
+    background-position: -386px 0;
   }
   to {
-    background-position: calc(-245px + var(--cloud-w)) 0;
+    background-position: calc(-386px + var(--cloud-w)) 0;
   }
 }
 
