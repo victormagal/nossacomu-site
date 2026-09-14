@@ -1,7 +1,11 @@
 // Main section
 .main {
   background-color: var(--color-cream);
-  padding: 1rem 0 2rem;
+  padding: 2rem 0;
+
+  &.apps {
+    padding-top: 0;
+  }
 
   .grid {
     gap: var(--layout-grid-gap-2x);
@@ -81,7 +85,7 @@
 // Be part of section
 .be-part-of {
   background-color: var(--color-pink);
-  padding: 4rem 0;
+  padding: 2rem 0;
   margin-top: 2rem;
 
   .grid {
@@ -252,7 +256,7 @@
 // Journey section
 .journey {
   background-color: var(--color-black);
-  padding: 4rem 0;
+  padding: 2rem 0;
 
   .grid {
     gap: var(--layout-grid-gap);
@@ -337,7 +341,7 @@
 
 // Learning section
 .learning {
-  padding: 2rem 0 4rem;
+  padding: 2rem 0;
 
   .grid {
     gap: var(--layout-grid-gap-2x);
@@ -485,7 +489,15 @@
 // History section
 .history {
   background-color: var(--color-black);
-  padding: 4rem 0;
+  padding: 2rem 0;
+
+  @media (max-width: 767px) {
+    padding: 2rem 0;
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+    padding: 2rem 0 3.5rem;
+  }
 
   .grid {
     gap: var(--layout-grid-gap-2x);
@@ -677,114 +689,10 @@
 }
 // History section
 
-// Sales section
-.sales {
-  .grid {
-    gap: var(--layout-grid-gap-2x);
-    padding: 4rem 0;
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap);
-    }
-
-    .hero-sale {
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-      padding: 0 2rem;
-      text-align: center;
-
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 4;
-      }
-
-      @media (min-width: 1200px) {
-        grid-column: 4 / span 6;
-      }
-
-      .hero-sale-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-
-        app-button {
-          display: block;
-        }
-
-        > * {
-          flex: 1 1 calc(50% - 0.25rem);
-          min-width: 0;
-        }
-      }
-    }
-
-    .card-sale {
-      background-color: var(--color-white);
-      border: 1px solid rgba(var(--color-muted-rgb), 0.45);
-      border-radius: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-      padding: 2rem;
-
-      @media (min-width: 1200px) {
-        &:nth-child(2) {
-          grid-column: 3 / span 4;
-        }
-      }
-
-      .card-sale-header {
-        border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
-        display: flex;
-        flex-direction: column;
-        gap: var(--layout-grid-gap);
-        padding-bottom: var(--layout-grid-gap);
-
-        h6 {
-          font-weight: 600;
-        }
-      }
-
-      .card-sale-body {
-        ul {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-
-          li {
-            align-items: center;
-            display: flex;
-            gap: var(--layout-grid-gap);
-            list-style: none;
-
-            i {
-              color: var(--color-pink);
-              display: inline-block;
-              text-align: center;
-            }
-          }
-        }
-      }
-
-      .card-sale-footer {
-        display: flex;
-        justify-content: center;
-        app-button {
-          display: flex;
-          flex: 0 0 75%;
-          min-width: 0;
-          justify-content: center;
-        }
-      }
-    }
-  }
-}
-// Sales section
-
 // As creator section
 .as-creator {
   background-color: var(--color-cream);
-  padding: 4rem 0 0;
+  padding: 2rem 0 0;
 
   .grid {
     gap: var(--layout-grid-gap-2x);

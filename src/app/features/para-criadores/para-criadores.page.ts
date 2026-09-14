@@ -1,23 +1,21 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  viewChild
-} from '@angular/core';
-import { ButtonComponent } from "../../shared/components/button/button.component";
+import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
+import { BrandsCloudComponent } from '../../shared/components/brands-cloud/brands-cloud.component';
+import { ButtonComponent } from '../../shared/components/button/button.component';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-para-criadores-page',
   styleUrl: './para-criadores.page.scss',
   templateUrl: './para-criadores.page.html',
-  imports: [ButtonComponent],
+  imports: [BrandsCloudComponent, ButtonComponent],
 })
 export class ForCreatorsPage {
-  private readonly brandGrowthCarousel = viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
+  private readonly brandGrowthCarousel =
+    viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
   private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
   private readonly eventsCarousel = viewChild.required<ElementRef<HTMLElement>>('eventsCarousel');
-  private readonly learningCarousel = viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
+  private readonly learningCarousel =
+    viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
   private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
 
   openItems = new Set<number>();
