@@ -638,23 +638,25 @@ p {
     }
 
     .table-info {
-      overflow-x: auto;
+      background: rgba(var(--color-white-rgb), 0.5);
+      border: 1px solid rgba(var(--color-muted-rgb), 0.25);
+      border-radius: 1.25rem;
+      box-shadow: 0 0.5rem 1.5rem rgba(var(--color-black-rgb), 0.06);
+      overflow: hidden;
 
       @media (min-width: 1200px) {
         grid-column: 2 / span 10;
       }
 
       .sales-table {
-        border-collapse: collapse;
-        overflow: hidden;
-        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 0;
         width: 100%;
 
         th,
         td {
-          padding: 1rem;
-          text-align: left;
-          vertical-align: top;
+          border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.2);
+          padding: 1.25rem 1.5rem;
 
           h6 {
             font-weight: 600;
@@ -681,6 +683,11 @@ p {
         }
 
         th:nth-child(2),
+        td:nth-child(2) {
+          background: rgba(var(--color-pink-rgb), 0.04);
+        }
+
+        th:nth-child(2),
         td:nth-child(2),
         th:nth-child(3),
         td:nth-child(3) {
@@ -699,6 +706,11 @@ p {
         th:nth-child(3) {
           text-align: right;
           vertical-align: middle;
+        }
+
+        thead th {
+          background: rgba(var(--color-cream-rgb), 0.8);
+          font-weight: 700;
         }
 
         tbody td:nth-child(2),
@@ -749,8 +761,26 @@ p {
           color: var(--color-muted);
         }
 
-        tbody tr:last-child {
+        tbody tr:last-child td {
           border-bottom: 0;
+        }
+
+        i.fa-check,
+        i.fa-xmark {
+          align-items: center;
+          border-radius: 50%;
+          display: inline-flex;
+          height: 1.75rem;
+          justify-content: center;
+          width: 1.75rem;
+        }
+        i.fa-check {
+          background: rgba(var(--color-pink-rgb), 0.12);
+          color: var(--color-pink);
+        }
+        i.fa-xmark {
+          background: rgba(var(--color-muted-rgb), 0.12);
+          color: var(--color-muted);
         }
       }
     }
