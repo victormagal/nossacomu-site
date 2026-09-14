@@ -1,23 +1,25 @@
 import { Component, input } from '@angular/core';
 
 type Size = 'small' | 'medium' | 'large';
-type Variant = 'blue'
-    | 'dark-pink-border'
-    | 'default'
-    | 'pink'
-    | 'pink-border'
-    | 'transparentMuted'
-    | 'transparentWhite';
+type Variant =
+  | 'blue'
+  | 'dark-pink-border'
+  | 'default'
+  | 'pink'
+  | 'pink-border'
+  | 'transparentMuted'
+  | 'transparentWhite';
 
 @Component({
-    selector: 'app-button',
-    standalone: true,
-    styleUrl: './button.component.scss',
-    templateUrl: './button.component.html',
+  selector: 'app-button',
+  standalone: true,
+  styleUrl: './button.component.scss',
+  templateUrl: './button.component.html',
 })
 export class ButtonComponent {
-    link = input<string | null>(null);
-    size = input<Size>('medium');
-    text = input<string>('');
-    type = input<Variant>('default');
+  link = input<string | null>(null);
+  size = input<Size>('medium');
+  target = input<string>('_self');
+  text = input<string>('');
+  type = input<Variant>('default');
 }
