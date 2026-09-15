@@ -1,35 +1,28 @@
 import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
 import { BrandsCloudComponent } from '../../shared/components/brands-cloud/brands-cloud.component';
-import { ButtonComponent } from '../../shared/components/button/button.component';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-para-criadores-page',
   styleUrl: './eventos.page.scss',
   templateUrl: './eventos.page.html',
-  imports: [BrandsCloudComponent, ButtonComponent],
+  imports: [BrandsCloudComponent],
 })
 export class EventsPage {
-  private readonly brandGrowthCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
-  private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
-  private readonly eventsCarousel = viewChild.required<ElementRef<HTMLElement>>('eventsCarousel');
+  private readonly eventCarousel = viewChild.required<ElementRef<HTMLElement>>('eventCarousel');
+  private readonly eventCarousel2 = viewChild.required<ElementRef<HTMLElement>>('eventCarousel2');
   private readonly learningCarousel =
     viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
   private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
 
   openItems = new Set<number>();
 
-  scrollCards(direction: -1 | 1) {
-    this.scrollCarousel(this.cardsCarousel().nativeElement, '.card-be-part-of', direction);
+  scrollEvent(direction: -1 | 1) {
+    this.scrollCarousel(this.eventCarousel().nativeElement, '.event-image', direction);
   }
 
-  scrollBrandGrowth(direction: -1 | 1) {
-    this.scrollCarousel(this.brandGrowthCarousel().nativeElement, '.brand-growth-image', direction);
-  }
-
-  scrollEvents(direction: -1 | 1) {
-    this.scrollCarousel(this.eventsCarousel().nativeElement, '.card-event', direction);
+  scrollEvent2(direction: -1 | 1) {
+    this.scrollCarousel(this.eventCarousel2().nativeElement, '.event-image', direction);
   }
 
   scrollLearning(direction: -1 | 1) {

@@ -15,7 +15,7 @@
   position: relative;
 
   &::before {
-    background-color: rgba(var(--color-white-rgb), 0.15);
+    background-color: rgba(var(--color-black-rgb), 0.75);
     content: '';
     inset: 0;
     pointer-events: none;
@@ -36,12 +36,13 @@
         display: flex;
         flex-direction: column;
         gap: var(--layout-grid-gap);
+        justify-content: center;
         text-align: center;
 
         h2,
         p {
-          color: var(--color-dark-gray);
-          font-weight: 400;
+          color: var(--color-white);
+          font-weight: 700;
           text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
         }
 
@@ -121,22 +122,29 @@
 }
 // Main section
 
-// Be part of section
-.be-part-of {
-  padding: 2rem 0 4rem;
+// Brand growth section
+.event {
+  padding: 4rem 2rem;
+
+  &.dark {
+    background-color: var(--color-dark-gray);
+    margin-top: 2rem;
+  }
+  &.light { background-color: var(--color-muted); }
+  &.pink { background-color: var(--color-pink); }
 
   .grid {
+    align-items: center;
     gap: var(--layout-grid-gap);
 
-    @media (min-width: 1200px) {
+    @media (min-width: 768px) {
       gap: var(--layout-grid-gap-2x);
     }
 
-    .hero-be-part-of {
+    .event-content {
       display: flex;
       flex-direction: column;
       gap: var(--layout-grid-gap);
-      padding: 0 2rem;
       text-align: center;
 
       @media (min-width: 768px) and (max-width: 1199px) {
@@ -144,33 +152,42 @@
       }
 
       @media (min-width: 1200px) {
-        grid-column: 4 / span 6;
-        grid-row: 1;
+        text-align: left;
+
+        &.right {
+          align-items: flex-end;
+          text-align: right;
+        }
       }
 
-      .hero-be-part-of-logo {
-        align-items: center;
+      h2 { color: var(--color-white); }
+      h6 { color: var(--color-white); font-weight: 600; }
+      p {
+        color: var(--color-muted);
+
+        &.white { color: var(--color-white); }
+      }
+
+      ul {
+        li {
+          color: var(--color-white);
+          list-style: none;
+        }
+      }
+
+      span {
+        color: var(--color-pink);
+        font-weight: 700;
+      }
+
+      .event-buttons {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 0.5rem;
 
         @media (min-width: 1200px) {
           flex-direction: column;
         }
-
-        h3 {
-          font-weight: 300;
-
-          span {
-            font-weight: 600;
-          }
-        }
-      }
-
-      .hero-be-part-of-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
 
         app-button {
           display: block;
@@ -183,164 +200,14 @@
       }
     }
 
-    .cards-carousel {
+    .event-carousel {
       min-width: 0;
 
-      .cards-carousel-track {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        overflow-x: auto;
-        padding: 0 0 1.5rem;
-        scroll: {
-          behavior: smooth;
-          snap-type: x mandatory;
-        }
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-
-        .card-be-part-of {
-          flex: 0 0 calc(100%);
-          scroll-snap-align: start;
-          scroll-snap-stop: always;
-        }
-      }
-
-      .cards-carousel-controls {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        justify-content: center;
-
-        .cards-carousel-button {
-          align-items: center;
-          background-color: var(--color-white);
-          border: 1px solid rgba(var(--color-muted-rgb), 0.45);
-          border-radius: 50%;
-          cursor: pointer;
-          display: inline-flex;
-          height: 2.75rem;
-          justify-content: center;
-          width: 2.75rem;
-
-          &:focus-visible {
-            outline: 3px solid var(--color-pink);
-            outline-offset: 3px;
-          }
-        }
-      }
-
       @media (min-width: 768px) {
-        grid-column: 2 / span 4;
-
-        .cards-carousel-track {
-          display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          overflow: visible;
-          padding: 0;
-        }
-
-        .cards-carousel-controls {
-          display: none;
-        }
+        display: contents;
       }
 
-      @media (min-width: 1200px) {
-        grid-column: 1 / span 12;
-        grid-row: 2;
-
-        .cards-carousel-track {
-          grid-template-columns: repeat(12, minmax(0, 1fr));
-        }
-      }
-    }
-
-    .card-be-part-of {
-      background-color: var(--color-white);
-      border: 1px solid rgba(var(--color-muted-rgb), 0.45);
-      border-radius: 1rem;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-
-      .card-be-part-of-header {
-        display: flex;
-        flex-direction: column;
-        gap: var(--layout-grid-gap);
-        padding: var(--layout-grid-gap-2x) var(--layout-grid-gap-2x) 0;
-
-        > i {
-          color: var(--color-pink);
-        }
-      }
-
-      .card-be-part-of-body {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        gap: var(--layout-grid-gap);
-        padding: var(--layout-grid-gap) var(--layout-grid-gap-2x) var(--layout-grid-gap-2x);
-
-        > p {
-          flex: 1;
-        }
-
-        app-button {
-          align-self: center;
-          display: block;
-          min-width: 0;
-          width: 75%;
-        }
-      }
-    }
-  }
-}
-// Be part of section
-
-// Creators section
-.creators {
-  background-color: var(--color-pink);
-
-  .grid {
-    gap: var(--layout-grid-gap-2x);
-    padding: 4rem 0;
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap);
-    }
-
-    @media (min-width: 1200px) {
-      align-items: start;
-      display: grid;
-      grid-template-columns: repeat(var(--layout-grid-columns), minmax(0, 1fr));
-    }
-
-    .hero-creators {
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-      padding: 0 2rem;
-      text-align: center;
-
-      @media (min-width: 768px) {
-        grid-column: 2 / span 4;
-      }
-
-      @media (min-width: 1200px) {
-        grid-column: 4 / span 6;
-      }
-
-      h2,
-      p {
-        color: var(--color-white);
-      }
-    }
-
-    .stories-carousel {
-      min-width: 0;
-
-      .stories-carousel-track {
+      .event-carousel-track {
         display: flex;
         gap: var(--layout-grid-gap);
         overflow-x: auto;
@@ -356,347 +223,45 @@
         }
 
         @media (min-width: 768px) {
-          display: grid;
-          grid-template-columns: repeat(6, minmax(0, 1fr));
-          overflow: visible;
-          padding-bottom: 0;
-        }
-
-        @media (min-width: 1200px) {
-          gap: var(--layout-grid-gap-2x);
-          grid-template-columns: repeat(12, minmax(0, 1fr));
+          display: contents;
         }
       }
 
-      .stories-carousel-controls {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        justify-content: center;
-
-        @media (min-width: 768px) {
-          display: none;
-        }
-
-        .stories-carousel-button {
-          align-items: center;
-          background-color: var(--color-white);
-          border: 0;
-          border-radius: 50%;
-          color: var(--color-pink);
-          cursor: pointer;
-          display: inline-flex;
-          height: 2.75rem;
-          justify-content: center;
-          width: 2.75rem;
-
-          &:focus-visible {
-            outline: 3px solid var(--color-white);
-            outline-offset: 3px;
+      .event-image {
+        flex: 0 0 100%;
+        min-width: 0;
+        scroll: {
+          snap: {
+            align: start;
+            stop: always;
           }
         }
-      }
-    }
-
-    .story {
-      background: var(--color-white);
-      border-radius: 1rem;
-      box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
-      flex: 0 0 100%;
-      scroll-snap: {
-        align: start;
-        stop: always;
-      }
-
-      @media (min-width: 768px) {
-        flex: initial;
-      }
-
-      iframe {
-        aspect-ratio: 9 / 16;
-        border-radius: 1rem;
-        border: 0;
-        display: block;
-        max-height: 480px;
         width: 100%;
-      }
-
-      .content-story {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: var(--layout-grid-gap-2x);
-
-        h3 {
-          font-weight: 600;
-        }
-        h5 {
-          color: var(--color-pink);
-        }
-      }
-    }
-  }
-}
-// Creators section
-
-// Journey section
-.journey {
-  background-color: var(--color-black);
-  padding: 4rem 0;
-
-  .grid {
-    gap: var(--layout-grid-gap-2x);
-
-    .hero-journey {
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-      padding: 0 2rem;
-      text-align: center;
-
-      @media (min-width: 768px) {
-        grid-column: 2 / span 4;
-      }
-
-      @media (min-width: 1200px) {
-        grid-column: 4 / span 6;
-      }
-
-      h2 {
-        color: var(--color-white);
-      }
-      p {
-        color: var(--color-muted);
-      }
-    }
-
-    .content-journey {
-      border-radius: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-
-      .content-journey-header {
-        align-items: baseline;
-        display: flex;
-        justify-content: space-between;
-        gap: var(--layout-grid-gap);
 
         @media (min-width: 768px) {
-          justify-content: center;
+          flex: initial;
         }
 
-        h5 {
-          color: var(--color-white);
-          font-weight: 600;
-        }
-        i {
-          color: var(--color-white);
-        }
-      }
-
-      .content-journey-footer {
-        .timeline {
-          display: grid;
-          gap: 1rem 0;
-          grid-template-columns: minmax(0, 1fr) 1.25rem minmax(0, 1fr);
-          padding: 1rem 0;
-          position: relative;
-        }
-
-        .timeline-line {
-          background-color: rgba(var(--color-white-rgb), 0.25);
-          bottom: 0;
-          left: 50%;
-          position: absolute;
-          top: 0;
-          transform: translateX(-50%);
-          width: 2px;
-        }
-
-        .timeline-item {
-          align-items: center;
-          display: grid;
-          grid-column: 1 / -1;
-          grid-template-columns: subgrid;
-          min-height: 7rem;
-          position: relative;
-        }
-
-        .timeline-content {
+        img {
           border-radius: 1rem;
-          min-width: 0;
-          position: relative;
-          z-index: 1;
-
-          h5 {
-            color: var(--color-pink);
-            font-weight: 600;
-          }
-
-          p {
-            color: var(--color-white);
-          }
-        }
-
-        .timeline-item:nth-child(2) .timeline-content,
-        .timeline-item:nth-child(4) .timeline-content,
-        .timeline-item:nth-child(6) .timeline-content {
-          grid-column: 1;
-          margin-right: 1rem;
-          text-align: right;
-        }
-
-        .timeline-item:nth-child(3) .timeline-content,
-        .timeline-item:nth-child(5) .timeline-content {
-          grid-column: 3;
-          margin-left: 1rem;
-        }
-
-        .timeline-dot {
-          background-color: var(--color-pink);
-          border: 3px solid var(--color-black);
-          border-radius: 50%;
-          height: 1rem;
-          justify-self: center;
-          position: relative;
-          width: 1rem;
-          z-index: 2;
-        }
-
-        .timeline-item .timeline-dot {
-          grid-column: 2;
-          grid-row: 1;
-        }
-
-        @media (min-width: 768px) {
-          .timeline {
-            column-gap: 1rem;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-            min-height: 20rem;
-            padding: 6rem 0;
-          }
-
-          .timeline-line {
-            height: 2px;
-            left: 0;
-            right: 0;
-            top: 35%;
-            transform: translateY(-50%);
-            width: auto;
-          }
-
-          .timeline-item {
-            display: flex;
-            flex-direction: column;
-            grid-column: auto;
-            height: 2rem;
-            min-height: 0;
-          }
-
-          .timeline-dot {
-            flex: 0 0 1rem;
-            left: 50%;
-            order: 2;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-          }
-
-          .timeline-content {
-            left: auto;
-            margin: 0;
-            position: absolute;
-            transform: none;
-            width: 100%;
-          }
-
-          .timeline-item:nth-child(2) .timeline-content,
-          .timeline-item:nth-child(4) .timeline-content,
-          .timeline-item:nth-child(6) .timeline-content {
-            bottom: calc(50% + 1rem);
-            margin: 0;
-            right: 0;
-            text-align: center;
-          }
-
-          .timeline-item:nth-child(3) .timeline-content,
-          .timeline-item:nth-child(5) .timeline-content {
-            margin: 0;
-            right: 0;
-            text-align: center;
-            top: calc(50% + 1rem);
-          }
-        }
-      }
-    }
-  }
-}
-// Journey section
-
-// Learning section
-.learning {
-  padding: 4rem 0;
-
-  .grid {
-    gap: var(--layout-grid-gap-2x);
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap);
-    }
-
-    .hero-learning {
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-      padding: 0 2rem;
-      text-align: center;
-
-      @media (min-width: 768px) {
-        grid-column: 2 / span 4;
-      }
-
-      @media (min-width: 1200px) {
-        grid-column: 9 / span 4;
-        grid-row: 1;
-        text-align: left;
-      }
-
-      h6 {
-        color: var(--color-muted);
-      }
-      p {
-        color: var(--color-dark-gray);
-      }
-    }
-
-    .learning-carousel {
-      min-width: 0;
-
-      .learning-carousel-track {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        overflow-x: auto;
-        padding-bottom: 1.5rem;
-        scroll: {
-          behavior: smooth;
-          snap-type: x mandatory;
-        }
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-          display: none;
+          display: block;
+          width: 100%;
         }
       }
 
-      .learning-carousel-controls {
+      .event-carousel-controls {
         display: flex;
         gap: var(--layout-grid-gap);
         justify-content: center;
 
-        .learning-carousel-button {
+        @media (min-width: 768px) {
+          display: none;
+        }
+
+        .event-carousel-button {
           align-items: center;
           background-color: var(--color-white);
-          border: 1px solid rgba(var(--color-muted-rgb), 0.45);
+          border: 0;
           border-radius: 50%;
           color: var(--color-pink);
           cursor: pointer;
@@ -711,333 +276,25 @@
           }
         }
       }
-
-      @media (min-width: 768px) {
-        display: contents;
-
-        .learning-carousel-track {
-          display: contents;
-        }
-
-        .learning-carousel-controls {
-          display: none;
-        }
-      }
-    }
-
-    .card-learning {
-      background-color: var(--color-white);
-      border-radius: 1rem;
-      box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
-      display: flex;
-      flex: 0 0 100%;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-
-      @media (min-width: 768px) {
-        flex: initial;
-      }
-
-      @media (min-width: 1200px) {
-        &:nth-child(1) {
-          grid-column: 1 / span 4;
-          grid-row: 1;
-        }
-        &:nth-child(2) {
-          grid-column: 5 / span 4;
-          grid-row: 1;
-        }
-      }
-
-      .card-learning-header {
-        img {
-          border-radius: 1rem 1rem 0 0;
-          width: 100%;
-        }
-      }
-
-      .card-learning-body {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: var(--layout-grid-gap);
-
-        h5 {
-          color: var(--color-pink);
-          font-weight: 600;
-        }
-
-        h6 {
-          font-weight: 600;
-        }
-
-        p {
-          color: var(--color-dark-gray);
-          flex: 1;
-        }
-      }
     }
   }
 }
-// Learning section
-
-// Events section
-.events {
-  background-color: var(--color-pink);
-
-  .grid {
-    gap: var(--layout-grid-gap-2x);
-    padding: 4rem 0;
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap);
-    }
-
-    .hero-events {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 0 2rem;
-      text-align: center;
-
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 4;
-      }
-
-      @media (min-width: 1200px) {
-        grid-column: 4 / span 6;
-      }
-
-      h1 {
-        color: var(--color-white);
-      }
-
-      h2 {
-        color: var(--color-white);
-        display: flex;
-        gap: 0.5rem;
-        justify-content: center;
-      }
-
-      h6 {
-        color: var(--color-white);
-        text-transform: uppercase;
-      }
-
-      p {
-        color: var(--color-white);
-      }
-    }
-
-    .main-event {
-      background-color: var(--color-white);
-      border-radius: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap-2x);
-      padding: 2rem;
-
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 4;
-      }
-
-      @media (min-width: 1200px) {
-        grid-column: 4 / span 6;
-      }
-
-      .main-event-body {
-        border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding-bottom: var(--layout-grid-gap-2x);
-
-        app-button {
-          align-self: flex-start;
-          display: inline-flex;
-          flex: 0 0 auto;
-          justify-content: center;
-          width: auto;
-        }
-
-        h4 {
-          font-weight: 600;
-        }
-        h6 {
-          color: var(--color-muted);
-        }
-        p {
-          color: var(--color-dark-gray);
-        }
-      }
-    }
-
-    .regular-events-header {
-      border-bottom: 1px solid rgba(var(--color-white-rgb), 0.45);
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-      padding-bottom: var(--layout-grid-gap);
-      text-align: center;
-
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 4;
-      }
-
-      @media (min-width: 1200px) {
-        grid-column: 4 / span 6;
-      }
-
-      h2 {
-        color: var(--color-white);
-      }
-    }
-
-    .events-carousel {
-      min-width: 0;
-
-      .events-carousel-track {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        overflow-x: auto;
-        padding-bottom: 1.5rem;
-        scroll: {
-          behavior: smooth;
-          snap-type: x mandatory;
-        }
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-      }
-
-      .events-carousel-controls {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        justify-content: center;
-
-        .events-carousel-button {
-          align-items: center;
-          background-color: var(--color-white);
-          border: 0;
-          border-radius: 50%;
-          color: var(--color-pink);
-          cursor: pointer;
-          display: inline-flex;
-          height: 2.75rem;
-          justify-content: center;
-          width: 2.75rem;
-
-          &:focus-visible {
-            outline: 3px solid var(--color-white);
-            outline-offset: 3px;
-          }
-        }
-      }
-
-      @media (min-width: 768px) {
-        display: contents;
-
-        .events-carousel-track {
-          display: contents;
-        }
-
-        .events-carousel-controls {
-          display: none;
-        }
-      }
-    }
-
-    .card-event {
-      background-color: var(--color-white);
-      border-radius: 1rem;
-      display: flex;
-      flex: 0 0 100%;
-      flex-direction: column;
-      gap: var(--layout-grid-gap-2x);
-      padding: 1rem;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-
-      @media (min-width: 768px) {
-        flex: initial;
-      }
-
-      .card-event-header {
-        position: relative;
-
-        img {
-          border-radius: 0.5rem;
-          position: relative;
-          width: 100%;
-        }
-
-        app-button {
-          left: 1rem;
-          position: absolute;
-          top: 1rem;
-        }
-      }
-
-      .card-event-body {
-        border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding-top: var(--layout-grid-gap);
-        padding-bottom: var(--layout-grid-gap-2x);
-
-        app-button {
-          align-self: flex-start;
-          display: inline-flex;
-          flex: 0 0 auto;
-          justify-content: center;
-          width: auto;
-        }
-
-        h4 {
-          font-weight: 600;
-        }
-        h6 {
-          color: var(--color-muted);
-        }
-        p {
-          color: var(--color-dark-gray);
-        }
-      }
-    }
-
-    .regular-events-footer {
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 4;
-      }
-
-      @media (min-width: 1200px) {
-        grid-column: 5 / span 4;
-      }
-    }
-  }
-}
-// Events section
+// Brand growth section
 
 // Sales section
 .sales {
   .grid {
-    gap: var(--layout-grid-gap-2x);
+    gap: var(--layout-grid-gap);
     padding: 4rem 0;
 
     @media (min-width: 768px) {
-      gap: var(--layout-grid-gap);
+      gap: var(--layout-grid-gap-2x);
     }
 
     .hero-sale {
       display: flex;
       flex-direction: column;
-      gap: var(--layout-grid-gap);
+      gap: 0.5rem;
       padding: 0 2rem;
       text-align: center;
 
@@ -1074,10 +331,12 @@
       gap: var(--layout-grid-gap);
       padding: 2rem;
 
+      @media (min-width: 768px) and (max-width: 1199px) {
+        grid-column: 3 / span 2;
+      }
+
       @media (min-width: 1200px) {
-        &:nth-child(2) {
-          grid-column: 2 / span 5;
-        }
+        grid-column: 5 / span 4;
       }
 
       .card-sale-header {
@@ -1128,113 +387,19 @@
 }
 // Sales section
 
-// Faq section
-.faq {
-  background-color: var(--color-white);
-  padding: 4rem 2rem;
-
-  .faq-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--layout-grid-gap-2x);
-
-    @media (min-width: 768px) and (max-width: 1199px) {
-      grid-column: 2 / span 4;
-    }
-
-    @media (min-width: 1200px) {
-      grid-column: 3 / span 8;
-    }
-
-    .faq-header {
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-      text-align: center;
-    }
-
-    .faq-body {
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-
-      .question {
-        border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.5);
-        display: flex;
-        flex-direction: column;
-        padding: 0 0 var(--layout-grid-gap) 0;
-
-        &:last-child {
-          border-bottom: none;
-        }
-
-        .question-header {
-          align-items: center;
-          cursor: pointer;
-          display: flex;
-          gap: var(--layout-grid-gap);
-          justify-content: space-between;
-
-          .title-question-header {
-            align-items: center;
-            display: flex;
-            gap: 0.5rem;
-
-            h5 {
-              font-weight: 600;
-            }
-          }
-
-          .toggle-icon {
-            transition: transform 0.2s ease;
-          }
-        }
-
-        .question-body {
-          max-height: 0;
-          overflow: hidden;
-          padding-top: 0;
-          transition:
-            max-height 0.28s ease,
-            padding-top 0.2s ease;
-
-          p {
-            color: var(--color-dark-gray);
-            margin: 0;
-          }
-        }
-
-        &.open {
-          .question-body {
-            max-height: 400px;
-            padding-top: 0.5rem;
-          }
-
-          .question-header {
-            .toggle-icon {
-              transform: rotate(45deg);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-// Faq section
-
-// Brand growth section
-.brand-growth {
+// More than events section
+.more-than-events {
   background-color: var(--color-dark-gray);
   padding: 4rem 2rem;
 
   .grid {
     gap: var(--layout-grid-gap-2x);
 
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 1199px) {
       gap: var(--layout-grid-gap);
     }
 
-    .brand-growth-content {
+    .more-than-events-content {
       display: flex;
       flex-direction: column;
       gap: var(--layout-grid-gap);
@@ -1245,7 +410,7 @@
       }
 
       @media (min-width: 1200px) {
-        text-align: left;
+        grid-column: 4 / span 6;
       }
 
       h2 {
@@ -1259,116 +424,7 @@
         color: var(--color-pink);
         font-weight: 700;
       }
-
-      .brand-growth-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-
-        @media (min-width: 1200px) {
-          flex-direction: column;
-        }
-
-        app-button {
-          display: block;
-        }
-
-        > * {
-          flex: 1 1 calc(50% - 0.25rem);
-          min-width: 0;
-        }
-      }
-    }
-
-    .brand-growth-carousel {
-      min-width: 0;
-
-      @media (min-width: 768px) {
-        display: contents;
-      }
-
-      .brand-growth-carousel-track {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        overflow-x: auto;
-        padding-bottom: 1.5rem;
-        scroll: {
-          behavior: smooth;
-          snap-type: x mandatory;
-        }
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-
-        @media (min-width: 768px) {
-          display: contents;
-        }
-      }
-
-      .brand-growth-image {
-        flex: 0 0 100%;
-        min-width: 0;
-        scroll: {
-          snap: {
-            align: start;
-            stop: always;
-          }
-        }
-        width: 100%;
-
-        @media (min-width: 768px) {
-          flex: initial;
-        }
-
-        img {
-          border-radius: 1rem;
-          display: block;
-          width: 100%;
-        }
-      }
-
-      .brand-growth-carousel-controls {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        justify-content: center;
-
-        @media (min-width: 768px) {
-          display: none;
-        }
-
-        .brand-growth-carousel-button {
-          align-items: center;
-          background-color: var(--color-white);
-          border: 0;
-          border-radius: 50%;
-          color: var(--color-pink);
-          cursor: pointer;
-          display: inline-flex;
-          height: 2.75rem;
-          justify-content: center;
-          width: 2.75rem;
-
-          &:focus-visible {
-            outline: 3px solid var(--color-pink);
-            outline-offset: 3px;
-          }
-        }
-      }
     }
   }
 }
-
-// Brands section
-.brands-section {
-  overflow: hidden;
-}
-
-.brands-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(180px, 1fr));
-  gap: 1rem;
-  width: 100%;
-}
-// Brands section
+// More than events section
