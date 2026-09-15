@@ -2,8 +2,8 @@
 .main {
   background: {
     image: image-set(
-      url('/images/heros/creators-mobile.jpg') 1x,
-      url('/images/heros/creators-mobile-2x.jpg') 2x
+      url('/images/heros/events-mobile.webp') 1x,
+      url('/images/heros/events-mobile-2x.webp') 2x
     );
     position: center;
     repeat: no-repeat;
@@ -108,16 +108,16 @@
 
   @media (min-width: 768px) {
     background-image: image-set(
-      url('/images/heros/creators-tablet.jpg') 1x,
-      url('/images/heros/creators-tablet-2x.jpg') 2x
+      url('/images/heros/events-tablet.jpg') 1x,
+      url('/images/heros/events-tablet-2x.jpg') 2x
     );
     height: 445px;
   }
 
   @media (min-width: 1200px) {
     background-image: image-set(
-      url('/images/heros/creators-desktop.jpg') 1x,
-      url('/images/heros/creators-desktop-2x.jpg') 2x
+      url('/images/heros/events-desktop.jpg') 1x,
+      url('/images/heros/events-desktop-2x.jpg') 2x
     );
     height: 560px;
   }
