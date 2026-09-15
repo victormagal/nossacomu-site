@@ -1,59 +1,125 @@
 // Main section
 .main {
-  background-color: var(--color-cream);
-  padding: 2rem 0 3rem;
+  background: {
+    image: image-set(
+      url('/images/heros/brands-mobile.webp') 1x,
+      url('/images/heros/brands-mobile-2x.webp') 2x
+    );
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+  margin-bottom: 3rem;
+  height: 575px;
+  position: relative;
 
-  .grid {
-    gap: var(--layout-grid-gap);
+  &::before {
+    background-color: rgba(var(--color-black-rgb), 0.75);
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+  }
 
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
+  .container {
+    height: 100%;
+    position: relative;
+    z-index: 1;
 
-    .hero-main {
-      display: flex;
-      flex-direction: column;
+    .grid {
+      height: 100%;
       gap: var(--layout-grid-gap);
-      text-align: center;
 
       @media (min-width: 768px) {
-        justify-content: center;
-        text-align: left;
+        gap: var(--layout-grid-gap-2x);
       }
 
-      h4 {
-        span {
-          font-weight: 700;
-        }
-      }
-
-      .hero-main-pills {
-        align-items: center;
+      .hero-main {
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
+        flex-direction: column;
+        gap: var(--layout-grid-gap);
+        justify-content: center;
+        text-align: center;
 
-        app-button {
-          display: block;
+        h2,
+        p {
+          color: var(--color-white);
+          font-weight: 700;
+          text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
         }
 
-        > * {
-          flex: 1 1 calc(50% - 0.25rem);
-          min-width: 0;
+        .hero-main-pills {
+          align-items: center;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+
+          app-button {
+            display: block;
+          }
+
+          > * {
+            flex: 1 1 calc(50% - 0.25rem);
+            min-width: 0;
+          }
+        }
+
+        @media (min-width: 768px) {
+          gap: 0.5rem;
+          text-align: left;
+        }
+      }
+
+      .content-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap);
+
+        img {
+          border-radius: 1rem;
+          box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
+        }
+
+        .content-main-pill {
+          align-items: center;
+          background-color: var(--color-white);
+          border-radius: 1rem;
+          box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.1);
+          display: flex;
+          gap: var(--layout-grid-gap);
+          justify-content: center;
+          padding: var(--layout-grid-gap);
+          text-align: center;
+
+          p {
+            color: var(--color-dark-gray);
+
+            span {
+              font: {
+                size: 1.5rem;
+                weight: 600;
+              }
+            }
+          }
         }
       }
     }
+  }
 
-    .content-main {
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
+  @media (min-width: 768px) {
+    background-image: image-set(
+      url('/images/heros/brands-tablet.webp') 1x,
+      url('/images/heros/brands-tablet-2x.webp') 2x
+    );
+    height: 445px;
+  }
 
-      img {
-        border-radius: 1rem;
-        box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
-      }
-    }
+  @media (min-width: 1200px) {
+    background-image: image-set(
+      url('/images/heros/brands-desktop.webp') 1x,
+      url('/images/heros/brands-desktop-2x.webp') 2x
+    );
+    height: 560px;
   }
 }
 // Main section
