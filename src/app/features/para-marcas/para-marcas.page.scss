@@ -1,17 +1,14 @@
-// General styles
-p {
-  color: var(--color-muted);
-}
-// General styles
-
 // Main section
 .main {
   background-color: var(--color-cream);
-  padding: 1rem 0 2rem;
+  padding: 2rem 0 3rem;
 
   .grid {
-    gap: var(--layout-grid-gap-2x);
-    padding: 0 2rem;
+    gap: var(--layout-grid-gap);
+
+    @media (min-width: 768px) {
+      gap: var(--layout-grid-gap-2x);
+    }
 
     .hero-main {
       display: flex;
@@ -28,12 +25,6 @@ p {
         span {
           font-weight: 700;
         }
-      }
-
-      h6 {
-        color: var(--color-pink);
-        font-weight: 400;
-        text-transform: uppercase;
       }
 
       .hero-main-pills {
@@ -69,13 +60,13 @@ p {
 
 // Learning section
 .learning {
-  padding: 2rem 0 4rem;
+  padding: 3rem 0 4rem;
 
   .grid {
-    gap: var(--layout-grid-gap-2x);
+    gap: var(--layout-grid-gap);
 
-    @media (min-width: 768px) and (max-width: 1199px) {
-      gap: var(--layout-grid-gap);
+    @media (min-width: 768px) {
+      gap: var(--layout-grid-gap-2x);
     }
 
     .hero-learning {
@@ -303,11 +294,11 @@ p {
   background-color: var(--color-pink);
 
   .grid {
-    gap: var(--layout-grid-gap-2x);
+    gap: var(--layout-grid-gap);
     padding: 4rem 0;
 
-    @media (min-width: 768px) and (max-width: 1199px) {
-      gap: var(--layout-grid-gap);
+    @media (min-width: 768px) {
+      gap: var(--layout-grid-gap-2x);
     }
 
     @media (min-width: 1200px) {
@@ -429,10 +420,10 @@ p {
   padding: 4rem 0;
 
   .grid {
-    gap: var(--layout-grid-gap-2x);
+    gap: var(--layout-grid-gap);
 
-    @media (min-width: 768px) and (max-width: 1199px) {
-      gap: var(--layout-grid-gap);
+    @media (min-width: 768px) {
+      gap: var(--layout-grid-gap-2x);
     }
 
     .hero-partner {
@@ -776,13 +767,13 @@ p {
 // Brand growth section
 .brand-growth {
   background-color: var(--color-dark-gray);
-  padding: 4rem 2rem;
+  padding: 4rem 0;
 
   .grid {
-    gap: var(--layout-grid-gap-2x);
+    gap: var(--layout-grid-gap);
 
-    @media (min-width: 768px) and (max-width: 1199px) {
-      gap: var(--layout-grid-gap);
+    @media (min-width: 768px) {
+      gap: var(--layout-grid-gap-2x);
     }
 
     .brand-growth-content {
@@ -792,10 +783,12 @@ p {
       text-align: center;
 
       @media (min-width: 768px) and (max-width: 1199px) {
+        gap: var(--layout-grid-gap-2x);
         grid-column: 2 / span 4;
       }
 
       @media (min-width: 1200px) {
+        gap: var(--layout-grid-gap-2x);
         grid-column: 4 / span 6;
       }
 
@@ -832,28 +825,20 @@ p {
     }
   }
 }
-
-// Brands section
-.brands-section {
-  overflow: hidden;
-}
-
-.brands-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(180px, 1fr));
-  gap: 1rem;
-  width: 100%;
-}
-// Brands section
+// Brand growth section
 
 // As creator section
 .as-creator {
   background-color: var(--color-cream);
-  padding: 4rem 0 0;
+  padding: 4rem 0;
 
   .grid {
-    gap: var(--layout-grid-gap-2x);
+    gap: var(--layout-grid-gap);
     padding: 0 2rem;
+
+    @media (min-width: 768px) {
+      gap: var(--layout-grid-gap-2x);
+    }
 
     .hero-as-creator {
       display: flex;
