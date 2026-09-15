@@ -9,7 +9,7 @@
     repeat: no-repeat;
     size: cover;
   }
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   height: 575px;
   padding: 1rem 0 2rem;
   position: relative;
@@ -29,8 +29,11 @@
 
     .grid {
       height: 100%;
-      gap: var(--layout-grid-gap-2x);
-      padding: 0 2rem;
+      gap: var(--layout-grid-gap);
+
+      @media (min-width: 768px) {
+        gap: var(--layout-grid-gap-2x);
+      }
 
       .hero-main {
         display: flex;
@@ -124,7 +127,7 @@
 
 // Be part of section
 .be-part-of {
-  padding: 2rem 0 4rem;
+  padding: 3rem 0 4rem;
 
   .grid {
     gap: var(--layout-grid-gap);
@@ -302,13 +305,13 @@
 // Creators section
 .creators {
   background-color: var(--color-pink);
+  padding: 4rem 0;
 
   .grid {
-    gap: var(--layout-grid-gap-2x);
-    padding: 4rem 0;
+    gap: var(--layout-grid-gap);
 
     @media (min-width: 768px) {
-      gap: var(--layout-grid-gap);
+      gap: var(--layout-grid-gap-2x);
     }
 
     @media (min-width: 1200px) {
@@ -465,7 +468,11 @@
   padding: 4rem 0;
 
   .grid {
-    gap: var(--layout-grid-gap-2x);
+    gap: var(--layout-grid-gap);
+
+    @media (min-width: 768px) {
+      gap: var(--layout-grid-gap-2x);
+    }
 
     .hero-journey {
       display: flex;
@@ -659,10 +666,10 @@
   padding: 4rem 0;
 
   .grid {
-    gap: var(--layout-grid-gap-2x);
+    gap: var(--layout-grid-gap);
 
     @media (min-width: 768px) {
-      gap: var(--layout-grid-gap);
+      gap: var(--layout-grid-gap-2x);
     }
 
     .hero-learning {
@@ -808,10 +815,10 @@
 // Events section
 .events {
   background-color: var(--color-pink);
+  padding: 4rem 0;
 
   .grid {
     gap: var(--layout-grid-gap);
-    padding: 4rem 0;
 
     @media (min-width: 768px) {
       gap: var(--layout-grid-gap-2x);
@@ -1099,12 +1106,13 @@
 
 // Sales section
 .sales {
+  padding: 4rem 0;
+
   .grid {
-    gap: var(--layout-grid-gap-2x);
-    padding: 4rem 0;
+    gap: var(--layout-grid-gap);
 
     @media (min-width: 768px) {
-      gap: var(--layout-grid-gap);
+      gap: var(--layout-grid-gap-2x);
     }
 
     .hero-sale {
@@ -1209,13 +1217,15 @@
   .faq-content {
     display: flex;
     flex-direction: column;
-    gap: var(--layout-grid-gap-2x);
+    gap: var(--layout-grid-gap);
 
     @media (min-width: 768px) and (max-width: 1199px) {
+      gap: var(--layout-grid-gap-2x);
       grid-column: 2 / span 4;
     }
 
     @media (min-width: 1200px) {
+      gap: var(--layout-grid-gap-2x);
       grid-column: 3 / span 8;
     }
 
@@ -1295,153 +1305,44 @@
 }
 // Faq section
 
-// Brand growth section
-.brand-growth {
+// As brand section
+.as-brand {
   background-color: var(--color-dark-gray);
-  padding: 4rem 2rem;
+  padding: 4rem 0;
 
   .grid {
-    gap: var(--layout-grid-gap-2x);
+    gap: var(--layout-grid-gap);
+    padding: 0 2rem;
 
     @media (min-width: 768px) {
-      gap: var(--layout-grid-gap);
+      gap: var(--layout-grid-gap-2x);
     }
 
-    .brand-growth-content {
+    .hero-as-brand {
       display: flex;
       flex-direction: column;
       gap: var(--layout-grid-gap);
       text-align: center;
 
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 4;
-      }
-
-      @media (min-width: 1200px) {
+      @media (min-width: 768px) {
+        justify-content: center;
         text-align: left;
       }
 
-      h2 {
-        color: #f8faff;
-      }
-      p {
-        color: #a79f91;
-      }
-
-      span {
-        color: var(--color-pink);
-        font-weight: 700;
-      }
-
-      .brand-growth-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-
-        @media (min-width: 1200px) {
-          flex-direction: column;
-        }
-
-        app-button {
-          display: block;
-        }
-
-        > * {
-          flex: 1 1 calc(50% - 0.25rem);
-          min-width: 0;
-        }
-      }
+      h2 { color: var(--color-white); font-weight: 600; }
+      p { color: var(--color-white); }
     }
 
-    .brand-growth-carousel {
-      min-width: 0;
+    .content-as-brand {
+      display: flex;
+      flex-direction: column;
+      gap: var(--layout-grid-gap);
 
-      @media (min-width: 768px) {
-        display: contents;
-      }
-
-      .brand-growth-carousel-track {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        overflow-x: auto;
-        padding-bottom: 1.5rem;
-        scroll: {
-          behavior: smooth;
-          snap-type: x mandatory;
-        }
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-
-        @media (min-width: 768px) {
-          display: contents;
-        }
-      }
-
-      .brand-growth-image {
-        flex: 0 0 100%;
-        min-width: 0;
-        scroll: {
-          snap: {
-            align: start;
-            stop: always;
-          }
-        }
-        width: 100%;
-
-        @media (min-width: 768px) {
-          flex: initial;
-        }
-
-        img {
-          border-radius: 1rem;
-          display: block;
-          width: 100%;
-        }
-      }
-
-      .brand-growth-carousel-controls {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        justify-content: center;
-
-        @media (min-width: 768px) {
-          display: none;
-        }
-
-        .brand-growth-carousel-button {
-          align-items: center;
-          background-color: var(--color-white);
-          border: 0;
-          border-radius: 50%;
-          color: var(--color-pink);
-          cursor: pointer;
-          display: inline-flex;
-          height: 2.75rem;
-          justify-content: center;
-          width: 2.75rem;
-
-          &:focus-visible {
-            outline: 3px solid var(--color-pink);
-            outline-offset: 3px;
-          }
-        }
+      img {
+        border-radius: 1rem;
+        box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
       }
     }
   }
 }
-
-// Brands section
-.brands-section {
-  overflow: hidden;
-}
-
-.brands-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(180px, 1fr));
-  gap: 1rem;
-  width: 100%;
-}
-// Brands section
+// As creator section
