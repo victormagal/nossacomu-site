@@ -18,6 +18,7 @@ export class ForBrandsPage {
     viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
   private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
   private readonly partnerCarousel = viewChild.required<ElementRef<HTMLElement>>('partnerCarousel');
+  private readonly partnersSection = viewChild.required<ElementRef<HTMLElement>>('partnersSection');
 
   openItems = new Set<number>();
 
@@ -43,6 +44,11 @@ export class ForBrandsPage {
 
   scrollBrandGrowth(direction: -1 | 1) {
     this.scrollCarousel(this.brandGrowthCarousel().nativeElement, '.brand-growth-image', direction);
+  }
+
+  scrollToPartners(event: Event) {
+    event.preventDefault();
+    this.partnersSection().nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   private scrollCarousel(carousel: HTMLElement, itemSelector: string, direction: -1 | 1) {

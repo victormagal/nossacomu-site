@@ -15,9 +15,11 @@ h5 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  justify-content: flex-end;
 }
 
 .second-column {
+  align-items: flex-end;
   display: flex;
   gap: var(--layout-grid-gap);
 
@@ -31,9 +33,9 @@ h5 {
   display: flex;
   flex-direction: column;
   gap: var(--layout-grid-gap);
+  justify-content: flex-end;
 
   p {
-    border-top: 1px solid rgba(var(--color-muted-rgb), 0.5);
     color: var(--color-muted);
     font: {
       size: 0.75rem;

@@ -1,14 +1,19 @@
 <section class="main section">
   <div class="container">
     <div class="grid">
-      <div class="hero-main span-4 md-span-3 lg-span-6">
+      <div class="hero-main span-4 md-span-4 lg-span-8">
         <h2>Construa seu ecossistema de creators dentro da Comu</h2>
         <p>
           Sua marca entra em uma comunidade com creators de diferentes perfis e níveis de
           performance, criando novas possibilidades para testar produtos, gerar conteúdo e encontrar
           quem realmente vende.
         </p>
-        <app-button link="#this" text="Conhecer nossos cases" type="pink"> </app-button>
+        <app-button
+          (click)="scrollToPartners($event)"
+          text="Conhecer nossos cases"
+          type="pink"
+        >
+        </app-button>
       </div>
     </div>
   </div>
@@ -108,7 +113,6 @@
       <div class="hero-journey span-4 md-span-4 lg-span-6">
         <h2>+1.500 criadores postando todos os dias para marcas</h2>
         <p>Os números refletem o nosso impacto.</p>
-        <app-button link="#this" text="Falar com o nosso time" type="pink"> </app-button>
       </div>
       <div class="box-number span-4 md-span-2 lg-span-3">
         <h3>R$ 250 milhões</h3>
@@ -236,7 +240,7 @@
     </div>
   </div>
 </section>
-<section class="partners section">
+<section #partnersSection class="partners section" id="partners">
   <div class="container">
     <div class="grid">
       <div class="hero-partner span-4 md-span-4 lg-span-6">
@@ -386,16 +390,13 @@
 <section class="as-creator section">
   <div class="container">
     <div class="grid">
-      <div class="hero-as-creator span-4 md-span-3 lg-span-6">
+      <div class="hero-as-creator span-4 md-span-4 lg-span-6">
         <h2>Chegou aqui como creator?</h2>
         <p>
           Conheça nossa comunidade para creators e descubra como transformar o seu conteúdo em
           vendas.
         </p>
         <app-button link="/solucoes-para-criadores" text="Saber mais" type="pink"> </app-button>
-      </div>
-      <div class="content-as-creator span-4 md-span-3 lg-span-6">
-        <img src="/images/as-creators.jpg" alt="Para creators" />
       </div>
     </div>
   </div>

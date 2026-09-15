@@ -26,11 +26,7 @@
         text-align: left;
       }
 
-      h6 {
-        color: var(--color-pink);
-        font-weight: 400;
-        text-transform: uppercase;
-      }
+      h2 { font-weight: 600; }
 
       .hero-main-pills {
         align-items: center;
@@ -156,6 +152,21 @@
         }
       }
     }
+  }
+}
+// Be part of section
+
+// Be part of 2 section
+.be-part-of-2 {
+  background-color: var(--color-cream);
+  padding: 4rem 0;
+
+  .grid {
+    gap: var(--layout-grid-gap);
+
+    @media (min-width: 768px) {
+      gap: var(--layout-grid-gap-2x);
+    }
 
     .cards-carousel {
       min-width: 0;
@@ -268,7 +279,7 @@
     }
   }
 }
-// Be part of section
+// Be part of 2 section
 
 // Journey section
 .journey {
@@ -729,20 +740,12 @@
       gap: var(--layout-grid-gap);
       text-align: center;
 
-      @media (min-width: 768px) {
-        justify-content: center;
-        text-align: left;
+      @media (min-width: 768px) and (max-width: 1199px) {
+        grid-column: 2 / span 4;
       }
-    }
 
-    .content-as-creator {
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-
-      img {
-        border-radius: 1rem;
-        box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
+      @media (min-width: 1200px) {
+        grid-column: 4 / span 6;
       }
     }
   }

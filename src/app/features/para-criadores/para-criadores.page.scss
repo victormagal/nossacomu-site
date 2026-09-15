@@ -64,9 +64,12 @@
           }
         }
 
-        @media (min-width: 768px) {
-          gap: 0.5rem;
-          text-align: left;
+        @media (min-width: 768px) and (max-width: 1199px) {
+          grid-column: 2 / span 4;
+        }
+
+        @media (min-width: 1200px) {
+          grid-column: 3 / span 8;
         }
       }
 

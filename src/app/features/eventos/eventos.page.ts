@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
-import { BrandsCloudComponent } from '../../shared/components/brands-cloud/brands-cloud.component';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-para-criadores-page',
   styleUrl: './eventos.page.scss',
   templateUrl: './eventos.page.html',
-  imports: [BrandsCloudComponent],
+  imports: [],
 })
 export class EventsPage {
   private readonly eventCarousel = viewChild.required<ElementRef<HTMLElement>>('eventCarousel');
