@@ -665,7 +665,7 @@
 
 // Testimonials section
 .testimonials {
-  padding: 4rem 0 2rem;
+  padding: 4rem 0;
 
   .grid {
     gap: var(--layout-grid-gap);
@@ -820,7 +820,8 @@
 
 // Learning section
 .learning {
-  padding: 2rem 0 4rem;
+  background: var(--color-dark-gray);
+  padding: 4rem 0;
 
   .grid {
     gap: var(--layout-grid-gap);
@@ -847,12 +848,8 @@
         text-align: left;
       }
 
-      h6 {
-        color: var(--color-muted);
-      }
-      p {
-        color: var(--color-dark-gray);
-      }
+      h2 { color: var(--color-white); font-weight: 700; }
+      p { color: var(--color-white); }
     }
 
     .learning-carousel {
