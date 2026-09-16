@@ -10,10 +10,8 @@ import { ButtonComponent } from '../../shared/components/button/button.component
   imports: [BrandsCloudComponent, ButtonComponent],
 })
 export class ForCreatorsPage {
-  private readonly brandGrowthCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
   private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
-  private readonly eventsCarousel = viewChild.required<ElementRef<HTMLElement>>('eventsCarousel');
+  private readonly testimonialsCarousel = viewChild.required<ElementRef<HTMLElement>>('testimonialsCarousel');
   private readonly learningCarousel =
     viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
   private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
@@ -24,12 +22,8 @@ export class ForCreatorsPage {
     this.scrollCarousel(this.cardsCarousel().nativeElement, '.card-be-part-of', direction);
   }
 
-  scrollBrandGrowth(direction: -1 | 1) {
-    this.scrollCarousel(this.brandGrowthCarousel().nativeElement, '.brand-growth-image', direction);
-  }
-
-  scrollEvents(direction: -1 | 1) {
-    this.scrollCarousel(this.eventsCarousel().nativeElement, '.card-event', direction);
+  scrollTestimonials(direction: -1 | 1) {
+    this.scrollCarousel(this.testimonialsCarousel().nativeElement, '.card-testimonials', direction);
   }
 
   scrollLearning(direction: -1 | 1) {

@@ -270,7 +270,7 @@
             <div class="timeline-item" role="listitem">
               <div class="timeline-content">
                 <h5>Comu Elite</h5>
-                <p>Nosso nível mais exclusivo, reservado para creators de alta performance.</p>
+                <p>Apenas creators selecionados.</p>
               </div>
               <div aria-hidden="true" class="timeline-dot"></div>
             </div>
@@ -280,11 +280,113 @@
     </div>
   </div>
 </section>
+<section class="testimonials section">
+  <div class="container">
+    <div class="grid">
+      <div class="hero-testimonials span-4 md-span-4 lg-span-6">
+        <h2>O que nossos creators vivem na Comu</h2>
+      </div>
+      <div class="testimonials-carousel span-4 md-span-6 lg-span-12">
+        <div
+          #testimonialsCarousel
+          aria-label="Conteúdos de aprendizado"
+          class="testimonials-carousel-track"
+          id="testimonials-carousel"
+          role="region"
+          tabindex="0"
+        >
+          <div class="card-testimonials span-4 md-span-2 lg-span-4">
+            <div class="text">
+              <p>
+                “Amei sua análise e vou aplicar cada dica que me passou, abriu muito a minha mente e
+                me deu muita clareza do próximo passo.
+              </p>
+              <p>
+                E sobre o GMV, esse foi o primeiro mês que atingi esse valor, até então meu GMV médio
+                era de 80 a 90k e agora quero conseguir manter essa média atual de 150k com
+                constância.
+              </p>
+              <p>Muito obrigada pela atenção e pelo carinho, seu trabalho ficou impecável ❤️</p>
+              <p>Não tenho dúvidas que teremos ótimos resultados daqui em diante 🙏🏻”</p>
+            </div>
+            <h6>Creator da Comu+</h6>
+          </div>
+          <div class="card-testimonials span-4 md-span-2 lg-span-4">
+            <div class="text">
+              <p>“Tirei vários insights, feliz por ter entrado na comu+”</p>
+            </div>
+            <h6>Mary Jayne, creator da Comu+</h6>
+          </div>
+          <div class="card-testimonials span-4 md-span-2 lg-span-4">
+            <div class="text">
+              <p>
+                “Amores quero compartilhar com vcs que voltei para o Nível 5. A meta (ousada) agora é
+                chegar no nível 6!!!!
+              </p>
+              <p>Gostaria de agradecer todo o suporte e ajuda maravilhosa de vcs !!! ❤️❤️❤️❤️❤️”</p>
+            </div>
+            <h6>Maria Fernanda, creator do Star Club</h6>
+          </div>
+          <div class="card-testimonials span-4 md-span-2 lg-span-4">
+            <div class="text">
+              <p>
+                “É o que eu falo sempre quando indico a Comu pra alguém. Falo exatamente isso, eu
+                nunca comprei um curso relevante por menos de 197 reais e com certeza isso aqui é ouro
+                pra gente que está começando.”
+              </p>
+            </div>
+            <h6>Jully Islene, creator da Comu Base</h6>
+          </div>
+          <div class="card-testimonials span-4 md-span-2 lg-span-4">
+            <div class="text">
+              <p>
+                “Minha melhor escolha no TikTok Shop. Tô investindo nos produtos parceiros, produzindo
+                conteúdo com base no estudo e conhecimento da marca e ta fazendo diferencial. Essa
+                semana viralizei um vídeo com o shampoo da Noviole e sai fo Nível 1 para o nível 2 e
+                to chegando no nível 3 praticamente só com esse produtoooo 🙏✨”
+              </p>
+            </div>
+            <h6>Creator da Comu Base</h6>
+          </div>
+          <div class="card-testimonials span-4 md-span-2 lg-span-4">
+            <div class="text">
+              <p>
+                “Boa tarde tudo bem? Ju, amei a análise, me deu várias ideias e agora vou coloca em
+                prática para melhorar meus vídeos, muito obrigada”
+              </p>
+            </div>
+            <h6>Creator da Comu Base</h6>
+          </div>
+        </div>
+        <div class="testimonials-carousel-controls">
+          <button
+            aria-controls="testimonials-carousel"
+            aria-label="Mostrar conteúdo anterior"
+            class="testimonials-carousel-button"
+            type="button"
+            (click)="scrollTestimonials(-1)"
+          >
+            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            aria-controls="testimonials-carousel"
+            aria-label="Mostrar próximo conteúdo"
+            class="testimonials-carousel-button"
+            type="button"
+            (click)="scrollTestimonials(1)"
+          >
+            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="learning section">
   <div class="container">
     <div class="grid">
       <div class="hero-learning span-4 md-span-4 lg-span-4">
-        <h2>Aprenda o que faz sentido para o seu momento.</h2>
+        <h2>Aprenda o que faz sentido para o seu momento</h2>
         <p>
           Nem todo creator está na mesma fase. Por isso, desenvolvemos produtos que acompanham sua
           evolução, da primeira venda à construção de uma marca pessoal.
@@ -301,6 +403,7 @@
         >
           <div class="card-learning span-4 md-span-3 lg-span-4">
             <div class="card-learning-body">
+              <img src="/images/shop-creator.webp" alt="Shop Creator" />
               <h6>Shop Creator</h6>
               <h5>Comece a vender no TikTok Shop.</h5>
               <p>
@@ -318,6 +421,7 @@
           </div>
           <div class="card-learning span-4 md-span-3 lg-span-4">
             <div class="card-learning-body">
+              <img src="/images/live-shop-pro.webp" alt="Live Shop Pro" />
               <h6>Live Shop Pro</h6>
               <h5>Transforme suas lives em uma experiência.</h5>
               <p>
@@ -361,7 +465,7 @@
   <div class="container">
     <div class="grid">
       <div class="hero-events span-4 md-span-3 lg-span-6">
-        <h2>Experiências que aproximam creators do mercado.</h2>
+        <h2>Experiências que aproximam creators do mercado</h2>
         <p>
           Conheça os eventos e saiba os requisitos para participar de experiências com networking,
           aprendizado e mais oportunidades.
@@ -382,7 +486,7 @@
         </div>
       </div>
       <div class="events-cta span-4 md-span-4 lg-span-6">
-        <app-button link="/eventos" text="Saber mais" type="pink-border"> </app-button>
+        <app-button link="/eventos" text="Saber mais" type="pink-border"></app-button>
       </div>
     </div>
   </div>
@@ -405,15 +509,15 @@
           <ul>
             <li>
               <i class="fa-solid fa-video"></i>
-              Aulas ao vivo abertas
+              Aulas ao vivo limitadas
             </li>
             <li>
               <i class="fa-solid fa-users"></i>
-              Acesso gratuito à comunidade
+              Acesso à comunidade
             </li>
             <li>
               <i class="fa-solid fa-headset"></i>
-              Suporte com nossos especialistas
+              Suporte
             </li>
             <li>
               <i class="fa-solid fa-star"></i>
@@ -421,7 +525,7 @@
             </li>
             <li>
               <i class="fa-solid fa-c"></i>
-              Primeiras oportunidades
+              Primeiras oportunidades da carreira
             </li>
           </ul>
         </div>
@@ -633,7 +737,7 @@
   <div class="container">
     <div class="grid">
       <div class="hero-as-brand span-4 md-span-3 lg-span-6">
-        <h2>Sua marca também pode crescer com creators.</h2>
+        <h2>Sua marca também pode crescer com creators</h2>
         <p>
           A Comu conecta marcas aos creators certos para desenvolver campanhas, gerar conteúdo e
           resultados.

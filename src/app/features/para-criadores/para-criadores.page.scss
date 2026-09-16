@@ -663,9 +663,164 @@
 }
 // Journey section
 
+// Testimonials section
+.testimonials {
+  padding: 4rem 0 2rem;
+
+  .grid {
+    gap: var(--layout-grid-gap);
+
+    @media (min-width: 768px) {
+      gap: var(--layout-grid-gap-2x);
+    }
+
+    .hero-testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0 2rem;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        grid-column: 2 / span 4;
+      }
+
+      @media (min-width: 1200px) {
+        grid-column: 4 / span 6;
+      }
+
+      h6 {
+        color: var(--color-muted);
+      }
+      p {
+        color: var(--color-dark-gray);
+      }
+    }
+
+    .testimonials-carousel {
+      min-width: 0;
+
+      .testimonials-carousel-track {
+        display: flex;
+        gap: var(--layout-grid-gap);
+        overflow-x: auto;
+        padding-bottom: 1.5rem;
+        scroll: {
+          behavior: smooth;
+          snap-type: x mandatory;
+        }
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .testimonials-carousel-controls {
+        display: flex;
+        gap: var(--layout-grid-gap);
+        justify-content: center;
+
+        .testimonials-carousel-button {
+          align-items: center;
+          background-color: var(--color-white);
+          border: 1px solid rgba(var(--color-muted-rgb), 0.45);
+          border-radius: 50%;
+          color: var(--color-pink);
+          cursor: pointer;
+          display: inline-flex;
+          height: 2.75rem;
+          justify-content: center;
+          width: 2.75rem;
+
+          &:focus-visible {
+            outline: 3px solid var(--color-pink);
+            outline-offset: 3px;
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        display: contents;
+
+        .testimonials-carousel-track {
+          display: contents;
+        }
+
+        .testimonials-carousel-controls {
+          display: none;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        display: block;
+        grid-column: 1 / -1;
+        grid-row: 2;
+
+        .testimonials-carousel-track {
+          display: grid;
+          grid-template-columns: repeat(var(--layout-grid-columns), minmax(0, 1fr));
+          overflow-x: visible;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .card-testimonials {
+      background-color: var(--color-white);
+      border-radius: 1rem;
+      box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
+      display: flex;
+      flex: 0 0 100%;
+      flex-direction: column;
+      gap: var(--layout-grid-gap);
+      justify-content: space-between;
+      padding: 1.5rem;
+      scroll-snap: {
+        align: start;
+        stop: always;
+      }
+
+      @media (min-width: 768px) {
+        flex: initial;
+      }
+
+      @media (min-width: 1200px) {
+        flex: initial;
+      }
+
+      > .text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap);
+      }
+
+      i {
+        color: var(--color-pink);
+        display: inline-block;
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      h6 {
+        text-align: right;
+        color: var(--color-dark-gray);
+        font-weight: 700;
+      }
+
+      p {
+        color: var(--color-dark-gray);
+        font-weight: 400;
+        flex: 1;
+      }
+    }
+  }
+}
+// Testimonials section
+
 // Learning section
 .learning {
-  padding: 4rem 0;
+  padding: 2rem 0 4rem;
 
   .grid {
     gap: var(--layout-grid-gap);
@@ -688,6 +843,7 @@
       @media (min-width: 1200px) {
         grid-column: 9 / span 4;
         grid-row: 1;
+        justify-content: center;
         text-align: left;
       }
 
@@ -792,8 +948,12 @@
         display: flex;
         flex: 1;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: var(--layout-grid-gap);
         padding: var(--layout-grid-gap);
+
+        img {
+          width: 150px;
+        }
 
         h5 {
           color: var(--color-pink);

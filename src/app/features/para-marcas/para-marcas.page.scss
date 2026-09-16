@@ -491,7 +491,7 @@
   .grid {
     gap: var(--layout-grid-gap);
 
-    @media (min-width: 768px) {
+    @media (min-width: 1200px) {
       gap: var(--layout-grid-gap-2x);
     }
 
@@ -602,8 +602,14 @@
       }
 
       @media (min-width: 768px) and (max-width: 1199px) {
-        &:nth-child(odd) {
-          grid-column: 2 / span 2;
+        &:last-child {
+          grid-column: 3 / span 2;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        &:last-child {
+          grid-column: 5 / span 4;
         }
       }
 
