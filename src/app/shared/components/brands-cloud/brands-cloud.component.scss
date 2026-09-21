@@ -1,7 +1,7 @@
 .brands-section {
   --cloud-w: 670px;
   --cloud-h: 48px;
-  --cloud-rows: 3;
+  --cloud-rows: 1;
   background: {
     image: url('/images/cloud-brands.svg');
     repeat: repeat-x;
@@ -14,39 +14,8 @@
   animation: brands-left-to-right 24s linear infinite;
 }
 
-/* second & third rows (stacked bands) */
-.brands-section::before,
-.brands-section::after {
-  background: {
-    image: url('/images/cloud-brands.svg');
-    repeat: repeat-x;
-    size: var(--cloud-w) var(--cloud-h);
-  }
-  content: '';
-  height: var(--cloud-h);
-  left: 0;
-  opacity: 1;
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  z-index: 0;
-  animation-duration: 24s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-/* second row */
-.brands-section::before {
-  background-position: -181px 0;
-  top: calc(var(--cloud-h) * 1);
-  animation-name: brands-right-to-left;
-}
-
-/* third row */
-.brands-section::after {
-  background-position: -386px 0;
-  top: calc(var(--cloud-h) * 2);
-  animation-name: brands-left-to-right-third;
+.brands-section:hover {
+  animation-play-state: paused;
 }
 
 @keyframes brands-left-to-right {
@@ -55,24 +24,6 @@
   }
   to {
     background-position: var(--cloud-w) 0;
-  }
-}
-
-@keyframes brands-right-to-left {
-  from {
-    background-position: -181px 0;
-  }
-  to {
-    background-position: calc(-181px - var(--cloud-w)) 0;
-  }
-}
-
-@keyframes brands-left-to-right-third {
-  from {
-    background-position: -386px 0;
-  }
-  to {
-    background-position: calc(-386px + var(--cloud-w)) 0;
   }
 }
 
