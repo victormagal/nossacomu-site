@@ -1,5 +1,16 @@
-import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
-import { BrandsCloudComponent} from '../../shared/components/brands-cloud/brands-cloud.component';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  PLATFORM_ID,
+  signal,
+  viewChild,
+} from '@angular/core';
+import { BrandsCloudComponent } from '../../shared/components/brands-cloud/brands-cloud.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 
 @Component({
@@ -9,7 +20,8 @@ import { ButtonComponent } from '../../shared/components/button/button.component
   templateUrl: './home.page.html',
   imports: [BrandsCloudComponent, ButtonComponent],
 })
-export class HomePage {
+export class HomePage implements AfterViewInit, OnDestroy {
+  private readonly platformId = inject(PLATFORM_ID);
   private readonly brandGrowthCarousel =
     viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
   private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
@@ -17,8 +29,13 @@ export class HomePage {
   private readonly learningCarousel =
     viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
   private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
+  private readonly historyStepper = viewChild.required<ElementRef<HTMLElement>>('historyStepper');
+  private historyTimer?: ReturnType<typeof setInterval>;
+  private historyObserver?: IntersectionObserver;
 
   openItems = new Set<number>();
+  protected readonly activeHistoryStep = signal(0);
+  protected readonly historyProgressAlternate = signal(false);
 
   scrollCards(direction: -1 | 1) {
     this.scrollCarousel(this.cardsCarousel().nativeElement, '.card-be-part-of', direction);
@@ -38,6 +55,52 @@ export class HomePage {
 
   scrollStories(direction: -1 | 1) {
     this.scrollCarousel(this.storiesCarousel().nativeElement, '.story', direction);
+  }
+
+  ngAfterViewInit() {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+    this.historyObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.startHistoryAutoplay();
+        } else {
+          this.stopHistoryAutoplay();
+        }
+      },
+      { threshold: 0.3 },
+    );
+    this.historyObserver.observe(this.historyStepper().nativeElement);
+  }
+
+  ngOnDestroy() {
+    this.stopHistoryAutoplay();
+    this.historyObserver?.disconnect();
+  }
+
+  protected selectHistoryStep(index: number) {
+    this.activeHistoryStep.set(index);
+    this.historyProgressAlternate.update((alternate) => !alternate);
+    this.startHistoryAutoplay();
+  }
+
+  private startHistoryAutoplay() {
+    this.stopHistoryAutoplay();
+    this.historyTimer = setInterval(() => {
+      this.selectHistoryStep((this.activeHistoryStep() + 1) % 3);
+    }, 4000);
+  }
+
+  private stopHistoryAutoplay() {
+    if (this.historyTimer) {
+      clearInterval(this.historyTimer);
+      this.historyTimer = undefined;
+    }
   }
 
   private scrollCarousel(carousel: HTMLElement, itemSelector: string, direction: -1 | 1) {

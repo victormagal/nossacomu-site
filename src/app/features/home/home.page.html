@@ -223,49 +223,113 @@
 <section class="history section">
   <div class="container">
     <div class="grid">
-      <div class="hero-history span-4 md-span-4 lg-span-6">
-        <h2>Nossa história</h2>
-      </div>
+      <header class="span-4 md-span-6 lg-span-12">
+        <h2>De comunidade a agência Top 1 do TikTok Shop</h2>
+      </header>
       <div class="content-history span-4 md-span-6 lg-span-12">
         <div class="content-history-footer">
-          <div class="timeline" aria-label="Linha do tempo de crescimento" role="list">
-            <div aria-hidden="true" class="timeline-line"></div>
-            <div class="timeline-item" role="listitem">
-              <div class="timeline-content">
-                <h5>2022 | Tudo começou com conteúdo</h5>
-                <p>
-                  A Comu nasceu como uma comunidade para creators que queriam transformar a criação
-                  de conteúdo em carreira. Um espaço para aprender e trocar experiências.
-                </p>
-              </div>
-              <div aria-hidden="true" class="timeline-dot"></div>
+          <div #historyStepper class="history-stepper">
+            <div aria-label="Marcos da história da Comu" class="history-steps" role="tablist">
+              <button
+                [attr.aria-selected]="activeHistoryStep() === 0"
+                [class.active]="activeHistoryStep() === 0"
+                aria-controls="history-panel-2022"
+                class="history-step"
+                id="history-tab-2022"
+                role="tab"
+                type="button"
+                (click)="selectHistoryStep(0)"
+              >
+                2022
+                <span
+                  [class.progress-alternate]="historyProgressAlternate()"
+                  aria-hidden="true"
+                  class="history-step-progress"
+                ></span>
+              </button>
+              <button
+                [attr.aria-selected]="activeHistoryStep() === 1"
+                [class.active]="activeHistoryStep() === 1"
+                aria-controls="history-panel-2025"
+                class="history-step"
+                id="history-tab-2025"
+                role="tab"
+                type="button"
+                (click)="selectHistoryStep(1)"
+              >
+                2025
+                <span
+                  [class.progress-alternate]="historyProgressAlternate()"
+                  aria-hidden="true"
+                  class="history-step-progress"
+                ></span>
+              </button>
+              <button
+                [attr.aria-selected]="activeHistoryStep() === 2"
+                [class.active]="activeHistoryStep() === 2"
+                aria-controls="history-panel-today"
+                class="history-step"
+                id="history-tab-today"
+                role="tab"
+                type="button"
+                (click)="selectHistoryStep(2)"
+              >
+                Hoje
+                <span
+                  [class.progress-alternate]="historyProgressAlternate()"
+                  aria-hidden="true"
+                  class="history-step-progress"
+                ></span>
+              </button>
             </div>
-            <div class="timeline-item" role="listitem">
-              <div class="timeline-content">
-                <h5>2025 | O mercado mudou</h5>
-                <p>
-                  Com a chegada do TikTok Shop, surgiu uma nova oportunidade para creators:
-                  transformar influência em vendas. A Comu expandiu sua atuação para esse mercado,
-                  trazendo a experiência de profissionais que já trabalhavam com TikTok Shop nos
-                  Estados Unidos e ajudando creators a vender e crescer.
-                </p>
+
+            <section
+              [class.active]="activeHistoryStep() === 0"
+              aria-labelledby="history-tab-2022"
+              class="history-panel"
+              id="history-panel-2022"
+              role="tabpanel"
+            >
+              <div class="history-year">2022<span>Tudo começou com conteúdo</span></div>
+              <div class="history-panel-content">
+                <p>A Comu nasce como comunidade para creators que queriam viver de conteúdo.</p>
+                <img src="/images/timeline-1.webp" alt="2022" />
               </div>
-              <div aria-hidden="true" class="timeline-dot"></div>
-            </div>
-            <div class="timeline-item" role="listitem">
-              <div class="timeline-content">
-                <h5>Hoje | Um ecossistema completo</h5>
+            </section>
+
+            <section
+              [class.active]="activeHistoryStep() === 1"
+              aria-labelledby="history-tab-2025"
+              class="history-panel"
+              id="history-panel-2025"
+              role="tabpanel"
+            >
+              <div class="history-year">2025<span>O mercado mudou</span></div>
+              <div class="history-panel-content">
                 <p>
-                  Hoje, a Comu tem comunidade, educação, suporte, campanhas, produtos digitais,
-                  eventos e uma operação dedicada ao desenvolvimento de creators dentro do TikTok
-                  Shop.
-                  <br />
-                  Tudo com um objetivo: ajudar creators a construir uma carreira que vai além de um
-                  vídeo viral.
+                  Com o TikTok Shop, a Comu passa a ajudar creators a transformar influência em
+                  vendas.
                 </p>
+                <img src="/images/timeline-2.webp" alt="2025" />
               </div>
-              <div aria-hidden="true" class="timeline-dot"></div>
-            </div>
+            </section>
+
+            <section
+              [class.active]="activeHistoryStep() === 2"
+              aria-labelledby="history-tab-today"
+              class="history-panel"
+              id="history-panel-today"
+              role="tabpanel"
+            >
+              <div class="history-year">Hoje<span>Uma operação completa</span></div>
+              <div class="history-panel-content">
+                <p>
+                  Comunidade, educação, campanhas, produtos e eventos em uma operação dedicada ao
+                  TikTok Shop.
+                </p>
+                <img src="/images/timeline-3.webp" alt="Hoje" />
+              </div>
+            </section>
           </div>
         </div>
       </div>
