@@ -1,62 +1,69 @@
-:host { display: block; }
+:host {
+  display: inline-block;
+}
 
-a, span {
-    align-items: center;
-    border-radius: 5rem;
-    display: inline-flex;
-    font: {
-        size: 0.75rem;
-        weight: 600;
-    }
-    justify-content: center;
-    padding: 0.625rem;
-    width: 100%;
+a,
+span {
+  align-items: center;
+  border-radius: 5rem;
+  display: inline-flex;
+  font: {
+    size: 0.75rem;
+    weight: 600;
+  }
+  justify-content: center;
+  padding: 0.625rem 1rem;
+  width: auto;
 
-    &.large {
-        font-size: 1rem;
-        padding: 0.9rem 0.625rem;
-    }
+  &.large {
+    font-size: 1rem;
+    padding: 0.9rem 0.625rem;
+  }
 }
 
 .blue {
-    background-color: rgba(var(--color-blue-rgb), 1);
-    border: 1px solid transparent;
-    color: var(--color-white);
+  background-color: rgba(var(--color-blue-rgb), 1);
+  border: 1px solid transparent;
+  color: var(--color-white);
 }
 
+.dark {
+  background-color: rgba(var(--color-dark-gray-rgb), 1);
+  color: var(--color-white);
+}
 
 .dark-pink-border {
-    background-color: rgba(var(--color-dark-gray-rgb), 1);
-    border: 1px solid rgba(var(--color-pink-rgb), 1);
-    color: var(--color-white);
+  background-color: rgba(var(--color-dark-gray-rgb), 1);
+  border: 1px solid rgba(var(--color-pink-rgb), 1);
+  color: var(--color-white);
 }
 
 .default {
-    background-color: rgba(var(--color-white-rgb), 1);
-    border: 1px solid rgba(var(--color-black-rgb), 0.1);
-    color: var(--color-dark-gray);
+  background-color: rgba(var(--color-white-rgb), 1);
+  border: 1px solid rgba(var(--color-black-rgb), 0.1);
+  color: var(--color-dark-gray);
 }
 
 .pink {
-    background-color: rgba(var(--color-pink-rgb), 1);
-    border: 1px solid transparent;
-    color: var(--color-white);
+  background-color: rgba(var(--color-pink-rgb), 1);
+  border: 1px solid transparent;
+  color: var(--color-white);
 }
 
 .pink-border {
-    background-color: rgba(var(--color-white-rgb), 1);
-    border: 1px solid rgba(var(--color-pink-rgb), 1);
-    color: var(--color-dark-gray);
+  background-color: rgba(var(--color-white-rgb), 1);
+  border: 1px solid rgba(var(--color-pink-rgb), 1);
+  color: var(--color-dark-gray);
 }
 
 .transparentMuted {
-    background-color: transparent;
-    border: 1px solid rgb(var(--color-muted-rgb));
-    color: var(--color-muted);
+  background-color: transparent;
+  border: 1px solid rgb(var(--color-muted-rgb));
+  color: var(--color-muted);
 }
 
 .transparentWhite {
-    background-color: transparent;
-    border: 1px solid rgb(var(--color-white-rgb));
-    color: var(--color-white);
+  background-color: transparent;
+  border: 1px solid rgb(var(--color-white-rgb));
+  color: var(--color-white);
 }
