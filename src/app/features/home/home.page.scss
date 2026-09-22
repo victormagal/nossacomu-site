@@ -1,23 +1,16 @@
 // Hero section
 .hero {
   .grid {
+    align-items: center;
+
     .hero-content {
       display: flex;
       flex-direction: column;
       gap: var(--layout-grid-gap);
-      text-align: center;
 
-      @media (min-width: 768px) {
-        justify-content: center;
-        text-align: left;
-      }
-
-      h1 {
+      h2 {
         font-weight: 600;
-
-        span {
-          color: var(--color-pink);
-        }
+        span { color: var(--color-pink); }
       }
 
       .hero-pills {
@@ -48,14 +41,14 @@
 // Tiktok shop section
 .tiktok-shop {
   .grid {
+    align-items: center;
+
     .tiktok-shop-content {
       display: flex;
       flex-direction: column;
       gap: var(--layout-grid-gap);
 
-      h1 {
-        font-weight: 600;
-      }
+      h2 { font-weight: 600; }
     }
   }
 }
@@ -64,67 +57,6 @@
 // Creators and brands section
 .creators-and-brands {
   .grid {
-    .creators-and-brands-carousel {
-      min-width: 0;
-
-      .creators-and-brands-carousel-track {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        overflow-x: auto;
-        padding: 0 0 1.5rem;
-        scroll: {
-          behavior: smooth;
-          snap-type: x mandatory;
-        }
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-
-        .creators-and-brands-card {
-          flex: 0 0 calc(100%);
-          scroll-snap-align: start;
-          scroll-snap-stop: always;
-        }
-      }
-
-      .creators-and-brands-carousel-controls {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        justify-content: center;
-
-        .creators-and-brands-carousel-button {
-          align-items: center;
-          background-color: var(--color-white);
-          border: 1px solid rgba(var(--color-muted-rgb), 0.45);
-          border-radius: 50%;
-          cursor: pointer;
-          display: inline-flex;
-          height: 2.75rem;
-          justify-content: center;
-          width: 2.75rem;
-
-          &:focus-visible {
-            outline: 3px solid var(--color-pink);
-            outline-offset: 3px;
-          }
-        }
-      }
-
-      @media (min-width: 768px) {
-        display: contents;
-
-        .creators-and-brands-carousel-track {
-          display: contents;
-        }
-
-        .creators-and-brands-carousel-controls {
-          display: none;
-        }
-      }
-    }
-
     .creators-and-brands-card {
       background-color: var(--color-white);
       border: 1px solid rgba(var(--color-muted-rgb), 0.45);
@@ -132,6 +64,12 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+
+      @media (min-width: 768px) and (max-width: 1999px) {
+        &:first-child {
+          grid-column: 2 / span 3;
+        }
+      }
 
       @media (min-width: 1200px) {
         &:first-child {
@@ -196,13 +134,6 @@
       padding: 1rem 0;
       width: 100%;
 
-      @media (min-width: 768px) and (max-width: 1199px) {
-        &:nth-of-type(2),
-        &:nth-of-type(4) {
-          grid-column: 2 / span 2;
-        }
-      }
-
       @media (min-width: 1200px) {
         grid-row: 2;
       }
@@ -213,13 +144,8 @@
         }
       }
 
-      h3 {
-        color: var(--color-pink);
-        font-weight: 700;
-      }
-      h6 {
-        color: var(--color-muted);
-      }
+      h3 { color: var(--color-pink); font-weight: 600; }
+      h6 { color: var(--color-muted); }
     }
   }
 }
@@ -233,9 +159,7 @@
       flex-direction: column;
       gap: 0.5rem;
 
-      h2 {
-        font-weight: 600;
-      }
+      h2 { font-weight: 600; }
     }
 
     .learning-big-card {
@@ -245,10 +169,7 @@
       isolation: isolate;
       overflow: hidden;
       position: relative;
-      scroll-snap: {
-        align: start;
-        stop: always;
-      }
+      scroll-snap-type: x mandatory;
 
       @media (min-width: 768px) {
         flex: initial;
@@ -292,96 +213,14 @@
       }
     }
 
-    .learning-carousel {
-      min-width: 0;
-
-      .learning-carousel-track {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        overflow-x: auto;
-        padding-bottom: 1.5rem;
-        scroll: {
-          behavior: smooth;
-          snap-type: x mandatory;
-        }
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-      }
-
-      .learning-carousel-controls {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        justify-content: center;
-
-        .learning-carousel-button {
-          align-items: center;
-          background-color: var(--color-white);
-          border: 1px solid rgba(var(--color-muted-rgb), 0.45);
-          border-radius: 50%;
-          color: var(--color-pink);
-          cursor: pointer;
-          display: inline-flex;
-          height: 2.75rem;
-          justify-content: center;
-          width: 2.75rem;
-
-          &:focus-visible {
-            outline: 3px solid var(--color-pink);
-            outline-offset: 3px;
-          }
-        }
-      }
-
-      @media (min-width: 768px) {
-        display: contents;
-
-        .learning-carousel-track {
-          display: contents;
-        }
-
-        .learning-carousel-controls {
-          display: none;
-        }
-      }
-
-      @media (min-width: 1200px) {
-        display: block;
-        grid-column: 1 / -1;
-        grid-row: 3;
-
-        .learning-carousel-track {
-          display: grid;
-          grid-template-columns: repeat(var(--layout-grid-columns), minmax(0, 1fr));
-          overflow-x: visible;
-          padding-bottom: 0;
-        }
-      }
-    }
-
     .learning-card {
       background-color: var(--color-white);
       border: 1px solid rgba(var(--color-dark-gray-rgb), 0.25);
       border-radius: 1rem;
       display: flex;
-      flex: 0 0 100%;
       flex-direction: column;
       gap: 0.5rem;
       padding: 1.5rem;
-      scroll-snap: {
-        align: start;
-        stop: always;
-      }
-
-      @media (min-width: 768px) {
-        flex: initial;
-      }
-
-      @media (min-width: 1200px) {
-        flex: initial;
-      }
 
       h5 { font-weight: 600; }
       p { flex: 1; }
@@ -404,12 +243,7 @@
       display: flex;
       flex-direction: column;
       gap: var(--layout-grid-gap);
-      text-align: center;
-
-      @media (min-width: 768px) {
-        justify-content: center;
-        text-align: left;
-      }
+      justify-content: center;
 
       h2 { font-weight: 600; }
 

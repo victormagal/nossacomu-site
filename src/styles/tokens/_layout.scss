@@ -5,7 +5,7 @@
   --layout-grid-columns: 4;
   --layout-grid-gap: 1rem;
   --layout-grid-gap-2x: 2rem;
-  --section-padding-block: 1rem;
+  --section-padding-block: 2rem;
 }
 
 /* Explicit mobile rule (keeps phones in portrait & small landscape at 4 cols) */
@@ -14,7 +14,7 @@
     --layout-page-padding: 1rem;
     --layout-page-padding-2x: 2rem;
     --layout-grid-gap: 1rem;
-    --section-padding-block: 1rem;
+    --section-padding-block: 2rem;
     --layout-grid-columns: 4;
   }
 }
@@ -25,7 +25,7 @@
     --layout-page-padding: 1rem;
     --layout-page-padding-2x: 2rem;
     --layout-grid-gap: 1rem;
-    --section-padding-block: 2rem;
+    --section-padding-block: 3rem;
     --layout-grid-columns: 8;
   }
 }
@@ -36,7 +36,7 @@
     --layout-page-padding: 2rem;
     --layout-page-padding-2x: 4rem;
     --layout-grid-gap: 1.5rem;
-    --section-padding-block: 3rem;
+    --section-padding-block: 4rem;
     --layout-grid-columns: 12;
   }
 }

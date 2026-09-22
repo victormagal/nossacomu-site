@@ -24,10 +24,7 @@ export class HomePage implements AfterViewInit, OnDestroy {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly brandGrowthCarousel =
     viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
-  private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
   private readonly eventsCarousel = viewChild.required<ElementRef<HTMLElement>>('eventsCarousel');
-  private readonly learningCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
   private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
   private readonly historyStepper = viewChild.required<ElementRef<HTMLElement>>('historyStepper');
   private historyTimer?: ReturnType<typeof setInterval>;
@@ -37,20 +34,12 @@ export class HomePage implements AfterViewInit, OnDestroy {
   protected readonly activeHistoryStep = signal(0);
   protected readonly historyProgressAlternate = signal(false);
 
-  scrollCards(direction: -1 | 1) {
-    this.scrollCarousel(this.cardsCarousel().nativeElement, '.card-be-part-of', direction);
-  }
-
   scrollBrandGrowth(direction: -1 | 1) {
     this.scrollCarousel(this.brandGrowthCarousel().nativeElement, '.brand-growth-image', direction);
   }
 
   scrollEvents(direction: -1 | 1) {
     this.scrollCarousel(this.eventsCarousel().nativeElement, '.card-event', direction);
-  }
-
-  scrollLearning(direction: -1 | 1) {
-    this.scrollCarousel(this.learningCarousel().nativeElement, '.card-learning', direction);
   }
 
   scrollStories(direction: -1 | 1) {

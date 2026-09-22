@@ -1,15 +1,15 @@
 <section class="hero section">
   <div class="container">
     <div class="grid">
-      <div class="hero-content span-4 md-span-3 lg-span-6">
-        <h1>Transforme conteúdo em <span>vendas</span> no TikTok Shop</h1>
+      <div class="hero-content span-4 md-span-4 lg-span-6">
+        <h2>Transforme conteúdo em <span>vendas</span> no TikTok Shop</h2>
         <p>Conectamos creators e marcas com comunidade, formação e campanhas.</p>
         <div class="hero-pills">
           <app-button link="/solucoes-para-criadores" text="Sou creator" type="pink"> </app-button>
           <app-button link="/solucoes-para-marcas" text="Sou marca" type="default"> </app-button>
         </div>
       </div>
-      <div class="hero-image span-4 md-span-3 lg-span-6">
+      <div class="hero-image span-4 md-span-4 lg-span-6">
         <img src="/images/homepage-hero.png" alt="A Comu" />
       </div>
     </div>
@@ -19,11 +19,11 @@
 <section class="tiktok-shop section">
   <div class="container">
     <div class="grid">
-      <div class="tiktok-shop-video span-4 md-span-3 lg-span-6">
+      <div class="tiktok-shop-video span-4 md-span-4 lg-span-6">
         <p>Video TikTok Shop</p>
       </div>
-      <div class="tiktok-shop-content span-4 md-span-3 lg-span-6">
-        <h1>O TikTok Shop mudou a forma de comprar</h1>
+      <div class="tiktok-shop-content span-4 md-span-4 lg-span-6">
+        <h2>O TikTok Shop mudou a forma de comprar</h2>
         <p>As pessoas descobrem o produto no vídeo de um creator e compram sem sair do app.</p>
       </div>
     </div>
@@ -32,60 +32,29 @@
 <section class="creators-and-brands section">
   <div class="container">
     <div class="grid">
-      <div class="creators-and-brands-carousel span-4">
-        <div
-          #cardsCarousel
-          aria-label="Para creators e marcas"
-          class="creators-and-brands-carousel-track"
-          id="creators-and-brands-carousel"
-          role="region"
-          tabindex="0"
-        >
-          <div class="creators-and-brands-card span-4 md-span-3 lg-span-5">
-            <header>
-              <img src="/images/be-part-1.jpg" alt="Comunidade" />
-            </header>
-            <main>
-              <h3>Creators</h3>
-              <p>Venda pelo programa de afiliados e receba por cada venda que gerar.</p>
-              <app-button link="/solucoes-para-criadores" text="Sou creator" type="pink">
-              </app-button>
-            </main>
-          </div>
-          <div class="creators-and-brands-card span-4 md-span-3 lg-span-5">
-            <header>
-              <img src="/images/be-part-2.jpg" alt="Aprendizado" />
-            </header>
-            <main>
-              <h3>Marcas</h3>
-              <p>
-                Coloque seu produto em centenas de vídeos de creators que falam com a própria
-                comunidade.
-              </p>
-              <app-button link="/solucoes-para-marcas" text="Sou marca"> </app-button>
-            </main>
-          </div>
-        </div>
-        <div class="creators-and-brands-carousel-controls">
-          <button
-            aria-controls="creators-and-brands-carousel"
-            aria-label="Mostrar card anterior"
-            class="creators-and-brands-carousel-button"
-            type="button"
-            (click)="scrollCards(-1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            aria-controls="creators-and-brands-carousel"
-            aria-label="Mostrar próximo card"
-            class="creators-and-brands-carousel-button"
-            type="button"
-            (click)="scrollCards(1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
+      <div class="creators-and-brands-card span-4 md-span-3 lg-span-5">
+        <header>
+          <img src="/images/be-part-1.jpg" alt="Comunidade" />
+        </header>
+        <main>
+          <h3>Creators</h3>
+          <p>Venda pelo programa de afiliados e receba por cada venda que gerar.</p>
+          <app-button link="/solucoes-para-criadores" text="Sou creator" type="pink">
+          </app-button>
+        </main>
+      </div>
+      <div class="creators-and-brands-card span-4 md-span-3 lg-span-5">
+        <header>
+          <img src="/images/be-part-2.jpg" alt="Aprendizado" />
+        </header>
+        <main>
+          <h3>Marcas</h3>
+          <p>
+            Coloque seu produto em centenas de vídeos de creators que falam com a própria
+            comunidade.
+          </p>
+          <app-button link="/solucoes-para-marcas" text="Sou marca"> </app-button>
+        </main>
       </div>
     </div>
   </div>
@@ -93,7 +62,7 @@
 <section class="top-global section">
   <div class="container">
     <div class="grid">
-      <div class="top-global-content span-4 md-span-6 lg-span-12">
+      <div class="top-global-content span-4 md-span-8 lg-span-12">
         <h2>A agência Top 1 global em TikTok Shop</h2>
       </div>
       <div class="box-number span-2 md-span-2 lg-span-3">
@@ -118,10 +87,10 @@
 <section class="learning section">
   <div class="container">
     <div class="grid">
-      <div class="learning-content span-4 md-span-6 lg-span-12">
+      <div class="learning-content span-4 md-span-8 lg-span-12">
         <h2>Tudo para vender no TikTok Shop, em um lugar só</h2>
       </div>
-      <div class="learning-big-card span-4 md-span-3 lg-span-6">
+      <div class="learning-big-card span-4 md-span-4 lg-span-6">
         <img src="/images/tiktok-shop-creators.webp" alt="Creators" />
         <main>
           <h3>Creators</h3>
@@ -129,7 +98,7 @@
           <i class="fa-solid fa-arrow-right-long"></i>
         </main>
       </div>
-      <div class="learning-big-card span-4 md-span-3 lg-span-6">
+      <div class="learning-big-card span-4 md-span-4 lg-span-6">
         <img src="/images/tiktok-shop-marcas.webp" alt="Marcas" />
         <main>
           <h3>Marcas</h3>
@@ -137,56 +106,25 @@
           <i class="fa-solid fa-arrow-right-long"></i>
         </main>
       </div>
-      <div class="learning-carousel span-4 md-span-6 lg-span-12">
-        <div
-          #learningCarousel
-          aria-label="Conteúdos de aprendizado"
-          class="learning-carousel-track"
-          id="learning-carousel"
-          role="region"
-          tabindex="0"
-        >
-          <div class="learning-card span-4 md-span-3 lg-span-3">
-            <h5>Academy</h5>
-            <p>formação prática para creators sellers</p>
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </div>
-          <div class="learning-card span-4 md-span-3 lg-span-3">
-            <h5>Produtos</h5>
-            <p>soluções para evoluir dentro do TikTok Shop</p>
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </div>
-          <div class="learning-card span-4 md-span-3 lg-span-3">
-            <h5>Comunidade</h5>
-            <p>espaço para aprender e acompanhar o mercado</p>
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </div>
-          <div class="learning-card span-4 md-span-3 lg-span-3">
-            <h5>Experiências</h5>
-            <p>eventos que aproximam creators e marcas</p>
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </div>
-        </div>
-        <div class="learning-carousel-controls">
-          <button
-            aria-controls="learning-carousel"
-            aria-label="Mostrar conteúdo anterior"
-            class="learning-carousel-button"
-            type="button"
-            (click)="scrollLearning(-1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            aria-controls="learning-carousel"
-            aria-label="Mostrar próximo conteúdo"
-            class="learning-carousel-button"
-            type="button"
-            (click)="scrollLearning(1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
+      <div class="learning-card span-2 md-span-2 lg-span-3">
+        <h5>Academy</h5>
+        <p>formação prática para creators sellers</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+      <div class="learning-card span-2 md-span-2 lg-span-3">
+        <h5>Produtos</h5>
+        <p>soluções para evoluir dentro do TikTok Shop</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+      <div class="learning-card span-2 md-span-2 lg-span-3">
+        <h5>Comunidade</h5>
+        <p>espaço para aprender e acompanhar o mercado</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+      <div class="learning-card span-2 md-span-2 lg-span-3">
+        <h5>Experiências</h5>
+        <p>eventos que aproximam creators e marcas</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
       </div>
     </div>
   </div>
@@ -194,10 +132,10 @@
 <section class="apps section">
   <div class="container">
     <div class="grid">
-      <div class="apps-image span-4 md-span-3 lg-span-6">
+      <div class="apps-image span-4 md-span-4 lg-span-6">
         <img src="/images/criadores.png" alt="Aplicativo" />
       </div>
-      <div class="apps-content span-4 md-span-3 lg-span-6">
+      <div class="apps-content span-4 md-span-4 lg-span-6">
         <h2>A comunidade vive dentro do app da Comu</h2>
         <p>Aulas, avisos, oportunidades e tudo o que acontece na Comu, em um só lugar.</p>
         <div class="apps-btns">
@@ -223,10 +161,10 @@
 <section class="history section">
   <div class="container">
     <div class="grid">
-      <header class="span-4 md-span-6 lg-span-12">
+      <header class="span-4 md-span-8 lg-span-12">
         <h2>De comunidade a agência Top 1 do TikTok Shop</h2>
       </header>
-      <div class="content-history span-4 md-span-6 lg-span-12">
+      <div class="content-history span-4 md-span-8 lg-span-12">
         <div class="content-history-footer">
           <div #historyStepper class="history-stepper">
             <div aria-label="Marcos da história da Comu" class="history-steps" role="tablist">
@@ -339,7 +277,7 @@
 <section class="start-selling section">
   <div class="container">
     <div class="grid">
-      <div class="start-selling-content span-4 md-span-6 lg-span-12">
+      <div class="start-selling-content span-4 md-span-8 lg-span-12">
         <h2>Comece a vender no TikTok Shop</h2>
         <div class="start-selling-btns">
           <app-button link="/solucoes-para-criadores" text="Sou creator" type="pink"> </app-button>
