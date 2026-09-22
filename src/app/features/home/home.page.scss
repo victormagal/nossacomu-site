@@ -13,7 +13,7 @@
         span { color: var(--color-pink); }
       }
 
-      .hero-pills {
+      .hero-btns {
         align-items: center;
         display: flex;
         flex-wrap: wrap;
@@ -32,9 +32,86 @@
     .hero-image {
       display: flex;
       flex-direction: column;
-      gap: var(--layout-grid-gap);
+      position: relative;
+
+      > img {
+        display: block;
+        width: 100%;
+      }
+
+      .pill {
+        will-change: transform;
+        backface-visibility: hidden;
+        background-color: rgba(var(--color-white-rgb), 0.9);
+        border-radius: 999px;
+        box-shadow: 0 0.5rem 1.5rem rgba(var(--color-black-rgb), 0.12);
+        padding: 0.75rem 1rem;
+        position: absolute;
+        z-index: 1;
+
+        h6 {
+          font-size: clamp(0.625rem, 1.5vw, 0.875rem);
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        &:first-of-type {
+          left: 0.75rem;
+          top: 0.75rem;
+          animation: hero-pill-cloud-right 6s ease-in-out infinite alternate;
+          animation-delay: 0s;
+          transform-origin: center;
+        }
+
+        &:last-of-type {
+          bottom: 0.75rem;
+          right: 0.75rem;
+          animation: hero-pill-cloud-left 7s ease-in-out infinite alternate;
+          animation-delay: -2s;
+          transform-origin: center;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .pill {
+          padding: 1rem 1.25rem;
+
+          &:first-of-type {
+            left: 1.5rem;
+            top: 1.5rem;
+          }
+
+          &:last-of-type {
+            bottom: 1.5rem;
+            right: 1.5rem;
+          }
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pill {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
     }
   }
+}
+
+@keyframes hero-pill-cloud-right {
+  0%   { transform: translate3d(-0.45rem, 0, 0) rotate(-0.5deg) scale(1); }
+  25%  { transform: translate3d(-0.18rem, -0.12rem, 0) rotate(-0.25deg) scale(1.01); }
+  50%  { transform: translate3d(0, -0.38rem, 0) rotate(0deg) scale(1.02); }
+  75%  { transform: translate3d(0.18rem, -0.25rem, 0) rotate(0.25deg) scale(1.01); }
+  100% { transform: translate3d(0.45rem, -0.45rem, 0) rotate(0.5deg) scale(1); }
+}
+
+@keyframes hero-pill-cloud-left {
+  0%   { transform: translate3d(0.45rem, 0, 0) rotate(0.5deg) scale(1); }
+  25%  { transform: translate3d(0.18rem, -0.12rem, 0) rotate(0.25deg) scale(1.01); }
+  50%  { transform: translate3d(0, -0.38rem, 0) rotate(0deg) scale(1.02); }
+  75%  { transform: translate3d(-0.18rem, -0.25rem, 0) rotate(-0.25deg) scale(1.01); }
+  100% { transform: translate3d(-0.45rem, -0.45rem, 0) rotate(-0.5deg) scale(1); }
 }
 // Hero section
 
