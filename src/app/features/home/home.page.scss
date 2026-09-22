@@ -56,6 +56,8 @@
 
 // Creators and brands section
 .creators-and-brands {
+  padding-top: 0;
+
   .grid {
     .creators-and-brands-card {
       background-color: var(--color-white);
@@ -232,6 +234,8 @@
 
 // Apps section
 .apps {
+  padding-block: 0;
+
   .grid {
     .apps-image {
       display: flex;
@@ -442,6 +446,8 @@
 
 // Start selling section
 .start-selling {
+  padding-block: 0;
+
   .grid {
     .start-selling-content {
       display: flex;
