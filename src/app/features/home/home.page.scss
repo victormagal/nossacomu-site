@@ -1,14 +1,6 @@
 // Hero section
 .hero {
-  padding: 4rem 0;
-
   .grid {
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     .hero-content {
       display: flex;
       flex-direction: column;
@@ -55,20 +47,11 @@
 
 // Tiktok shop section
 .tiktok-shop {
-  padding: 4rem 0;
-
   .grid {
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     .tiktok-shop-content {
       display: flex;
       flex-direction: column;
       gap: var(--layout-grid-gap);
-      padding: 0 2rem;
 
       h1 {
         font-weight: 600;
@@ -80,15 +63,7 @@
 
 // Creators and brands section
 .creators-and-brands {
-  padding: 0 0 4rem;
-
   .grid {
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     .creators-and-brands-carousel {
       min-width: 0;
 
@@ -198,15 +173,8 @@
 // Top global section
 .top-global {
   background-color: var(--color-black);
-  padding: 4rem 0;
 
   .grid {
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     .top-global-content {
       display: flex;
       flex-direction: column;
@@ -259,15 +227,7 @@
 
 // Learning section
 .learning {
-  padding: 4rem 0 2rem;
-
   .grid {
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     .learning-content {
       display: flex;
       flex-direction: column;
@@ -433,15 +393,7 @@
 
 // Apps section
 .apps {
-  padding: 0 0 4rem;
-
   .grid {
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     .apps-image {
       display: flex;
       flex-direction: column;
@@ -472,23 +424,7 @@
 
 // History section
 .history {
-  padding: 4rem 0;
-
-  @media (max-width: 767px) {
-    padding: 2rem 0;
-  }
-
-  @media (min-width: 768px) and (max-width: 1199px) {
-    padding: 2rem 0 3.5rem;
-  }
-
   .grid {
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     header {
       display: flex;
       flex-direction: column;
@@ -646,7 +582,6 @@
     }
   }
 }
-// History section
 
 @keyframes history-step-progress {
   from { width: 0; }
@@ -669,19 +604,11 @@
     transform: translateY(0);
   }
 }
+// History section
 
 // Start selling section
 .start-selling {
-  background-color: var(--color-cream);
-  padding: 4rem 0 0;
-
   .grid {
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     .start-selling-content {
       display: flex;
       flex-direction: column;

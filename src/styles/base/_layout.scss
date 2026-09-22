@@ -1,90 +1,91 @@
 .section {
-    padding-block: var(--section-padding-block);
+  padding-block: var(--section-padding-block);
 }
 
 .container {
-    width: min(100% - calc(var(--layout-page-padding) * 2), var(--layout-max-width));
-    margin-inline: auto;
+  width: min(100% - calc(var(--layout-page-padding) * 2), var(--layout-max-width));
+  margin-inline: auto;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(var(--layout-grid-columns), minmax(0, 1fr));
-    gap: var(--layout-grid-gap);
+  display: grid;
+  grid-template-columns: repeat(var(--layout-grid-columns), minmax(0, 1fr));
+  gap: var(--layout-grid-gap);
+  padding: 0 var(--layout-page-padding);
 }
 
 .span-12 {
-    grid-column: span 12;
+  grid-column: span 12;
 }
 
 .span-11 {
-    grid-column: span 11;
+  grid-column: span 11;
 }
 
 .span-10 {
-    grid-column: span 10;
+  grid-column: span 10;
 }
 
 .span-9 {
-    grid-column: span 9;
+  grid-column: span 9;
 }
 
 .span-8 {
-    grid-column: span 8;
+  grid-column: span 8;
 }
 
 .span-7 {
-    grid-column: span 7;
+  grid-column: span 7;
 }
 
 .span-6 {
-    grid-column: span 6;
+  grid-column: span 6;
 }
 
 .span-5 {
-    grid-column: span 5;
+  grid-column: span 5;
 }
 
 .span-4 {
-    grid-column: span 4;
+  grid-column: span 4;
 }
 
 .span-3 {
-    grid-column: span 3;
+  grid-column: span 3;
 }
 
 .span-2 {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
 .span-1 {
-    grid-column: span 1;
+  grid-column: span 1;
 }
 
 /* Breakpoint-specific span utilities (md = >=768px, lg = >=1200px) Usage: add `md-span-6` alongside `span-2` to change span at md+. */
 @media (min-width: 768px) {
-    @for $i from 1 through 12 {
-        .md-span-#{$i} {
-            grid-column: span #{$i};
-        }
+  @for $i from 1 through 12 {
+    .md-span-#{$i} {
+      grid-column: span #{$i};
     }
+  }
 }
 
 @media (min-width: 1200px) {
-    @for $i from 1 through 12 {
-        .lg-span-#{$i} {
-            grid-column: span #{$i};
-        }
+  @for $i from 1 through 12 {
+    .lg-span-#{$i} {
+      grid-column: span #{$i};
     }
+  }
 }
 
 .full-bleed {
-    width: 100%;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
-    /* On small screens, only force full-row for grid children that don't already declare an explicit span-* class. This lets `.span-2`, `.span-3` etc. keep their spans on mobile. */
-    .grid > *:not([class*="span-"]) {
-        grid-column: span var(--layout-grid-columns);
-    }
+  /* On small screens, only force full-row for grid children that don't already declare an explicit span-* class. This lets `.span-2`, `.span-3` etc. keep their spans on mobile. */
+  .grid > *:not([class*='span-']) {
+    grid-column: span var(--layout-grid-columns);
+  }
 }
