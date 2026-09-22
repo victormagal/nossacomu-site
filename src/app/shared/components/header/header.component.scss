@@ -1,7 +1,8 @@
 section {
+  inset: 0 0 auto;
   padding-block: 1rem;
-  position: relative;
-  z-index: 10;
+  position: fixed;
+  z-index: 100;
 }
 
 .header-pill {
