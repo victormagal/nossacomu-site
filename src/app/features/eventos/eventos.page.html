@@ -1,7 +1,7 @@
 <section class="main section">
   <div class="container">
     <div class="grid">
-      <div class="hero-main span-4 md-span-4 lg-span-8">
+      <div class="hero-main span-4 md-span-6 lg-span-8">
         <h2>Onde creators, marcas e comunidade se encontram</h2>
         <p>
           Cada evento tem um propósito. Todos têm uma coisa em comum: aproximar quem está
@@ -11,58 +11,19 @@
     </div>
   </div>
 </section>
-<!--<app-brands-cloud-component></app-brands-cloud-component>-->
-<section class="event dark section">
+<section class="event section">
   <div class="container">
     <div class="grid">
-      <div class="event-carousel span-4 lg-span-8">
-        <div
-          #eventCarousel
-          aria-label="Campanhas de crescimento de marcas"
-          class="event-carousel-track"
-          id="event-carousel"
-          role="region"
-          tabindex="0"
-        >
-          <div class="event-image md-span-2 lg-span-3">
-            <img src="/images/well-day-1.jpg" alt="Comu Well Day" />
-          </div>
-          <div class="event-image md-span-2 lg-span-3">
-            <img src="/images/well-day-2.jpg" alt="Comu Well Day" />
-          </div>
-          <div class="event-image md-span-2 lg-span-3">
-            <img src="/images/well-day-3.jpg" alt="Comu Well Day" />
-          </div>
-        </div>
-        <div class="event-carousel-controls">
-          <button
-            aria-controls="event-carousel"
-            aria-label="Mostrar evento anterior"
-            class="event-carousel-button"
-            type="button"
-            (click)="scrollEvent(-1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            aria-controls="event-carousel"
-            aria-label="Mostrar próximo evento"
-            class="event-carousel-button"
-            type="button"
-            (click)="scrollEvent(1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-      <div class="event-content right span-4 md-span-4 lg-span-3">
+      <div class="event-content right span-4 md-span-8 lg-span-12">
         <h2>Comu Well Day</h2>
         <p>Movimento para quem vive em movimento.</p>
         <p>
           O Well Day reúne creators em uma experiência de wellness com aulas, ativações de marcas,
           momentos de troca e experiências pensadas para cuidar do corpo e da mente.
         </p>
-        <h6>No Well Day:</h6>
+      </div>
+      <div class="event-details span-4 md-span-2 lg-span-3">
+        <h5>No Well Day:</h5>
         <ul>
           <li>Aula de wellness</li>
           <li>Ativações de marcas</li>
@@ -71,68 +32,48 @@
           <li>Brunch</li>
         </ul>
       </div>
+      <div class="event-image span-4 md-span-2 lg-span-3">
+        <img src="/images/well-day-1.jpg" alt="Comu Well Day" />
+      </div>
+      <div class="event-image span-4 md-span-2 lg-span-3">
+        <img src="/images/well-day-2.jpg" alt="Comu Well Day" />
+      </div>
+      <div class="event-image span-4 md-span-2 lg-span-3">
+        <img src="/images/well-day-3.jpg" alt="Comu Well Day" />
+      </div>
     </div>
   </div>
 </section>
-<section class="event pink section">
+<section class="event dark section">
   <div class="container">
     <div class="grid">
-      <div class="event-content span-4 md-span-4 lg-span-3">
-        <h2>Comu Awards</h2>
+      <div class="event-content span-4 md-span-8 lg-span-12">
+        <h2 class="white">Comu Awards</h2>
         <p class="white">Um momento para reconhecer quem está fazendo acontecer.</p>
         <p class="white">
           O Comu Awards reúne creators que se destacam em vendas e resultados para uma experiência
           de celebração e reconhecimento. Além da premiação por GMV, o evento conta com ativações de
           marcas e momentos pensados para aproximar creators.
         </p>
-        <h6>No Comu Awards:</h6>
+      </div>
+      <div class="event-details span-4 md-span-2 lg-span-3">
+        <h5 class="white">No Comu Awards:</h5>
         <ul>
-          <li>Premiação por resultados</li>
-          <li>Ativações de marcas</li>
-          <li>Conexão entre creators</li>
-          <li>Reconhecimento</li>
-          <li>Festa e celebração</li>
+          <li class="white">Premiação por resultados</li>
+          <li class="white">Ativações de marcas</li>
+          <li class="white">Conexão entre creators</li>
+          <li class="white">Reconhecimento</li>
+          <li class="white">Festa e celebração</li>
         </ul>
       </div>
-      <div class="event-carousel span-4 lg-span-8">
-        <div
-          #eventCarousel2
-          aria-label="Campanhas de crescimento de marcas"
-          class="event-carousel-track"
-          id="event-carousel2"
-          role="region"
-          tabindex="0"
-        >
-          <div class="event-image md-span-2 lg-span-3">
-            <img src="/images/awards-1.jpg" alt="Comu Awards" />
-          </div>
-          <div class="event-image md-span-2 lg-span-3">
-            <img src="/images/awards-2.jpg" alt="Comu Awards" />
-          </div>
-          <div class="event-image md-span-2 lg-span-3">
-            <img src="/images/awards-3.jpg" alt="Comu Awards" />
-          </div>
-        </div>
-        <div class="event-carousel-controls">
-          <button
-            aria-controls="event-carousel2"
-            aria-label="Mostrar evento anterior"
-            class="event-carousel-button"
-            type="button"
-            (click)="scrollEvent2(-1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            aria-controls="event-carousel2"
-            aria-label="Mostrar próximo evento"
-            class="event-carousel-button"
-            type="button"
-            (click)="scrollEvent2(1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
+      <div class="event-image span-4 md-span-2 lg-span-3">
+        <img src="/images/awards-1.jpg" alt="Comu Awards" />
+      </div>
+      <div class="event-image span-4 md-span-2 lg-span-3">
+        <img src="/images/awards-2.jpg" alt="Comu Awards" />
+      </div>
+      <div class="event-image span-4 md-span-2 lg-span-3">
+        <img src="/images/awards-3.jpg" alt="Comu Awards" />
       </div>
     </div>
   </div>
@@ -140,7 +81,7 @@
 <section class="sales section">
   <div class="container">
     <div class="grid">
-      <div class="hero-sale span-4 md-span-4 lg-span-6">
+      <div class="hero-sale span-4 md-span-6 lg-span-8">
         <h2>Comu Academy</h2>
         <p>Uma imersão presencial para transformar creators comuns em creator sellers.</p>
         <p>
@@ -149,7 +90,7 @@
           conteúdo e um plano para continuar criando.
         </p>
       </div>
-      <div class="card-sale span-4 md-span-2 lg-span-4">
+      <div class="card-sale span-4 md-span-6 lg-span-8">
         <div class="card-sale-header">
           <h6>Na Academy:</h6>
         </div>
@@ -188,7 +129,7 @@
 <section class="more-than-events section">
   <div class="container">
     <div class="grid">
-      <div class="more-than-events-content span-4 md-span-4 lg-span-6">
+      <div class="more-than-events-content span-4 md-span-6 lg-span-10">
         <h2>Mais do que eventos</h2>
         <p>
           São momentos para aprender, criar conexões, celebrar resultados e fortalecer quem está

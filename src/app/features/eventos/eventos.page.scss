@@ -27,18 +27,12 @@
 
     .grid {
       height: 100%;
-      gap: var(--layout-grid-gap);
-
-      @media (min-width: 768px) {
-        gap: var(--layout-grid-gap-2x);
-      }
 
       .hero-main {
         display: flex;
         flex-direction: column;
-        gap: var(--layout-grid-gap);
+        gap: 0.5rem;
         justify-content: center;
-        text-align: center;
 
         h2 {
           color: var(--color-white);
@@ -49,64 +43,6 @@
         p {
           color: var(--color-white);
           text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
-        }
-
-        .hero-main-pills {
-          align-items: center;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-
-          app-button {
-            display: block;
-          }
-
-          > * {
-            flex: 1 1 calc(50% - 0.25rem);
-            min-width: 0;
-          }
-        }
-
-        @media (min-width: 768px) and (max-width: 1199px) {
-          grid-column: 2 / span 4;
-        }
-
-        @media (min-width: 1200px) {
-          grid-column: 3 / span 8;
-        }
-      }
-
-      .content-main {
-        display: flex;
-        flex-direction: column;
-        gap: var(--layout-grid-gap);
-
-        img {
-          border-radius: 1rem;
-          box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
-        }
-
-        .content-main-pill {
-          align-items: center;
-          background-color: var(--color-white);
-          border-radius: 1rem;
-          box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.1);
-          display: flex;
-          gap: var(--layout-grid-gap);
-          justify-content: center;
-          padding: var(--layout-grid-gap);
-          text-align: center;
-
-          p {
-            color: var(--color-dark-gray);
-
-            span {
-              font: {
-                size: 1.5rem;
-                weight: 600;
-              }
-            }
-          }
         }
       }
     }
@@ -132,52 +68,46 @@
 
 // Brand growth section
 .event {
-  padding: 4rem 0;
-
-  &.dark { background-color: var(--color-dark-gray); }
-  &.light {
-    background-color: var(--color-muted);
-  }
-  &.pink {
-    background-color: var(--color-pink);
+  &.dark {
+    background-color: var(--color-dark-gray);
   }
 
   .grid {
     align-items: center;
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
 
     .event-content {
       display: flex;
       flex-direction: column;
-      gap: var(--layout-grid-gap);
-      text-align: center;
-
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 4;
-      }
-
-      @media (min-width: 1200px) {
-        text-align: left;
-
-        &.right {
-          align-items: flex-end;
-          text-align: right;
-        }
-      }
+      gap: 0.5rem;
 
       h2 {
-        color: var(--color-white);
-      }
-      h6 {
-        color: var(--color-white);
         font-weight: 600;
+
+        &.white {
+          color: var(--color-white);
+        }
       }
       p {
-        color: var(--color-muted);
+        &.white {
+          color: var(--color-white);
+        }
+      }
+    }
+
+    .event-image {
+      img {
+        border-radius: 0.5rem;
+        width: 100%;
+      }
+    }
+
+    .event-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      h5 {
+        font-weight: 600;
 
         &.white {
           color: var(--color-white);
@@ -186,109 +116,11 @@
 
       ul {
         li {
-          color: var(--color-white);
+          color: var(--color-black);
           list-style: none;
-        }
-      }
 
-      span {
-        color: var(--color-pink);
-        font-weight: 700;
-      }
-
-      .event-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-
-        @media (min-width: 1200px) {
-          flex-direction: column;
-        }
-
-        app-button {
-          display: block;
-        }
-
-        > * {
-          flex: 1 1 calc(50% - 0.25rem);
-          min-width: 0;
-        }
-      }
-    }
-
-    .event-carousel {
-      min-width: 0;
-
-      @media (min-width: 768px) {
-        display: contents;
-      }
-
-      .event-carousel-track {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        overflow-x: auto;
-        padding-bottom: 1.5rem;
-        scroll: {
-          behavior: smooth;
-          snap-type: x mandatory;
-        }
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-
-        @media (min-width: 768px) {
-          display: contents;
-        }
-      }
-
-      .event-image {
-        flex: 0 0 100%;
-        min-width: 0;
-        scroll: {
-          snap: {
-            align: start;
-            stop: always;
-          }
-        }
-        width: 100%;
-
-        @media (min-width: 768px) {
-          flex: initial;
-        }
-
-        img {
-          border-radius: 1rem;
-          display: block;
-          width: 100%;
-        }
-      }
-
-      .event-carousel-controls {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        justify-content: center;
-
-        @media (min-width: 768px) {
-          display: none;
-        }
-
-        .event-carousel-button {
-          align-items: center;
-          background-color: var(--color-white);
-          border: 0;
-          border-radius: 50%;
-          color: var(--color-pink);
-          cursor: pointer;
-          display: inline-flex;
-          height: 2.75rem;
-          justify-content: center;
-          width: 2.75rem;
-
-          &:focus-visible {
-            outline: 3px solid var(--color-pink);
-            outline-offset: 3px;
+          &.white {
+            color: var(--color-white);
           }
         }
       }
@@ -300,26 +132,17 @@
 // Sales section
 .sales {
   .grid {
-    gap: var(--layout-grid-gap);
-    padding: 4rem 0;
-
-    @media (min-width: 768px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     .hero-sale {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      padding: 0 2rem;
-      text-align: center;
 
       @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 4;
+        grid-column: 2 / span 6;
       }
 
       @media (min-width: 1200px) {
-        grid-column: 4 / span 6;
+        grid-column: 3 / span 8;
       }
 
       .hero-sale-buttons {
@@ -348,11 +171,11 @@
       padding: 2rem;
 
       @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 3 / span 2;
+        grid-column: 2 / span 6;
       }
 
       @media (min-width: 1200px) {
-        grid-column: 5 / span 4;
+        grid-column: 3 / span 8;
       }
 
       .card-sale-header {
@@ -406,32 +229,20 @@
 // More than events section
 .more-than-events {
   background-color: var(--color-dark-gray);
-  margin-bottom: 2rem;
-  padding: 4rem 0;
 
   .grid {
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 768px) and (max-width: 1199px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     .more-than-events-content {
       display: flex;
       flex-direction: column;
-      gap: var(--layout-grid-gap);
-      text-align: center;
+      gap: 0.5rem;
 
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 4;
+      h2 {
+        color: var(--color-white);
+        font-weight: 600;
       }
-
-      @media (min-width: 1200px) {
-        grid-column: 4 / span 6;
+      p {
+        color: var(--color-cream);
       }
-
-      h2 { color: var(--color-white); }
-      p { color: var(--color-cream); }
 
       span {
         color: var(--color-pink);
