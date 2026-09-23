@@ -12,6 +12,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
 })
 export class ForCreatorsPage implements AfterViewInit, OnDestroy {
   private readonly platformId = inject(PLATFORM_ID);
+  private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
   private readonly testimonialsCarousel = viewChild.required<ElementRef<HTMLElement>>('testimonialsCarousel');
   private readonly learningCarousel =
     viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
@@ -69,6 +70,10 @@ export class ForCreatorsPage implements AfterViewInit, OnDestroy {
       clearInterval(this.historyTimer);
       this.historyTimer = undefined;
     }
+  }
+
+  scrollCards(direction: -1 | 1) {
+    this.scrollCarousel(this.cardsCarousel().nativeElement, '.card-be-part-of', direction);
   }
 
   scrollTestimonials(direction: -1 | 1) {
