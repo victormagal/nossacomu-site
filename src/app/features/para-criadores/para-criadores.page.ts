@@ -60,8 +60,13 @@ export class ForCreatorsPage implements AfterViewInit, OnDestroy {
 
   private startHistoryAutoplay() {
     this.stopHistoryAutoplay();
+    const stepCount = Math.max(
+      1,
+      this.historyStepper().nativeElement.querySelectorAll('.history-step').length,
+    );
+
     this.historyTimer = setInterval(() => {
-      this.selectHistoryStep((this.activeHistoryStep() + 1) % 3);
+      this.selectHistoryStep((this.activeHistoryStep() + 1) % stepCount);
     }, 4000);
   }
 
