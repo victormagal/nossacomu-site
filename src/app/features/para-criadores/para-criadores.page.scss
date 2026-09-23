@@ -9,7 +9,7 @@
     repeat: no-repeat;
     size: cover;
   }
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   height: 575px;
   position: relative;
 
@@ -28,82 +28,22 @@
 
     .grid {
       height: 100%;
-      gap: var(--layout-grid-gap);
-
-      @media (min-width: 768px) {
-        gap: var(--layout-grid-gap-2x);
-      }
 
       .hero-main {
         display: flex;
         flex-direction: column;
         gap: var(--layout-grid-gap);
         justify-content: center;
-        text-align: center;
 
-        h2,
-        p {
+        h2 {
           color: var(--color-white);
-          font-weight: 700;
+          font-weight: 600;
           text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
         }
 
-        .hero-main-pills {
-          align-items: center;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-
-          app-button {
-            display: block;
-          }
-
-          > * {
-            flex: 1 1 calc(50% - 0.25rem);
-            min-width: 0;
-          }
-        }
-
-        @media (min-width: 768px) and (max-width: 1199px) {
-          grid-column: 2 / span 4;
-        }
-
-        @media (min-width: 1200px) {
-          grid-column: 3 / span 8;
-        }
-      }
-
-      .content-main {
-        display: flex;
-        flex-direction: column;
-        gap: var(--layout-grid-gap);
-
-        img {
-          border-radius: 1rem;
-          box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.25);
-        }
-
-        .content-main-pill {
-          align-items: center;
-          background-color: var(--color-white);
-          border-radius: 1rem;
-          box-shadow: 0 0.25rem 0.5rem rgba(var(--color-black-rgb), 0.1);
-          display: flex;
-          gap: var(--layout-grid-gap);
-          justify-content: center;
-          padding: var(--layout-grid-gap);
-          text-align: center;
-
-          p {
-            color: var(--color-dark-gray);
-
-            span {
-              font: {
-                size: 1.5rem;
-                weight: 600;
-              }
-            }
-          }
+        p {
+          color: var(--color-white);
+          text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
         }
       }
     }
@@ -115,6 +55,7 @@
       url('/images/heros/creators-tablet-2x.jpg') 2x
     );
     height: 445px;
+    margin-bottom: 3rem;
   }
 
   @media (min-width: 1200px) {
@@ -123,132 +64,50 @@
       url('/images/heros/creators-desktop-2x.jpg') 2x
     );
     height: 560px;
+    margin-bottom: 4rem;
   }
 }
 // Main section
 
 // Be part of section
 .be-part-of {
-  padding: 3rem 0 4rem;
-
   .grid {
-    gap: var(--layout-grid-gap);
-
-    @media (min-width: 1200px) {
-      gap: var(--layout-grid-gap-2x);
-    }
-
     .hero-be-part-of {
       display: flex;
       flex-direction: column;
-      gap: var(--layout-grid-gap);
-      padding: 0 2rem;
-      text-align: center;
+      gap: 0.5rem;
 
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 4;
-      }
+      img { width: 150px; }
 
-      @media (min-width: 1200px) {
-        grid-column: 4 / span 6;
-        grid-row: 1;
-      }
-
-      .hero-be-part-of-logo {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-
-        @media (min-width: 1200px) {
-          flex-direction: column;
-        }
-
-        h3 {
-          font-weight: 300;
-
-          span {
-            font-weight: 600;
-          }
-        }
-      }
-
-      .hero-be-part-of-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-
-        app-button {
-          display: block;
-        }
-
-        > * {
-          flex: 1 1 calc(50% - 0.25rem);
-          min-width: 0;
-        }
+      h2 {
+        font-weight: 300;
+        span { font-weight: 600; }
       }
     }
 
     .cards-carousel {
       min-width: 0;
 
+      /* Use a grid layout at all sizes instead of a horizontal scrolling carousel */
       .cards-carousel-track {
-        display: flex;
+        display: grid;
         gap: var(--layout-grid-gap);
-        overflow-x: auto;
-        padding: 0 0 1.5rem;
-        scroll: {
-          behavior: smooth;
-          snap-type: x mandatory;
-        }
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-
-        .card-be-part-of {
-          flex: 0 0 calc(100%);
-          scroll-snap-align: start;
-          scroll-snap-stop: always;
-        }
+        padding: 0;
+        /* default to a 4-column base grid so cards align with the layout system */
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
+      /* Controls are no longer needed since layout is static */
       .cards-carousel-controls {
-        display: flex;
-        gap: var(--layout-grid-gap);
-        justify-content: center;
-
-        .cards-carousel-button {
-          align-items: center;
-          background-color: var(--color-white);
-          border: 1px solid rgba(var(--color-muted-rgb), 0.45);
-          border-radius: 50%;
-          cursor: pointer;
-          display: inline-flex;
-          height: 2.75rem;
-          justify-content: center;
-          width: 2.75rem;
-
-          &:focus-visible {
-            outline: 3px solid var(--color-pink);
-            outline-offset: 3px;
-          }
-        }
+        display: none;
       }
 
       @media (min-width: 768px) {
         grid-column: 2 / span 4;
 
         .cards-carousel-track {
-          display: grid;
+          /* keep the tablet/desktop column configuration */
           grid-template-columns: repeat(4, minmax(0, 1fr));
-          overflow: visible;
-          padding: 0;
-        }
-
-        .cards-carousel-controls {
-          display: none;
         }
       }
 
