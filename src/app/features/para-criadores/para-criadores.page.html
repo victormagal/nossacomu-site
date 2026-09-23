@@ -1,7 +1,7 @@
 <section class="main section">
   <div class="container">
     <div class="grid">
-      <div class="hero-main span-4 md-span-4 lg-span-8">
+      <div class="hero-main span-4 md-span-6 lg-span-8">
         <h2>Faça parte de quem está construindo o futuro da creator economy</h2>
         <p>Criar conteúdo é só o começo.</p>
       </div>
@@ -12,86 +12,32 @@
 <section class="be-part-of section">
   <div class="container">
     <div class="grid">
-      <div class="hero-be-part-of span-4 md-span-4 lg-span-6">
-        <div class="hero-be-part-of-logo">
-          <img alt="Comu" src="/images/logo-comu-mais.svg" />
-          <h3><span>Comunidade Premium.</span> Tudo o que um creator precisa para crescer.</h3>
-        </div>
+      <div class="hero-be-part-of span-4 md-span-8 lg-span-10">
+        <img alt="Comu" src="/images/logo-comu-mais.svg" />
+        <h2><span>Comunidade Premium.</span> Tudo o que um creator precisa para crescer.</h2>
       </div>
-      <div class="cards-carousel span-4 md-span-4 lg-span-12">
-        <div
-          #cardsCarousel
-          aria-label="Opções para fazer parte da Comu"
-          class="cards-carousel-track"
-          id="be-part-of-carousel"
-          role="region"
-          tabindex="0"
-        >
-          <div class="card-be-part-of span-4 md-span-2 lg-span-3">
-            <div class="card-be-part-of-header">
-              <i class="fa-solid fa-users fa-3x"></i>
-            </div>
-            <div class="card-be-part-of-body">
-              <h3>Comunidade</h3>
-              <p>
-                Compartilhe experiências, tire dúvidas e evolua ao lado de creators de todo o
-                Brasil.
-              </p>
-            </div>
-          </div>
-          <div class="card-be-part-of span-4 md-span-2 lg-span-3">
-            <div class="card-be-part-of-header">
-              <i class="fa-solid fa-graduation-cap fa-3x"></i>
-            </div>
-            <div class="card-be-part-of-body">
-              <h3>Aprendizado</h3>
-              <p>
-                Tenha acesso a conteúdos, mentorias e materiais criados para acelerar sua carreira
-                como creator.
-              </p>
-            </div>
-          </div>
-          <div class="card-be-part-of span-4 md-span-2 lg-span-3">
-            <div class="card-be-part-of-header">
-              <i class="fa-solid fa-briefcase fa-3x"></i>
-            </div>
-            <div class="card-be-part-of-body">
-              <h3>Oportunidades</h3>
-              <p>
-                Conecte-se a marcas, campanhas e ativações exclusivas para transformar suas vendas.
-              </p>
-            </div>
-          </div>
-          <div class="card-be-part-of span-4 md-span-2 lg-span-3">
-            <div class="card-be-part-of-header">
-              <i class="fa-solid fa-chart-line fa-3x"></i>
-            </div>
-            <div class="card-be-part-of-body">
-              <h3>Estratégia</h3>
-              <p>Entenda o que está movimentando o mercado e acompanhe as mudanças e tendências.</p>
-            </div>
-          </div>
-        </div>
-        <div class="cards-carousel-controls">
-          <button
-            aria-controls="be-part-of-carousel"
-            aria-label="Mostrar card anterior"
-            class="cards-carousel-button"
-            (click)="scrollCards(-1)"
-            type="button"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            aria-controls="be-part-of-carousel"
-            aria-label="Mostrar próximo card"
-            class="cards-carousel-button"
-            (click)="scrollCards(1)"
-            type="button"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
+      <div class="card-be-part-of span-2 md-span-2 lg-span-3">
+        <h5>Comunidade</h5>
+        <p>Compartilhe experiências, tire dúvidas e evolua ao lado de creators de todo o Brasil.</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+      <div class="card-be-part-of span-2 md-span-2 lg-span-3">
+        <h5>Aprendizado</h5>
+        <p>
+          Tenha acesso a conteúdos, mentorias e materiais criados para acelerar sua carreira como
+          creator.
+        </p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+      <div class="card-be-part-of span-2 md-span-2 lg-span-3">
+        <h5>Oportunidades</h5>
+        <p>Conecte-se a marcas, campanhas e ativações exclusivas para transformar suas vendas.</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </div>
+      <div class="card-be-part-of span-2 md-span-2 lg-span-3">
+        <h5>Estratégia</h5>
+        <p>Entenda o que está movimentando o mercado e acompanhe as mudanças e tendências.</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
       </div>
     </div>
   </div>
@@ -99,181 +45,230 @@
 <section class="creators section">
   <div class="container">
     <div class="grid">
-      <div class="hero-creators span-4 md-span-4 lg-span-6">
+      <div class="hero-creators span-4 md-span-8 lg-span-10">
         <h2>Creators que começaram como você</h2>
         <p>Conheça as histórias de creators que escolheram crescer com a Comu.</p>
       </div>
-      <div class="stories-carousel span-4 md-span-6 lg-span-12">
-        <div
-          #storiesCarousel
-          aria-label="Histórias dos criadores da comunidade"
-          class="stories-carousel-track"
-          id="stories-carousel"
-          role="region"
-          tabindex="0"
-        >
-          <div class="story span-4 md-span-2 lg-span-4">
-            <img src="/images/creators/nathalia_bisson.jpeg" alt="Nath Bisson" />
-            <div class="content-story">
-              <h3>Nath Bisson</h3>
-              <h5>De jornalista a top creator.</h5>
-              <p>
-                Nath sempre teve facilidade para se comunicar, mas tinha medo de se expor e ser
-                julgada. Um vídeo despretensioso sobre recriação de looks mudou tudo. Ela encontrou
-                seu nicho, começou a construir uma comunidade e descobriu no TikTok Shop uma nova
-                oportunidade de monetizar seu conteúdo.
-              </p>
-            </div>
-          </div>
-          <div class="story span-4 md-span-2 lg-span-4">
-            <img src="/images/creators/giander.jpg" alt="Giander" />
-            <div class="content-story">
-              <h3>Giander</h3>
-              <h5>Da música para o TikTok Shop.</h5>
-              <p>
-                Giander começou sua carreira musical no funk e construiu uma audiência de 1 milhão
-                de seguidores com música, lifestyle e humor. Quando descobriu o TikTok Shop,
-                encontrou uma nova forma de financiar sua carreira musical.
-              </p>
-            </div>
-          </div>
-          <div class="story span-4 md-span-2 lg-span-4">
-            <img src="/images/creators/nohara_navarro.jpeg" alt="Nohara Navarro" />
-            <div class="content-story">
-              <h3>Nohara Navarro</h3>
-              <h5>Uma nova carreira em busca de mais liberdade.</h5>
-              <p>
-                Depois de anos empreendendo com papelaria personalizada, Nohara descobriu no digital
-                uma possibilidade de escala. Conheceu o TikTok Shop, começou a estudar e, poucos
-                meses depois, fez a transição completa para a plataforma.
-              </p>
-              <p>Hoje, o TikTok Shop é sua principal fonte de renda.</p>
-            </div>
-          </div>
-          <div class="story span-4 md-span-2 lg-span-4">
-            <img src="/images/creators/bruno_lourenco.jpeg" alt="Bruno Lourenço" />
-            <div class="content-story">
-              <h3>Bruno Lourenço</h3>
-              <h5>Começou nas poucas horas livres do dia.</h5>
-              <p>
-                Empresário e barbeiro, Bruno começou a estudar marketing digital enquanto trabalhava
-                12 horas por dia. Depois de conhecer o TikTok Shop, decidiu se expor e começar a
-                criar conteúdo mesmo com pouco tempo disponível.
-              </p>
-              <p>
-                No primeiro mês do TikTok Shop Brasil, conquistou mais de R$ 7 mil em comissões.
-              </p>
-            </div>
-          </div>
-          <div class="story span-4 md-span-2 lg-span-4">
-            <img src="/images/creators/rosana_moraes.jpeg" alt="Rosana Moraes" />
-            <div class="content-story">
-              <h3>Rosana Moraes</h3>
-              <h5>De 20 anos em vendas para o TikTok Shop.</h5>
-              <p>
-                Rosana já tinha uma longa história no mundo das vendas quando decidiu apostar no
-                TikTok Shop. No primeiro mês, faturou R$ 116. Em vez de parar ali, continuou
-                estudando, fazendo lives e testando.
-              </p>
-              <p>Foi assim que começou a construir sua história na plataforma.</p>
-            </div>
-          </div>
-          <div class="story span-4 md-span-2 lg-span-4">
-            <img src="/images/creators/felipe_tomio.jpeg" alt="Felipe Tomio" />
-            <div class="content-story">
-              <h3>Felipe Tomio</h3>
-              <h5>De vendedor a um dos grandes nomes do TikTok Shop.</h5>
-              <p>
-                Felipe começou a trabalhar aos 11 anos e passou por diferentes funções até aprender,
-                na prática, a vender e se comunicar. Depois de anos empreendendo, encontrou uma nova
-                oportunidade no TikTok Shop.
-              </p>
-              <p>
-                Com consistência e vídeos simples, construiu seu espaço entre os grandes creators da
-                plataforma.
-              </p>
-            </div>
-          </div>
+      <div class="story span-4 md-span-4 lg-span-4">
+        <img src="/images/creators/nathalia_bisson.jpeg" alt="Nath Bisson" />
+        <div class="content-story">
+          <h3>Nath Bisson</h3>
+          <h5>De jornalista a top creator.</h5>
+          <p>
+            Nath sempre teve facilidade para se comunicar, mas tinha medo de se expor e ser julgada.
+            Um vídeo despretensioso sobre recriação de looks mudou tudo. Ela encontrou seu nicho,
+            começou a construir uma comunidade e descobriu no TikTok Shop uma nova oportunidade de
+            monetizar seu conteúdo.
+          </p>
         </div>
-        <div class="stories-carousel-controls">
-          <button
-            aria-controls="stories-carousel"
-            aria-label="Mostrar história anterior"
-            class="stories-carousel-button"
-            type="button"
-            (click)="scrollStories(-1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            aria-controls="stories-carousel"
-            aria-label="Mostrar próxima história"
-            class="stories-carousel-button"
-            type="button"
-            (click)="scrollStories(1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-          </button>
+      </div>
+      <div class="story span-4 md-span-4 lg-span-4">
+        <img src="/images/creators/giander.jpg" alt="Giander" />
+        <div class="content-story">
+          <h3>Giander</h3>
+          <h5>Da música para o TikTok Shop.</h5>
+          <p>
+            Giander começou sua carreira musical no funk e construiu uma audiência de 1 milhão de
+            seguidores com música, lifestyle e humor. Quando descobriu o TikTok Shop, encontrou uma
+            nova forma de financiar sua carreira musical.
+          </p>
+        </div>
+      </div>
+      <div class="story span-4 md-span-4 lg-span-4">
+        <img src="/images/creators/nohara_navarro.jpeg" alt="Nohara Navarro" />
+        <div class="content-story">
+          <h3>Nohara Navarro</h3>
+          <h5>Uma nova carreira em busca de mais liberdade.</h5>
+          <p>
+            Depois de anos empreendendo com papelaria personalizada, Nohara descobriu no digital uma
+            possibilidade de escala. Conheceu o TikTok Shop, começou a estudar e, poucos meses
+            depois, fez a transição completa para a plataforma.
+          </p>
+          <p>Hoje, o TikTok Shop é sua principal fonte de renda.</p>
+        </div>
+      </div>
+      <div class="story span-4 md-span-4 lg-span-4">
+        <img src="/images/creators/bruno_lourenco.jpeg" alt="Bruno Lourenço" />
+        <div class="content-story">
+          <h3>Bruno Lourenço</h3>
+          <h5>Começou nas poucas horas livres do dia.</h5>
+          <p>
+            Empresário e barbeiro, Bruno começou a estudar marketing digital enquanto trabalhava 12
+            horas por dia. Depois de conhecer o TikTok Shop, decidiu se expor e começar a criar
+            conteúdo mesmo com pouco tempo disponível.
+          </p>
+          <p>No primeiro mês do TikTok Shop Brasil, conquistou mais de R$ 7 mil em comissões.</p>
+        </div>
+      </div>
+      <div class="story span-4 md-span-4 lg-span-4">
+        <img src="/images/creators/rosana_moraes.jpeg" alt="Rosana Moraes" />
+        <div class="content-story">
+          <h3>Rosana Moraes</h3>
+          <h5>De 20 anos em vendas para o TikTok Shop.</h5>
+          <p>
+            Rosana já tinha uma longa história no mundo das vendas quando decidiu apostar no TikTok
+            Shop. No primeiro mês, faturou R$ 116. Em vez de parar ali, continuou estudando, fazendo
+            lives e testando.
+          </p>
+          <p>Foi assim que começou a construir sua história na plataforma.</p>
+        </div>
+      </div>
+      <div class="story span-4 md-span-4 lg-span-4">
+        <img src="/images/creators/felipe_tomio.jpeg" alt="Felipe Tomio" />
+        <div class="content-story">
+          <h3>Felipe Tomio</h3>
+          <h5>De vendedor a um dos grandes nomes do TikTok Shop.</h5>
+          <p>
+            Felipe começou a trabalhar aos 11 anos e passou por diferentes funções até aprender, na
+            prática, a vender e se comunicar. Depois de anos empreendendo, encontrou uma nova
+            oportunidade no TikTok Shop.
+          </p>
+          <p>
+            Com consistência e vídeos simples, construiu seu espaço entre os grandes creators da
+            plataforma.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="journey section">
+<section class="history section">
   <div class="container">
     <div class="grid">
-      <div class="hero-journey span-4 md-span-4 lg-span-6">
+      <header class="span-4 md-span-8 lg-span-12">
         <h2>Seu crescimento acompanha suas oportunidades</h2>
         <p>
           A Comu organiza sua caminhada em níveis que acompanham sua evolução e conectam você ao
           conteúdo, campanhas e experiências certas para cada momento.
         </p>
-      </div>
-      <div class="content-journey span-4 md-span-6 lg-span-12">
-        <div class="content-journey-header">
-          <h5>Seu crescimento dentro da Comu.</h5>
-          <i class="fa-solid fa-users fa-2x"></i>
-        </div>
-        <div class="content-journey-footer">
-          <div class="timeline" aria-label="Linha do tempo de crescimento" role="list">
-            <div aria-hidden="true" class="timeline-line"></div>
-            <div class="timeline-item" role="listitem">
-              <div class="timeline-content">
-                <h5>Comu+</h5>
+      </header>
+      <div class="content-history span-4 md-span-8 lg-span-12">
+        <div class="content-history-footer">
+          <div #historyStepper class="history-stepper">
+            <div aria-label="Seu crescimento dentro da Comu" class="history-steps" role="tablist">
+              <button
+                [attr.aria-selected]="activeHistoryStep() === 0"
+                [class.active]="activeHistoryStep() === 0"
+                aria-controls="history-panel-comu-mais"
+                class="history-step"
+                id="history-tab-comu-mais"
+                role="tab"
+                type="button"
+                (click)="selectHistoryStep(0)"
+              >
+                Comu+
+                <span
+                  [class.progress-alternate]="historyProgressAlternate()"
+                  aria-hidden="true"
+                  class="history-step-progress"
+                ></span>
+              </button>
+              <button
+                [attr.aria-selected]="activeHistoryStep() === 1"
+                [class.active]="activeHistoryStep() === 1"
+                aria-controls="history-panel-comu-base"
+                class="history-step"
+                id="history-tab-comu-base"
+                role="tab"
+                type="button"
+                (click)="selectHistoryStep(1)"
+              >
+                Comu Base
+                <span
+                  [class.progress-alternate]="historyProgressAlternate()"
+                  aria-hidden="true"
+                  class="history-step-progress"
+                ></span>
+              </button>
+              <button
+                [attr.aria-selected]="activeHistoryStep() === 2"
+                [class.active]="activeHistoryStep() === 2"
+                aria-controls="history-panel-top-creator"
+                class="history-step"
+                id="history-tab-top-creator"
+                role="tab"
+                type="button"
+                (click)="selectHistoryStep(2)"
+              >
+                Top Creator
+                <span
+                  [class.progress-alternate]="historyProgressAlternate()"
+                  aria-hidden="true"
+                  class="history-step-progress"
+                ></span>
+              </button>
+              <button
+                [attr.aria-selected]="activeHistoryStep() === 3"
+                [class.active]="activeHistoryStep() === 3"
+                aria-controls="history-panel-star-club"
+                class="history-step"
+                id="history-tab-star-club"
+                role="tab"
+                type="button"
+                (click)="selectHistoryStep(3)"
+              >
+                Star Club
+                <span
+                  [class.progress-alternate]="historyProgressAlternate()"
+                  aria-hidden="true"
+                  class="history-step-progress"
+                ></span>
+              </button>
+            </div>
+
+            <section
+              [class.active]="activeHistoryStep() === 0"
+              aria-labelledby="history-tab-comu-mais"
+              class="history-panel"
+              id="history-panel-comu-mais"
+              role="tabpanel"
+            >
+              <div class="history-year">Comu+</div>
+              <div class="history-panel-content">
                 <p>Aprofunde seus conhecimentos e tenha acesso a mais oportunidades.</p>
               </div>
-              <div aria-hidden="true" class="timeline-dot"></div>
-            </div>
-            <div class="timeline-item" role="listitem">
-              <div class="timeline-content">
-                <h5>Comu Base</h5>
+            </section>
+
+            <section
+              [class.active]="activeHistoryStep() === 1"
+              aria-labelledby="history-tab-comu-base"
+              class="history-panel"
+              id="history-panel-comu-base"
+              role="tabpanel"
+            >
+              <div class="history-year">Comu Base</div>
+              <div class="history-panel-content">
                 <p>
                   O ponto de partida para quem quer aprender, criar e começar a monetizar do zero.
                 </p>
               </div>
-              <div aria-hidden="true" class="timeline-dot"></div>
-            </div>
-            <div class="timeline-item" role="listitem">
-              <div class="timeline-content">
-                <h5>Top Creator</h5>
+            </section>
+
+            <section
+              [class.active]="activeHistoryStep() === 2"
+              aria-labelledby="history-tab-top-creator"
+              class="history-panel"
+              id="history-panel-top-creator"
+              role="tabpanel"
+            >
+              <div class="history-year">Top Creator</div>
+              <div class="history-panel-content">
                 <p>Mais campanhas, mais visibilidade e novas possibilidades de crescimento.</p>
               </div>
-              <div aria-hidden="true" class="timeline-dot"></div>
-            </div>
-            <div class="timeline-item" role="listitem">
-              <div class="timeline-content">
-                <h5>Star Club</h5>
+            </section>
+
+            <section
+              [class.active]="activeHistoryStep() === 3"
+              aria-labelledby="history-tab-star-club"
+              class="history-panel"
+              id="history-panel-star-club"
+              role="tabpanel"
+            >
+              <div class="history-year">Star Club</div>
+              <div class="history-panel-content">
                 <p>Relacionamento próximo, benefícios exclusivos e acompanhamento estratégico.</p>
               </div>
-              <div aria-hidden="true" class="timeline-dot"></div>
-            </div>
-            <div class="timeline-item" role="listitem">
-              <div class="timeline-content">
-                <h5>Comu Elite</h5>
-                <p>Apenas creators selecionados.</p>
-              </div>
-              <div aria-hidden="true" class="timeline-dot"></div>
-            </div>
+            </section>
           </div>
         </div>
       </div>
@@ -283,101 +278,70 @@
 <section class="testimonials section">
   <div class="container">
     <div class="grid">
-      <div class="hero-testimonials span-4 md-span-4 lg-span-6">
+      <div class="hero-testimonials span-4 md-span-8 lg-span-10">
         <h2>O que nossos creators vivem na Comu</h2>
       </div>
-      <div class="testimonials-carousel span-4 md-span-6 lg-span-12">
-        <div
-          #testimonialsCarousel
-          aria-label="Conteúdos de aprendizado"
-          class="testimonials-carousel-track"
-          id="testimonials-carousel"
-          role="region"
-          tabindex="0"
-        >
-          <div class="card-testimonials span-4 md-span-2 lg-span-4">
-            <div class="text">
-              <p>
-                “Amei sua análise e vou aplicar cada dica que me passou, abriu muito a minha mente e
-                me deu muita clareza do próximo passo.
-              </p>
-              <p>
-                E sobre o GMV, esse foi o primeiro mês que atingi esse valor, até então meu GMV médio
-                era de 80 a 90k e agora quero conseguir manter essa média atual de 150k com
-                constância.
-              </p>
-              <p>Muito obrigada pela atenção e pelo carinho, seu trabalho ficou impecável ❤️</p>
-              <p>Não tenho dúvidas que teremos ótimos resultados daqui em diante 🙏🏻”</p>
-            </div>
-            <h6>Creator da Comu+</h6>
-          </div>
-          <div class="card-testimonials span-4 md-span-2 lg-span-4">
-            <div class="text">
-              <p>“Tirei vários insights, feliz por ter entrado na comu+”</p>
-            </div>
-            <h6>Mary Jayne, creator da Comu+</h6>
-          </div>
-          <div class="card-testimonials span-4 md-span-2 lg-span-4">
-            <div class="text">
-              <p>
-                “Amores quero compartilhar com vcs que voltei para o Nível 5. A meta (ousada) agora é
-                chegar no nível 6!!!!
-              </p>
-              <p>Gostaria de agradecer todo o suporte e ajuda maravilhosa de vcs !!! ❤️❤️❤️❤️❤️”</p>
-            </div>
-            <h6>Maria Fernanda, creator do Star Club</h6>
-          </div>
-          <div class="card-testimonials span-4 md-span-2 lg-span-4">
-            <div class="text">
-              <p>
-                “É o que eu falo sempre quando indico a Comu pra alguém. Falo exatamente isso, eu
-                nunca comprei um curso relevante por menos de 197 reais e com certeza isso aqui é ouro
-                pra gente que está começando.”
-              </p>
-            </div>
-            <h6>Jully Islene, creator da Comu Base</h6>
-          </div>
-          <div class="card-testimonials span-4 md-span-2 lg-span-4">
-            <div class="text">
-              <p>
-                “Minha melhor escolha no TikTok Shop. Tô investindo nos produtos parceiros, produzindo
-                conteúdo com base no estudo e conhecimento da marca e ta fazendo diferencial. Essa
-                semana viralizei um vídeo com o shampoo da Noviole e sai fo Nível 1 para o nível 2 e
-                to chegando no nível 3 praticamente só com esse produtoooo 🙏✨”
-              </p>
-            </div>
-            <h6>Creator da Comu Base</h6>
-          </div>
-          <div class="card-testimonials span-4 md-span-2 lg-span-4">
-            <div class="text">
-              <p>
-                “Boa tarde tudo bem? Ju, amei a análise, me deu várias ideias e agora vou coloca em
-                prática para melhorar meus vídeos, muito obrigada”
-              </p>
-            </div>
-            <h6>Creator da Comu Base</h6>
-          </div>
+      <div class="card-testimonials span-4 md-span-4 lg-span-4">
+        <div class="text">
+          <p>
+            “Amei sua análise e vou aplicar cada dica que me passou, abriu muito a minha mente e
+            me deu muita clareza do próximo passo.
+          </p>
+          <p>
+            E sobre o GMV, esse foi o primeiro mês que atingi esse valor, até então meu GMV
+            médio era de 80 a 90k e agora quero conseguir manter essa média atual de 150k com
+            constância.
+          </p>
+          <p>Muito obrigada pela atenção e pelo carinho, seu trabalho ficou impecável ❤️</p>
+          <p>Não tenho dúvidas que teremos ótimos resultados daqui em diante 🙏🏻”</p>
         </div>
-        <div class="testimonials-carousel-controls">
-          <button
-            aria-controls="testimonials-carousel"
-            aria-label="Mostrar conteúdo anterior"
-            class="testimonials-carousel-button"
-            type="button"
-            (click)="scrollTestimonials(-1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            aria-controls="testimonials-carousel"
-            aria-label="Mostrar próximo conteúdo"
-            class="testimonials-carousel-button"
-            type="button"
-            (click)="scrollTestimonials(1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-          </button>
+        <h6>Creator da Comu+</h6>
+      </div>
+      <div class="card-testimonials span-4 md-span-4 lg-span-4">
+        <div class="text">
+          <p>“Tirei vários insights, feliz por ter entrado na comu+”</p>
         </div>
+        <h6>Mary Jayne, creator da Comu+</h6>
+      </div>
+      <div class="card-testimonials span-4 md-span-4 lg-span-4">
+        <div class="text">
+          <p>
+            “Amores quero compartilhar com vcs que voltei para o Nível 5. A meta (ousada) agora
+            é chegar no nível 6!!!!
+          </p>
+          <p>Gostaria de agradecer todo o suporte e ajuda maravilhosa de vcs !!! ❤️❤️❤️❤️❤️”</p>
+        </div>
+        <h6>Maria Fernanda, creator do Star Club</h6>
+      </div>
+      <div class="card-testimonials span-4 md-span-4 lg-span-4">
+        <div class="text">
+          <p>
+            “É o que eu falo sempre quando indico a Comu pra alguém. Falo exatamente isso, eu
+            nunca comprei um curso relevante por menos de 197 reais e com certeza isso aqui é
+            ouro pra gente que está começando.”
+          </p>
+        </div>
+        <h6>Jully Islene, creator da Comu Base</h6>
+      </div>
+      <div class="card-testimonials span-4 md-span-4 lg-span-4">
+        <div class="text">
+          <p>
+            “Minha melhor escolha no TikTok Shop. Tô investindo nos produtos parceiros,
+            produzindo conteúdo com base no estudo e conhecimento da marca e ta fazendo
+            diferencial. Essa semana viralizei um vídeo com o shampoo da Noviole e sai fo Nível
+            1 para o nível 2 e to chegando no nível 3 praticamente só com esse produtoooo 🙏✨”
+          </p>
+        </div>
+        <h6>Creator da Comu Base</h6>
+      </div>
+      <div class="card-testimonials span-4 md-span-4 lg-span-4">
+        <div class="text">
+          <p>
+            “Boa tarde tudo bem? Ju, amei a análise, me deu várias ideias e agora vou coloca em
+            prática para melhorar meus vídeos, muito obrigada”
+          </p>
+        </div>
+        <h6>Creator da Comu Base</h6>
       </div>
     </div>
   </div>
@@ -385,77 +349,46 @@
 <section class="learning section">
   <div class="container">
     <div class="grid">
-      <div class="hero-learning span-4 md-span-4 lg-span-4">
+      <div class="hero-learning span-4 md-span-6 lg-span-8">
         <h2>Aprenda o que faz sentido para o seu momento</h2>
         <p>
           Nem todo creator está na mesma fase. Por isso, desenvolvemos produtos que acompanham sua
           evolução, da primeira venda à construção de uma marca pessoal.
         </p>
       </div>
-      <div class="learning-carousel span-4">
-        <div
-          #learningCarousel
-          aria-label="Conteúdos de aprendizado"
-          class="learning-carousel-track"
-          id="learning-carousel"
-          role="region"
-          tabindex="0"
-        >
-          <div class="card-learning span-4 md-span-3 lg-span-4">
-            <div class="card-learning-body">
-              <img src="/images/shop-creator.webp" alt="Shop Creator" />
-              <h6>Shop Creator</h6>
-              <h5>Comece a vender no TikTok Shop.</h5>
-              <p>
-                Os primeiros passos para transformar conteúdo em vendas e construir resultados na
-                plataforma.
-              </p>
-              <app-button
-                link="https://hotmart.com/pt-br/marketplace/produtos/certificacao-shop-creator/Y104039560N"
-                target="_blank"
-                text="Conhecer"
-                type="pink"
-              >
-              </app-button>
-            </div>
-          </div>
-          <div class="card-learning span-4 md-span-3 lg-span-4">
-            <div class="card-learning-body">
-              <img src="/images/live-shop-pro.webp" alt="Live Shop Pro" />
-              <h6>Live Shop Pro</h6>
-              <h5>Transforme suas lives em uma experiência.</h5>
-              <p>
-                Estratégias para aumentar retenção, engajamento e resultados em cada transmissão.
-              </p>
-              <app-button
-                link="https://hotmart.com/pt-br/marketplace/produtos/live-pro-shop/Y104415160H"
-                target="_blank"
-                text="Conhecer"
-                type="pink"
-              >
-              </app-button>
-            </div>
-          </div>
+      <div class="card-learning span-4 md-span-3 lg-span-4">
+        <div class="card-learning-body">
+          <img src="/images/shop-creator.webp" alt="Shop Creator" />
+          <h6>Shop Creator</h6>
+          <h5>Comece a vender no TikTok Shop.</h5>
+          <p>
+            Os primeiros passos para transformar conteúdo em vendas e construir resultados na
+            plataforma.
+          </p>
+          <app-button
+            link="https://hotmart.com/pt-br/marketplace/produtos/certificacao-shop-creator/Y104039560N"
+            target="_blank"
+            text="Conhecer"
+            type="pink"
+          >
+          </app-button>
         </div>
-        <div class="learning-carousel-controls">
-          <button
-            aria-controls="learning-carousel"
-            aria-label="Mostrar conteúdo anterior"
-            class="learning-carousel-button"
-            type="button"
-            (click)="scrollLearning(-1)"
+      </div>
+      <div class="card-learning span-4 md-span-3 lg-span-4">
+        <div class="card-learning-body">
+          <img src="/images/live-shop-pro.webp" alt="Live Shop Pro" />
+          <h6>Live Shop Pro</h6>
+          <h5>Transforme suas lives em uma experiência.</h5>
+          <p>
+            Estratégias para aumentar retenção, engajamento e resultados em cada transmissão.
+          </p>
+          <app-button
+            link="https://hotmart.com/pt-br/marketplace/produtos/live-pro-shop/Y104415160H"
+            target="_blank"
+            text="Conhecer"
+            type="pink"
           >
-            <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            aria-controls="learning-carousel"
-            aria-label="Mostrar próximo conteúdo"
-            class="learning-carousel-button"
-            type="button"
-            (click)="scrollLearning(1)"
-          >
-            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
-          </button>
+          </app-button>
         </div>
       </div>
     </div>
@@ -464,29 +397,26 @@
 <section class="events section">
   <div class="container">
     <div class="grid">
-      <div class="hero-events span-4 md-span-3 lg-span-6">
+      <div class="hero-events span-4 md-span-8 lg-span-10">
         <h2>Experiências que aproximam creators do mercado</h2>
         <p>
           Conheça os eventos e saiba os requisitos para participar de experiências com networking,
           aprendizado e mais oportunidades.
         </p>
       </div>
-      <div class="event span-4 md-span-3 lg-span-5">
+      <div class="event span-4 md-span-4 lg-span-5">
         <img src="/images/event_wellness_grid.jpg" alt="Comu Well Day" />
         <div class="content-story">
           <h3>Comu Well Day</h3>
           <p>Um dia para desacelerar, se conectar e voltar para a criação com outra energia.</p>
         </div>
       </div>
-      <div class="event span-4 md-span-3 lg-span-5">
+      <div class="event span-4 md-span-4 lg-span-5">
         <img src="/images/event_awards_grid.jpg" alt="Comu Awards" />
         <div class="content-story">
           <h3>Comu Awards</h3>
           <p>Um momento para reconhecer quem está fazendo acontecer.</p>
         </div>
-      </div>
-      <div class="events-cta span-4 md-span-4 lg-span-6">
-        <app-button link="/eventos" text="Saber mais" type="pink-border"></app-button>
       </div>
     </div>
   </div>
@@ -494,11 +424,11 @@
 <section class="sales section">
   <div class="container">
     <div class="grid">
-      <div class="hero-sale span-4 md-span-4 lg-span-6">
+      <div class="hero-sale span-4 md-span-8 lg-span-10">
         <h2>Você não precisa fazer tudo sozinho</h2>
         <p>Comece gratuitamente ou acelere sua evolução com a Comu+.</p>
       </div>
-      <div class="card-sale span-4 md-span-3 lg-span-5">
+      <div class="card-sale span-4 md-span-4 lg-span-5">
         <div class="card-sale-header">
           <img alt="Comu free" src="/images/logo-comu-free.svg" width="116" />
           <h6>Gratuito</h6>
@@ -539,7 +469,7 @@
           </app-button>
         </div>
       </div>
-      <div class="card-sale span-4 md-span-3 lg-span-5">
+      <div class="card-sale span-4 md-span-4 lg-span-5">
         <div class="card-sale-header">
           <img alt="Comu mais" src="/images/logo-comu-mais.svg" width="130" />
           <p>Acelere seus resultados. Para creators que querem ir além do básico.</p>
@@ -585,7 +515,7 @@
 <section class="faq section">
   <div class="container">
     <div class="grid">
-      <div class="faq-content span-4 md-span-4 lg-span-8">
+      <div class="faq-content span-4 md-span-6 lg-span-8">
         <div class="faq-header">
           <h2>Ainda ficou alguma dúvida?</h2>
         </div>
@@ -736,7 +666,7 @@
 <section class="as-brand section">
   <div class="container">
     <div class="grid">
-      <div class="hero-as-brand span-4 md-span-3 lg-span-6">
+      <div class="hero-as-brand span-4 md-span-4 lg-span-6">
         <h2>Sua marca também pode crescer com creators</h2>
         <p>
           A Comu conecta marcas aos creators certos para desenvolver campanhas, gerar conteúdo e
@@ -745,7 +675,7 @@
         <app-button link="/solucoes-para-marcas" text="Saber mais" type="dark-pink-border">
         </app-button>
       </div>
-      <div class="content-as-brand span-4 md-span-3 lg-span-6">
+      <div class="content-as-brand span-4 md-span-4 lg-span-6">
         <img src="/images/gocase_marcas.jpg" alt="Marcas" />
       </div>
     </div>

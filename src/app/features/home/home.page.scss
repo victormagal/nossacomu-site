@@ -1,5 +1,15 @@
 // Hero section
 .hero {
+  margin-top: 5rem;
+
+  @media (min-width: 768px) and (max-width: 1999px) {
+    margin-top: 4rem;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: 3rem;
+  }
+
   .grid {
     align-items: center;
 
@@ -10,7 +20,9 @@
 
       h2 {
         font-weight: 600;
-        span { color: var(--color-pink); }
+        span {
+          color: var(--color-pink);
+        }
       }
 
       .hero-btns {
@@ -101,13 +113,21 @@
 }
 
 @keyframes hero-pill-cloud-right {
-  from { transform: translate3d(-3rem, 1.75rem, 0) rotate(-1deg) scale(1); }
-  to { transform: translate3d(3rem, -2.75rem, 0) rotate(1deg) scale(1.03); }
+  from {
+    transform: translate3d(-3rem, 1.75rem, 0) rotate(-1deg) scale(1);
+  }
+  to {
+    transform: translate3d(3rem, -2.75rem, 0) rotate(1deg) scale(1.03);
+  }
 }
 
 @keyframes hero-pill-cloud-left {
-  from { transform: translate3d(2rem, 2.75rem, 0) rotate(1deg) scale(1); }
-  to { transform: translate3d(-2rem, -3.75rem, 0) rotate(-1deg) scale(1.03); }
+  from {
+    transform: translate3d(2rem, 2.75rem, 0) rotate(1deg) scale(1);
+  }
+  to {
+    transform: translate3d(-2rem, -3.75rem, 0) rotate(-1deg) scale(1.03);
+  }
 }
 // Hero section
 
@@ -121,7 +141,9 @@
       flex-direction: column;
       gap: var(--layout-grid-gap);
 
-      h2 { font-weight: 600; }
+      h2 {
+        font-weight: 600;
+      }
     }
   }
 }
@@ -219,8 +241,13 @@
         }
       }
 
-      h3 { color: var(--color-pink); font-weight: 600; }
-      h6 { color: var(--color-muted); }
+      h3 {
+        color: var(--color-pink);
+        font-weight: 600;
+      }
+      h6 {
+        color: var(--color-muted);
+      }
     }
   }
 }
@@ -234,7 +261,9 @@
       flex-direction: column;
       gap: 0.5rem;
 
-      h2 { font-weight: 600; }
+      h2 {
+        font-weight: 600;
+      }
     }
 
     .learning-big-card {
@@ -289,8 +318,13 @@
         position: relative;
         z-index: 2;
 
-        h3 { color: var(--color-white); font-weight: 600; }
-        p { color: var(--color-white); }
+        h3 {
+          color: var(--color-white);
+          font-weight: 600;
+        }
+        p {
+          color: var(--color-white);
+        }
         i {
           align-self: flex-end;
           color: var(--color-pink);
@@ -317,6 +351,7 @@
 
       h5 { font-weight: 600; }
       p { flex: 1; }
+
       i {
         align-self: flex-end;
         color: var(--color-pink);
@@ -351,7 +386,9 @@
       gap: var(--layout-grid-gap);
       justify-content: center;
 
-      h2 { font-weight: 600; }
+      h2 {
+        font-weight: 600;
+      }
 
       .apps-btns {
         display: flex;
@@ -370,7 +407,9 @@
       flex-direction: column;
       gap: var(--layout-grid-gap);
 
-      h2 { font-weight: 600; }
+      h2 {
+        font-weight: 600;
+      }
     }
 
     .content-history {
@@ -524,13 +563,21 @@
 }
 
 @keyframes history-step-progress {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes history-step-progress-alternate {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes history-panel-enter {
@@ -556,8 +603,14 @@
       flex-direction: column;
       gap: var(--layout-grid-gap);
 
-      h2 { font-weight: 600; }
-      p { a { color: var(--color-pink); } }
+      h2 {
+        font-weight: 600;
+      }
+      p {
+        a {
+          color: var(--color-pink);
+        }
+      }
 
       .start-selling-btns {
         display: flex;

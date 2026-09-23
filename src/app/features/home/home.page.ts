@@ -22,10 +22,6 @@ import { ButtonComponent } from '../../shared/components/button/button.component
 })
 export class HomePage implements AfterViewInit, OnDestroy {
   private readonly platformId = inject(PLATFORM_ID);
-  private readonly brandGrowthCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
-  private readonly eventsCarousel = viewChild.required<ElementRef<HTMLElement>>('eventsCarousel');
-  private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
   private readonly historyStepper = viewChild.required<ElementRef<HTMLElement>>('historyStepper');
   private historyTimer?: ReturnType<typeof setInterval>;
   private historyObserver?: IntersectionObserver;
@@ -33,18 +29,6 @@ export class HomePage implements AfterViewInit, OnDestroy {
   openItems = new Set<number>();
   protected readonly activeHistoryStep = signal(0);
   protected readonly historyProgressAlternate = signal(false);
-
-  scrollBrandGrowth(direction: -1 | 1) {
-    this.scrollCarousel(this.brandGrowthCarousel().nativeElement, '.brand-growth-image', direction);
-  }
-
-  scrollEvents(direction: -1 | 1) {
-    this.scrollCarousel(this.eventsCarousel().nativeElement, '.card-event', direction);
-  }
-
-  scrollStories(direction: -1 | 1) {
-    this.scrollCarousel(this.storiesCarousel().nativeElement, '.story', direction);
-  }
 
   ngAfterViewInit() {
     if (!isPlatformBrowser(this.platformId)) {
@@ -90,33 +74,5 @@ export class HomePage implements AfterViewInit, OnDestroy {
       clearInterval(this.historyTimer);
       this.historyTimer = undefined;
     }
-  }
-
-  private scrollCarousel(carousel: HTMLElement, itemSelector: string, direction: -1 | 1) {
-    const item = carousel.querySelector<HTMLElement>(itemSelector);
-
-    if (!item) {
-      return;
-    }
-
-    const gap = Number.parseFloat(getComputedStyle(carousel).columnGap) || 0;
-    const distance = item.getBoundingClientRect().width + gap;
-
-    carousel.scrollBy({
-      behavior: 'smooth',
-      left: direction * distance,
-    });
-  }
-
-  toggle(index: number) {
-    if (this.openItems.has(index)) {
-      this.openItems.delete(index);
-    } else {
-      this.openItems.add(index);
-    }
-  }
-
-  isOpen(index: number) {
-    return this.openItems.has(index);
   }
 }
