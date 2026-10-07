@@ -1,254 +1,147 @@
-// Main section
-.main {
-  background: {
-    image: image-set(
-      url('/images/heros/events-mobile.webp') 1x,
-      url('/images/heros/events-mobile-2x.webp') 2x
-    );
-    position: center;
-    repeat: no-repeat;
-    size: cover;
-  }
-  height: 575px;
-  position: relative;
+// Página Carreiras
+// Base compartilhada (tipografia, seções, diferenciais, CTA final): styles/_site-page.scss
+@use '../../../styles/site-page' as site;
 
-  &::before {
-    background-color: rgba(var(--color-black-rgb), 0.75);
-    content: '';
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-  }
+@include site.page-base;
+@include site.section-heading;
+@include site.benefit-grid;
+@include site.closing;
 
-  .container {
-    height: 100%;
-    position: relative;
-    z-index: 1;
+// ---------------------------------------------------------------------------
+// Hero (faixa escura)
+// ---------------------------------------------------------------------------
+.careers-hero {
+  @include site.hero-band;
 
-    .grid {
-      height: 100%;
+  background-color: var(--color-ink);
+  color: var(--color-white);
 
-      .hero-main {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        justify-content: center;
+  h1 {
+    font-size: 2.89rem;
+    letter-spacing: -0.06em;
+    line-height: 1.03;
 
-        h2 {
-          color: var(--color-white);
-          font-weight: 600;
-          text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
-        }
-
-        p {
-          color: var(--color-white);
-          text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
-        }
-      }
+    @include site.md {
+      font-size: clamp(3.2rem, 5vw, 4.5rem);
+      letter-spacing: -0.055em;
+      line-height: 1.04;
     }
   }
 
-  @media (min-width: 768px) {
-    background-image: image-set(
-      url('/images/heros/events-tablet.jpg') 1x,
-      url('/images/heros/events-tablet-2x.jpg') 2x
-    );
-    height: 445px;
-  }
-
-  @media (min-width: 1200px) {
-    background-image: image-set(
-      url('/images/heros/events-desktop.jpg') 1x,
-      url('/images/heros/events-desktop-2x.jpg') 2x
-    );
-    height: 560px;
-  }
-}
-// Main section
-
-// Brand growth section
-.event {
-  &.dark {
-    background-color: var(--color-dark-gray);
-  }
-
-  .grid {
-    align-items: center;
-
-    .event-content {
-      display: flex;
+  .actions {
+    @include site.mobile-only {
       flex-direction: column;
-      gap: 0.5rem;
-
-      h2 {
-        font-weight: 600;
-
-        &.white {
-          color: var(--color-white);
-        }
-      }
-      p {
-        &.white {
-          color: var(--color-white);
-        }
-      }
-    }
-
-    .event-image {
-      img {
-        border-radius: 0.5rem;
-        width: 100%;
-      }
-    }
-
-    .event-details {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-
-      h5 {
-        font-weight: 600;
-
-        &.white {
-          color: var(--color-white);
-        }
-      }
-
-      ul {
-        li {
-          color: var(--color-black);
-          list-style: none;
-
-          &.white {
-            color: var(--color-white);
-          }
-        }
-      }
+      align-items: stretch;
     }
   }
 }
-// Brand growth section
 
-// Sales section
-.sales {
-  .grid {
-    .hero-sale {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+.careers-hero-grid {
+  align-items: center;
+  row-gap: 2.5rem;
+}
 
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 6;
-      }
+.careers-visual {
+  img {
+    border-radius: 1rem;
+    height: 16.25rem;
+    object-fit: cover;
+    object-position: 50% 34%;
+    width: 100%;
 
-      @media (min-width: 1200px) {
-        grid-column: 3 / span 8;
-      }
-
-      .hero-sale-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-
-        app-button {
-          display: block;
-        }
-
-        > * {
-          flex: 1 1 calc(50% - 0.25rem);
-          min-width: 0;
-        }
-      }
+    @include site.md {
+      height: 20.625rem;
     }
 
-    .card-sale {
-      background-color: var(--color-white);
-      border: 1px solid rgba(var(--color-muted-rgb), 0.45);
-      border-radius: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-      padding: 2rem;
+    @include site.lg {
+      height: 22.5rem;
+    }
+  }
 
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 6;
+  figcaption {
+    font: {
+      size: 1.35rem;
+      weight: 500;
+    }
+    letter-spacing: -0.035em;
+    line-height: 1.4;
+    padding-top: 1.25rem;
+
+    @include site.md {
+      font-size: 1.4rem;
+      padding-top: 1.5rem;
+    }
+
+    span {
+      display: block;
+      font: {
+        size: 0.8rem;
+        weight: 400;
       }
-
-      @media (min-width: 1200px) {
-        grid-column: 3 / span 8;
-      }
-
-      .card-sale-header {
-        border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
-        display: flex;
-        flex-direction: column;
-        gap: var(--layout-grid-gap);
-        padding-bottom: var(--layout-grid-gap);
-
-        h6 {
-          font-weight: 600;
-        }
-      }
-
-      .card-sale-body {
-        ul {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-
-          li {
-            align-items: center;
-            display: flex;
-            gap: var(--layout-grid-gap);
-            list-style: none;
-
-            i {
-              color: var(--color-pink);
-              display: inline-block;
-              text-align: center;
-            }
-          }
-        }
-      }
-
-      .card-sale-footer {
-        display: flex;
-        justify-content: center;
-        app-button {
-          display: flex;
-          flex: 0 0 75%;
-          min-width: 0;
-          justify-content: center;
-        }
-      }
+      letter-spacing: 0;
+      margin-top: 0.5rem;
     }
   }
 }
-// Sales section
 
-// More than events section
-.more-than-events {
-  background-color: var(--color-dark-gray);
+// ---------------------------------------------------------------------------
+// Vagas (faixa rosa)
+// ---------------------------------------------------------------------------
+.vacancies {
+  @include site.band-padding;
 
-  .grid {
-    .more-than-events-content {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+  background-color: var(--color-pink);
+  color: var(--color-white);
 
-      h2 {
-        color: var(--color-white);
-        font-weight: 600;
-      }
-      p {
-        color: var(--color-cream);
-      }
+  h2 {
+    @include site.section-title;
 
-      span {
-        color: var(--color-pink);
-        font-weight: 700;
-      }
+    em {
+      color: inherit;
     }
   }
 }
-// More than events section
+
+.vacancies-grid {
+  align-items: center;
+  row-gap: 2rem;
+}
+
+.vacancy-status {
+  background-color: var(--color-white);
+  border-radius: 14px;
+  color: var(--color-ink);
+  padding: 1.875rem 1.625rem;
+
+  @include site.md {
+    padding: 2rem;
+  }
+
+  @include site.lg {
+    padding: 2.625rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+
+    @include site.md {
+      font-size: 2.6rem;
+    }
+  }
+
+  p:not(.small) {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.status-label {
+  border: 1px solid rgba(var(--color-ink-rgb), 0.333);
+  border-radius: 40px;
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  line-height: 1.55;
+  margin-bottom: 1.875rem;
+  padding: 0.375rem 0.75rem;
+}

@@ -17,9 +17,13 @@
     </nav>
 
     <div class="header-cta">
-      <a class="comu-btn comu-btn--dark" routerLink="/" fragment="aplicativo"
-        >Entrar na comunidade</a
-      >
+      @if (isNaMidiaPage) {
+        <a class="comu-btn comu-btn--dark" routerLink="/">Conhecer a Comu</a>
+      } @else {
+        <a class="comu-btn comu-btn--dark" routerLink="/" fragment="aplicativo"
+          >Entrar na comunidade</a
+        >
+      }
     </div>
   </div>
 </header>

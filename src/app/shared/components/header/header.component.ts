@@ -1,6 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 interface NavItem {
   label: string;
@@ -15,6 +15,8 @@ interface NavItem {
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
+  private readonly router = inject(Router);
+
   protected readonly navItems: NavItem[] = [
     { label: 'A Comu', path: '/' },
     { label: 'Para criadores', path: '/solucoes-para-criadores' },
@@ -23,4 +25,8 @@ export class HeaderComponent {
     { label: 'Carreiras', path: '/carreiras' },
     { label: 'Na Mídia', path: '/na-midia' },
   ];
+
+  protected get isNaMidiaPage(): boolean {
+    return this.router.url === '/na-midia';
+  }
 }

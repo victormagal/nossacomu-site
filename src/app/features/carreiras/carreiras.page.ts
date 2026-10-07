@@ -1,62 +1,56 @@
-import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { FaqComponent, FaqItem } from '../../shared/components/faq/faq.component';
+
+interface Value {
+  text: string;
+  title: string;
+}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [FaqComponent, RouterLink],
   selector: 'app-carreiras-page',
   styleUrl: './carreiras.page.scss',
   templateUrl: './carreiras.page.html',
-  imports: [],
 })
 export class CarreirasPage {
-  private readonly eventCarousel = viewChild.required<ElementRef<HTMLElement>>('eventCarousel');
-  private readonly eventCarousel2 = viewChild.required<ElementRef<HTMLElement>>('eventCarousel2');
-  private readonly learningCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
-  private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
+  protected readonly values: Value[] = [
+    {
+      text: 'Autenticidade para encontrar caminhos próprios e dar forma a novas possibilidades.',
+      title: 'Ousada.',
+    },
+    {
+      text: 'Disposição para começar, experimentar e aprender ao longo do caminho.',
+      title: 'Corajosa.',
+    },
+    {
+      text: 'Criação que aproxima pessoas e convida a colocar ideias em prática.',
+      title: 'Inspiradora.',
+    },
+    { text: 'Foco e constância para seguir construindo com intenção.', title: 'Obstinada.' },
+  ];
 
-  openItems = new Set<number>();
-
-  scrollEvent(direction: -1 | 1) {
-    this.scrollCarousel(this.eventCarousel().nativeElement, '.event-image', direction);
-  }
-
-  scrollEvent2(direction: -1 | 1) {
-    this.scrollCarousel(this.eventCarousel2().nativeElement, '.event-image', direction);
-  }
-
-  scrollLearning(direction: -1 | 1) {
-    this.scrollCarousel(this.learningCarousel().nativeElement, '.card-learning', direction);
-  }
-
-  scrollStories(direction: -1 | 1) {
-    this.scrollCarousel(this.storiesCarousel().nativeElement, '.story', direction);
-  }
-
-  private scrollCarousel(carousel: HTMLElement, itemSelector: string, direction: -1 | 1) {
-    const item = carousel.querySelector<HTMLElement>(itemSelector);
-
-    if (!item) {
-      return;
-    }
-
-    const gap = Number.parseFloat(getComputedStyle(carousel).columnGap) || 0;
-    const distance = item.getBoundingClientRect().width + gap;
-
-    carousel.scrollBy({
-      behavior: 'smooth',
-      left: direction * distance,
-    });
-  }
-
-  toggle(index: number) {
-    if (this.openItems.has(index)) {
-      this.openItems.delete(index);
-    } else {
-      this.openItems.add(index);
-    }
-  }
-
-  isOpen(index: number) {
-    return this.openItems.has(index);
-  }
+  protected readonly faq: FaqItem[] = [
+    {
+      answer: [
+        'No momento, não temos vagas abertas. Quando houver novas oportunidades, você poderá consultá-las nesta página.',
+      ],
+      question: 'Há vagas abertas na Comu?',
+    },
+    {
+      answer: [
+        'Ainda não temos um canal de candidaturas ou banco de talentos aberto. As orientações para se candidatar serão apresentadas junto de cada vaga.',
+      ],
+      question: 'Posso enviar meu currículo?',
+    },
+    {
+      answer: [
+        'Para conhecer a comunidade e as iniciativas para criadores, acesse ',
+        { path: '/solucoes-para-criadores', text: 'Soluções para criadores' },
+        '. Esta página é dedicada a oportunidades de trabalho no time da Comu.',
+      ],
+      question: 'Quero participar como criador. Este é o lugar?',
+    },
+  ];
 }

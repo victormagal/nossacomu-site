@@ -90,32 +90,7 @@
 </section>
 
 <!-- Marcas -->
-<section class="brands" aria-label="Marcas em projetos Comu">
-  <p class="brands-heading">Marcas que já criaram com a <strong>Comu.</strong></p>
-  @for (row of brandRows; track $index; let rowIndex = $index) {
-    <div
-      class="marquee"
-      [class]="'marquee--row-' + (rowIndex + 1)"
-      [attr.aria-hidden]="row.decorative || null"
-    >
-      <div class="marquee-track">
-        @for (copy of marqueeCopies; track copy) {
-          <ul class="marquee-sequence" role="list" [attr.aria-hidden]="copy > 0 || null">
-            @for (brand of row.brands; track brand) {
-              <li class="brand-logo" [class]="'brand-logo--' + brand">
-                <img
-                  [src]="'/images/brands/' + brand + '.svg'"
-                  [alt]="brandNames[brand]"
-                  loading="lazy"
-                />
-              </li>
-            }
-          </ul>
-        }
-      </div>
-    </div>
-  }
-</section>
+<app-brands-marquee />
 
 <!-- Sobre -->
 <section class="intro" id="sobre">
@@ -278,23 +253,11 @@
 </section>
 
 <!-- Nosso jeito de fazer -->
-<section class="steps">
-  <div class="container">
-    <div class="steps-heading">
-      <p class="eyebrow">NOSSO JEITO DE FAZER</p>
-      <h2>Da criação ao resultado.</h2>
-    </div>
-    <ol class="steps-list" role="list">
-      @for (step of steps; track step.title; let i = $index) {
-        <li>
-          <span class="step-num">0{{ i + 1 }}</span>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.text }}</p>
-        </li>
-      }
-    </ol>
-  </div>
-</section>
+<app-steps-band
+  eyebrow="NOSSO JEITO DE FAZER"
+  [titleLines]="['Da criação ao resultado.']"
+  [steps]="steps"
+/>
 
 <!-- Experiências -->
 <section class="experience">

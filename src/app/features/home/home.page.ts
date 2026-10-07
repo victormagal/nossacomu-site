@@ -9,6 +9,8 @@ import {
   viewChild,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { BrandsMarqueeComponent } from '../../shared/components/brands-marquee/brands-marquee.component';
+import { Step, StepsBandComponent } from '../../shared/components/steps-band/steps-band.component';
 
 interface Stat {
   ariaLabel: string;
@@ -16,14 +18,6 @@ interface Stat {
   label: string;
   prefix: string;
   unit: string;
-}
-
-type Brand = 'barbours' | 'sallve' | 'kokeshi' | 'caffeine' | 'gocase';
-
-interface BrandRow {
-  brands: Brand[];
-  /** Linhas 2 e 3 são decorativas (aria-hidden). */
-  decorative: boolean;
 }
 
 interface PressItem {
@@ -37,7 +31,7 @@ interface PressItem {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink],
+  imports: [BrandsMarqueeComponent, RouterLink, StepsBandComponent],
   selector: 'app-home-page',
   styleUrl: './home.page.scss',
   templateUrl: './home.page.html',
@@ -82,24 +76,7 @@ export class HomePage {
     },
   ];
 
-  protected readonly brandNames: Record<Brand, string> = {
-    barbours: 'Barbour’s',
-    caffeine: 'Caffeine Army',
-    gocase: 'GoCase',
-    kokeshi: 'Kokeshi',
-    sallve: 'Sallve',
-  };
-
-  protected readonly brandRows: BrandRow[] = [
-    { brands: ['barbours', 'sallve', 'kokeshi', 'caffeine', 'gocase'], decorative: false },
-    { brands: ['caffeine', 'gocase', 'barbours', 'sallve', 'kokeshi'], decorative: true },
-    { brands: ['kokeshi', 'barbours', 'gocase', 'sallve', 'caffeine'], decorative: true },
-  ];
-
-  /** Cada faixa repete a sequência 4x (2 grupos × 2 sequências) para o loop contínuo. */
-  protected readonly marqueeCopies = [0, 1, 2, 3];
-
-  protected readonly steps = [
+  protected readonly steps: Step[] = [
     {
       text: 'Desenvolva seu repertório, conheça formatos e aprenda a transformar suas ideias em conteúdo com potencial de resultado. A Comu conecta aprendizado e prática para você começar.',
       title: 'Aprenda como se tornar um criador.',

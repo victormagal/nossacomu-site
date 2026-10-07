@@ -28,9 +28,9 @@ $lg: 1200px;
   }
 }
 
-// Host da página (seções empilhadas com o espaçamento padrão) + tipografia base,
-// eyebrow, textos pequenos, linha de botões e texto só para leitores de tela.
-@mixin page-base {
+// Host da página: seções empilhadas com o espaçamento padrão entre elas.
+// Seções coloridas que encostam na anterior (ou no header) recebem .is-flush.
+@mixin page-host {
   :host {
     --page-gap: 1.5rem;
 
@@ -51,6 +51,14 @@ $lg: 1200px;
     }
   }
 
+  .is-flush {
+    margin-top: calc(var(--page-gap) * -1);
+  }
+}
+
+// Tipografia base, eyebrow, textos pequenos, linha de botões e texto só para leitores de tela.
+// Também usado por componentes compartilhados das páginas (FAQ, faixa de passos...).
+@mixin page-typography {
   h1,
   h2,
   h3 {
@@ -114,6 +122,20 @@ $lg: 1200px;
     }
   }
 
+  // Texto de apoio do hero das páginas internas
+  .page-lead {
+    letter-spacing: -0.02em;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+    max-width: 35rem;
+
+    @include md {
+      font-size: 1.08rem;
+      line-height: 1.55;
+      margin-top: 1.9rem;
+    }
+  }
+
   .sr-only {
     border: 0;
     clip: rect(0 0 0 0);
@@ -124,6 +146,110 @@ $lg: 1200px;
     position: absolute;
     white-space: nowrap;
     width: 1px;
+  }
+}
+
+@mixin page-base {
+  @include page-host;
+  @include page-typography;
+}
+
+// Tamanho padrão dos títulos de seção (h2).
+@mixin section-title {
+  font-size: 2.45rem;
+
+  @include md {
+    font-size: clamp(2.45rem, 3.8vw, 3.7rem);
+  }
+}
+
+// Cabeçalho de seção: eyebrow + h2 + parágrafo opcional.
+@mixin section-heading {
+  .section-heading {
+    margin-bottom: 2.25rem;
+
+    @include md {
+      margin-bottom: 3.125rem;
+    }
+
+    h2 {
+      @include section-title;
+    }
+
+    > p:not(.eyebrow) {
+      font-size: 0.98rem;
+      margin-top: 1.8rem;
+      max-width: 40rem;
+
+      @include md {
+        font-size: 1.05rem;
+      }
+    }
+  }
+}
+
+// Grade de diferenciais numerados (01–04): 1 coluna no mobile, 2 no tablet, 4 no desktop.
+@mixin benefit-grid {
+  .benefit-grid {
+    display: grid;
+    gap: 1.875rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include md {
+      gap: 2.5rem var(--layout-grid-gap);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include lg {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    > * {
+      border-top: 1px solid rgba(var(--color-ink-rgb), 0.333);
+      padding: 1.5rem 0 0 2.5rem;
+      position: relative;
+
+      @include md {
+        padding: 1.25rem 0 0;
+      }
+    }
+
+    .small-index {
+      font-size: 0.7rem;
+      left: 0;
+      position: absolute;
+      top: 1.75rem;
+
+      @include md {
+        display: block;
+        font-size: 0.8rem;
+        margin-bottom: 2.1875rem;
+        position: static;
+      }
+    }
+
+    h3 {
+      font-size: 1.75rem;
+      letter-spacing: -0.055em;
+      line-height: 1.13;
+
+      @include md {
+        font-size: 1.7rem;
+        max-width: 17.1875rem;
+      }
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-top: 1rem;
+
+      @include md {
+        margin-top: 1.25rem;
+      }
+    }
   }
 }
 
@@ -159,6 +285,25 @@ $lg: 1200px;
       }
     }
 
+    .small {
+      margin: 1.5rem auto 0;
+      max-width: 42.5rem;
+    }
+
+    .cross-link {
+      display: inline-block;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      margin-top: 1.75rem;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+
+      @include md {
+        font-size: 0.9rem;
+        margin-top: 2.25rem;
+      }
+    }
+
     .actions {
       justify-content: center;
 
@@ -167,5 +312,27 @@ $lg: 1200px;
         flex-direction: column;
       }
     }
+  }
+}
+
+// Hero em faixa colorida (rosa ou escura) que encosta no header.
+@mixin hero-band {
+  padding-block: 2.625rem 3.25rem;
+
+  @include md {
+    padding-block: 3.375rem 4.875rem;
+  }
+
+  @include lg {
+    padding-block: 4.375rem 4.875rem;
+  }
+}
+
+// Seção em faixa colorida com respiro interno padrão.
+@mixin band-padding {
+  padding-block: 4rem;
+
+  @include md {
+    padding-block: 6.25rem;
   }
 }
