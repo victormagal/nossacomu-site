@@ -1,0 +1,121 @@
+<!-- Metadados (veículo + data) e link "Ler matéria", reaproveitados em todos os cards -->
+<ng-template #meta let-article>
+  <div class="editorial-meta">
+    <span>{{ article.outlet }}</span>
+    <time [attr.datetime]="article.date">{{ article.dateLabel }}</time>
+  </div>
+</ng-template>
+
+<ng-template #readLink let-article>
+  <a class="press-read" [href]="article.url" target="_blank" rel="noopener noreferrer">
+    Ler matéria <span class="sr-only">em {{ article.outlet }}, abre em nova aba</span>
+    <span aria-hidden="true">↗</span>
+  </a>
+</ng-template>
+
+<!-- Hero -->
+<section class="media-hero">
+  <div class="container">
+    <div class="grid media-hero-grid">
+      <div class="span-4 md-span-5 lg-span-7">
+        <p class="eyebrow">CRIAÇÃO QUE ENTRA NA CONVERSA</p>
+        <h1>
+          Comu na<br />
+          <em>Mídia.</em>
+        </h1>
+      </div>
+      <p class="media-hero-lead span-4 md-span-3 lg-span-5">
+        Nossa visão sobre criação, comunidade e negócios nos veículos que acompanham o mercado.
+        Explore as reportagens e entrevistas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Reportagens -->
+<section class="editorial" aria-label="Reportagens e entrevistas sobre a Comu">
+  <div class="container">
+    <div class="editorial-label">
+      <span>EM DESTAQUE</span>
+      <span aria-hidden="true">≠</span>
+    </div>
+
+    <!-- Destaque -->
+    <article class="press-featured">
+      <div class="featured-copy">
+        <ng-container *ngTemplateOutlet="meta; context: { $implicit: featured }" />
+        <h2>
+          Da criação de conteúdo<br />
+          <em>ao negócio.</em>
+        </h2>
+        <p>{{ featured.excerpt }}</p>
+        <ng-container *ngTemplateOutlet="readLink; context: { $implicit: featured }" />
+      </div>
+      <figure class="featured-portrait">
+        <img
+          src="/images/press-gabriel-lira.webp"
+          alt="Gabriel Lira, em foto de divulgação da Comu publicada pelo Economia Real"
+          width="1360"
+          height="850"
+          fetchpriority="high"
+        />
+        <figcaption>Gabriel Lira · Foto: Divulgação/Comu</figcaption>
+      </figure>
+    </article>
+
+    <div class="editorial-grid">
+      <!-- UGC (Exame) -->
+      <article class="press-ugc">
+        <div class="ugc-display" aria-hidden="true">
+          <span>UGC</span>
+          <span>≠</span>
+        </div>
+        <div class="ugc-copy">
+          <ng-container *ngTemplateOutlet="meta; context: { $implicit: ugc }" />
+          <h3>{{ ugc.title }}</h3>
+          <p>{{ ugc.excerpt }}</p>
+          <ng-container *ngTemplateOutlet="readLink; context: { $implicit: ugc }" />
+        </div>
+      </article>
+
+      <!-- Notas -->
+      <div class="press-briefs">
+        @for (brief of briefs; track brief.url) {
+          <article class="press-brief">
+            <ng-container *ngTemplateOutlet="meta; context: { $implicit: brief }" />
+            <h3>{{ brief.title }}</h3>
+            <p>{{ brief.excerpt }}</p>
+            <ng-container *ngTemplateOutlet="readLink; context: { $implicit: brief }" />
+          </article>
+        }
+      </div>
+    </div>
+
+    <!-- Mercado (Startupi) -->
+    <article class="press-market">
+      <div class="market-symbol" aria-hidden="true">≠</div>
+      <div class="market-copy">
+        <ng-container *ngTemplateOutlet="meta; context: { $implicit: market }" />
+        <h3>{{ market.title }}</h3>
+        <p>{{ market.excerpt }}</p>
+      </div>
+      <ng-container *ngTemplateOutlet="readLink; context: { $implicit: market }" />
+    </article>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="closing">
+  <div class="container">
+    <p class="eyebrow">SEJA INCOMUM.</p>
+    <h2>
+      A conversa continua<br />
+      por aqui.
+    </h2>
+    <p>Conheça o ecossistema que conecta criadores, marcas e oportunidades.</p>
+    <div class="actions">
+      <a class="comu-btn comu-btn--light-pink" routerLink="/solucoes-para-criadores">Sou criador</a>
+      <a class="comu-btn comu-btn--outline-light" routerLink="/solucoes-para-marcas">Sou marca</a>
+    </div>
+  </div>
+</section>

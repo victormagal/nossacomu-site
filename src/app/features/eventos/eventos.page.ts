@@ -1,62 +1,72 @@
-import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { FaqComponent, FaqItem } from '../../shared/components/faq/faq.component';
+
+interface TickerItem {
+  fragment: string;
+  label: string;
+}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'app-para-criadores-page',
+  imports: [FaqComponent, RouterLink],
+  selector: 'app-eventos-page',
   styleUrl: './eventos.page.scss',
   templateUrl: './eventos.page.html',
-  imports: [],
 })
 export class EventsPage {
-  private readonly eventCarousel = viewChild.required<ElementRef<HTMLElement>>('eventCarousel');
-  private readonly eventCarousel2 = viewChild.required<ElementRef<HTMLElement>>('eventCarousel2');
-  private readonly learningCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
-  private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
+  protected readonly instagramUrl = 'https://www.instagram.com/nossa.comu/';
 
-  openItems = new Set<number>();
+  /** Faixa rosa com atalhos para cada experiência. */
+  protected readonly tickerItems: TickerItem[] = [
+    { fragment: 'well-day', label: 'WELLDAY' },
+    { fragment: 'awards', label: 'AWARDS' },
+    { fragment: 'academy', label: 'ACADEMY' },
+  ];
 
-  scrollEvent(direction: -1 | 1) {
-    this.scrollCarousel(this.eventCarousel().nativeElement, '.event-image', direction);
-  }
+  /** A faixa repete a sequência 6x (2 grupos × 3) para o loop contínuo; só a primeira é acessível. */
+  protected readonly tickerCopies = [0, 1, 2, 3, 4, 5];
 
-  scrollEvent2(direction: -1 | 1) {
-    this.scrollCarousel(this.eventCarousel2().nativeElement, '.event-image', direction);
-  }
+  protected readonly wellDayTopics = [
+    'Atividades de wellness',
+    'Experiências com marcas',
+    'Conexão entre criadores',
+  ];
 
-  scrollLearning(direction: -1 | 1) {
-    this.scrollCarousel(this.learningCarousel().nativeElement, '.card-learning', direction);
-  }
+  protected readonly awardsTopics = [
+    'Reconhecimento de criadores',
+    'Ativações e experiências',
+    'Encontros e celebração',
+  ];
 
-  scrollStories(direction: -1 | 1) {
-    this.scrollCarousel(this.storiesCarousel().nativeElement, '.story', direction);
-  }
+  protected readonly academyTopics = [
+    'Estratégia e posicionamento',
+    'TikTok Shop e vendas',
+    'Roteiro e comunicação',
+    'Criação e edição de conteúdo',
+    'Plano de ação',
+  ];
 
-  private scrollCarousel(carousel: HTMLElement, itemSelector: string, direction: -1 | 1) {
-    const item = carousel.querySelector<HTMLElement>(itemSelector);
-
-    if (!item) {
-      return;
-    }
-
-    const gap = Number.parseFloat(getComputedStyle(carousel).columnGap) || 0;
-    const distance = item.getBoundingClientRect().width + gap;
-
-    carousel.scrollBy({
-      behavior: 'smooth',
-      left: direction * distance,
-    });
-  }
-
-  toggle(index: number) {
-    if (this.openItems.has(index)) {
-      this.openItems.delete(index);
-    } else {
-      this.openItems.add(index);
-    }
-  }
-
-  isOpen(index: number) {
-    return this.openItems.has(index);
-  }
+  protected readonly faq: FaqItem[] = [
+    {
+      answer: [
+        'As datas, os locais e as orientações de inscrição são divulgados nos canais oficiais da Comu. Confira a programação de cada edição antes de se organizar para participar.',
+      ],
+      question: 'Como acompanho as próximas edições?',
+    },
+    {
+      answer: [
+        'O formato e os critérios de participação variam conforme a edição. Consulte as informações do evento para saber a quem ele se destina e como participar.',
+      ],
+      question: 'Todos os eventos são abertos ao público?',
+    },
+    {
+      answer: [
+        'Conheça as ',
+        { path: '/solucoes-para-marcas', text: 'soluções para marcas' },
+        ' para entender como a Comu conecta marcas, criadores e experiências. O escopo é definido para cada projeto.',
+      ],
+      question: 'Minha marca pode participar de uma experiência?',
+    },
+  ];
 }

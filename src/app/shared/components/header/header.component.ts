@@ -1,38 +1,32 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+
+interface NavItem {
+  label: string;
+  path: string;
+}
 
 @Component({
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: {
-        '(document:keydown.escape)': 'closeMenu()',
-    },
-    imports: [NgOptimizedImage],
-    selector: 'app-header',
-    styleUrl: './header.component.scss',
-    templateUrl: './header.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [NgOptimizedImage, RouterLink, RouterLinkActive],
+  selector: 'app-header',
+  styleUrl: './header.component.scss',
+  templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-    protected readonly menuOpen = signal(false);
-    protected readonly participationOpen = signal(false);
-    protected readonly solutionsOpen = signal(false);
+  private readonly router = inject(Router);
 
-    protected toggleMenu() {
-        this.menuOpen.update((isOpen) => !isOpen);
-    }
+  protected readonly navItems: NavItem[] = [
+    { label: 'A Comu', path: '/' },
+    { label: 'Para criadores', path: '/solucoes-para-criadores' },
+    { label: 'Para marcas', path: '/solucoes-para-marcas' },
+    { label: 'Eventos', path: '/eventos' },
+    { label: 'Carreiras', path: '/carreiras' },
+    { label: 'Na Mídia', path: '/na-midia' },
+  ];
 
-    protected toggleSolutions() {
-        this.participationOpen.set(false);
-        this.solutionsOpen.update((isOpen) => !isOpen);
-    }
-
-    protected toggleParticipation() {
-        this.solutionsOpen.set(false);
-        this.participationOpen.update((isOpen) => !isOpen);
-    }
-
-    protected closeMenu() {
-        this.menuOpen.set(false);
-        this.participationOpen.set(false);
-        this.solutionsOpen.set(false);
-    }
+  protected get isNaMidiaPage(): boolean {
+    return this.router.url === '/na-midia';
+  }
 }

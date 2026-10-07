@@ -1,0 +1,26 @@
+<section class="brands" aria-label="Marcas em projetos Comu">
+  <p class="brands-heading">Marcas que já criaram com a <strong>Comu.</strong></p>
+  @for (row of brandRows; track $index; let rowIndex = $index) {
+    <div
+      class="marquee"
+      [class]="'marquee--row-' + (rowIndex + 1)"
+      [attr.aria-hidden]="row.decorative || null"
+    >
+      <div class="marquee-track">
+        @for (copy of marqueeCopies; track copy) {
+          <ul class="marquee-sequence" role="list" [attr.aria-hidden]="copy > 0 || null">
+            @for (brand of row.brands; track brand) {
+              <li class="brand-logo" [class]="'brand-logo--' + brand">
+                <img
+                  [src]="'/images/brands/' + brand + '.svg'"
+                  [alt]="brandNames[brand]"
+                  loading="lazy"
+                />
+              </li>
+            }
+          </ul>
+        }
+      </div>
+    </div>
+  }
+</section>

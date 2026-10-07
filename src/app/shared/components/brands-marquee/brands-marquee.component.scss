@@ -1,0 +1,131 @@
+@use '../../../../styles/site-page' as site;
+
+:host {
+  display: block;
+}
+
+.brands {
+  overflow: hidden;
+}
+
+.brands-heading {
+  color: var(--color-gray-500);
+  font: {
+    size: 0.875rem;
+    weight: 400;
+  }
+  line-height: 1.55;
+  margin: 0 0 1rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+
+  @include site.md {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.marquee {
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.marquee-track {
+  animation: marquee 48s linear infinite;
+  display: flex;
+  width: max-content;
+
+  .marquee--row-2 & {
+    animation-direction: reverse;
+    animation-duration: 54s;
+  }
+
+  .marquee--row-3 & {
+    animation-duration: 60s;
+  }
+
+  .marquee:hover & {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-sequence {
+  align-items: center;
+  display: flex;
+  gap: 1.625rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 1.625rem 0 0;
+
+  @include site.md {
+    gap: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+
+// Alturas calibradas para o peso visual de cada logo (desktop); no mobile, ~86%.
+.brand-logo {
+  --logo-h: 1.6rem;
+  --logo-scale: 0.865;
+
+  align-items: center;
+  display: flex;
+  flex: none;
+  height: 3.25rem;
+  justify-content: center;
+  width: 6.875rem;
+
+  @include site.md {
+    --logo-scale: 1;
+
+    height: 4rem;
+    width: 9.25rem;
+  }
+
+  img {
+    height: calc(var(--logo-h) * var(--logo-scale));
+    max-width: none;
+    opacity: 0.52;
+    width: auto;
+  }
+
+  &--barbours {
+    --logo-h: 1.73rem;
+  }
+
+  &--sallve {
+    --logo-h: 1.625rem;
+  }
+
+  &--kokeshi {
+    --logo-h: 2.78rem;
+  }
+
+  &--caffeine {
+    --logo-h: 2.29rem;
+  }
+
+  &--gocase {
+    --logo-h: 1.57rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
