@@ -1,0 +1,254 @@
+// Main section
+.main {
+  background: {
+    image: image-set(
+      url('/images/heros/events-mobile.webp') 1x,
+      url('/images/heros/events-mobile-2x.webp') 2x
+    );
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+  height: 575px;
+  position: relative;
+
+  &::before {
+    background-color: rgba(var(--color-black-rgb), 0.75);
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .container {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+
+    .grid {
+      height: 100%;
+
+      .hero-main {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: center;
+
+        h2 {
+          color: var(--color-white);
+          font-weight: 600;
+          text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
+        }
+
+        p {
+          color: var(--color-white);
+          text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    background-image: image-set(
+      url('/images/heros/events-tablet.jpg') 1x,
+      url('/images/heros/events-tablet-2x.jpg') 2x
+    );
+    height: 445px;
+  }
+
+  @media (min-width: 1200px) {
+    background-image: image-set(
+      url('/images/heros/events-desktop.jpg') 1x,
+      url('/images/heros/events-desktop-2x.jpg') 2x
+    );
+    height: 560px;
+  }
+}
+// Main section
+
+// Brand growth section
+.event {
+  &.dark {
+    background-color: var(--color-dark-gray);
+  }
+
+  .grid {
+    align-items: center;
+
+    .event-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      h2 {
+        font-weight: 600;
+
+        &.white {
+          color: var(--color-white);
+        }
+      }
+      p {
+        &.white {
+          color: var(--color-white);
+        }
+      }
+    }
+
+    .event-image {
+      img {
+        border-radius: 0.5rem;
+        width: 100%;
+      }
+    }
+
+    .event-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      h5 {
+        font-weight: 600;
+
+        &.white {
+          color: var(--color-white);
+        }
+      }
+
+      ul {
+        li {
+          color: var(--color-black);
+          list-style: none;
+
+          &.white {
+            color: var(--color-white);
+          }
+        }
+      }
+    }
+  }
+}
+// Brand growth section
+
+// Sales section
+.sales {
+  .grid {
+    .hero-sale {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      @media (min-width: 768px) and (max-width: 1199px) {
+        grid-column: 2 / span 6;
+      }
+
+      @media (min-width: 1200px) {
+        grid-column: 3 / span 8;
+      }
+
+      .hero-sale-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        app-button {
+          display: block;
+        }
+
+        > * {
+          flex: 1 1 calc(50% - 0.25rem);
+          min-width: 0;
+        }
+      }
+    }
+
+    .card-sale {
+      background-color: var(--color-white);
+      border: 1px solid rgba(var(--color-muted-rgb), 0.45);
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: var(--layout-grid-gap);
+      padding: 2rem;
+
+      @media (min-width: 768px) and (max-width: 1199px) {
+        grid-column: 2 / span 6;
+      }
+
+      @media (min-width: 1200px) {
+        grid-column: 3 / span 8;
+      }
+
+      .card-sale-header {
+        border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
+        display: flex;
+        flex-direction: column;
+        gap: var(--layout-grid-gap);
+        padding-bottom: var(--layout-grid-gap);
+
+        h6 {
+          font-weight: 600;
+        }
+      }
+
+      .card-sale-body {
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          li {
+            align-items: center;
+            display: flex;
+            gap: var(--layout-grid-gap);
+            list-style: none;
+
+            i {
+              color: var(--color-pink);
+              display: inline-block;
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      .card-sale-footer {
+        display: flex;
+        justify-content: center;
+        app-button {
+          display: flex;
+          flex: 0 0 75%;
+          min-width: 0;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+// Sales section
+
+// More than events section
+.more-than-events {
+  background-color: var(--color-dark-gray);
+
+  .grid {
+    .more-than-events-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      h2 {
+        color: var(--color-white);
+        font-weight: 600;
+      }
+      p {
+        color: var(--color-cream);
+      }
+
+      span {
+        color: var(--color-pink);
+        font-weight: 700;
+      }
+    }
+  }
+}
+// More than events section

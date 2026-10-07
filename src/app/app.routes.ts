@@ -21,8 +21,15 @@ export const routes: Routes = [
       },
       {
         path: 'eventos',
-        loadComponent: () =>
-          import('./features/eventos/eventos.page').then((m) => m.EventsPage),
+        loadComponent: () => import('./features/eventos/eventos.page').then((m) => m.EventsPage),
+      },
+      {
+        path: 'carreiras',
+        loadComponent: () => import('./features/carreiras/carreiras.page').then((m) => m.CarreirasPage),
+      },
+      {
+        path: 'na-midia',
+        loadComponent: () => import('./features/na-midia/na-midia.page').then((m) => m.NaMidiaPage),
       },
     ],
   },
