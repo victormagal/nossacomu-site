@@ -1,303 +1,382 @@
-<section class="hero section">
+<!-- Hero -->
+<section class="hero">
   <div class="container">
-    <div class="grid">
-      <div class="hero-content span-4 md-span-4 lg-span-6">
-        <h2>Transforme conteúdo em <span>vendas</span> no TikTok Shop</h2>
-        <p>Conectamos creators e marcas com comunidade, formação e campanhas.</p>
-        <div class="hero-btns">
-          <app-button link="/solucoes-para-criadores" text="Sou creator" type="pink"> </app-button>
-          <app-button link="/solucoes-para-marcas" text="Sou marca" type="default"> </app-button>
+    <div class="grid hero-grid">
+      <div class="hero-copy span-4 md-span-4 lg-span-6">
+        <p class="eyebrow">CRIAÇÃO. COMUNIDADE. NEGÓCIOS.</p>
+        <h1>
+          Criação que<br />
+          move pessoas<br />
+          e <em>negócios.</em>
+        </h1>
+        <p class="hero-lead">
+          A Comu conecta criadores e marcas em um ecossistema de educação, comunidade e
+          oportunidades. Damos direção à criação para construir negócios com ela.
+          <strong>Conteúdo, conexão e resultado na mesma conversa.</strong>
+        </p>
+        <div class="actions">
+          <a class="comu-btn comu-btn--dark" routerLink="/solucoes-para-criadores">Sou criador</a>
+          <a class="comu-btn comu-btn--outline" routerLink="/solucoes-para-marcas">Sou marca</a>
+        </div>
+        <p class="signature">Seja incomum. <span aria-hidden="true">≠</span></p>
+      </div>
+
+      <div class="hero-visual span-4 md-span-4 lg-span-6">
+        <figure class="photo-tile photo-tile--first">
+          <img
+            src="/images/home-encontro-wellness.webp"
+            alt="Criadoras reunidas em uma experiência de bem-estar da Comu"
+            width="1600"
+            height="1066"
+            fetchpriority="high"
+          />
+          <figcaption>GENTE QUE CRIA.</figcaption>
+        </figure>
+        <figure class="photo-tile photo-tile--second">
+          <img
+            src="/images/home-criacao-que-vende.webp"
+            alt="Criadora apresentando um produto em uma ativação de marca"
+            width="1100"
+            height="1650"
+            fetchpriority="high"
+          />
+          <figcaption>CRIAÇÃO QUE VENDE.</figcaption>
+        </figure>
+        <div class="visual-stamp" aria-hidden="true">
+          ≠<span>we are<br />comu</span>
         </div>
       </div>
-      <div class="hero-image span-4 md-span-4 lg-span-6">
-        <img src="/images/hero-homepage.webp" alt="A Comu" />
-        <div class="pill">
-          <h6>Top 1 Global em TikTok Shop</h6>
+
+      <section
+        #numbers
+        [class.is-running]="numbersRunning()"
+        aria-labelledby="numbers-title"
+        class="numbers span-4 md-span-8 lg-span-12"
+      >
+        <div class="numbers-heading">
+          <h2 class="eyebrow" id="numbers-title">A FORÇA DO NOSSO ECOSSISTEMA</h2>
+          <span class="numbers-mark" aria-hidden="true">≠</span>
         </div>
-        <div class="pill">
-          <h6>+10 mil creators</h6>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<app-brands-cloud-component></app-brands-cloud-component>
-<section class="tiktok-shop section">
-  <div class="container">
-    <div class="grid">
-      <div class="tiktok-shop-video span-4 md-span-4 lg-span-6">
-        <img src="/images/homepage-hero.png" alt="A Comu" />
-      </div>
-      <div class="tiktok-shop-content span-4 md-span-4 lg-span-6">
-        <h2>O TikTok Shop mudou a forma de comprar</h2>
-        <p>As pessoas descobrem o produto no vídeo de um creator e compram sem sair do app.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="creators-and-brands section">
-  <div class="container">
-    <div class="grid">
-      <div class="creators-and-brands-card span-4 md-span-3 lg-span-5">
-        <header>
-          <img src="/images/be-part-1.jpg" alt="Comunidade" />
-        </header>
-        <main>
-          <h3>Creators</h3>
-          <p>Venda pelo programa de afiliados e receba por cada venda que gerar.</p>
-          <app-button link="/solucoes-para-criadores" text="Sou creator" type="pink">
-          </app-button>
-        </main>
-      </div>
-      <div class="creators-and-brands-card span-4 md-span-3 lg-span-5">
-        <header>
-          <img src="/images/be-part-2.jpg" alt="Aprendizado" />
-        </header>
-        <main>
-          <h3>Marcas</h3>
-          <p>
-            Coloque seu produto em centenas de vídeos de creators que falam com a própria
-            comunidade.
-          </p>
-          <app-button link="/solucoes-para-marcas" text="Sou marca"> </app-button>
-        </main>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="top-global section">
-  <div class="container">
-    <div class="grid">
-      <div class="top-global-content span-4 md-span-8 lg-span-12">
-        <h2>A agência Top 1 global em TikTok Shop</h2>
-      </div>
-      <div class="box-number span-2 md-span-2 lg-span-3">
-        <h3>+40 mil</h3>
-        <h6>creators na comunidade</h6>
-      </div>
-      <div class="box-number span-2 md-span-2 lg-span-3">
-        <h3>+200</h3>
-        <h6>marcas parceiras</h6>
-      </div>
-      <div class="box-number span-2 md-span-2 lg-span-3">
-        <h3>R$ 1 bi</h3>
-        <h6>em GMV gerado</h6>
-      </div>
-      <div class="box-number span-2 md-span-2 lg-span-3">
-        <h3>R$ 25 mi</h3>
-        <h6>pagos a creators</h6>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="learning section">
-  <div class="container">
-    <div class="grid">
-      <div class="learning-content span-4 md-span-8 lg-span-12">
-        <h2>Tudo para vender no TikTok Shop, em um lugar só</h2>
-      </div>
-      <div class="learning-big-card span-4 md-span-4 lg-span-6">
-        <img src="/images/tiktok-shop-creators.webp" alt="Creators" />
-        <main>
-          <h3>Creators</h3>
-          <p>desenvolvimento, comunidade, suporte e oportunidades</p>
-          <i class="fa-solid fa-arrow-right-long"></i>
-        </main>
-      </div>
-      <div class="learning-big-card span-4 md-span-4 lg-span-6">
-        <img src="/images/tiktok-shop-marcas.webp" alt="Marcas" />
-        <main>
-          <h3>Marcas</h3>
-          <p>creators, campanhas, conteúdo e vendas</p>
-          <i class="fa-solid fa-arrow-right-long"></i>
-        </main>
-      </div>
-      <div class="learning-card span-2 md-span-2 lg-span-3">
-        <h5>Academy</h5>
-        <p>formação prática para creators sellers</p>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </div>
-      <div class="learning-card span-2 md-span-2 lg-span-3">
-        <h5>Produtos</h5>
-        <p>soluções para evoluir dentro do TikTok Shop</p>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </div>
-      <div class="learning-card span-2 md-span-2 lg-span-3">
-        <h5>Comunidade</h5>
-        <p>espaço para aprender e acompanhar o mercado</p>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </div>
-      <div class="learning-card span-2 md-span-2 lg-span-3">
-        <h5>Experiências</h5>
-        <p>eventos que aproximam creators e marcas</p>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="apps section">
-  <div class="container">
-    <div class="grid">
-      <div class="apps-image span-4 md-span-4 lg-span-6">
-        <img src="/images/criadores.png" alt="Aplicativo" />
-      </div>
-      <div class="apps-content span-4 md-span-4 lg-span-6">
-        <h2>A comunidade vive dentro do app da Comu</h2>
-        <p>Aulas, avisos, oportunidades e tudo o que acontece na Comu, em um só lugar.</p>
-        <div class="apps-btns">
-          <app-button
-            link="https://apps.apple.com/us/app/comu-comunidade-para-creators/id6796062450"
-            target="_blank"
-            text="App Store"
-            type="dark"
-          >
-          </app-button>
-          <app-button
-            link="https://play.google.com/store/apps/details?id=com.nossacomu.comunidade&pli=1"
-            target="_blank"
-            text="Google Play"
-            type="dark"
-          >
-          </app-button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="history section">
-  <div class="container">
-    <div class="grid">
-      <header class="span-4 md-span-8 lg-span-12">
-        <h2>De comunidade a agência Top 1 do TikTok Shop</h2>
-      </header>
-      <div class="content-history span-4 md-span-8 lg-span-12">
-        <div class="content-history-footer">
-          <div #historyStepper class="history-stepper">
-            <div aria-label="Marcos da história da Comu" class="history-steps" role="tablist">
-              <button
-                [attr.aria-selected]="activeHistoryStep() === 0"
-                [class.active]="activeHistoryStep() === 0"
-                aria-controls="history-panel-2022"
-                class="history-step"
-                id="history-tab-2022"
-                role="tab"
-                type="button"
-                (click)="selectHistoryStep(0)"
-              >
-                2022
-                <span
-                  [class.progress-alternate]="historyProgressAlternate()"
-                  aria-hidden="true"
-                  class="history-step-progress"
-                ></span>
-              </button>
-              <button
-                [attr.aria-selected]="activeHistoryStep() === 1"
-                [class.active]="activeHistoryStep() === 1"
-                aria-controls="history-panel-2025"
-                class="history-step"
-                id="history-tab-2025"
-                role="tab"
-                type="button"
-                (click)="selectHistoryStep(1)"
-              >
-                2025
-                <span
-                  [class.progress-alternate]="historyProgressAlternate()"
-                  aria-hidden="true"
-                  class="history-step-progress"
-                ></span>
-              </button>
-              <button
-                [attr.aria-selected]="activeHistoryStep() === 2"
-                [class.active]="activeHistoryStep() === 2"
-                aria-controls="history-panel-today"
-                class="history-step"
-                id="history-tab-today"
-                role="tab"
-                type="button"
-                (click)="selectHistoryStep(2)"
-              >
-                Hoje
-                <span
-                  [class.progress-alternate]="historyProgressAlternate()"
-                  aria-hidden="true"
-                  class="history-step-progress"
-                ></span>
-              </button>
+        <dl class="numbers-grid">
+          @for (stat of stats; track stat.label) {
+            <div>
+              <dt [attr.aria-label]="stat.ariaLabel">
+                <span class="number-prefix" aria-hidden="true">{{ stat.prefix }}</span>
+                <span class="rolling-digits" aria-hidden="true">
+                  @for (digit of stat.digits; track $index) {
+                    <span class="digit-window">
+                      <span class="digit-reel" [style.--digit]="digit">
+                        @for (n of reel; track $index) {
+                          <span>{{ n }}</span>
+                        }
+                      </span>
+                    </span>
+                  }
+                </span>
+                @if (stat.unit) {
+                  <span class="number-unit" aria-hidden="true">{{ stat.unit }}</span>
+                }
+              </dt>
+              <dd>{{ stat.label }}</dd>
             </div>
+          }
+        </dl>
+        <p class="numbers-note">
+          Indicadores do site institucional. Base e período em validação nesta revisão.
+        </p>
+      </section>
+    </div>
+  </div>
+</section>
 
-            <section
-              [class.active]="activeHistoryStep() === 0"
-              aria-labelledby="history-tab-2022"
-              class="history-panel"
-              id="history-panel-2022"
-              role="tabpanel"
-            >
-              <div class="history-year">2022<span>Tudo começou com conteúdo</span></div>
-              <div class="history-panel-content">
-                <p>A Comu nasce como comunidade para creators que queriam viver de conteúdo.</p>
-                <img src="/images/timeline-1.webp" alt="2022" />
-              </div>
-            </section>
+<!-- Marcas -->
+<section class="brands" aria-label="Marcas em projetos Comu">
+  <p class="brands-heading">Marcas que já criaram com a <strong>Comu.</strong></p>
+  @for (row of brandRows; track $index; let rowIndex = $index) {
+    <div
+      class="marquee"
+      [class]="'marquee--row-' + (rowIndex + 1)"
+      [attr.aria-hidden]="row.decorative || null"
+    >
+      <div class="marquee-track">
+        @for (copy of marqueeCopies; track copy) {
+          <ul class="marquee-sequence" role="list" [attr.aria-hidden]="copy > 0 || null">
+            @for (brand of row.brands; track brand) {
+              <li class="brand-logo" [class]="'brand-logo--' + brand">
+                <img
+                  [src]="'/images/brands/' + brand + '.svg'"
+                  [alt]="brandNames[brand]"
+                  loading="lazy"
+                />
+              </li>
+            }
+          </ul>
+        }
+      </div>
+    </div>
+  }
+</section>
 
-            <section
-              [class.active]="activeHistoryStep() === 1"
-              aria-labelledby="history-tab-2025"
-              class="history-panel"
-              id="history-panel-2025"
-              role="tabpanel"
-            >
-              <div class="history-year">2025<span>O mercado mudou</span></div>
-              <div class="history-panel-content">
-                <p>
-                  Com o TikTok Shop, a Comu passa a ajudar creators a transformar influência em
-                  vendas.
-                </p>
-                <img src="/images/timeline-2.webp" alt="2025" />
-              </div>
-            </section>
+<!-- Sobre -->
+<section class="intro" id="sobre">
+  <div class="container">
+    <div class="grid intro-grid">
+      <h2 class="span-4 md-span-4 lg-span-6">
+        Sua potência<br />
+        encontra <em>forma aqui.</em>
+      </h2>
+      <p class="span-4 md-span-4 lg-span-6">
+        Criar pede repertório, prática e direção. A Comu aproxima quem cria, quem ensina e quem
+        vende para transformar ideias em caminhos de crescimento.
+      </p>
+    </div>
+  </div>
+</section>
 
-            <section
-              [class.active]="activeHistoryStep() === 2"
-              aria-labelledby="history-tab-today"
-              class="history-panel"
-              id="history-panel-today"
-              role="tabpanel"
-            >
-              <div class="history-year">Hoje<span>Uma operação completa</span></div>
-              <div class="history-panel-content">
-                <p>
-                  Comunidade, educação, campanhas, produtos e eventos em uma operação dedicada ao
-                  TikTok Shop.
-                </p>
-                <img src="/images/timeline-3.webp" alt="Hoje" />
-              </div>
-            </section>
-          </div>
+<!-- Caminhos -->
+<section class="paths">
+  <div class="container">
+    <div class="grid paths-grid">
+      <article class="path-card path-card--pink span-4 md-span-4 lg-span-6">
+        <div class="path-card-body">
+          <p class="eyebrow">PARA CRIADORES</p>
+          <h2>
+            Você cria.<br />
+            A gente constrói<br />
+            com você.
+          </h2>
+          <p>
+            Encontre um ambiente para desenvolver sua criação, trocar com outros criadores e
+            entender os próximos passos do seu negócio.
+          </p>
+          <a class="comu-btn comu-btn--light-pink" routerLink="/solucoes-para-criadores"
+            >Soluções para criadores</a
+          >
         </div>
+        <img
+          src="/images/home-path-criadores.webp"
+          alt="Criadoras em evento da Comu"
+          width="1200"
+          height="766"
+          loading="lazy"
+        />
+      </article>
+
+      <article class="path-card path-card--ink span-4 md-span-4 lg-span-6">
+        <div class="path-card-body">
+          <p class="eyebrow">PARA MARCAS</p>
+          <h2>
+            Sua marca pode<br />
+            crescer com quem<br />
+            sabe criar.
+          </h2>
+          <p>
+            Conecte sua marca a criadores e formatos que façam sentido para seu público. Construa
+            uma operação de conteúdo com objetivo e acompanhamento.
+          </p>
+          <a class="comu-btn comu-btn--light" routerLink="/solucoes-para-marcas"
+            >Soluções para marcas</a
+          >
+        </div>
+        <img
+          src="/images/home-path-marcas.webp"
+          alt="Criadora gravando conteúdo em uma loja parceira"
+          width="1200"
+          height="756"
+          loading="lazy"
+        />
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Impacto -->
+<section class="impact" aria-labelledby="impact-title">
+  <div class="container">
+    <div class="grid impact-grid">
+      <div class="impact-symbol span-4 md-span-3 lg-span-4" aria-hidden="true">≠</div>
+      <div class="impact-copy span-4 md-span-5 lg-span-8">
+        <p class="eyebrow">CRIATIVIDADE COM AMBIÇÃO</p>
+        <h2 id="impact-title">
+          Criar impacto.<br />
+          <em>Construir resultado.</em>
+        </h2>
+        <p>
+          Uma comunidade que cria. Marcas que entram na conversa. Conteúdo que aproxima pessoas e
+          produtos, com estratégia para transformar essa conexão em negócio.
+        </p>
+        <p class="impact-statement">
+          Da ideia à venda, o objetivo dá direção. Os indicadores mostram o próximo passo.
+        </p>
+        <a class="comu-btn comu-btn--outline" routerLink="/solucoes-para-marcas" fragment="cases"
+          >Ver projetos e indicadores</a
+        >
       </div>
     </div>
   </div>
 </section>
-<section class="start-selling section">
+
+<!-- Aplicativo -->
+<section class="app" id="aplicativo" aria-labelledby="app-title">
   <div class="container">
-    <div class="grid">
-      <div class="start-selling-content span-4 md-span-8 lg-span-12">
-        <h2>Comece a vender no TikTok Shop</h2>
-        <div class="start-selling-btns">
-          <app-button link="/solucoes-para-criadores" text="Sou creator" type="pink"> </app-button>
-          <app-button link="/solucoes-para-marcas" text="Sou marca"> </app-button>
-        </div>
+    <div class="grid app-grid">
+      <div class="app-copy span-4 md-span-4 lg-span-6">
+        <p class="eyebrow">Comu NO SEU DIA A DIA</p>
+        <h2 id="app-title">
+          Entre na nossa<br />
+          <em>comunidade gratuita.</em>
+        </h2>
+        <p class="app-lead">Seu próximo encontro com a criação pode estar no seu celular.</p>
         <p>
-          Quer trabalhar com creators todos os dias?
+          Baixe o aplicativo da Comu para se conectar com outros criadores, trocar experiências e
+          acompanhar os conteúdos e as novidades da comunidade.
+        </p>
+        <ul class="app-benefits" role="list">
+          <li>Conheça gente que também vive a criação.</li>
+          <li>Compartilhe dúvidas, ideias e aprendizados.</li>
+          <li>Acompanhe o que acontece na Comu.</li>
+        </ul>
+        <div class="actions app-downloads">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdoSZmbDuBCVyi3DGHFGUL2f66VJGJvNwc02mLuOz1QMvE9Cg/viewform"
+            class="comu-btn comu-btn--dark"
+            href="https://apps.apple.com/us/app/comu-comunidade-para-creators/id6796062450"
             target="_blank"
-            >Enviar meu perfil para o time</a
+            rel="noopener noreferrer"
+            >Baixar o app para iOS</a
           >
+          <a
+            class="comu-btn comu-btn--dark"
+            href="https://play.google.com/store/apps/details?id=com.nossacomu.comunidade"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Baixar o app para Android</a
+          >
+        </div>
+        <p class="small">
+          Disponível na App Store e no Google Play. Comunidade gratuita para começar a participar.
         </p>
       </div>
+
+      <div class="app-screens span-4 md-span-4 lg-span-6">
+        <img
+          src="/images/app-screen-1.webp"
+          alt="Tela do app Comu com boas-vindas e novidades do mercado"
+          width="600"
+          height="1299"
+          loading="lazy"
+        />
+        <img
+          src="/images/app-screen-2.webp"
+          alt="Tela do app Comu com conversas da comunidade de criadores"
+          width="600"
+          height="1299"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Nosso jeito de fazer -->
+<section class="steps">
+  <div class="container">
+    <div class="steps-heading">
+      <p class="eyebrow">NOSSO JEITO DE FAZER</p>
+      <h2>Da criação ao resultado.</h2>
+    </div>
+    <ol class="steps-list" role="list">
+      @for (step of steps; track step.title; let i = $index) {
+        <li>
+          <span class="step-num">0{{ i + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<!-- Experiências -->
+<section class="experience">
+  <div class="container">
+    <div class="grid experience-grid">
+      <div class="experience-photo span-4 md-span-4 lg-span-6">
+        <img
+          src="/images/home-encontro-wellness.webp"
+          alt="Participantes em atividade coletiva da Comu"
+          width="1600"
+          height="1066"
+          loading="lazy"
+        />
+      </div>
+      <div class="experience-copy span-4 md-span-4 lg-span-6">
+        <p class="eyebrow">ECOSSISTEMA EM MOVIMENTO</p>
+        <h2>
+          A criação continua<br />
+          <em>fora da tela.</em>
+        </h2>
+        <p>
+          Encontros, formação e experiências também fazem parte da Comu. São oportunidades para
+          aprender, trocar e reconhecer o trabalho de quem cria.
+        </p>
+        <a class="comu-btn comu-btn--outline" routerLink="/eventos">Conhecer as experiências</a>
+        <p class="small">Conheça os formatos e saiba como acompanhar as próximas edições.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Na Mídia -->
+<section class="press" id="na-midia" aria-labelledby="press-title">
+  <div class="container">
+    <div class="grid press-heading">
+      <div class="span-4 md-span-4 lg-span-6">
+        <p class="eyebrow">A Comu NA CONVERSA</p>
+        <h2 id="press-title">Na <em>Mídia.</em></h2>
+      </div>
+      <p class="span-4 md-span-4 lg-span-6">
+        Reportagens e entrevistas sobre criação, comunidade e negócios. Veja a Comu na imprensa.
+      </p>
+    </div>
+
+    <div class="press-grid">
+      @for (item of press; track item.url) {
+        <article class="press-card">
+          <div class="press-meta">
+            <span>{{ item.outlet }}</span>
+            <time [attr.datetime]="item.date">{{ item.dateLabel }}</time>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.excerpt }}</p>
+          <a class="press-read" [href]="item.url" target="_blank" rel="noopener noreferrer"
+            >Ler matéria<span class="sr-only"> em {{ item.outlet }}, abre em nova aba</span></a
+          >
+        </article>
+      }
+    </div>
+
+    <div class="actions">
+      <a class="comu-btn comu-btn--outline" routerLink="/na-midia">Ver Comu na Mídia</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="closing">
+  <div class="container">
+    <p class="eyebrow">SEJA INCOMUM.</p>
+    <h2>
+      O próximo passo<br />
+      pode começar aqui.
+    </h2>
+    <p>Se você cria ou quer crescer com criadores, tem um caminho na Comu.</p>
+    <div class="actions">
+      <a class="comu-btn comu-btn--light-pink" routerLink="/solucoes-para-criadores"
+        >Quero crescer como criador</a
+      >
+      <a class="comu-btn comu-btn--outline-light" routerLink="/solucoes-para-marcas"
+        >Quero criar com a Comu</a
+      >
     </div>
   </div>
 </section>

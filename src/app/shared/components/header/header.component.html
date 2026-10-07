@@ -1,51 +1,25 @@
-<section class="section">
-  <div class="container">
-    <div class="header-pill">
-      <div class="header-logo">
-        <a href="/" aria-label="Comu - página inicial">
-          <img ngSrc="/images/logo-comu-black.svg" alt="Comu" height="24" width="106" />
-        </a>
-      </div>
-      <div class="header-menu">
-        <button
-          [attr.aria-expanded]="menuOpen()"
-          aria-controls="primary-navigation"
-          aria-label="Abrir ou fechar menu"
-          class="menu-btn"
-          type="button"
-          (click)="toggleMenu()"
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="header-logo" routerLink="/" aria-label="Comu — página inicial">
+      <img ngSrc="/images/logo-comu-black.svg" alt="Comu" width="112" height="26" priority />
+    </a>
+
+    <nav class="header-nav" aria-label="Navegação principal">
+      @for (item of navItems; track item.path) {
+        <a
+          [routerLink]="item.path"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ariaCurrentWhenActive="page"
+          routerLinkActive="is-active"
+          >{{ item.label }}</a
         >
-          <i
-            [class.fa-bars]="!menuOpen()"
-            [class.fa-xmark]="menuOpen()"
-            aria-hidden="true"
-            class="fa-solid"
-          ></i>
-        </button>
-        <nav
-          [class.is-open]="menuOpen()"
-          aria-label="Menu principal"
-          class="primary-navigation"
-          id="primary-navigation"
-        >
-          <ul role="list">
-            <li><a href="/" (click)="closeMenu()">A Comu</a></li>
-            <li><a href="/solucoes-para-criadores" (click)="closeMenu()">Para creators</a></li>
-            <li><a href="/solucoes-para-marcas" (click)="closeMenu()">Para marcas</a></li>
-            <li><a href="/eventos" (click)="closeMenu()">Eventos</a></li>
-            <li>
-              <a
-                class="whatsapp-link"
-                href="https://wa.me/5561993745254"
-                target="_blank"
-                rel="noopener noreferrer"
-                (click)="closeMenu()"
-                >Entrar pelo WhatsApp</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
+      }
+    </nav>
+
+    <div class="header-cta">
+      <a class="comu-btn comu-btn--dark" routerLink="/" fragment="aplicativo"
+        >Entrar na comunidade</a
+      >
     </div>
   </div>
-</section>
+</header>

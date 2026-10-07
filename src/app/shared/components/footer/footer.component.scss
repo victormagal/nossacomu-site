@@ -1,66 +1,97 @@
-// Grid containers
-.first-column {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  justify-content: flex-start;
+:host {
+  display: block;
 }
 
-.second-column {
-  align-items: flex-end;
-  display: flex;
-  gap: var(--layout-grid-gap);
-
-  * {
-    flex: 1;
-  }
-}
-
-.third-column {
-  display: flex;
-  flex-direction: column;
-  gap: var(--layout-grid-gap);
-  justify-content: flex-end;
-
-  p {
-    color: var(--color-muted);
-    font: {
-      size: 0.75rem;
-      weight: 400;
-    }
-    padding: 1.5rem 1.5rem 0;
-    text-align: center;
-  }
-}
-// Grid containers
-
-.description-block {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.site-footer {
+  background-color: var(--color-ink);
+  color: var(--color-white);
+  padding: 3rem 0 1.5rem;
 
   @media (min-width: 768px) {
-    align-items: flex-start;
+    padding: 4.375rem 0 1.625rem;
   }
 }
 
-.nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.footer-top {
+  row-gap: 1.75rem;
+}
 
-  li {
-    color: var(--color-muted);
+.footer-brand {
+  img {
+    height: auto;
+    width: 8.625rem;
+
+    @media (min-width: 768px) {
+      width: 10rem;
+    }
+  }
+
+  p {
     font: {
-      size: 0.875rem;
+      size: 1.45rem;
       weight: 400;
     }
-    list-style: none;
+    letter-spacing: -0.035em;
+    line-height: 1.25;
+    margin-top: 1.25rem;
 
-    a {
-      &:hover {
-        text-decoration: underline;
-      }
+    @media (min-width: 768px) {
+      font-size: 1.55rem;
+      margin-top: 1.75rem;
     }
+  }
+}
+
+.footer-links {
+  h3 {
+    font: {
+      size: 0.875rem;
+      weight: 650;
+    }
+    letter-spacing: 0;
+    line-height: 1.4;
+    margin: 0.875rem 0 1.25rem;
+
+    @media (min-width: 768px) {
+      font-size: 0.8rem;
+      line-height: 1.04;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  a {
+    color: var(--color-gray-200);
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin: 0.75rem 0;
+    max-width: 100%;
+    width: max-content;
+
+    @media (min-width: 768px) {
+      margin: 0.8125rem 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(var(--color-white-rgb), 0.25);
+  display: flex;
+  font-size: 0.75rem;
+  gap: 1.25rem;
+  justify-content: space-between;
+  line-height: 1.4;
+  margin-top: 2.1875rem;
+  padding-top: 1.375rem;
+
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+    line-height: 1.55;
+    margin-top: 3.4375rem;
   }
 }

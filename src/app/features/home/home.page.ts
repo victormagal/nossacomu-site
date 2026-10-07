@@ -1,78 +1,167 @@
-import { isPlatformBrowser } from '@angular/common';
 import {
-  AfterViewInit,
+  afterNextRender,
   ChangeDetectionStrategy,
   Component,
+  DestroyRef,
   ElementRef,
   inject,
-  OnDestroy,
-  PLATFORM_ID,
   signal,
   viewChild,
 } from '@angular/core';
-import { BrandsCloudComponent } from '../../shared/components/brands-cloud/brands-cloud.component';
-import { ButtonComponent } from '../../shared/components/button/button.component';
+import { RouterLink } from '@angular/router';
+
+interface Stat {
+  ariaLabel: string;
+  digits: number[];
+  label: string;
+  prefix: string;
+  unit: string;
+}
+
+type Brand = 'barbours' | 'sallve' | 'kokeshi' | 'caffeine' | 'gocase';
+
+interface BrandRow {
+  brands: Brand[];
+  /** Linhas 2 e 3 são decorativas (aria-hidden). */
+  decorative: boolean;
+}
+
+interface PressItem {
+  date: string;
+  dateLabel: string;
+  excerpt: string;
+  outlet: string;
+  title: string;
+  url: string;
+}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterLink],
   selector: 'app-home-page',
   styleUrl: './home.page.scss',
   templateUrl: './home.page.html',
-  imports: [BrandsCloudComponent, ButtonComponent],
 })
-export class HomePage implements AfterViewInit, OnDestroy {
-  private readonly platformId = inject(PLATFORM_ID);
-  private readonly historyStepper = viewChild.required<ElementRef<HTMLElement>>('historyStepper');
-  private historyTimer?: ReturnType<typeof setInterval>;
-  private historyObserver?: IntersectionObserver;
+export class HomePage {
+  private readonly numbers = viewChild.required<ElementRef<HTMLElement>>('numbers');
 
-  openItems = new Set<number>();
-  protected readonly activeHistoryStep = signal(0);
-  protected readonly historyProgressAlternate = signal(false);
+  /** Ativa a animação dos números quando o bloco entra na tela. */
+  protected readonly numbersRunning = signal(false);
 
-  ngAfterViewInit() {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
+  /** Rolo de dígitos: 0–9 duas vezes, para a animação dar uma volta completa. */
+  protected readonly reel = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return;
-    }
-    this.historyObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          this.startHistoryAutoplay();
-        } else {
-          this.stopHistoryAutoplay();
-        }
-      },
-      { threshold: 0.3 },
-    );
-    this.historyObserver.observe(this.historyStepper().nativeElement);
-  }
+  protected readonly stats: Stat[] = [
+    {
+      ariaLabel: 'Mais de 40 mil',
+      digits: [4, 0],
+      label: 'Criadores no ecossistema',
+      prefix: '+',
+      unit: 'mil',
+    },
+    {
+      ariaLabel: 'Mais de 200',
+      digits: [2, 0, 0],
+      label: 'Marcas parceiras',
+      prefix: '+',
+      unit: '',
+    },
+    {
+      ariaLabel: '1 bilhão de reais',
+      digits: [1],
+      label: 'Em GMV movimentado pelos criadores',
+      prefix: 'R$',
+      unit: 'bi',
+    },
+    {
+      ariaLabel: '25 milhões de reais',
+      digits: [2, 5],
+      label: 'Pagos a criadores',
+      prefix: 'R$',
+      unit: 'mi',
+    },
+  ];
 
-  ngOnDestroy() {
-    this.stopHistoryAutoplay();
-    this.historyObserver?.disconnect();
-  }
+  protected readonly brandNames: Record<Brand, string> = {
+    barbours: 'Barbour’s',
+    caffeine: 'Caffeine Army',
+    gocase: 'GoCase',
+    kokeshi: 'Kokeshi',
+    sallve: 'Sallve',
+  };
 
-  protected selectHistoryStep(index: number) {
-    this.activeHistoryStep.set(index);
-    this.historyProgressAlternate.update((alternate) => !alternate);
-    this.startHistoryAutoplay();
-  }
+  protected readonly brandRows: BrandRow[] = [
+    { brands: ['barbours', 'sallve', 'kokeshi', 'caffeine', 'gocase'], decorative: false },
+    { brands: ['caffeine', 'gocase', 'barbours', 'sallve', 'kokeshi'], decorative: true },
+    { brands: ['kokeshi', 'barbours', 'gocase', 'sallve', 'caffeine'], decorative: true },
+  ];
 
-  private startHistoryAutoplay() {
-    this.stopHistoryAutoplay();
-    this.historyTimer = setInterval(() => {
-      this.selectHistoryStep((this.activeHistoryStep() + 1) % 3);
-    }, 4000);
-  }
+  /** Cada faixa repete a sequência 4x (2 grupos × 2 sequências) para o loop contínuo. */
+  protected readonly marqueeCopies = [0, 1, 2, 3];
 
-  private stopHistoryAutoplay() {
-    if (this.historyTimer) {
-      clearInterval(this.historyTimer);
-      this.historyTimer = undefined;
-    }
+  protected readonly steps = [
+    {
+      text: 'Desenvolva seu repertório, conheça formatos e aprenda a transformar suas ideias em conteúdo com potencial de resultado. A Comu conecta aprendizado e prática para você começar.',
+      title: 'Aprenda como se tornar um criador.',
+    },
+    {
+      text: 'Tire suas ideias do papel, publique e teste na prática. Cada conteúdo é uma oportunidade de encontrar sua voz e se conectar com o seu público.',
+      title: 'Crie para começar o jogo.',
+    },
+    {
+      text: 'Acompanhe o que seu conteúdo gera, entenda os indicadores e ajuste a rota. Use cada aprendizado para evoluir sua criação e construir novas oportunidades de negócio.',
+      title: 'Evolução e resultado.',
+    },
+  ];
+
+  protected readonly press: PressItem[] = [
+    {
+      date: '2025-05-12',
+      dateLabel: '12 MAI 2025',
+      excerpt: 'Reportagem sobre a formação de criadores e a atuação da Comu no social commerce.',
+      outlet: 'Economia Real',
+      title: 'Da criação de conteúdo ao negócio',
+      url: 'https://economiareal.uol.com.br/noticia/comercio/eles-treinam-criadores-para-vender-no-tiktok-e-ja-movimentam-r-50-mi-216',
+    },
+    {
+      date: '2025-05-13',
+      dateLabel: '13 MAI 2025',
+      excerpt:
+        'A Comu participa da conversa sobre profissionalização e criação de conteúdo para marcas.',
+      outlet: 'Exame',
+      title: 'UGC e novas possibilidades de trabalho com o TikTok Shop',
+      url: 'https://exame.com/carreira/tiktok-shop-impulsiona-nova-profissao-ugc-creator-pode-ganhar-ate-r-20-mil-por-mes/',
+    },
+    {
+      date: '2025-05-09',
+      dateLabel: '09 MAI 2025',
+      excerpt: 'A visão da Comu sobre a conexão entre conteúdo, criadores e vendas.',
+      outlet: 'Startupi',
+      title: 'TikTok Shop e as oportunidades para empresas',
+      url: 'https://startupi.com.br/tiktok-shop-brasil-oportunidades-pmes-startups/',
+    },
+  ];
+
+  constructor() {
+    const destroyRef = inject(DestroyRef);
+
+    // Só roda no navegador (não no SSR/prerender).
+    afterNextRender(() => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            this.numbersRunning.set(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.35 },
+      );
+      observer.observe(this.numbers().nativeElement);
+      destroyRef.onDestroy(() => observer.disconnect());
+    });
   }
 }
