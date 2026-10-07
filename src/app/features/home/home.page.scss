@@ -1,119 +1,9 @@
 // Página A Comu (homepage)
-// Breakpoints do projeto: mobile < 768px · tablet (md) ≥ 768px · desktop (lg) ≥ 1200px
-// Espaço entre seções: 24px (mobile) · 48px (tablet) · 64px (desktop)
+// Base compartilhada (tipografia, eyebrow, botões em linha, CTA final): styles/_site-page.scss
+@use '../../../styles/site-page' as site;
 
-$md: 768px;
-$lg: 1200px;
-
-@mixin md {
-  @media (min-width: $md) {
-    @content;
-  }
-}
-
-@mixin lg {
-  @media (min-width: $lg) {
-    @content;
-  }
-}
-
-:host {
-  --home-gap: 1.5rem;
-
-  background-color: var(--color-white);
-  color: var(--color-ink);
-  display: flex;
-  flex-direction: column;
-  gap: var(--home-gap);
-  line-height: 1.55;
-  padding-top: var(--home-gap);
-
-  @include md {
-    --home-gap: 3rem;
-  }
-
-  @include lg {
-    --home-gap: 4rem;
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Tipografia base da página
-// ---------------------------------------------------------------------------
-h1,
-h2,
-h3 {
-  font-weight: 650;
-  letter-spacing: -0.055em;
-  line-height: 1.04;
-  text-wrap: wrap;
-}
-
-p,
-li {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.55;
-}
-
-em {
-  color: var(--color-pink);
-  font-style: normal;
-}
-
-strong {
-  font-weight: 650;
-}
-
-figure {
-  margin: 0;
-}
-
-.eyebrow {
-  font: {
-    size: 0.75rem;
-    weight: 700;
-  }
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-  margin: 0 0 1.3125rem;
-
-  @include md {
-    font-size: 0.875rem;
-    margin-bottom: 1.4rem;
-  }
-}
-
-.small {
-  font-size: 0.8rem;
-  line-height: 1.6;
-  margin-top: 1rem;
-}
-
-.actions {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.625rem;
-  margin-top: 1.5625rem;
-
-  @include md {
-    gap: 0.75rem;
-    margin-top: 2rem;
-  }
-}
-
-.sr-only {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
+@include site.page-base;
+@include site.closing;
 
 // Títulos de seção (Impacto, App, Passos, Experiências, Na Mídia)
 .impact h2,
@@ -123,7 +13,7 @@ figure {
 .press h2 {
   font-size: 2.4rem;
 
-  @include md {
+  @include site.md {
     font-size: clamp(2.45rem, 3.8vw, 3.7rem);
   }
 }
@@ -135,7 +25,7 @@ figure {
   align-items: center;
   row-gap: 2.125rem;
 
-  @include md {
+  @include site.md {
     row-gap: 1.75rem;
   }
 }
@@ -148,7 +38,7 @@ figure {
     letter-spacing: -0.06em;
     line-height: 1.03;
 
-    @include md {
+    @include site.md {
       font-size: clamp(3.25rem, 5.2vw, 5.4rem);
       letter-spacing: -0.055em;
       line-height: 1.04;
@@ -162,7 +52,7 @@ figure {
   margin-top: 1.5rem;
   max-width: 35rem;
 
-  @include md {
+  @include site.md {
     line-height: 1.55;
   }
 }
@@ -177,7 +67,7 @@ figure {
   gap: 0.875rem;
   margin-top: 1.3125rem;
 
-  @include md {
+  @include site.md {
     font-size: 0.8rem;
     margin-top: 1.5rem;
   }
@@ -199,7 +89,7 @@ figure {
   order: 3;
   position: relative;
 
-  @include md {
+  @include site.md {
     gap: var(--layout-grid-gap);
     order: 2;
   }
@@ -212,7 +102,7 @@ figure {
   overflow: hidden;
   position: relative;
 
-  @include md {
+  @include site.md {
     height: 25rem;
   }
 
@@ -237,7 +127,7 @@ figure {
     right: 0.5rem;
     text-align: center;
 
-    @include md {
+    @include site.md {
       left: 0.75rem;
       line-height: 1.55;
       padding: 0.5625rem 0.3125rem;
@@ -248,7 +138,7 @@ figure {
   &--first figcaption {
     bottom: 1.1875rem;
 
-    @include md {
+    @include site.md {
       bottom: 1.5625rem;
     }
   }
@@ -256,14 +146,14 @@ figure {
   &--second {
     margin-top: 3rem;
 
-    @include md {
+    @include site.md {
       margin-top: 4.375rem;
     }
 
     figcaption {
       top: 1rem;
 
-      @include md {
+      @include site.md {
         top: 1.25rem;
       }
     }
@@ -291,14 +181,14 @@ figure {
   transform: translateX(-50%);
   width: 5.875rem;
 
-  @include md {
+  @include site.md {
     font-size: 3.625rem;
     height: 7rem;
     top: 35%;
     width: 7rem;
   }
 
-  @include lg {
+  @include site.lg {
     height: 7.8125rem;
     width: 7.8125rem;
   }
@@ -308,7 +198,7 @@ figure {
     letter-spacing: -0.05em;
     line-height: 1;
 
-    @include md {
+    @include site.md {
       font-size: 1.125rem;
     }
   }
@@ -323,7 +213,7 @@ figure {
   order: 2;
   padding: 1.375rem 1.25rem;
 
-  @include md {
+  @include site.md {
     order: 3;
     padding: 1.375rem 1.875rem 1.25rem;
   }
@@ -336,7 +226,7 @@ figure {
   justify-content: space-between;
   margin-bottom: 0.875rem;
 
-  @include md {
+  @include site.md {
     gap: 1.25rem;
   }
 
@@ -344,7 +234,7 @@ figure {
     margin: 0;
     max-width: 13.75rem;
 
-    @include md {
+    @include site.md {
       max-width: none;
     }
   }
@@ -357,7 +247,7 @@ figure {
   }
   line-height: 1;
 
-  @include md {
+  @include site.md {
     font-size: 2.75rem;
   }
 }
@@ -502,7 +392,7 @@ figure {
   padding-inline: 1.5rem;
   text-align: center;
 
-  @include md {
+  @include site.md {
     font-size: 1rem;
     margin-bottom: 1.25rem;
   }
@@ -554,7 +444,7 @@ figure {
   margin: 0;
   padding: 0 1.625rem 0 0;
 
-  @include md {
+  @include site.md {
     gap: 2.25rem;
     padding-right: 2.25rem;
   }
@@ -572,7 +462,7 @@ figure {
   justify-content: center;
   width: 6.875rem;
 
-  @include md {
+  @include site.md {
     --logo-scale: 1;
 
     height: 4rem;
@@ -613,14 +503,14 @@ figure {
 .intro-grid {
   row-gap: 1.5rem;
 
-  @include md {
+  @include site.md {
     align-items: center;
   }
 
   h2 {
     font-size: 2.35rem;
 
-    @include md {
+    @include site.md {
       font-size: clamp(2.3rem, 3.5vw, 3.15rem);
     }
   }
@@ -629,7 +519,7 @@ figure {
     line-height: 1.65;
     max-width: 35.625rem;
 
-    @include md {
+    @include site.md {
       font-size: 1.08rem;
     }
   }
@@ -662,7 +552,7 @@ figure {
     object-fit: cover;
     width: 100%;
 
-    @include md {
+    @include site.md {
       height: 15.625rem;
     }
   }
@@ -672,22 +562,22 @@ figure {
   flex: 1;
   padding: 2rem 1.75rem;
 
-  @include md {
+  @include site.md {
     padding: 2.1875rem 1.875rem;
   }
 
-  @include lg {
+  @include site.lg {
     padding: 2.8125rem 2.625rem;
   }
 
   h2 {
     font-size: 2.4rem;
 
-    @include md {
+    @include site.md {
       font-size: 2.3rem;
     }
 
-    @include lg {
+    @include site.lg {
       font-size: 2.65rem;
     }
   }
@@ -697,7 +587,7 @@ figure {
     margin: 1.5rem 0 1.6rem;
     max-width: 27.8125rem;
 
-    @include md {
+    @include site.md {
       font-size: 1rem;
       margin-top: 1.7rem;
     }
@@ -710,7 +600,7 @@ figure {
 .impact-grid {
   row-gap: 1.5625rem;
 
-  @include md {
+  @include site.md {
     align-items: center;
   }
 }
@@ -724,7 +614,7 @@ figure {
   letter-spacing: -0.08em;
   line-height: 1;
 
-  @include md {
+  @include site.md {
     font-size: min(28vw, 25rem);
     line-height: 0.8;
     text-align: center;
@@ -740,7 +630,7 @@ figure {
     margin-bottom: 1.6rem;
     max-width: 41.25rem;
 
-    @include md {
+    @include site.md {
       font-size: 1.08rem;
     }
   }
@@ -760,7 +650,7 @@ figure {
 .app-grid {
   row-gap: 2.125rem;
 
-  @include md {
+  @include site.md {
     align-items: center;
   }
 }
@@ -777,7 +667,7 @@ figure {
     line-height: 1.5;
     margin: 1.5rem 0 1.125rem;
 
-    @include md {
+    @include site.md {
       font-size: 1.25rem;
       margin-top: 1.75rem;
     }
@@ -827,7 +717,7 @@ figure {
   gap: 0.75rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  @include md {
+  @include site.md {
     gap: 1.125rem;
   }
 
@@ -836,14 +726,14 @@ figure {
     height: auto;
     width: 100%;
 
-    @include md {
+    @include site.md {
       border-radius: 12px;
     }
 
     + img {
       margin-top: 1.75rem;
 
-      @include md {
+      @include site.md {
         margin-top: 2.625rem;
       }
     }
@@ -858,7 +748,7 @@ figure {
   color: var(--color-white);
   padding-block: 4rem;
 
-  @include md {
+  @include site.md {
     padding-block: 6.25rem;
   }
 
@@ -874,7 +764,7 @@ figure {
   margin: 2.25rem 0 0;
   padding: 0;
 
-  @include md {
+  @include site.md {
     gap: var(--layout-grid-gap);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 3.875rem;
@@ -884,7 +774,7 @@ figure {
     border-top: 1px solid rgba(var(--color-white-rgb), 0.4);
     padding-top: 1.3125rem;
 
-    @include md {
+    @include site.md {
       padding-top: 1.5625rem;
     }
   }
@@ -894,7 +784,7 @@ figure {
     line-height: 1.1;
     margin: 1rem 0;
 
-    @include md {
+    @include site.md {
       margin: 2.25rem 0 1.25rem;
     }
   }
@@ -904,7 +794,7 @@ figure {
     font-size: 0.95rem;
     line-height: 1.6;
 
-    @include md {
+    @include site.md {
       max-width: 20.625rem;
     }
   }
@@ -920,7 +810,7 @@ figure {
 .experience-grid {
   row-gap: 2.125rem;
 
-  @include md {
+  @include site.md {
     align-items: center;
   }
 }
@@ -931,11 +821,11 @@ figure {
   height: 21.25rem;
   overflow: hidden;
 
-  @include md {
+  @include site.md {
     height: 25.625rem;
   }
 
-  @include lg {
+  @include site.lg {
     height: 29.6875rem;
   }
 
@@ -968,7 +858,7 @@ figure {
   margin-bottom: 1.75rem;
   row-gap: 1.25rem;
 
-  @include md {
+  @include site.md {
     align-items: end;
     margin-bottom: 2.5rem;
   }
@@ -976,7 +866,7 @@ figure {
   p {
     max-width: 30.625rem;
 
-    @include md {
+    @include site.md {
       font-size: 1.08rem;
     }
   }
@@ -986,12 +876,12 @@ figure {
   display: grid;
   gap: 1.75rem;
 
-  @include md {
+  @include site.md {
     gap: 1.9rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  @include lg {
+  @include site.lg {
     gap: var(--layout-grid-gap);
   }
 }
@@ -1005,7 +895,7 @@ figure {
   min-width: 0;
   padding: 1.375rem 0 1.125rem;
 
-  @include md {
+  @include site.md {
     padding-top: 1.5rem;
   }
 
@@ -1015,7 +905,7 @@ figure {
     line-height: 1.12;
     max-width: 37.5rem;
 
-    @include md {
+    @include site.md {
       font-size: clamp(1.55rem, 2.05vw, 1.85rem);
     }
   }
@@ -1025,7 +915,7 @@ figure {
     margin: 1rem 0 0.75rem;
     max-width: 37.5rem;
 
-    @include md {
+    @include site.md {
       margin: 1.25rem 0 1.5rem;
     }
   }
@@ -1039,7 +929,7 @@ figure {
   margin-bottom: 1.125rem;
   width: 100%;
 
-  @include md {
+  @include site.md {
     margin-bottom: 1.5rem;
   }
 
@@ -1083,51 +973,8 @@ figure {
 .press .actions {
   margin-top: 1.75rem;
 
-  @include md {
+  @include site.md {
     margin-top: 2rem;
-  }
-}
-
-// ---------------------------------------------------------------------------
-// CTA final (faixa rosa, encosta no footer)
-// ---------------------------------------------------------------------------
-.closing {
-  background-color: var(--color-pink);
-  color: var(--color-white);
-  padding-block: 4rem;
-  text-align: center;
-
-  @include md {
-    padding-block: 5.75rem 5.375rem;
-  }
-
-  h2 {
-    font-size: 2.55rem;
-    margin-inline: auto;
-    max-width: 67.5rem;
-
-    @include md {
-      font-size: clamp(2.5rem, 4.1vw, 4.1rem);
-    }
-  }
-
-  h2 + p {
-    margin: 1.5rem auto 0;
-    max-width: 42.5rem;
-
-    @include md {
-      font-size: 1.07rem;
-      margin-top: 1.5625rem;
-    }
-  }
-
-  .actions {
-    justify-content: center;
-
-    @media (max-width: ($md - 1px)) {
-      align-items: stretch;
-      flex-direction: column;
-    }
   }
 }
 

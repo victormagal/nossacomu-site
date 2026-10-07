@@ -1,62 +1,71 @@
-import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+interface PressArticle {
+  /** Data no formato ISO (atributo datetime). */
+  date: string;
+  /** Data exibida, ex.: "12 MAI 2025". */
+  dateLabel: string;
+  excerpt: string;
+  outlet: string;
+  title: string;
+  url: string;
+}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [NgTemplateOutlet, RouterLink],
   selector: 'app-na-midia-page',
   styleUrl: './na-midia.page.scss',
   templateUrl: './na-midia.page.html',
-  imports: [],
 })
 export class NaMidiaPage {
-  private readonly eventCarousel = viewChild.required<ElementRef<HTMLElement>>('eventCarousel');
-  private readonly eventCarousel2 = viewChild.required<ElementRef<HTMLElement>>('eventCarousel2');
-  private readonly learningCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
-  private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
+  /** Matéria em destaque (título montado no template, com quebra e destaque). */
+  protected readonly featured: PressArticle = {
+    date: '2025-05-12',
+    dateLabel: '12 MAI 2025',
+    excerpt: 'Reportagem sobre a formação de criadores e a atuação da Comu no social commerce.',
+    outlet: 'Economia Real',
+    title: 'Da criação de conteúdo ao negócio.',
+    url: 'https://economiareal.uol.com.br/noticia/comercio/eles-treinam-criadores-para-vender-no-tiktok-e-ja-movimentam-r-50-mi-216',
+  };
 
-  openItems = new Set<number>();
+  protected readonly ugc: PressArticle = {
+    date: '2025-05-13',
+    dateLabel: '13 MAI 2025',
+    excerpt:
+      'A Comu participa da conversa sobre profissionalização e criação de conteúdo para marcas.',
+    outlet: 'Exame',
+    title: 'UGC e novas possibilidades de trabalho com o TikTok Shop',
+    url: 'https://exame.com/carreira/tiktok-shop-impulsiona-nova-profissao-ugc-creator-pode-ganhar-ate-r-20-mil-por-mes/',
+  };
 
-  scrollEvent(direction: -1 | 1) {
-    this.scrollCarousel(this.eventCarousel().nativeElement, '.event-image', direction);
-  }
+  protected readonly briefs: PressArticle[] = [
+    {
+      date: '2025-04-24',
+      dateLabel: '24 ABR 2025',
+      excerpt: 'Entrevista com Gabriel Lira sobre aprendizado, prática e profissionalização.',
+      outlet: 'RH Pra Você',
+      title: 'Os caminhos para se tornar um criador',
+      url: 'https://rhpravoce.com.br/redacao/boom-da-creator-economy-tambem-posso-ser-um-influenciador',
+    },
+    {
+      date: '2025-04-17',
+      dateLabel: '17 ABR 2025',
+      excerpt: 'Orientações sobre presença digital, conteúdo e conexão com o público.',
+      outlet: 'Você S/A',
+      title: 'Creator economy para quem empreende',
+      url: 'https://vocesa.abril.com.br/empreendedorismo/creator-economy-para-empreendedores-como-profissionalizar-suas-redes-sociais/',
+    },
+  ];
 
-  scrollEvent2(direction: -1 | 1) {
-    this.scrollCarousel(this.eventCarousel2().nativeElement, '.event-image', direction);
-  }
-
-  scrollLearning(direction: -1 | 1) {
-    this.scrollCarousel(this.learningCarousel().nativeElement, '.card-learning', direction);
-  }
-
-  scrollStories(direction: -1 | 1) {
-    this.scrollCarousel(this.storiesCarousel().nativeElement, '.story', direction);
-  }
-
-  private scrollCarousel(carousel: HTMLElement, itemSelector: string, direction: -1 | 1) {
-    const item = carousel.querySelector<HTMLElement>(itemSelector);
-
-    if (!item) {
-      return;
-    }
-
-    const gap = Number.parseFloat(getComputedStyle(carousel).columnGap) || 0;
-    const distance = item.getBoundingClientRect().width + gap;
-
-    carousel.scrollBy({
-      behavior: 'smooth',
-      left: direction * distance,
-    });
-  }
-
-  toggle(index: number) {
-    if (this.openItems.has(index)) {
-      this.openItems.delete(index);
-    } else {
-      this.openItems.add(index);
-    }
-  }
-
-  isOpen(index: number) {
-    return this.openItems.has(index);
-  }
+  protected readonly market: PressArticle = {
+    date: '2025-05-09',
+    dateLabel: '09 MAI 2025',
+    excerpt: 'A visão da Comu sobre a conexão entre conteúdo, criadores e vendas.',
+    outlet: 'Startupi',
+    title: 'TikTok Shop e as oportunidades para empresas',
+    url: 'https://startupi.com.br/tiktok-shop-brasil-oportunidades-pmes-startups/',
+  };
 }

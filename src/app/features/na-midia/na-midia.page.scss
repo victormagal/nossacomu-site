@@ -1,254 +1,458 @@
-// Main section
-.main {
-  background: {
-    image: image-set(
-      url('/images/heros/events-mobile.webp') 1x,
-      url('/images/heros/events-mobile-2x.webp') 2x
-    );
-    position: center;
-    repeat: no-repeat;
-    size: cover;
-  }
-  height: 575px;
-  position: relative;
+// Página Na Mídia
+// Base compartilhada (tipografia, eyebrow, botões em linha, CTA final): styles/_site-page.scss
+@use '../../../styles/site-page' as site;
 
-  &::before {
-    background-color: rgba(var(--color-black-rgb), 0.75);
-    content: '';
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-  }
+@include site.page-base;
+@include site.closing;
 
-  .container {
-    height: 100%;
-    position: relative;
-    z-index: 1;
+$card-border: 1px solid rgba(var(--color-ink-rgb), 0.157);
 
-    .grid {
-      height: 100%;
+// ---------------------------------------------------------------------------
+// Hero
+// ---------------------------------------------------------------------------
+.media-hero-grid {
+  align-items: end;
+  row-gap: 1.625rem;
 
-      .hero-main {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        justify-content: center;
+  h1 {
+    font-size: clamp(2.75rem, 13.8vw, 3.8rem);
+    line-height: 0.98;
 
-        h2 {
-          color: var(--color-white);
-          font-weight: 600;
-          text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
-        }
-
-        p {
-          color: var(--color-white);
-          text-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.3);
-        }
-      }
-    }
-  }
-
-  @media (min-width: 768px) {
-    background-image: image-set(
-      url('/images/heros/events-tablet.jpg') 1x,
-      url('/images/heros/events-tablet-2x.jpg') 2x
-    );
-    height: 445px;
-  }
-
-  @media (min-width: 1200px) {
-    background-image: image-set(
-      url('/images/heros/events-desktop.jpg') 1x,
-      url('/images/heros/events-desktop-2x.jpg') 2x
-    );
-    height: 560px;
-  }
-}
-// Main section
-
-// Brand growth section
-.event {
-  &.dark {
-    background-color: var(--color-dark-gray);
-  }
-
-  .grid {
-    align-items: center;
-
-    .event-content {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-
-      h2 {
-        font-weight: 600;
-
-        &.white {
-          color: var(--color-white);
-        }
-      }
-      p {
-        &.white {
-          color: var(--color-white);
-        }
-      }
-    }
-
-    .event-image {
-      img {
-        border-radius: 0.5rem;
-        width: 100%;
-      }
-    }
-
-    .event-details {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-
-      h5 {
-        font-weight: 600;
-
-        &.white {
-          color: var(--color-white);
-        }
-      }
-
-      ul {
-        li {
-          color: var(--color-black);
-          list-style: none;
-
-          &.white {
-            color: var(--color-white);
-          }
-        }
-      }
+    @include site.md {
+      font-size: clamp(3.8rem, 6.5vw, 6rem);
     }
   }
 }
-// Brand growth section
 
-// Sales section
-.sales {
-  .grid {
-    .hero-sale {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+.media-hero-lead {
+  line-height: 1.6;
+  max-width: 31.875rem;
 
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 6;
-      }
+  @include site.md {
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    line-height: 1.55;
+    margin-bottom: 0.5rem;
+    max-width: 25.625rem;
+  }
+}
 
-      @media (min-width: 1200px) {
-        grid-column: 3 / span 8;
-      }
+// ---------------------------------------------------------------------------
+// Reportagens
+// ---------------------------------------------------------------------------
+.editorial-label {
+  align-items: center;
+  border-bottom: 1px solid var(--color-ink);
+  display: flex;
+  font: {
+    size: 0.72rem;
+    weight: 700;
+  }
+  justify-content: space-between;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.875rem;
 
-      .hero-sale-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
+  @include site.md {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.125rem;
+  }
 
-        app-button {
-          display: block;
-        }
+  span:last-child {
+    color: var(--color-pink);
+    font-size: 2rem;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+}
 
-        > * {
-          flex: 1 1 calc(50% - 0.25rem);
-          min-width: 0;
-        }
-      }
-    }
+// Veículo + data
+.editorial-meta {
+  align-items: baseline;
+  display: flex;
+  font-size: 0.8rem;
+  gap: 1rem;
+  justify-content: space-between;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  width: 100%;
 
-    .card-sale {
-      background-color: var(--color-white);
-      border: 1px solid rgba(var(--color-muted-rgb), 0.45);
-      border-radius: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: var(--layout-grid-gap);
-      padding: 2rem;
+  @include site.md {
+    font-size: 0.9rem;
+  }
 
-      @media (min-width: 768px) and (max-width: 1199px) {
-        grid-column: 2 / span 6;
-      }
+  span {
+    font-weight: 700;
+  }
 
-      @media (min-width: 1200px) {
-        grid-column: 3 / span 8;
-      }
+  time {
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
 
-      .card-sale-header {
-        border-bottom: 1px solid rgba(var(--color-muted-rgb), 0.45);
-        display: flex;
-        flex-direction: column;
-        gap: var(--layout-grid-gap);
-        padding-bottom: var(--layout-grid-gap);
-
-        h6 {
-          font-weight: 600;
-        }
-      }
-
-      .card-sale-body {
-        ul {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-
-          li {
-            align-items: center;
-            display: flex;
-            gap: var(--layout-grid-gap);
-            list-style: none;
-
-            i {
-              color: var(--color-pink);
-              display: inline-block;
-              text-align: center;
-            }
-          }
-        }
-      }
-
-      .card-sale-footer {
-        display: flex;
-        justify-content: center;
-        app-button {
-          display: flex;
-          flex: 0 0 75%;
-          min-width: 0;
-          justify-content: center;
-        }
-      }
+    @include site.md {
+      font-size: 0.7rem;
     }
   }
 }
-// Sales section
 
-// More than events section
-.more-than-events {
-  background-color: var(--color-dark-gray);
+// Link "Ler matéria ↗"
+.press-read {
+  align-items: center;
+  border-bottom: 1px solid var(--color-ink);
+  display: inline-flex;
+  font: {
+    size: 0.9rem;
+    weight: 650;
+  }
+  gap: 2rem;
+  justify-content: space-between;
+  line-height: 1.4;
+  min-height: 2.75rem;
+  padding-block: 0.5rem;
+  transition: border-color 0.2s ease;
 
-  .grid {
-    .more-than-events-content {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+  span[aria-hidden='true'] {
+    font: {
+      size: 1.45rem;
+      weight: 400;
+    }
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
 
-      h2 {
-        color: var(--color-white);
-        font-weight: 600;
-      }
-      p {
-        color: var(--color-cream);
-      }
+  &:hover {
+    border-bottom-color: var(--color-pink);
 
-      span {
-        color: var(--color-pink);
-        font-weight: 700;
-      }
+    span[aria-hidden='true'] {
+      transform: translate(2px, -2px);
     }
   }
 }
-// More than events section
+
+// Destaque (Economia Real)
+.press-featured {
+  border: $card-border;
+  border-radius: 1rem;
+  display: grid;
+  overflow: hidden;
+
+  @include site.md {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.featured-copy {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5625rem;
+
+  @include site.md {
+    padding: 1.875rem;
+  }
+
+  @include site.lg {
+    padding: 2.625rem;
+  }
+
+  .editorial-meta {
+    margin-bottom: 1.875rem;
+
+    @include site.md {
+      margin-bottom: 2rem;
+    }
+
+    @include site.lg {
+      margin-bottom: 3.25rem;
+    }
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    letter-spacing: -0.045em;
+    line-height: 1.03;
+
+    @include site.md {
+      font-size: clamp(2.55rem, 3.65vw, 3.3rem);
+    }
+  }
+
+  p {
+    margin: 1.5rem 0;
+    max-width: 28.75rem;
+
+    @include site.md {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin: 1.75rem 0 2.5rem;
+    }
+  }
+
+  .press-read {
+    @include site.md {
+      margin-top: auto;
+    }
+  }
+}
+
+.featured-portrait {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    height: 16.25rem;
+    object-fit: cover;
+    object-position: 50% 43%;
+    width: 100%;
+
+    @include site.md {
+      flex: 1;
+      height: auto;
+      min-height: 27.5rem;
+      object-position: 51% 50%;
+    }
+  }
+
+  figcaption {
+    background-color: var(--color-white);
+    border-top: 1px solid rgba(var(--color-ink-rgb), 0.082);
+    color: var(--color-gray-700);
+    font-size: 0.65rem;
+    line-height: 1.55;
+    padding: 0.625rem 0.875rem;
+
+    @include site.md {
+      font-size: 0.7rem;
+      padding-inline: 1.125rem;
+    }
+  }
+}
+
+// UGC + notas
+.editorial-grid {
+  display: grid;
+  gap: 2.25rem;
+  margin-top: 2.25rem;
+
+  @include site.md {
+    gap: var(--layout-grid-gap);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 4rem;
+  }
+}
+
+.press-ugc {
+  border: $card-border;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ugc-display {
+  align-items: center;
+  background-color: var(--color-pink);
+  color: var(--color-white);
+  display: flex;
+  gap: 1.25rem;
+  justify-content: space-between;
+  padding: 1.125rem 1.5625rem;
+
+  @include site.md {
+    padding: 1.25rem 2.125rem;
+  }
+
+  span:first-child {
+    font: {
+      size: 4.5rem;
+      weight: 700;
+    }
+    letter-spacing: -0.07em;
+    line-height: 1;
+
+    @include site.md {
+      font-size: clamp(4.2rem, 6.5vw, 6rem);
+    }
+  }
+
+  span:last-child {
+    font: {
+      size: 3.5rem;
+      weight: 650;
+    }
+    line-height: 1;
+
+    @include site.md {
+      font-size: 4.5rem;
+    }
+  }
+}
+
+.ugc-copy {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.5625rem;
+
+  @include site.md {
+    padding: 2rem;
+  }
+
+  h3 {
+    font-size: 1.85rem;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+
+    @include site.md {
+      font-size: 1.9rem;
+    }
+
+    @include site.lg {
+      font-size: 2.25rem;
+    }
+  }
+
+  p {
+    font-size: 0.95rem;
+    margin: 1.375rem 0 1.625rem;
+    max-width: 30rem;
+
+    @include site.md {
+      font-size: 1rem;
+    }
+  }
+
+  .press-read {
+    margin-top: auto;
+  }
+}
+
+.press-briefs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  justify-content: space-between;
+
+  @include site.md {
+    gap: 2rem;
+  }
+}
+
+.press-brief {
+  align-items: flex-start;
+  border-top: 1px solid var(--color-ink);
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+
+  h3 {
+    font-size: 1.7rem;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    max-width: 27.5rem;
+
+    @include site.md {
+      font-size: 1.8rem;
+    }
+  }
+
+  p {
+    color: var(--color-gray-700);
+    font-size: 0.95rem;
+    margin: 1rem 0 0.75rem;
+    max-width: 29.375rem;
+  }
+}
+
+// Mercado (Startupi)
+.press-market {
+  align-items: center;
+  background-color: #fafafa;
+  border-bottom: 1px solid rgba(var(--color-ink-rgb), 0.145);
+  border-top: 3px solid var(--color-pink);
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+  padding: 1.625rem 1.5rem;
+
+  @include site.md {
+    gap: 1.75rem;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    margin-top: 4rem;
+    padding: 2rem;
+  }
+
+  @include site.lg {
+    gap: 2.75rem;
+    grid-template-columns: 7.5rem minmax(0, 1fr) auto;
+    padding: 2.25rem 2.5rem;
+  }
+
+  .editorial-meta {
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+
+    @include site.md {
+      gap: 2rem;
+      justify-content: flex-start;
+    }
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    max-width: 38.75rem;
+
+    @include site.md {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    color: var(--color-gray-700);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    max-width: 38.75rem;
+  }
+
+  .press-read {
+    justify-self: start;
+
+    @include site.md {
+      grid-column: 2;
+    }
+
+    @include site.lg {
+      grid-column: auto;
+    }
+  }
+}
+
+.market-symbol {
+  color: var(--color-pink);
+  display: none;
+  font: {
+    size: 6rem;
+    weight: 650;
+  }
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+
+  @include site.md {
+    display: block;
+  }
+
+  @include site.lg {
+    font-size: 8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .press-read span[aria-hidden='true'] {
+    transition: none;
+  }
+}

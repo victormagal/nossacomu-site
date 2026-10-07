@@ -1,0 +1,171 @@
+// Base compartilhada das páginas do novo site (A Comu, Na Mídia, ...).
+// Uso no SCSS do componente da página:
+//   @use '../../../styles/site-page' as site;
+//   @include site.page-base;
+//   @include site.closing;
+//
+// Breakpoints do projeto: mobile < 768px · tablet (md) ≥ 768px · desktop (lg) ≥ 1200px
+// Espaço entre seções: 24px (mobile) · 48px (tablet) · 64px (desktop)
+
+$md: 768px;
+$lg: 1200px;
+
+@mixin md {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media (max-width: ($md - 1px)) {
+    @content;
+  }
+}
+
+// Host da página (seções empilhadas com o espaçamento padrão) + tipografia base,
+// eyebrow, textos pequenos, linha de botões e texto só para leitores de tela.
+@mixin page-base {
+  :host {
+    --page-gap: 1.5rem;
+
+    background-color: var(--color-white);
+    color: var(--color-ink);
+    display: flex;
+    flex-direction: column;
+    gap: var(--page-gap);
+    line-height: 1.55;
+    padding-top: var(--page-gap);
+
+    @include md {
+      --page-gap: 3rem;
+    }
+
+    @include lg {
+      --page-gap: 4rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 650;
+    letter-spacing: -0.055em;
+    line-height: 1.04;
+    text-wrap: wrap;
+  }
+
+  p,
+  li {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
+  em {
+    color: var(--color-pink);
+    font-style: normal;
+  }
+
+  strong {
+    font-weight: 650;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  .eyebrow {
+    font: {
+      size: 0.75rem;
+      weight: 700;
+    }
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    margin: 0 0 1.3125rem;
+
+    @include md {
+      font-size: 0.875rem;
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  .small {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+
+  .actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-top: 1.5625rem;
+
+    @include md {
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
+// CTA final: faixa rosa centralizada que encosta no footer.
+@mixin closing {
+  .closing {
+    background-color: var(--color-pink);
+    color: var(--color-white);
+    padding-block: 4rem;
+    text-align: center;
+
+    @include md {
+      padding-block: 5.75rem 5.375rem;
+    }
+
+    h2 {
+      font-size: 2.55rem;
+      margin-inline: auto;
+      max-width: 67.5rem;
+
+      @include md {
+        font-size: clamp(2.5rem, 4.1vw, 4.1rem);
+      }
+    }
+
+    h2 + p {
+      margin: 1.5rem auto 0;
+      max-width: 42.5rem;
+
+      @include md {
+        font-size: 1.07rem;
+        margin-top: 1.5625rem;
+      }
+    }
+
+    .actions {
+      justify-content: center;
+
+      @include mobile-only {
+        align-items: stretch;
+        flex-direction: column;
+      }
+    }
+  }
+}
