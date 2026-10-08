@@ -46,7 +46,7 @@
   img {
     height: 100%;
     object-fit: cover;
-    object-position: 50% 25%;
+    object-position: 50% 50%;
     width: 100%;
   }
 }
@@ -133,7 +133,7 @@
   }
 
   img {
-    height: calc(var(--logo-h) * var(--logo-scale));
+    height: calc(var(--logo-h) * var(--logo-scale) * 2);
     opacity: 0.52;
     width: auto;
   }
@@ -250,7 +250,7 @@
   img {
     height: 100%;
     object-fit: cover;
-    object-position: 50% 41%;
+    object-position: 50% 8%;
     width: 100%;
   }
 }

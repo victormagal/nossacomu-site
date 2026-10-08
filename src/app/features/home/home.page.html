@@ -24,20 +24,20 @@
       <div class="hero-visual span-4 md-span-4 lg-span-6">
         <figure class="photo-tile photo-tile--first">
           <img
-            src="/images/home-encontro-wellness.webp"
+            src="/images/home-hero-1.webp"
             alt="Criadoras reunidas em uma experiência de bem-estar da Comu"
             width="1600"
-            height="1066"
+            height="1067"
             fetchpriority="high"
           />
           <figcaption>GENTE QUE CRIA.</figcaption>
         </figure>
         <figure class="photo-tile photo-tile--second">
           <img
-            src="/images/home-criacao-que-vende.webp"
-            alt="Criadora apresentando um produto em uma ativação de marca"
-            width="1100"
-            height="1650"
+            src="/images/home-hero-2.webp"
+            alt="Criadores se divertem em uma ativação de marca no Comu Awards"
+            width="1600"
+            height="1067"
             fetchpriority="high"
           />
           <figcaption>CRIAÇÃO QUE VENDE.</figcaption>
@@ -92,6 +92,32 @@
 <!-- Marcas -->
 <app-brands-marquee />
 
+<!-- Impacto -->
+<section class="impact" aria-labelledby="impact-title">
+  <div class="container">
+    <div class="grid impact-grid">
+      <div class="impact-symbol span-4 md-span-3 lg-span-4" aria-hidden="true">≠</div>
+      <div class="impact-copy span-4 md-span-5 lg-span-8">
+        <p class="eyebrow">CRIATIVIDADE COM AMBIÇÃO</p>
+        <h2 id="impact-title">
+          Criar impacto.<br />
+          <em>Construir resultado.</em>
+        </h2>
+        <p>
+          Uma comunidade que cria. Marcas que entram na conversa. Conteúdo que aproxima pessoas e
+          produtos, com estratégia para transformar essa conexão em negócio.
+        </p>
+        <p class="impact-statement">
+          Da ideia à venda, o objetivo dá direção. Os indicadores mostram o próximo passo.
+        </p>
+        <a class="comu-btn comu-btn--outline" routerLink="/solucoes-para-marcas" fragment="cases"
+        >Ver projetos e indicadores</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Sobre -->
 <section class="intro" id="sobre">
   <div class="container">
@@ -130,9 +156,9 @@
         </div>
         <img
           src="/images/home-path-criadores.webp"
-          alt="Criadoras em evento da Comu"
+          alt="Criadoras e criadores reunidos no Comu Awards"
           width="1200"
-          height="766"
+          height="800"
           loading="lazy"
         />
       </article>
@@ -156,37 +182,11 @@
         <img
           src="/images/home-path-marcas.webp"
           alt="Criadora gravando conteúdo em uma loja parceira"
-          width="1200"
-          height="756"
+          width="1067"
+          height="1600"
           loading="lazy"
         />
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- Impacto -->
-<section class="impact" aria-labelledby="impact-title">
-  <div class="container">
-    <div class="grid impact-grid">
-      <div class="impact-symbol span-4 md-span-3 lg-span-4" aria-hidden="true">≠</div>
-      <div class="impact-copy span-4 md-span-5 lg-span-8">
-        <p class="eyebrow">CRIATIVIDADE COM AMBIÇÃO</p>
-        <h2 id="impact-title">
-          Criar impacto.<br />
-          <em>Construir resultado.</em>
-        </h2>
-        <p>
-          Uma comunidade que cria. Marcas que entram na conversa. Conteúdo que aproxima pessoas e
-          produtos, com estratégia para transformar essa conexão em negócio.
-        </p>
-        <p class="impact-statement">
-          Da ideia à venda, o objetivo dá direção. Os indicadores mostram o próximo passo.
-        </p>
-        <a class="comu-btn comu-btn--outline" routerLink="/solucoes-para-marcas" fragment="cases"
-          >Ver projetos e indicadores</a
-        >
-      </div>
     </div>
   </div>
 </section>
@@ -252,43 +252,6 @@
   </div>
 </section>
 
-<!-- Nosso jeito de fazer -->
-<app-steps-band
-  eyebrow="NOSSO JEITO DE FAZER"
-  [titleLines]="['Da criação ao resultado.']"
-  [steps]="steps"
-/>
-
-<!-- Experiências -->
-<section class="experience">
-  <div class="container">
-    <div class="grid experience-grid">
-      <div class="experience-photo span-4 md-span-4 lg-span-6">
-        <img
-          src="/images/home-encontro-wellness.webp"
-          alt="Participantes em atividade coletiva da Comu"
-          width="1600"
-          height="1066"
-          loading="lazy"
-        />
-      </div>
-      <div class="experience-copy span-4 md-span-4 lg-span-6">
-        <p class="eyebrow">ECOSSISTEMA EM MOVIMENTO</p>
-        <h2>
-          A criação continua<br />
-          <em>fora da tela.</em>
-        </h2>
-        <p>
-          Encontros, formação e experiências também fazem parte da Comu. São oportunidades para
-          aprender, trocar e reconhecer o trabalho de quem cria.
-        </p>
-        <a class="comu-btn comu-btn--outline" routerLink="/eventos">Conhecer as experiências</a>
-        <p class="small">Conheça os formatos e saiba como acompanhar as próximas edições.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Na Mídia -->
 <section class="press" id="na-midia" aria-labelledby="press-title">
   <div class="container">
@@ -312,7 +275,7 @@
           <h3>{{ item.title }}</h3>
           <p>{{ item.excerpt }}</p>
           <a class="press-read" [href]="item.url" target="_blank" rel="noopener noreferrer"
-            >Ler matéria<span class="sr-only"> em {{ item.outlet }}, abre em nova aba</span></a
+          >Ler matéria<span class="sr-only"> em {{ item.outlet }}, abre em nova aba</span></a
           >
         </article>
       }
@@ -323,6 +286,43 @@
     </div>
   </div>
 </section>
+
+<!-- Nosso jeito de fazer -->
+<app-steps-band
+  eyebrow="NOSSO JEITO DE FAZER"
+  [titleLines]="['Da criação ao resultado.']"
+  [steps]="steps"
+/>
+
+<!-- Experiências -->
+<!--<section class="experience">
+  <div class="container">
+    <div class="grid experience-grid">
+      <div class="experience-photo span-4 md-span-4 lg-span-6">
+        <img
+          src="/images/home-experiencia.webp"
+          alt="Criadoras celebram juntas em um encontro da Comu"
+          width="1600"
+          height="1067"
+          loading="lazy"
+        />
+      </div>
+      <div class="experience-copy span-4 md-span-4 lg-span-6">
+        <p class="eyebrow">ECOSSISTEMA EM MOVIMENTO</p>
+        <h2>
+          A criação continua<br />
+          <em>fora da tela.</em>
+        </h2>
+        <p>
+          Encontros, formação e experiências também fazem parte da Comu. São oportunidades para
+          aprender, trocar e reconhecer o trabalho de quem cria.
+        </p>
+        <a class="comu-btn comu-btn&#45;&#45;outline" routerLink="/eventos">Conhecer as experiências</a>
+        <p class="small">Conheça os formatos e saiba como acompanhar as próximas edições.</p>
+      </div>
+    </div>
+  </div>
+</section>-->
 
 <!-- CTA final -->
 <section class="closing">

@@ -32,10 +32,10 @@
       <div class="creator-visual span-4 md-span-4 lg-span-6">
         <img
           class="creator-main"
-          src="/images/criadoras-evento-comu.webp"
-          alt="Criadoras se encontram em um evento da Comu"
-          width="1200"
-          height="1824"
+          src="/images/criadores-main.webp"
+          alt="Criadoras premiadas no Comu Awards"
+          width="1600"
+          height="1067"
           fetchpriority="high"
         />
         <div class="creator-caption">
@@ -47,10 +47,10 @@
         </div>
         <img
           class="creator-second"
-          src="/images/home-encontro-wellness.webp"
-          alt="Troca e conexão em uma experiência da Comu"
-          width="1600"
-          height="1066"
+          src="/images/criadores-second.webp"
+          alt="Criadoras posam juntas em um evento da Comu"
+          width="1053"
+          height="1600"
           fetchpriority="high"
         />
       </div>
@@ -80,79 +80,8 @@
   </div>
 </section>
 
-<!-- Formas de participar (faixa rosa) -->
-<section class="participation" id="participar">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">FORMAS DE PARTICIPAR</p>
-      <h2>
-        O seu ponto de partida<br />
-        tem que fazer sentido <em>para você.</em>
-      </h2>
-    </div>
-
-    <div class="participation-grid">
-      <article class="participation-card">
-        <p class="eyebrow">COMUNIDADE GRATUITA</p>
-        <h3>
-          Acesse a<br />
-          comunidade.
-        </h3>
-        <p>
-          Baixe o aplicativo, conecte-se com outros criadores e acompanhe os conteúdos e as
-          novidades da nossa comunidade gratuita.
-        </p>
-        <ul class="perks" role="list">
-          @for (perk of communityPerks; track perk) {
-            <li>{{ perk }}</li>
-          }
-        </ul>
-        <div class="app-downloads">
-          <a
-            class="comu-btn comu-btn--dark"
-            [href]="appStoreUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Baixar o app para iOS</a
-          >
-          <a
-            class="comu-btn comu-btn--dark"
-            [href]="googlePlayUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Baixar o app para Android</a
-          >
-        </div>
-        <p class="small">Acesso para iOS e Android.</p>
-      </article>
-
-      <article class="participation-card participation-card--plus" id="comu-mais">
-        <p class="eyebrow">PRODUTO Comu</p>
-        <h3>
-          Acelere com<br />
-          a Comu<span>+</span>.
-        </h3>
-        <p>
-          Conheça o produto da Comu que reúne conteúdos e experiências de desenvolvimento para
-          criadores. Veja a oferta atual e escolha se este é o seu próximo passo.
-        </p>
-        <div class="plus-sign" aria-hidden="true">+</div>
-        <a
-          class="comu-btn comu-btn--light"
-          [href]="comuPlusUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Explorar o Comu+</a
-        >
-        <p class="small">Benefícios e condições na página do produto.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
 <!-- Nosso jeito de fazer (faixa escura, encosta na faixa rosa) -->
 <app-steps-band
-  class="is-flush"
   [titleLines]="['Seu caminho ganha', 'forma na prática.']"
   intro="Cada criador tem um momento. A participação em programas e projetos depende dos critérios de cada iniciativa."
   [steps]="steps"
@@ -193,6 +122,76 @@
         </h3>
         <p>Conheça os encontros e as experiências da Comu.</p>
         <a class="comu-btn comu-btn--light-pink" routerLink="/eventos">Conhecer as experiências</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Formas de participar (faixa rosa) -->
+<section class="participation" id="participar">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">FORMAS DE PARTICIPAR</p>
+      <h2>
+        O seu ponto de partida<br />
+        tem que fazer sentido <em>para você.</em>
+      </h2>
+    </div>
+
+    <div class="participation-grid">
+      <article class="participation-card">
+        <p class="eyebrow">COMUNIDADE GRATUITA</p>
+        <h3>
+          Acesse a<br />
+          comunidade.
+        </h3>
+        <p>
+          Baixe o aplicativo, conecte-se com outros criadores e acompanhe os conteúdos e as
+          novidades da nossa comunidade gratuita.
+        </p>
+        <ul class="perks" role="list">
+          @for (perk of communityPerks; track perk) {
+            <li>{{ perk }}</li>
+          }
+        </ul>
+        <div class="app-downloads">
+          <a
+            class="comu-btn comu-btn--dark"
+            [href]="appStoreUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Baixar o app para iOS</a
+          >
+          <a
+            class="comu-btn comu-btn--dark"
+            [href]="googlePlayUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Baixar o app para Android</a
+          >
+        </div>
+        <p class="small">Acesso para iOS e Android.</p>
+      </article>
+
+      <article class="participation-card participation-card--plus" id="comu-mais">
+        <p class="eyebrow">PRODUTO Comu</p>
+        <h3>
+          Acelere com<br />
+          a Comu<span>+</span>.
+        </h3>
+        <p>
+          Conheça o produto da Comu que reúne conteúdos e experiências de desenvolvimento para
+          criadores. Veja a oferta atual e escolha se este é o seu próximo passo.
+        </p>
+        <div class="plus-sign" aria-hidden="true">+</div>
+        <a
+          class="comu-btn comu-btn--light"
+          [href]="comuPlusUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Explorar o Comu+</a
+        >
+        <p class="small">Benefícios e condições na página do produto.</p>
       </article>
     </div>
   </div>

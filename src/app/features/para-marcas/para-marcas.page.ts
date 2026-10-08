@@ -11,8 +11,10 @@ interface Benefit {
 
 interface CaseStudy {
   /** Arquivo em /images/brands (logo vetorizado). */
-  logo: 'gocase' | 'sallve' | 'caffeine';
+  logo: 'gocase' | 'sallve' | 'caffeine' | 'kokeshi' | 'embelleze' | 'barbours';
   name: string;
+  label: string;
+  value: string;
 }
 
 @Component({
@@ -27,16 +29,24 @@ export class ForBrandsPage {
   protected readonly contactUrl = 'https://form.typeform.com/to/F3h5dgUh';
 
   protected readonly cases: CaseStudy[] = [
-    { logo: 'gocase', name: 'GoCase' },
-    { logo: 'sallve', name: 'Sallve' },
-    { logo: 'caffeine', name: 'Caffeine Army' },
-  ];
-
-  /** Indicadores dos cases (X = espaço reservado até a aprovação dos dados). */
-  protected readonly caseMetrics = [
-    { label: 'GMV do projeto', value: 'R$ X' },
-    { label: 'Criadores envolvidos', value: 'X' },
-    { label: 'Conteúdos publicados', value: 'X' },
+    {
+      logo: 'barbours',
+      name: "Barbour's",
+      label: 'em um período de 6 meses',
+      value: '+5 milhões em GMV',
+    },
+    {
+      logo: 'embelleze',
+      name: 'Embelleze',
+      label: 'em um período de 6 meses',
+      value: '+8 mil criadores colaboradores',
+    },
+    {
+      logo: 'kokeshi',
+      name: 'Kokeshi',
+      label: 'em um período de 6 meses',
+      value: '+75.000 conteúdos produzidos',
+    },
   ];
 
   protected readonly benefits: Benefit[] = [

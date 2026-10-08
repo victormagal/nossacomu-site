@@ -30,10 +30,10 @@
 
       <div class="brand-visual span-4 md-span-4 lg-span-6">
         <img
-          src="/images/home-criacao-que-vende.webp"
+          src="/images/marcas-hero.webp"
           alt="Criadora apresenta um produto em uma ativação de marca"
-          width="1100"
-          height="1650"
+          width="1067"
+          height="1600"
           fetchpriority="high"
         />
       </div>
@@ -43,52 +43,6 @@
 
 <!-- Marcas -->
 <app-brands-marquee />
-
-<!-- Cases -->
-<section class="cases" id="cases" aria-labelledby="cases-title">
-  <div class="container">
-    <div class="grid case-heading">
-      <div class="span-4 md-span-5 lg-span-8">
-        <p class="eyebrow">Comu + MARCAS</p>
-        <h2 id="cases-title">
-          Criação em ação.<br />
-          <em>Resultado em evidência.</em>
-        </h2>
-      </div>
-      <p class="span-4 md-span-3 lg-span-4">
-        O impacto de cada projeto ganha contexto com seus objetivos, indicadores e aprendizados.
-      </p>
-    </div>
-
-    <p class="case-review">
-      <strong>Cases em revisão.</strong> X representa um espaço reservado, não um resultado
-      realizado. Marcas selecionadas do portfólio já publicado; dados e relatos aguardam aprovação.
-    </p>
-
-    <div class="case-grid">
-      @for (item of cases; track item.name) {
-        <article class="case-card">
-          <div class="case-logo" [class]="'case-logo--' + item.logo">
-            <img [src]="'/images/brands/' + item.logo + '.svg'" [alt]="item.name" loading="lazy" />
-          </div>
-          <div class="case-content">
-            <span class="case-status">CASE EM PREPARAÇÃO</span>
-            <h3>{{ item.name }}</h3>
-            <dl class="case-metrics">
-              @for (metric of caseMetrics; track metric.label) {
-                <div>
-                  <dt>{{ metric.value }}</dt>
-                  <dd>{{ metric.label }}</dd>
-                </div>
-              }
-            </dl>
-            <p class="case-footnote">Período e fonte: a confirmar.</p>
-          </div>
-        </article>
-      }
-    </div>
-  </div>
-</section>
 
 <!-- Soluções -->
 <section class="solutions" id="solucoes">
@@ -119,16 +73,53 @@
   [steps]="steps"
 />
 
+<!-- Cases -->
+<section class="cases" id="cases" aria-labelledby="cases-title">
+  <div class="container">
+    <div class="grid case-heading">
+      <div class="span-4 md-span-5 lg-span-8">
+        <p class="eyebrow">Comu + MARCAS</p>
+        <h2 id="cases-title">
+          Criação em ação.<br />
+          <em>Resultado em evidência.</em>
+        </h2>
+      </div>
+      <p class="span-4 md-span-3 lg-span-4">
+        O impacto de cada projeto ganha contexto com seus objetivos, indicadores e aprendizados.
+      </p>
+    </div>
+
+    <div class="case-grid">
+      @for (item of cases; track item.name) {
+        <article class="case-card">
+          <div class="case-logo" [class]="'case-logo--' + item.logo">
+            <img [src]="'/images/brands/' + item.logo + '.svg'" [alt]="item.name" loading="lazy" />
+          </div>
+          <div class="case-content">
+            <h3>{{ item.name }}</h3>
+            <dl class="case-metrics">
+              <div>
+                <dt>{{ item.value }}</dt>
+                <dd>{{ item.label }}</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
 <!-- Editorial -->
-<section class="brand-editorial">
+<!--<section class="brand-editorial">
   <div class="container">
     <div class="grid brand-editorial-grid">
       <div class="brand-editorial-photo span-4 md-span-4 lg-span-6">
         <img
-          src="/images/criadoras-evento-comu.webp"
-          alt="Criadoras reunidas em um encontro do ecossistema Comu"
-          width="1200"
-          height="1824"
+          src="/images/marcas-editorial.webp"
+          alt="Criadora mostra o presente de uma marca parceira em um evento da Comu"
+          width="1067"
+          height="1600"
           loading="lazy"
         />
       </div>
@@ -143,7 +134,7 @@
           passo começa entendendo o que você quer construir.
         </p>
         <a
-          class="comu-btn comu-btn--dark"
+          class="comu-btn comu-btn&#45;&#45;dark"
           [href]="contactUrl"
           target="_blank"
           rel="noopener noreferrer"
@@ -152,7 +143,7 @@
       </div>
     </div>
   </div>
-</section>
+</section>-->
 
 <!-- Perguntas frequentes -->
 <app-faq [items]="faq" />

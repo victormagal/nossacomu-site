@@ -32,11 +32,11 @@ export const routes: Routes = [
         title: 'Carreiras na Comu | Nosso propósito e oportunidades',
         loadComponent: () => import('./features/carreiras/carreiras.page').then((m) => m.CarreirasPage),
       },
-      {
+      /*{
         path: 'na-midia',
         title: 'Comu na Mídia | Reportagens e entrevistas',
         loadComponent: () => import('./features/na-midia/na-midia.page').then((m) => m.NaMidiaPage),
-      },
+      },*/
     ],
   },
 ];

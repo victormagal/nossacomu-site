@@ -23,7 +23,7 @@ export class HeaderComponent {
     { label: 'Para marcas', path: '/solucoes-para-marcas' },
     { label: 'Eventos', path: '/eventos' },
     { label: 'Carreiras', path: '/carreiras' },
-    { label: 'Na Mídia', path: '/na-midia' },
+    /*{ label: 'Na Mídia', path: '/na-midia' },*/
   ];
 
   protected get isNaMidiaPage(): boolean {

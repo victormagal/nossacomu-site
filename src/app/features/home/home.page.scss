@@ -111,6 +111,10 @@
     width: 100%;
   }
 
+  &--second img {
+    object-position: 70% 50%;
+  }
+
   figcaption {
     background-color: var(--color-white);
     border-radius: 5px;
@@ -425,6 +429,10 @@
 
   &--ink {
     background-color: var(--color-ink);
+
+    > img {
+      object-position: 50% 27%;
+    }
   }
 
   > img {

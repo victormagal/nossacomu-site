@@ -1,6 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-export type Brand = 'barbours' | 'sallve' | 'kokeshi' | 'caffeine' | 'gocase';
+export type Brand =
+  | 'barbours'
+  | 'sallve'
+  | 'kokeshi'
+  | 'caffeine'
+  | 'gocase'
+  | 'embelleze'
+  | 'bn-cachos'
+  | 'online-editora';
 
 interface BrandRow {
   brands: Brand[];
@@ -18,16 +26,55 @@ interface BrandRow {
 export class BrandsMarqueeComponent {
   protected readonly brandNames: Record<Brand, string> = {
     barbours: 'Barbour’s',
+    'bn-cachos': 'BN Cachos',
     caffeine: 'Caffeine Army',
+    embelleze: 'Embelleze',
     gocase: 'GoCase',
     kokeshi: 'Kokeshi',
+    'online-editora': 'On line Editora',
     sallve: 'Sallve',
   };
 
   protected readonly brandRows: BrandRow[] = [
-    { brands: ['barbours', 'sallve', 'kokeshi', 'caffeine', 'gocase'], decorative: false },
-    { brands: ['caffeine', 'gocase', 'barbours', 'sallve', 'kokeshi'], decorative: true },
-    { brands: ['kokeshi', 'barbours', 'gocase', 'sallve', 'caffeine'], decorative: true },
+    {
+      brands: [
+        'barbours',
+        'sallve',
+        'embelleze',
+        'kokeshi',
+        'caffeine',
+        'bn-cachos',
+        'gocase',
+        'online-editora',
+      ],
+      decorative: false,
+    },
+    {
+      brands: [
+        'caffeine',
+        'online-editora',
+        'gocase',
+        'barbours',
+        'bn-cachos',
+        'sallve',
+        'embelleze',
+        'kokeshi',
+      ],
+      decorative: true,
+    },
+    {
+      brands: [
+        'bn-cachos',
+        'kokeshi',
+        'barbours',
+        'embelleze',
+        'gocase',
+        'online-editora',
+        'sallve',
+        'caffeine',
+      ],
+      decorative: true,
+    },
   ];
 
   /** Cada faixa repete a sequência 4x (2 grupos × 2 sequências) para o loop contínuo. */
