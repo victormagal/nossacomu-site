@@ -41,44 +41,7 @@
         </div>
       </div>
 
-      <section
-        #numbers
-        [class.is-running]="numbersRunning()"
-        aria-labelledby="numbers-title"
-        class="numbers span-4 md-span-8 lg-span-12"
-      >
-        <div class="numbers-heading">
-          <h2 class="eyebrow" id="numbers-title">A FORÇA DO NOSSO ECOSSISTEMA</h2>
-          <span class="numbers-mark" aria-hidden="true">≠</span>
-        </div>
-        <dl class="numbers-grid">
-          @for (stat of stats; track stat.label) {
-            <div>
-              <dt [attr.aria-label]="stat.ariaLabel">
-                <span class="number-prefix" aria-hidden="true">{{ stat.prefix }}</span>
-                <span class="rolling-digits" aria-hidden="true">
-                  @for (digit of stat.digits; track $index) {
-                    <span class="digit-window">
-                      <span class="digit-reel" [style.--digit]="digit">
-                        @for (n of reel; track $index) {
-                          <span>{{ n }}</span>
-                        }
-                      </span>
-                    </span>
-                  }
-                </span>
-                @if (stat.unit) {
-                  <span class="number-unit" aria-hidden="true">{{ stat.unit }}</span>
-                }
-              </dt>
-              <dd>{{ stat.label }}</dd>
-            </div>
-          }
-        </dl>
-        <p class="numbers-note">
-          Indicadores do site institucional. Base e período em validação nesta revisão.
-        </p>
-      </section>
+      <app-numbers class="hero-numbers span-4 md-span-8 lg-span-12" [stats]="stats" />
     </div>
   </div>
 </section>

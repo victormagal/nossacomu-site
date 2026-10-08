@@ -2,6 +2,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FaqComponent, FaqItem } from '../../shared/components/faq/faq.component';
 import { Step, StepsBandComponent } from '../../shared/components/steps-band/steps-band.component';
+import {
+  ECOSYSTEM_STATS,
+  NumbersComponent,
+} from '../../shared/components/numbers/numbers.component';
 
 interface Benefit {
   text: string;
@@ -21,12 +25,15 @@ interface Testimonial {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FaqComponent, RouterLink, StepsBandComponent],
+  imports: [FaqComponent, NumbersComponent, RouterLink, StepsBandComponent],
   selector: 'app-para-criadores-page',
   styleUrl: './para-criadores.page.scss',
   templateUrl: './para-criadores.page.html',
 })
 export class ForCreatorsPage {
+  /** Indicadores do ecossistema voltados a criadores. */
+  protected readonly stats = ECOSYSTEM_STATS.slice(2);
+
   protected readonly comuPlusUrl = 'https://comumais.com.br/';
   protected readonly appStoreUrl =
     'https://apps.apple.com/us/app/comu-comunidade-para-creators/id6796062450';

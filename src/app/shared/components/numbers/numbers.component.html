@@ -1,0 +1,33 @@
+<section class="numbers" [class.is-running]="running()" [attr.aria-labelledby]="titleId">
+  <div class="numbers-heading">
+    <h2 class="eyebrow" [id]="titleId">{{ eyebrow() }}</h2>
+    <span class="numbers-mark" aria-hidden="true">≠</span>
+  </div>
+  <dl class="numbers-grid" [style.--numbers-cols]="stats().length">
+    @for (stat of stats(); track stat.label) {
+      <div>
+        <dt [attr.aria-label]="stat.ariaLabel">
+          <span class="number-prefix" aria-hidden="true">{{ stat.prefix }}</span>
+          <span class="rolling-digits" aria-hidden="true">
+            @for (digit of stat.digits; track $index) {
+              <span class="digit-window">
+                <span class="digit-reel" [style.--digit]="digit">
+                  @for (n of reel; track $index) {
+                    <span>{{ n }}</span>
+                  }
+                </span>
+              </span>
+            }
+          </span>
+          @if (stat.unit) {
+            <span class="number-unit" aria-hidden="true">{{ stat.unit }}</span>
+          }
+        </dt>
+        <dd>{{ stat.label }}</dd>
+      </div>
+    }
+  </dl>
+  @if (note()) {
+    <p class="numbers-note">{{ note() }}</p>
+  }
+</section>

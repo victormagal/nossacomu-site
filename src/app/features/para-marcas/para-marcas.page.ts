@@ -3,6 +3,10 @@ import { RouterLink } from '@angular/router';
 import { BrandsMarqueeComponent } from '../../shared/components/brands-marquee/brands-marquee.component';
 import { FaqComponent, FaqItem } from '../../shared/components/faq/faq.component';
 import { Step, StepsBandComponent } from '../../shared/components/steps-band/steps-band.component';
+import {
+  ECOSYSTEM_STATS,
+  NumbersComponent,
+} from '../../shared/components/numbers/numbers.component';
 
 interface Benefit {
   text: string;
@@ -19,12 +23,15 @@ interface CaseStudy {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [BrandsMarqueeComponent, FaqComponent, RouterLink, StepsBandComponent],
+  imports: [BrandsMarqueeComponent, FaqComponent, NumbersComponent, RouterLink, StepsBandComponent],
   selector: 'app-para-marcas-page',
   styleUrl: './para-marcas.page.scss',
   templateUrl: './para-marcas.page.html',
 })
 export class ForBrandsPage {
+  /** Indicadores do ecossistema voltados a marcas. */
+  protected readonly stats = ECOSYSTEM_STATS.slice(0, 2);
+
   /** Formulário comercial da Comu ("Conversar sobre meu projeto"). */
   protected readonly contactUrl = 'https://form.typeform.com/to/F3h5dgUh';
 

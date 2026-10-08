@@ -1,24 +1,11 @@
-import {
-  afterNextRender,
-  ChangeDetectionStrategy,
-  Component,
-  DestroyRef,
-  ElementRef,
-  inject,
-  signal,
-  viewChild,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BrandsMarqueeComponent } from '../../shared/components/brands-marquee/brands-marquee.component';
+import {
+  ECOSYSTEM_STATS,
+  NumbersComponent,
+} from '../../shared/components/numbers/numbers.component';
 import { Step, StepsBandComponent } from '../../shared/components/steps-band/steps-band.component';
-
-interface Stat {
-  ariaLabel: string;
-  digits: number[];
-  label: string;
-  prefix: string;
-  unit: string;
-}
 
 interface PressItem {
   date: string;
@@ -31,50 +18,13 @@ interface PressItem {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [BrandsMarqueeComponent, RouterLink, StepsBandComponent],
+  imports: [BrandsMarqueeComponent, NumbersComponent, RouterLink, StepsBandComponent],
   selector: 'app-home-page',
   styleUrl: './home.page.scss',
   templateUrl: './home.page.html',
 })
 export class HomePage {
-  private readonly numbers = viewChild.required<ElementRef<HTMLElement>>('numbers');
-
-  /** Ativa a animação dos números quando o bloco entra na tela. */
-  protected readonly numbersRunning = signal(false);
-
-  /** Rolo de dígitos: 0–9 duas vezes, para a animação dar uma volta completa. */
-  protected readonly reel = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-  protected readonly stats: Stat[] = [
-    {
-      ariaLabel: 'Mais de 40 mil',
-      digits: [4, 0],
-      label: 'Criadores no ecossistema',
-      prefix: '+',
-      unit: 'mil',
-    },
-    {
-      ariaLabel: 'Mais de 200',
-      digits: [2, 0, 0],
-      label: 'Marcas parceiras',
-      prefix: '+',
-      unit: '',
-    },
-    {
-      ariaLabel: '1 bilhão de reais',
-      digits: [1],
-      label: 'Em GMV movimentado pelos criadores',
-      prefix: 'R$',
-      unit: 'bi',
-    },
-    {
-      ariaLabel: '25 milhões de reais',
-      digits: [2, 5],
-      label: 'Pagos a criadores',
-      prefix: 'R$',
-      unit: 'mi',
-    },
-  ];
+  protected readonly stats = ECOSYSTEM_STATS;
 
   protected readonly steps: Step[] = [
     {
@@ -118,27 +68,4 @@ export class HomePage {
       url: 'https://startupi.com.br/tiktok-shop-brasil-oportunidades-pmes-startups/',
     },
   ];
-
-  constructor() {
-    const destroyRef = inject(DestroyRef);
-
-    // Só roda no navegador (não no SSR/prerender).
-    afterNextRender(() => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return;
-      }
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            this.numbersRunning.set(true);
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.35 },
-      );
-      observer.observe(this.numbers().nativeElement);
-      destroyRef.onDestroy(() => observer.disconnect());
-    });
-  }
 }
