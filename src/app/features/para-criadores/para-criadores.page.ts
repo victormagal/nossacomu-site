@@ -13,6 +13,12 @@ interface Course {
   url: string;
 }
 
+interface Testimonial {
+  name?: string;
+  program: 'Comu Base' | 'Comu+' | 'Star Club';
+  quote: string;
+}
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [FaqComponent, RouterLink, StepsBandComponent],
@@ -43,6 +49,39 @@ export class ForCreatorsPage {
     {
       text: 'Conheça iniciativas, marcas e projetos do ecossistema. Cada oportunidade tem seus próprios critérios de participação.',
       title: 'Conexão com oportunidades.',
+    },
+  ];
+
+  protected readonly testimonials: Testimonial[] = [
+    {
+      program: 'Comu+',
+      quote: 'Amei sua análise, abriu muito a minha mente e me deu muita clareza do próximo passo.',
+    },
+    {
+      name: 'Mary Jayne',
+      program: 'Comu+',
+      quote: 'Tirei vários insights, feliz por ter entrado na Comu+.',
+    },
+    {
+      name: 'Maria Fernanda',
+      program: 'Star Club',
+      quote:
+        'Voltei para o Nível 5. A meta, agora, é chegar no nível 6! Gostaria de agradecer todo o suporte e ajuda maravilhosa de vocês.',
+    },
+    {
+      name: 'Jully Islene',
+      program: 'Comu Base',
+      quote: 'Com certeza isso aqui é ouro pra gente que está começando.',
+    },
+    {
+      program: 'Comu Base',
+      quote:
+        'Minha melhor escolha no TikTok Shop. Tô investindo nos produtos parceiros, produzindo conteúdo com base no estudo e conhecimento da marca e tá fazendo diferença.',
+    },
+    {
+      program: 'Comu Base',
+      quote:
+        'Amei a análise, me deu várias ideias e agora vou colocar em prática para melhorar meus vídeos.',
     },
   ];
 

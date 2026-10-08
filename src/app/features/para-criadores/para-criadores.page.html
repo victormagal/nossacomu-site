@@ -123,6 +123,40 @@
   </div>
 </section>
 
+<!-- Depoimentos -->
+<section class="testimonials" aria-labelledby="testimonials-title">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">DEPOIMENTOS</p>
+      <h2 id="testimonials-title">
+        Quem cria com a Comu<br />
+        <em>conta como é.</em>
+      </h2>
+    </div>
+
+    <ul class="testimonial-grid" role="list">
+      @for (testimonial of testimonials; track testimonial.quote) {
+        <li>
+          <figure class="testimonial-card">
+            <span class="testimonial-mark" aria-hidden="true">“</span>
+            <blockquote>
+              <p>{{ testimonial.quote }}</p>
+            </blockquote>
+            <figcaption>
+              @if (testimonial.name) {
+                <strong>{{ testimonial.name }}</strong>
+                <span>Creator da {{ testimonial.program }}</span>
+              } @else {
+                <strong>Creator da {{ testimonial.program }}</strong>
+              }
+            </figcaption>
+          </figure>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
 <!-- Formas de participar (faixa rosa) -->
 <section class="participation" id="participar">
   <div class="container">
