@@ -61,12 +61,46 @@
         sua marca <em>em movimento.</em>
       </h2>
     </div>
-    <ul class="benefit-grid" role="list">
-      @for (benefit of benefits; track benefit.title; let i = $index) {
+    <ul class="benefit-cards" role="list">
+      @for (benefit of benefits; track benefit.title) {
         <li>
-          <span class="small-index">0{{ i + 1 }}</span>
-          <h3>{{ benefit.title }}</h3>
-          <p>{{ benefit.text }}</p>
+          <article class="benefit-card">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                @switch (benefit.icon) {
+                  @case ('creators') {
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  }
+                  @case ('target') {
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" />
+                  }
+                  @case ('commerce') {
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                    <path d="M3 6h18" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                  }
+                  @case ('growth') {
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                    <polyline points="16 7 22 7 22 13" />
+                  }
+                }
+              </svg>
+            </span>
+            <h3>{{ benefit.title }}</h3>
+            <p>{{ benefit.text }}</p>
+          </article>
         </li>
       }
     </ul>

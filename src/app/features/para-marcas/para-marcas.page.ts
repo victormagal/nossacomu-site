@@ -9,6 +9,7 @@ import {
 } from '../../shared/components/numbers/numbers.component';
 
 interface Benefit {
+  icon: 'creators' | 'target' | 'commerce' | 'growth';
   text: string;
   title: string;
 }
@@ -58,18 +59,22 @@ export class ForBrandsPage {
 
   protected readonly benefits: Benefit[] = [
     {
+      icon: 'creators',
       text: 'Conecte sua marca a perfis que façam sentido para o público, o produto e a linguagem da campanha.',
       title: 'Esquadrão de creators sellers focados em resultado.',
     },
     {
+      icon: 'target',
       text: 'Desenvolva projetos de conteúdo com um direcionamento claro, do que precisa ser comunicado ao que será observado depois da entrega.',
       title: 'Conteúdo focado em vendas.',
     },
     {
+      icon: 'commerce',
       text: 'Explore a conexão entre conteúdo, descoberta e compra em iniciativas como o TikTok Shop, conforme o momento e a operação da sua marca.',
       title: 'Social commerce na prática.',
     },
     {
+      icon: 'growth',
       text: 'Use as entregas e os resultados do projeto para identificar aprendizados e orientar os próximos testes.',
       title: 'Acompanhamento para evoluir.',
     },
