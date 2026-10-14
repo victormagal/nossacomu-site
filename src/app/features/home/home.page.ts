@@ -5,7 +5,7 @@ import {
   ECOSYSTEM_STATS,
   NumbersComponent,
 } from '../../shared/components/numbers/numbers.component';
-import { Step, StepsBandComponent } from '../../shared/components/steps-band/steps-band.component';
+import { Step } from '../../shared/components/steps-band/steps-band.component';
 
 interface PressItem {
   date: string;
@@ -18,7 +18,7 @@ interface PressItem {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [BrandsMarqueeComponent, NumbersComponent, RouterLink, StepsBandComponent],
+  imports: [BrandsMarqueeComponent, NumbersComponent, RouterLink],
   selector: 'app-home-page',
   styleUrl: './home.page.scss',
   templateUrl: './home.page.html',

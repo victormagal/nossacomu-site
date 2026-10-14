@@ -68,9 +68,6 @@ let nextId = 0;
 export class NumbersComponent {
   readonly stats = input.required<Stat[]>();
   readonly eyebrow = input('A FORÇA DO NOSSO ECOSSISTEMA');
-  readonly note = input(
-    'Indicadores do site institucional. Base e período em validação nesta revisão.',
-  );
 
   protected readonly titleId = `numbers-title-${nextId++}`;
 
