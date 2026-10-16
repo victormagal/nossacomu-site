@@ -325,7 +325,13 @@
   }
 
   &__title {
-    text-align: right;
+    order: -1;
+    text-align: left;
+
+    @include site.md {
+      order: 0;
+      text-align: right;
+    }
   }
 }
 
