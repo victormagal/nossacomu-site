@@ -17,10 +17,6 @@ export interface Stat {
   unit: string;
 }
 
-/**
- * Indicadores do ecossistema. Os dois primeiros falam com marcas e os dois últimos com criadores:
- * a home usa todos, Para marcas usa `slice(0, 2)` e Para criadores usa `slice(2)`.
- */
 export const ECOSYSTEM_STATS: Stat[] = [
   {
     ariaLabel: 'Mais de 40 mil',
@@ -54,10 +50,6 @@ export const ECOSYSTEM_STATS: Stat[] = [
 
 let nextId = 0;
 
-/**
- * Bloco rosa "A força do nosso ecossistema" com números que rolam ao entrar na tela.
- * O número de colunas acompanha a quantidade de indicadores (até 4).
- */
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'numbers-host' },
@@ -71,17 +63,14 @@ export class NumbersComponent {
 
   protected readonly titleId = `numbers-title-${nextId++}`;
 
-  /** Ativa a animação dos números quando o bloco entra na tela. */
   protected readonly running = signal(false);
 
-  /** Rolo de dígitos: 0–9 duas vezes, para a animação dar uma volta completa. */
   protected readonly reel = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   constructor() {
     const host = inject<ElementRef<HTMLElement>>(ElementRef);
     const destroyRef = inject(DestroyRef);
 
-    // Só roda no navegador (não no SSR/prerender).
     afterNextRender(() => {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         return;

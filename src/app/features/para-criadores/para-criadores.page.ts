@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FaqComponent, FaqItem } from '../../shared/components/faq/faq.component';
-import { Step, StepsBandComponent } from '../../shared/components/steps-band/steps-band.component';
+import { Step } from '../../shared/components/steps-band/steps-band.component';
 import {
   ECOSYSTEM_STATS,
   NumbersComponent,
@@ -25,13 +25,12 @@ interface Testimonial {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FaqComponent, NumbersComponent, RouterLink, StepsBandComponent],
+  imports: [FaqComponent, NumbersComponent, RouterLink],
   selector: 'app-para-criadores-page',
   styleUrl: './para-criadores.page.scss',
   templateUrl: './para-criadores.page.html',
 })
 export class ForCreatorsPage {
-  /** Indicadores do ecossistema voltados a criadores. */
   protected readonly stats = ECOSYSTEM_STATS.slice(2);
 
   protected readonly comuPlusUrl = 'https://comumais.com.br/';
@@ -42,20 +41,20 @@ export class ForCreatorsPage {
 
   protected readonly benefits: Benefit[] = [
     {
-      text: 'Conteúdos e formações para desenvolver sua comunicação, conhecer formatos e colocar novas ideias em prática.',
-      title: 'Repertório para sair do automático.',
+      text: 'Conheça a comunidade, troque com outros creators e descubra por onde começar. Ninguém aqui cria sozinho.',
+      title: 'Encontre seu ponto de partida.',
     },
     {
-      text: 'Um espaço para compartilhar experiências, levantar dúvidas e aprender com outros criadores.',
-      title: 'Troca que faz parte do processo.',
+      text: 'Conteúdos e formações para ampliar seu repertório, testar formatos, sair do automático e criar em volume.',
+      title: 'Desenvolva suas habilidades.',
     },
     {
-      text: 'Entenda o que observar no seu conteúdo e como usar o aprendizado para evoluir sua criação.',
-      title: 'Direção para o próximo passo.',
+      text: 'Publique, teste e entenda o que observar no seu conteúdo para saber qual é o próximo passo.',
+      title: 'Coloque em prática.',
     },
     {
-      text: 'Conheça iniciativas, marcas e projetos do ecossistema. Cada oportunidade tem seus próprios critérios de participação.',
-      title: 'Conexão com oportunidades.',
+      text: 'Conforme você evolui, mais portas se abrem para marcas, amostras, eventos e iniciativas do ecossistema.',
+      title: 'Cresça com novas oportunidades.',
     },
   ];
 
@@ -96,19 +95,6 @@ export class ForCreatorsPage {
     'Conteúdos para explorar',
     'Troca entre criadores',
     'Iniciativas do ecossistema',
-  ];
-
-  protected readonly steps: Step[] = [
-    { text: 'Explore a Comu e encontre seu ponto de partida.', title: 'Conheça o ambiente.' },
-    {
-      text: 'Identifique o que faz sentido para o seu momento.',
-      title: 'Escolha o que desenvolver.',
-    },
-    { text: 'Transforme o aprendizado em criação.', title: 'Coloque em prática.' },
-    {
-      text: 'Explore novas oportunidades e seus critérios de participação.',
-      title: 'Acompanhe sua evolução.',
-    },
   ];
 
   protected readonly courses: Course[] = [
