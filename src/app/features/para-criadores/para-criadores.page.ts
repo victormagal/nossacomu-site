@@ -31,7 +31,7 @@ interface Testimonial {
   templateUrl: './para-criadores.page.html',
 })
 export class ForCreatorsPage {
-  protected readonly stats = ECOSYSTEM_STATS.slice(2);
+  protected readonly stats = ECOSYSTEM_STATS;
 
   protected readonly comuPlusUrl = 'https://comumais.com.br/';
   protected readonly appStoreUrl =

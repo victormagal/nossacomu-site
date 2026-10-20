@@ -44,43 +44,6 @@
 <!-- Marcas -->
 <app-brands-marquee />
 
-<!-- Cases -->
-<section class="cases" id="cases" aria-labelledby="cases-title">
-  <div class="container">
-    <div class="grid case-heading">
-      <div class="span-4 md-span-5 lg-span-8">
-        <p class="eyebrow">Comu + MARCAS</p>
-        <h2 id="cases-title">
-          Criação em ação.<br />
-          <em>Resultado em evidência.</em>
-        </h2>
-      </div>
-      <p class="span-4 md-span-3 lg-span-4">
-        O impacto de cada projeto ganha contexto com seus objetivos, indicadores e aprendizados.
-      </p>
-    </div>
-
-    <div class="case-grid">
-      @for (item of cases; track item.name) {
-        <article class="case-card">
-          <div class="case-logo" [class]="'case-logo--' + item.logo">
-            <img [src]="'/images/brands/' + item.logo + '.svg'" [alt]="item.name" loading="lazy" />
-          </div>
-          <div class="case-content">
-            <h3>{{ item.name }}</h3>
-            <dl class="case-metrics">
-              <div>
-                <dt>{{ item.value }}</dt>
-                <dd>{{ item.label }}</dd>
-              </div>
-            </dl>
-          </div>
-        </article>
-      }
-    </div>
-  </div>
-</section>
-
 <!-- Soluções -->
 <section class="solutions" id="solucoes">
   <div class="container">
@@ -178,6 +141,43 @@
     </div>
   </div>
 </section>-->
+
+<!-- Cases -->
+<section class="cases" id="cases" aria-labelledby="cases-title">
+  <div class="container">
+    <div class="grid case-heading">
+      <div class="span-4 md-span-5 lg-span-8">
+        <p class="eyebrow">Comu + MARCAS</p>
+        <h2 id="cases-title">
+          Criação em ação.<br />
+          <em>Resultado em evidência.</em>
+        </h2>
+      </div>
+      <p class="span-4 md-span-3 lg-span-4">
+        O impacto de cada projeto ganha contexto com seus objetivos, indicadores e aprendizados.
+      </p>
+    </div>
+
+    <div class="case-grid">
+      @for (item of cases; track item.name) {
+        <article class="case-card">
+          <div class="case-logo" [class]="'case-logo--' + item.logo">
+            <img [src]="'/images/brands/' + item.logo + '.svg'" [alt]="item.name" loading="lazy" />
+          </div>
+          <div class="case-content">
+            <h3>{{ item.name }}</h3>
+            <dl class="case-metrics">
+              <div>
+                <dt>{{ item.value }}</dt>
+                <dd>{{ item.label }}</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
 
 <!-- Perguntas frequentes -->
 <app-faq [items]="faq" />
