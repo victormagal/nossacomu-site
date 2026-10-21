@@ -88,6 +88,7 @@ export class ForBrandsPage {
     },
     {
       name: 'Juliana Vallier',
+      photo: '/images/depoimentos/juliana-embelleze.webp',
       program: 'Gerenciamento de Afiliados',
       quote:
         'Nossa experiência com a Comu tem sido incrível!\n' +
