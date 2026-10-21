@@ -89,20 +89,6 @@ export class ForCreatorsPage {
       quote:
         'Eu estava no nível 2 emperrada lá rsrs entrei no início de de agosto com 16 dias subi para o nível 3. Foi incrível a diferença do número de vendas, amostrar sendo aceitas. Meus vídeos continuam a mesma pegando, por isso me prova que a diferença veio de estar dentro da comunidade mesmo. Estou muito satisfeita. Subi de nível e estou conseguindo mais amostras e com marcas grandes!!!',
     },
-    {
-      name: 'Juliana Vallier',
-      photo: '/images/depoimentos/juliana-embelleze.webp',
-      program: 'Gerenciamento de Afiliados',
-      quote:
-        'Nossa experiência com a Comu tem sido incrível! Desde o início, fomos muito bem recebidos pelo time. O que mais gostamos é justamente essa proximidade e o cuidado que eles têm com cada demanda, sempre buscando soluções e novas ideias para fazer as coisas acontecerem. É muito bom trabalhar com pessoas que realmente se importam, estão sempre disponíveis para trocar ideias e fazem a gente sentir que estamos no mesmo time! Estamos muito felizes com essa parceria e tenho certeza de que ainda vamos construir muita coisa boa juntos! 💜',
-    },
-    {
-      name: 'Luane Lohn',
-      photo: '/images/depoimentos/luane-lohn.webp',
-      program: 'CEO da Ciclo Cosméticos',
-      quote:
-        'Na Ciclo, acreditamos no poder das conexões autênticas e no protagonismo das criadoras de conteúdo na transformação do mercado. Encontramos na COMU uma parceira que compartilha dessa visão, valorizando talentos, desenvolvendo oportunidades e aproximando marcas e criadoras de forma estratégica. É muito bom construir essa parceria com quem entende que o futuro do social commerce passa por pessoas, criatividade e relações genuínas. Temos orgulho de fazer parte desse movimento ao lado da COMU!',
-    },
   ];
 
   protected instagramUrl(handle: string): string {
