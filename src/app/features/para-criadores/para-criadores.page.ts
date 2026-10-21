@@ -20,7 +20,7 @@ interface Course {
 interface Testimonial {
   name?: string;
   photo?: string;
-  program: 'Comu Base' | 'Comu+' | 'Star Club';
+  program: string;
   instagram?: string;
   tiktok?: string;
   quote: string;
@@ -88,6 +88,18 @@ export class ForCreatorsPage {
       tiktok: '@stefany.aguiars',
       quote:
         'Eu estava no nível 2 emperrada lá rsrs entrei no início de de agosto com 16 dias subi para o nível 3. Foi incrível a diferença do número de vendas, amostrar sendo aceitas. Meus vídeos continuam a mesma pegando, por isso me prova que a diferença veio de estar dentro da comunidade mesmo. Estou muito satisfeita. Subi de nível e estou conseguindo mais amostras e com marcas grandes!!!',
+    },
+    {
+      name: 'Juliana Vallier',
+      program: 'Gerenciamento de Afiliados',
+      quote:
+        'Nossa experiência com a Comu tem sido incrível!\n' +
+        '\n' +
+        'Desde o início, fomos muito bem recebidos pelo time. O que mais gostamos é justamente essa proximidade e o cuidado que eles têm com cada demanda, sempre buscando soluções e novas ideias para fazer as coisas acontecerem.\n' +
+        '\n' +
+        'É muito bom trabalhar com pessoas que realmente se importam, estão sempre disponíveis para trocar ideias e fazem a gente sentir que estamos no mesmo time!\n' +
+        '\n' +
+        'Estamos muito felizes com essa parceria e tenho certeza de que ainda vamos construir muita coisa boa juntos! 💜\n',
     },
   ];
 

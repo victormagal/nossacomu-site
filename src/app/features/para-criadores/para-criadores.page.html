@@ -156,9 +156,9 @@
               <div class="testimonial-author">
                 @if (testimonial.name) {
                   <strong>{{ testimonial.name }}</strong>
-                  <span>Creator da {{ testimonial.program }}</span>
+                  <span>{{ testimonial.program }}</span>
                 } @else {
-                  <strong>Creator da {{ testimonial.program }}</strong>
+                  <strong>{{ testimonial.program }}</strong>
                 }
                 @if (testimonial.instagram || testimonial.tiktok) {
                   <ul class="testimonial-socials" role="list">
