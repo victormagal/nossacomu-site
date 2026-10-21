@@ -143,12 +143,48 @@
               <p>{{ testimonial.quote }}</p>
             </blockquote>
             <figcaption>
-              @if (testimonial.name) {
-                <strong>{{ testimonial.name }}</strong>
-                <span>Creator da {{ testimonial.program }}</span>
-              } @else {
-                <strong>Creator da {{ testimonial.program }}</strong>
+              @if (testimonial.photo) {
+                <img
+                  class="testimonial-photo"
+                  [src]="testimonial.photo"
+                  [alt]="'Foto de ' + testimonial.name"
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                />
               }
+              <div class="testimonial-author">
+                @if (testimonial.name) {
+                  <strong>{{ testimonial.name }}</strong>
+                  <span>Creator da {{ testimonial.program }}</span>
+                } @else {
+                  <strong>Creator da {{ testimonial.program }}</strong>
+                }
+                @if (testimonial.instagram || testimonial.tiktok) {
+                  <ul class="testimonial-socials" role="list">
+                    @if (testimonial.instagram) {
+                      <li>
+                        <a
+                          [href]="instagramUrl(testimonial.instagram)"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >Instagram: <strong>{{ testimonial.instagram }}</strong></a
+                        >
+                      </li>
+                    }
+                    @if (testimonial.tiktok) {
+                      <li>
+                        <a
+                          [href]="tiktokUrl(testimonial.tiktok)"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >TikTok: <strong>{{ testimonial.tiktok }}</strong></a
+                        >
+                      </li>
+                    }
+                  </ul>
+                }
+              </div>
             </figcaption>
           </figure>
         </li>
