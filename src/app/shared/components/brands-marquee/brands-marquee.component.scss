@@ -103,36 +103,73 @@
     width: auto;
   }
 
-  &--barbours {
-    --logo-h: 1.73rem;
+  // Logos quadrados ou altos
+  &--adcos {
+    --logo-h: 2.1rem;
   }
 
-  &--sallve {
-    --logo-h: 1.625rem;
+  &--c-and-a {
+    --logo-h: 2.3rem;
   }
 
-  &--kokeshi {
-    --logo-h: 2.78rem;
+  &--glade {
+    --logo-h: 2.2rem;
   }
 
-  &--caffeine {
-    --logo-h: 2.29rem;
+  &--natura {
+    --logo-h: 2.2rem;
   }
 
-  &--gocase {
-    --logo-h: 1.57rem;
+  &--ysl {
+    --logo-h: 2.3rem;
   }
 
-  &--embelleze {
-    --logo-h: 2.6rem;
+  // Logos largos e finos
+  &--aura-beauty {
+    --logo-h: 1.55rem;
   }
 
-  &--bn-cachos {
-    --logo-h: 1.6rem;
+  &--bisyou {
+    --logo-h: 1.5rem;
   }
 
-  &--online-editora {
-    --logo-h: 2.9rem;
+  &--gummy {
+    --logo-h: 1.5rem;
+  }
+
+  &--mawwal {
+    --logo-h: 1.45rem;
+  }
+
+  &--guday {
+    --logo-h: 1.35rem;
+  }
+
+  &--blessy,
+  &--max-titanium {
+    --logo-h: 1.3rem;
+  }
+
+  &--avon {
+    --logo-h: 1.25rem;
+  }
+
+  &--maxfem {
+    --logo-h: 1.15rem;
+  }
+
+  &--loreal {
+    --logo-h: 1.1rem;
+  }
+
+  &--nutrata,
+  &--primacial,
+  &--riachuelo {
+    --logo-h: 1.05rem;
+  }
+
+  &--simple-organic {
+    --logo-h: 0.95rem;
   }
 }
 
