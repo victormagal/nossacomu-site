@@ -55,7 +55,6 @@ export class BrandsMarqueeComponent {
     ysl: 'Yves Saint Laurent',
   };
 
-  /** Cada marca aparece em uma única faixa; as faixas se alternam em sentidos opostos. */
   protected readonly brandRows: BrandRow[] = [
     {
       brands: ['natura', 'gummy', 'mawwal', 'simple-organic', 'c-and-a', 'bisyou'],
@@ -68,6 +67,5 @@ export class BrandsMarqueeComponent {
     },
   ];
 
-  /** Cada faixa repete a sequência 4x (2 grupos × 2 sequências) para o loop contínuo. */
   protected readonly marqueeCopies = [0, 1, 2, 3];
 }

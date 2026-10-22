@@ -23,7 +23,6 @@ export class HeaderComponent {
     { label: 'Para marcas', path: '/solucoes-para-marcas' },
     { label: 'Eventos', path: '/eventos' },
     { label: 'Carreiras', path: '/carreiras' },
-    /*{ label: 'Na Mídia', path: '/na-midia' },*/
   ];
 
   protected toggleMenu(): void {

@@ -17,14 +17,12 @@ interface TickerItem {
 export class EventsPage {
   protected readonly instagramUrl = 'https://www.instagram.com/nossa.comu/';
 
-  /** Faixa rosa com atalhos para cada experiência. */
   protected readonly tickerItems: TickerItem[] = [
     { fragment: 'well-day', label: 'WELLDAY' },
     { fragment: 'awards', label: 'AWARDS' },
     { fragment: 'academy', label: 'ACADEMY' },
   ];
 
-  /** A faixa repete a sequência 6x (2 grupos × 3) para o loop contínuo; só a primeira é acessível. */
   protected readonly tickerCopies = [0, 1, 2, 3, 4, 5];
 
   protected readonly wellDayTopics = [

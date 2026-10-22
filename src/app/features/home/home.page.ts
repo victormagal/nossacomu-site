@@ -5,7 +5,6 @@ import {
   ECOSYSTEM_STATS,
   NumbersComponent,
 } from '../../shared/components/numbers/numbers.component';
-import { Step } from '../../shared/components/steps-band/steps-band.component';
 
 interface PressItem {
   date: string;
@@ -25,21 +24,6 @@ interface PressItem {
 })
 export class HomePage {
   protected readonly stats = ECOSYSTEM_STATS;
-
-  protected readonly steps: Step[] = [
-    {
-      text: 'Desenvolva seu repertório, conheça formatos e aprenda a transformar suas ideias em conteúdo com potencial de resultado. A Comu conecta aprendizado e prática para você começar.',
-      title: 'Aprenda como se tornar um criador.',
-    },
-    {
-      text: 'Tire suas ideias do papel, publique e teste na prática. Cada conteúdo é uma oportunidade de encontrar sua voz e se conectar com o seu público.',
-      title: 'Crie para começar o jogo.',
-    },
-    {
-      text: 'Acompanhe o que seu conteúdo gera, entenda os indicadores e ajuste a rota. Use cada aprendizado para evoluir sua criação e construir novas oportunidades de negócio.',
-      title: 'Evolução e resultado.',
-    },
-  ];
 
   protected readonly press: PressItem[] = [
     {

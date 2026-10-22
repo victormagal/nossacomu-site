@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FaqComponent, FaqItem } from '../../shared/components/faq/faq.component';
-import { Step } from '../../shared/components/steps-band/steps-band.component';
 import {
   ECOSYSTEM_STATS,
   NumbersComponent,
