@@ -40,9 +40,9 @@ export const ECOSYSTEM_STATS: Stat[] = [
     unit: 'bi',
   },
   {
-    ariaLabel: '25 milhões de reais',
-    digits: [2, 5],
-    label: 'Pagos a criadores',
+    ariaLabel: '100 milhões de reais',
+    digits: [1, 0, 0],
+    label: 'Em comissões',
     prefix: 'R$',
     unit: 'mi',
   },
