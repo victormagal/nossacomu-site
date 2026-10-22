@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="grid">
+    <div class="faq-heading span-4 md-span-3 lg-span-4">
+      <p class="eyebrow">SEM RODEIOS</p>
+      <h2>
+        Perguntas<br />
+        frequentes.
+      </h2>
+    </div>
+    <div class="faq-list span-4 md-span-5 lg-span-8">
+      @for (item of items(); track item.question) {
+        <details>
+          <summary>
+            {{ item.question }}
+            <span aria-hidden="true">+</span>
+          </summary>
+          <p>
+            @for (part of item.answer; track $index) {
+              @if (isLink(part)) {
+                <a [routerLink]="part.path">{{ part.text }}</a>
+              } @else {
+                {{ part }}
+              }
+            }
+          </p>
+        </details>
+      }
+    </div>
+  </div>
+</div>

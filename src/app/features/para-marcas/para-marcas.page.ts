@@ -1,111 +1,160 @@
-import { ChangeDetectionStrategy, Component, ElementRef, viewChild, signal } from '@angular/core';
-import { BrandsCloudComponent} from '../../shared/components/brands-cloud/brands-cloud.component';
-import { ButtonComponent } from '../../shared/components/button/button.component';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { BrandsMarqueeComponent } from '../../shared/components/brands-marquee/brands-marquee.component';
+import { FaqComponent, FaqItem } from '../../shared/components/faq/faq.component';
+import { Step, StepsBandComponent } from '../../shared/components/steps-band/steps-band.component';
+
+interface Benefit {
+  icon: 'creators' | 'target' | 'commerce' | 'growth';
+  text: string;
+  title: string;
+}
+
+interface CaseStudy {
+  /** Arquivo em /images/brands (logo vetorizado). */
+  logo: 'gocase' | 'sallve' | 'caffeine' | 'kokeshi' | 'embelleze' | 'barbours';
+  name: string;
+  label: string;
+  value: string;
+}
+
+interface Testimonial {
+  name?: string;
+  photo?: string;
+  program: string;
+  instagram?: string;
+  tiktok?: string;
+  quote: string;
+}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [BrandsMarqueeComponent, FaqComponent, RouterLink, StepsBandComponent],
   selector: 'app-para-marcas-page',
   styleUrl: './para-marcas.page.scss',
   templateUrl: './para-marcas.page.html',
-  imports: [BrandsCloudComponent, ButtonComponent],
 })
 export class ForBrandsPage {
-  private readonly brandGrowthCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
-  private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
-  private readonly eventsCarousel = viewChild.required<ElementRef<HTMLElement>>('eventsCarousel');
-  private readonly learningCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
-  private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
-  private readonly partnerCarousel = viewChild.required<ElementRef<HTMLElement>>('partnerCarousel');
-  private readonly partnersSection = viewChild.required<ElementRef<HTMLElement>>('partnersSection');
+  protected readonly contactUrl = 'https://form.typeform.com/to/F3h5dgUh';
 
-  openItems = new Set<number>();
+  protected readonly cases: CaseStudy[] = [
+    {
+      logo: 'barbours',
+      name: "Barbour's",
+      label: 'em um período de 6 meses',
+      value: '+5 milhões em GMV',
+    },
+    {
+      logo: 'embelleze',
+      name: 'Embelleze',
+      label: 'em um período de 6 meses',
+      value: '+8 mil criadores colaboradores',
+    },
+    {
+      logo: 'kokeshi',
+      name: 'Kokeshi',
+      label: 'em um período de 6 meses',
+      value: '+75.000 conteúdos produzidos',
+    },
+  ];
 
-  scrollCards(direction: -1 | 1) {
-    this.scrollCarousel(this.cardsCarousel().nativeElement, '.card-be-part-of', direction);
+  protected readonly testimonials: Testimonial[] = [
+    {
+      name: 'Juliana Vallier',
+      photo: '/images/depoimentos/juliana-embelleze.webp',
+      program: 'Gerenciamento de Afiliados da Embelleze',
+      quote:
+        'Nossa experiência com a Comu tem sido incrível! Desde o início, fomos muito bem recebidos pelo time. O que mais gostamos é justamente essa proximidade e o cuidado que eles têm com cada demanda, sempre buscando soluções e novas ideias para fazer as coisas acontecerem. É muito bom trabalhar com pessoas que realmente se importam, estão sempre disponíveis para trocar ideias e fazem a gente sentir que estamos no mesmo time! Estamos muito felizes com essa parceria e tenho certeza de que ainda vamos construir muita coisa boa juntos! 💜',
+    },
+    {
+      name: 'Luane Lohn',
+      photo: '/images/depoimentos/luane-lohn.webp',
+      program: 'CEO da Ciclo Cosméticos',
+      quote:
+        'Na Ciclo, acreditamos no poder das conexões autênticas e no protagonismo das criadoras de conteúdo na transformação do mercado. Encontramos na COMU uma parceira que compartilha dessa visão, valorizando talentos, desenvolvendo oportunidades e aproximando marcas e criadoras de forma estratégica. É muito bom construir essa parceria com quem entende que o futuro do social commerce passa por pessoas, criatividade e relações genuínas. Temos orgulho de fazer parte desse movimento ao lado da COMU!',
+    },
+  ];
+
+  protected instagramUrl(handle: string): string {
+    return `https://www.instagram.com/${handle.replace(/^@/, '')}`;
   }
 
-  scrollEvents(direction: -1 | 1) {
-    this.scrollCarousel(this.eventsCarousel().nativeElement, '.card-event', direction);
+  protected tiktokUrl(handle: string): string {
+    return `https://www.tiktok.com/${handle.startsWith('@') ? handle : '@' + handle}`;
   }
 
-  scrollLearning(direction: -1 | 1) {
-    this.scrollCarousel(this.learningCarousel().nativeElement, '.card-learning', direction);
-  }
+  protected readonly benefits: Benefit[] = [
+    {
+      icon: 'creators',
+      text: 'Conecte sua marca a perfis que façam sentido para o público, o produto e a linguagem da campanha.',
+      title: 'Esquadrão de creators sellers focados em resultado.',
+    },
+    {
+      icon: 'target',
+      text: 'Desenvolva projetos de conteúdo com um direcionamento claro, do que precisa ser comunicado ao que será observado depois da entrega.',
+      title: 'Conteúdo focado em vendas.',
+    },
+    {
+      icon: 'commerce',
+      text: 'Explore a conexão entre conteúdo, descoberta e compra em iniciativas como o TikTok Shop, conforme o momento e a operação da sua marca.',
+      title: 'Social commerce na prática.',
+    },
+    {
+      icon: 'growth',
+      text: 'Use as entregas e os resultados do projeto para identificar aprendizados e orientar os próximos testes.',
+      title: 'Acompanhamento para evoluir.',
+    },
+  ];
 
-  scrollPartner(direction: -1 | 1) {
-    this.scrollCarousel(this.partnerCarousel().nativeElement, '.card-partner', direction);
-  }
+  protected readonly steps: Step[] = [
+    {
+      text: 'Você compartilha o contexto da marca, o produto e o que quer construir.',
+      title: 'Entendemos o projeto.',
+    },
+    {
+      text: 'Alinhamos escopo, criadores, formatos, responsabilidades e o que será acompanhado.',
+      title: 'Definimos o caminho.',
+    },
+    {
+      text: 'O projeto segue os combinados de criação, aprovação e entrega.',
+      title: 'Colocamos em prática.',
+    },
+    {
+      text: 'Reunimos os resultados disponíveis e discutimos os próximos passos.',
+      title: 'Aprendemos com a operação.',
+    },
+  ];
 
-  scrollStories(direction: -1 | 1) {
-    this.scrollCarousel(this.storiesCarousel().nativeElement, '.story', direction);
-  }
-
-  scrollBrandGrowth(direction: -1 | 1) {
-    this.scrollCarousel(this.brandGrowthCarousel().nativeElement, '.brand-growth-image', direction);
-  }
-
-  scrollToPartners(event: Event) {
-    event.preventDefault();
-    this.partnersSection().nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  private scrollCarousel(carousel: HTMLElement, itemSelector: string, direction: -1 | 1) {
-    const item = carousel.querySelector<HTMLElement>(itemSelector);
-
-    if (!item) {
-      return;
-    }
-
-    const gap = Number.parseFloat(getComputedStyle(carousel).columnGap) || 0;
-    const distance = item.getBoundingClientRect().width + gap;
-
-    carousel.scrollBy({
-      behavior: 'smooth',
-      left: direction * distance,
-    });
-  }
-
-  toggle(index: number) {
-    if (this.openItems.has(index)) {
-      this.openItems.delete(index);
-    } else {
-      this.openItems.add(index);
-    }
-  }
-
-  isOpen(index: number) {
-    return this.openItems.has(index);
-  }
-
-  // Signal-backed form fields
-  name = signal('');
-  mail = signal('');
-  phone = signal('');
-  site = signal('');
-  message = signal('');
-
-  submitForm(event?: Event) {
-    event?.preventDefault();
-
-    const payload = {
-      name: this.name(),
-      mail: this.mail(),
-      phone: this.phone(),
-      site: this.site(),
-      message: this.message(),
-    };
-
-    // For now just log — backend integration will come later
-    // eslint-disable-next-line no-console
-    console.log('contact form submitted', payload);
-
-    // reset
-    this.name.set('');
-    this.mail.set('');
-    this.phone.set('');
-    this.site.set('');
-    this.message.set('');
-  }
+  protected readonly faq: FaqItem[] = [
+    {
+      answer: [
+        'A definição considera o objetivo, o público e o contexto da campanha. O processo e os critérios são alinhados na proposta.',
+      ],
+      question: 'Como a Comu define os criadores de um projeto?',
+    },
+    {
+      answer: [
+        'O TikTok Shop é uma frente de atuação da Comu. O ecossistema também reúne conteúdo, educação, comunidade e experiências. Converse com o time para entender o que faz sentido para o seu projeto.',
+      ],
+      question: 'A Comu atua apenas no TikTok Shop?',
+    },
+    {
+      answer: [
+        'Investimento e prazo dependem do escopo, dos formatos, do volume e das etapas de aprovação. Esses pontos são definidos antes do início do projeto.',
+      ],
+      question: 'Quanto custa e quanto tempo leva?',
+    },
+    {
+      answer: [
+        'As permissões de uso precisam ser combinadas no projeto. Canais, prazo, formatos e eventual uso em mídia devem estar previstos na contratação.',
+      ],
+      question: 'Posso usar o conteúdo em anúncios e outros canais?',
+    },
+    {
+      answer: [
+        'Os indicadores e a forma de acompanhamento são alinhados ao objetivo e às informações disponíveis em cada projeto.',
+      ],
+      question: 'Como os resultados são acompanhados?',
+    },
+  ];
 }

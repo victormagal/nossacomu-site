@@ -1,70 +1,55 @@
-import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
-import { BrandsCloudComponent} from '../../shared/components/brands-cloud/brands-cloud.component';
-import { ButtonComponent } from '../../shared/components/button/button.component';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { BrandsMarqueeComponent } from '../../shared/components/brands-marquee/brands-marquee.component';
+import {
+  ECOSYSTEM_STATS,
+  NumbersComponent,
+} from '../../shared/components/numbers/numbers.component';
+
+interface PressItem {
+  date: string;
+  dateLabel: string;
+  excerpt: string;
+  outlet: string;
+  title: string;
+  url: string;
+}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [BrandsMarqueeComponent, NumbersComponent, RouterLink],
   selector: 'app-home-page',
   styleUrl: './home.page.scss',
   templateUrl: './home.page.html',
-  imports: [BrandsCloudComponent, ButtonComponent],
 })
 export class HomePage {
-  private readonly brandGrowthCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('brandGrowthCarousel');
-  private readonly cardsCarousel = viewChild.required<ElementRef<HTMLElement>>('cardsCarousel');
-  private readonly eventsCarousel = viewChild.required<ElementRef<HTMLElement>>('eventsCarousel');
-  private readonly learningCarousel =
-    viewChild.required<ElementRef<HTMLElement>>('learningCarousel');
-  private readonly storiesCarousel = viewChild.required<ElementRef<HTMLElement>>('storiesCarousel');
+  protected readonly stats = ECOSYSTEM_STATS;
 
-  openItems = new Set<number>();
-
-  scrollCards(direction: -1 | 1) {
-    this.scrollCarousel(this.cardsCarousel().nativeElement, '.card-be-part-of', direction);
-  }
-
-  scrollBrandGrowth(direction: -1 | 1) {
-    this.scrollCarousel(this.brandGrowthCarousel().nativeElement, '.brand-growth-image', direction);
-  }
-
-  scrollEvents(direction: -1 | 1) {
-    this.scrollCarousel(this.eventsCarousel().nativeElement, '.card-event', direction);
-  }
-
-  scrollLearning(direction: -1 | 1) {
-    this.scrollCarousel(this.learningCarousel().nativeElement, '.card-learning', direction);
-  }
-
-  scrollStories(direction: -1 | 1) {
-    this.scrollCarousel(this.storiesCarousel().nativeElement, '.story', direction);
-  }
-
-  private scrollCarousel(carousel: HTMLElement, itemSelector: string, direction: -1 | 1) {
-    const item = carousel.querySelector<HTMLElement>(itemSelector);
-
-    if (!item) {
-      return;
-    }
-
-    const gap = Number.parseFloat(getComputedStyle(carousel).columnGap) || 0;
-    const distance = item.getBoundingClientRect().width + gap;
-
-    carousel.scrollBy({
-      behavior: 'smooth',
-      left: direction * distance,
-    });
-  }
-
-  toggle(index: number) {
-    if (this.openItems.has(index)) {
-      this.openItems.delete(index);
-    } else {
-      this.openItems.add(index);
-    }
-  }
-
-  isOpen(index: number) {
-    return this.openItems.has(index);
-  }
+  protected readonly press: PressItem[] = [
+    {
+      date: '2025-05-12',
+      dateLabel: '12 MAI 2025',
+      excerpt: 'Reportagem sobre a formação de criadores e a atuação da Comu no social commerce.',
+      outlet: 'Economia Real',
+      title: 'Da criação de conteúdo ao negócio',
+      url: 'https://economiareal.uol.com.br/noticia/comercio/eles-treinam-criadores-para-vender-no-tiktok-e-ja-movimentam-r-50-mi-216',
+    },
+    {
+      date: '2025-05-13',
+      dateLabel: '13 MAI 2025',
+      excerpt:
+        'A Comu participa da conversa sobre profissionalização e criação de conteúdo para marcas.',
+      outlet: 'Exame',
+      title: 'UGC e novas possibilidades de trabalho com o TikTok Shop',
+      url: 'https://exame.com/carreira/tiktok-shop-impulsiona-nova-profissao-ugc-creator-pode-ganhar-ate-r-20-mil-por-mes/',
+    },
+    {
+      date: '2025-05-09',
+      dateLabel: '09 MAI 2025',
+      excerpt: 'A visão da Comu sobre a conexão entre conteúdo, criadores e vendas.',
+      outlet: 'Startupi',
+      title: 'TikTok Shop e as oportunidades para empresas',
+      url: 'https://startupi.com.br/tiktok-shop-brasil-oportunidades-pmes-startups/',
+    },
+  ];
 }

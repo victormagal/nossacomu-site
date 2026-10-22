@@ -1,0 +1,89 @@
+// Botões do novo layout do site (A Comu).
+// Uso: <a class="comu-btn comu-btn--dark">…</a>
+.comu-btn {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  font: {
+    family: var(--font-family-base);
+    size: 0.875rem;
+    weight: 600;
+  }
+  justify-content: center;
+  line-height: 1.25;
+  max-width: 100%;
+  min-height: 3.125rem;
+  padding: 0.8125rem 1.25rem;
+  text-align: center;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+
+  @media (min-width: 768px) {
+    min-height: 3.25rem;
+    padding: 0.85rem 1.5rem;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  // Fundo escuro, texto branco
+  &--dark {
+    background-color: var(--color-ink);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: #353131;
+    }
+  }
+
+  // Contorno escuro
+  &--outline {
+    background-color: transparent;
+    border-color: var(--color-ink);
+    color: var(--color-ink);
+
+    &:hover {
+      background-color: var(--color-blush);
+    }
+  }
+
+  // Fundo branco, texto rosa (sobre fundos rosa)
+  &--light-pink {
+    background-color: var(--color-white);
+    color: var(--color-pink-dark);
+
+    &:hover {
+      background-color: var(--color-blush);
+    }
+  }
+
+  // Fundo branco, texto escuro (sobre fundos escuros)
+  &--light {
+    background-color: var(--color-white);
+    color: var(--color-ink);
+
+    &:hover {
+      background-color: var(--color-blush);
+    }
+  }
+
+  // Contorno branco (sobre fundos rosa/escuros)
+  &--outline-light {
+    background-color: transparent;
+    border-color: var(--color-white);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: rgba(var(--color-white-rgb), 0.14);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &:hover {
+      transform: none;
+    }
+  }
+}

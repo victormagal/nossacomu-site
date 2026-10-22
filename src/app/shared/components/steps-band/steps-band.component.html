@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="steps-heading">
+    <p class="eyebrow">{{ eyebrow() }}</p>
+    <h2>
+      @for (line of titleLines(); track $index; let last = $last) {
+        {{ line }}
+        @if (!last) {
+          <br />
+        }
+      }
+    </h2>
+    @if (intro()) {
+      <p class="steps-intro">{{ intro() }}</p>
+    }
+  </div>
+  <ol class="steps-list" [class.steps-list--four]="steps().length === 4" role="list">
+    @for (step of steps(); track step.title; let i = $index) {
+      <li>
+        <span class="step-num">{{ (i + 1).toString().padStart(2, '0') }}</span>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.text }}</p>
+      </li>
+    }
+  </ol>
+</div>

@@ -3,6 +3,7 @@ import { Component, input } from '@angular/core';
 type Size = 'small' | 'medium' | 'large';
 type Variant =
   | 'blue'
+  | 'dark'
   | 'dark-pink-border'
   | 'default'
   | 'pink'

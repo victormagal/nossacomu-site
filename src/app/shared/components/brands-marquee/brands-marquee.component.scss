@@ -1,0 +1,180 @@
+@use '../../../../styles/site-page' as site;
+
+:host {
+  display: block;
+}
+
+.brands {
+  overflow: hidden;
+}
+
+.brands-heading {
+  color: var(--color-gray-500);
+  font: {
+    size: 0.875rem;
+    weight: 400;
+  }
+  line-height: 1.55;
+  margin: 0 0 1rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+
+  @include site.md {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.marquee {
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.marquee-track {
+  animation: marquee 48s linear infinite;
+  display: flex;
+  width: max-content;
+
+  .marquee--row-2 & {
+    animation-direction: reverse;
+    animation-duration: 54s;
+  }
+
+  .marquee--row-3 & {
+    animation-duration: 60s;
+  }
+
+  .marquee:hover & {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-sequence {
+  align-items: center;
+  display: flex;
+  gap: 1.625rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 1.625rem 0 0;
+
+  @include site.md {
+    gap: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+
+// Alturas calibradas para o peso visual de cada logo (desktop); no mobile, ~86%.
+.brand-logo {
+  --logo-h: 1.6rem;
+  --logo-scale: 0.865;
+
+  align-items: center;
+  display: flex;
+  flex: none;
+  height: 3.25rem;
+  justify-content: center;
+  width: 6.875rem;
+
+  @include site.md {
+    --logo-scale: 1;
+
+    height: 4rem;
+    width: 9.25rem;
+  }
+
+  img {
+    height: calc(var(--logo-h) * var(--logo-scale));
+    max-width: none;
+    opacity: 0.52;
+    width: auto;
+  }
+
+  // Logos quadrados ou altos
+  &--adcos {
+    --logo-h: 2.1rem;
+  }
+
+  &--c-and-a {
+    --logo-h: 2.3rem;
+  }
+
+  &--glade {
+    --logo-h: 2.2rem;
+  }
+
+  &--natura {
+    --logo-h: 2.2rem;
+  }
+
+  &--ysl {
+    --logo-h: 2.3rem;
+  }
+
+  // Logos largos e finos
+  &--aura-beauty {
+    --logo-h: 1.55rem;
+  }
+
+  &--bisyou {
+    --logo-h: 1.5rem;
+  }
+
+  &--gummy {
+    --logo-h: 1.5rem;
+  }
+
+  &--mawwal {
+    --logo-h: 1.45rem;
+  }
+
+  &--guday {
+    --logo-h: 1.35rem;
+  }
+
+  &--blessy,
+  &--max-titanium {
+    --logo-h: 1.3rem;
+  }
+
+  &--avon {
+    --logo-h: 1.25rem;
+  }
+
+  &--maxfem {
+    --logo-h: 1.15rem;
+  }
+
+  &--loreal {
+    --logo-h: 1.1rem;
+  }
+
+  &--nutrata,
+  &--primacial,
+  &--riachuelo {
+    --logo-h: 1.05rem;
+  }
+
+  &--simple-organic {
+    --logo-h: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
