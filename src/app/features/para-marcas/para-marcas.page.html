@@ -41,13 +41,6 @@
   </div>
 </section>
 
-<!-- Números do ecossistema -->
-<section class="numbers-section">
-  <div class="container">
-    <app-numbers [stats]="stats" />
-  </div>
-</section>
-
 <!-- Marcas -->
 <app-brands-marquee />
 
@@ -61,12 +54,116 @@
         sua marca <em>em movimento.</em>
       </h2>
     </div>
-    <ul class="benefit-grid" role="list">
-      @for (benefit of benefits; track benefit.title; let i = $index) {
+    <ul class="benefit-cards" role="list">
+      @for (benefit of benefits; track benefit.title) {
         <li>
-          <span class="small-index">0{{ i + 1 }}</span>
-          <h3>{{ benefit.title }}</h3>
-          <p>{{ benefit.text }}</p>
+          <article class="benefit-card">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                @switch (benefit.icon) {
+                  @case ('creators') {
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  }
+                  @case ('target') {
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" />
+                  }
+                  @case ('commerce') {
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                    <path d="M3 6h18" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                  }
+                  @case ('growth') {
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                    <polyline points="16 7 22 7 22 13" />
+                  }
+                }
+              </svg>
+            </span>
+            <h3>{{ benefit.title }}</h3>
+            <p>{{ benefit.text }}</p>
+          </article>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- Depoimentos -->
+<section class="testimonials" aria-labelledby="testimonials-title">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">DEPOIMENTOS</p>
+      <h2 id="testimonials-title">
+        Quem cria com a Comu<br />
+        <em>conta como é.</em>
+      </h2>
+    </div>
+
+    <ul class="testimonial-grid" role="list">
+      @for (testimonial of testimonials; track testimonial.quote) {
+        <li>
+          <figure class="testimonial-card">
+            <span class="testimonial-mark" aria-hidden="true">“</span>
+            <blockquote>
+              <p>{{ testimonial.quote }}</p>
+            </blockquote>
+            <figcaption>
+              @if (testimonial.photo) {
+                <img
+                  class="testimonial-photo"
+                  [src]="testimonial.photo"
+                  [alt]="'Foto de ' + testimonial.name"
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                />
+              }
+              <div class="testimonial-author">
+                @if (testimonial.name) {
+                  <strong>{{ testimonial.name }}</strong>
+                  <span>{{ testimonial.program }}</span>
+                } @else {
+                  <strong>{{ testimonial.program }}</strong>
+                }
+                @if (testimonial.instagram || testimonial.tiktok) {
+                  <ul class="testimonial-socials" role="list">
+                    @if (testimonial.instagram) {
+                      <li>
+                        <a
+                          [href]="instagramUrl(testimonial.instagram)"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >Instagram: <strong>{{ testimonial.instagram }}</strong></a
+                        >
+                      </li>
+                    }
+                    @if (testimonial.tiktok) {
+                      <li>
+                        <a
+                          [href]="tiktokUrl(testimonial.tiktok)"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >TikTok: <strong>{{ testimonial.tiktok }}</strong></a
+                        >
+                      </li>
+                    }
+                  </ul>
+                }
+              </div>
+            </figcaption>
+          </figure>
         </li>
       }
     </ul>
@@ -116,41 +213,6 @@
     </div>
   </div>
 </section>
-
-<!-- Editorial -->
-<!--<section class="brand-editorial">
-  <div class="container">
-    <div class="grid brand-editorial-grid">
-      <div class="brand-editorial-photo span-4 md-span-4 lg-span-6">
-        <img
-          src="/images/marcas-editorial.webp"
-          alt="Criadora mostra o presente de uma marca parceira em um evento da Comu"
-          width="1067"
-          height="1600"
-          loading="lazy"
-        />
-      </div>
-      <div class="span-4 md-span-4 lg-span-6">
-        <p class="eyebrow">PESSOAS, PRODUTOS E CONTEXTO</p>
-        <h2>
-          A criação ganha força<br />
-          quando tem <em>direção.</em>
-        </h2>
-        <p>
-          Conecte sua marca a criadores e formatos que façam sentido para seu público. O próximo
-          passo começa entendendo o que você quer construir.
-        </p>
-        <a
-          class="comu-btn comu-btn&#45;&#45;dark"
-          [href]="contactUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Conversar sobre meu projeto</a
-        >
-      </div>
-    </div>
-  </div>
-</section>-->
 
 <!-- Perguntas frequentes -->
 <app-faq [items]="faq" />

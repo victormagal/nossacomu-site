@@ -308,6 +308,12 @@
 // Próximos encontros
 // ---------------------------------------------------------------------------
 .event-participation {
+  padding-block: 2rem;
+
+  @include site.md {
+    padding-block: 4rem;
+  }
+
   .grid {
     row-gap: 1.625rem;
   }
@@ -322,6 +328,15 @@
 
   .actions {
     margin-top: 1.5rem;
+  }
+
+  &__title {
+    order: -1;
+    text-align: left;
+
+    @include site.md {
+      order: 0;
+    }
   }
 }
 

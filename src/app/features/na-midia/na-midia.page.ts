@@ -3,9 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 interface PressArticle {
-  /** Data no formato ISO (atributo datetime). */
   date: string;
-  /** Data exibida, ex.: "12 MAI 2025". */
   dateLabel: string;
   excerpt: string;
   outlet: string;
@@ -21,7 +19,6 @@ interface PressArticle {
   templateUrl: './na-midia.page.html',
 })
 export class NaMidiaPage {
-  /** Matéria em destaque (título montado no template, com quebra e destaque). */
   protected readonly featured: PressArticle = {
     date: '2025-05-12',
     dateLabel: '12 MAI 2025',

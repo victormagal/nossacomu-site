@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FaqComponent, FaqItem } from '../../shared/components/faq/faq.component';
-import { Step, StepsBandComponent } from '../../shared/components/steps-band/steps-band.component';
 import {
   ECOSYSTEM_STATS,
   NumbersComponent,
@@ -19,20 +18,22 @@ interface Course {
 
 interface Testimonial {
   name?: string;
-  program: 'Comu Base' | 'Comu+' | 'Star Club';
+  photo?: string;
+  program: string;
+  instagram?: string;
+  tiktok?: string;
   quote: string;
 }
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FaqComponent, NumbersComponent, RouterLink, StepsBandComponent],
+  imports: [FaqComponent, NumbersComponent, RouterLink],
   selector: 'app-para-criadores-page',
   styleUrl: './para-criadores.page.scss',
   templateUrl: './para-criadores.page.html',
 })
 export class ForCreatorsPage {
-  /** Indicadores do ecossistema voltados a criadores. */
-  protected readonly stats = ECOSYSTEM_STATS.slice(2);
+  protected readonly stats = ECOSYSTEM_STATS;
 
   protected readonly comuPlusUrl = 'https://comumais.com.br/';
   protected readonly appStoreUrl =
@@ -42,73 +43,65 @@ export class ForCreatorsPage {
 
   protected readonly benefits: Benefit[] = [
     {
-      text: 'Conteúdos e formações para desenvolver sua comunicação, conhecer formatos e colocar novas ideias em prática.',
-      title: 'Repertório para sair do automático.',
+      text: 'Conheça a comunidade, troque com outros creators e descubra por onde começar. Ninguém aqui cria sozinho.',
+      title: 'Encontre seu ponto de partida.',
     },
     {
-      text: 'Um espaço para compartilhar experiências, levantar dúvidas e aprender com outros criadores.',
-      title: 'Troca que faz parte do processo.',
+      text: 'Conteúdos e formações para ampliar seu repertório, testar formatos, sair do automático e criar em volume.',
+      title: 'Desenvolva suas habilidades.',
     },
     {
-      text: 'Entenda o que observar no seu conteúdo e como usar o aprendizado para evoluir sua criação.',
-      title: 'Direção para o próximo passo.',
+      text: 'Publique, teste e entenda o que observar no seu conteúdo para saber qual é o próximo passo.',
+      title: 'Coloque em prática.',
     },
     {
-      text: 'Conheça iniciativas, marcas e projetos do ecossistema. Cada oportunidade tem seus próprios critérios de participação.',
-      title: 'Conexão com oportunidades.',
+      text: 'Conforme você evolui, mais portas se abrem para marcas, amostras, eventos e iniciativas do ecossistema.',
+      title: 'Cresça com novas oportunidades.',
     },
   ];
 
   protected readonly testimonials: Testimonial[] = [
     {
+      name: 'Ana Gabriela Cociani da Silva',
+      photo: '/images/depoimentos/ana-gabriela-cociani.webp',
       program: 'Comu+',
-      quote: 'Amei sua análise, abriu muito a minha mente e me deu muita clareza do próximo passo.',
+      instagram: '@agabrielacociani',
+      tiktok: '@gabeecreator',
+      quote:
+        'Não saía do nível 1, subi para nível 3 após entrar para Comu+ e ser convidada para o evento da comu Award, voltei com muitos insight e então do nível 1 fui para o 2 em 4 dias, e para o nível 3 em 15 dias. Comecei a receber amostras de marcas que sempre sonhei. E ainda consegui comprar uma viagem para levar minha mãe para andar de avião pela primeira vez, com hotel, passeios, tudo com dinheiro do TikTok 🩷era um sonho.',
     },
     {
-      name: 'Mary Jayne',
+      name: 'Aline Nozaki Sasaki',
+      photo: '/images/depoimentos/aline-nozaki-sasaki.webp',
       program: 'Comu+',
-      quote: 'Tirei vários insights, feliz por ter entrado na Comu+.',
-    },
-    {
-      name: 'Maria Fernanda',
-      program: 'Star Club',
+      instagram: '@alinenozaki',
+      tiktok: '@alinenozaki',
       quote:
-        'Voltei para o Nível 5. A meta, agora, é chegar no nível 6! Gostaria de agradecer todo o suporte e ajuda maravilhosa de vocês.',
+        'Pedir demissão do CLT e viver de TikTok Shop, ganhar liberdade territorial para trabalhar. Poder trabalhar de qualquer lugar do mundo e o potencial de ganho que depende exclusivamente de cada um. Comissões diferenciadas e campanhas com marcas incríveis. A oportunidade de levar minha mãe para Disney comigo nesse ano.',
     },
     {
-      name: 'Jully Islene',
-      program: 'Comu Base',
-      quote: 'Com certeza isso aqui é ouro pra gente que está começando.',
-    },
-    {
-      program: 'Comu Base',
+      name: 'Stefany Aguiar Souza',
+      photo: '/images/depoimentos/stefany-aguiar-souza.webp',
+      program: 'Comu+',
+      instagram: '@stefanyaguiar.s',
+      tiktok: '@stefany.aguiars',
       quote:
-        'Minha melhor escolha no TikTok Shop. Tô investindo nos produtos parceiros, produzindo conteúdo com base no estudo e conhecimento da marca e tá fazendo diferença.',
-    },
-    {
-      program: 'Comu Base',
-      quote:
-        'Amei a análise, me deu várias ideias e agora vou colocar em prática para melhorar meus vídeos.',
+        'Eu estava no nível 2 emperrada lá rsrs entrei no início de de agosto com 16 dias subi para o nível 3. Foi incrível a diferença do número de vendas, amostrar sendo aceitas. Meus vídeos continuam a mesma pegando, por isso me prova que a diferença veio de estar dentro da comunidade mesmo. Estou muito satisfeita. Subi de nível e estou conseguindo mais amostras e com marcas grandes!!!',
     },
   ];
+
+  protected instagramUrl(handle: string): string {
+    return `https://www.instagram.com/${handle.replace(/^@/, '')}`;
+  }
+
+  protected tiktokUrl(handle: string): string {
+    return `https://www.tiktok.com/${handle.startsWith('@') ? handle : '@' + handle}`;
+  }
 
   protected readonly communityPerks = [
     'Conteúdos para explorar',
     'Troca entre criadores',
     'Iniciativas do ecossistema',
-  ];
-
-  protected readonly steps: Step[] = [
-    { text: 'Explore a Comu e encontre seu ponto de partida.', title: 'Conheça o ambiente.' },
-    {
-      text: 'Identifique o que faz sentido para o seu momento.',
-      title: 'Escolha o que desenvolver.',
-    },
-    { text: 'Transforme o aprendizado em criação.', title: 'Coloque em prática.' },
-    {
-      text: 'Explore novas oportunidades e seus critérios de participação.',
-      title: 'Acompanhe sua evolução.',
-    },
   ];
 
   protected readonly courses: Course[] = [

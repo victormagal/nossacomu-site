@@ -65,10 +65,10 @@
 <section class="benefits">
   <div class="container">
     <div class="section-heading">
-      <p class="eyebrow">POTÊNCIA COM DIREÇÃO</p>
+      <p class="eyebrow">SEU CAMINHO NA COMU</p>
       <h2>
-        Você cria com gente<br />
-        que entende o caminho.
+        De criador de conteúdo<br />
+        a um criador que vende
       </h2>
     </div>
     <ul class="benefit-grid" role="list">
@@ -82,13 +82,6 @@
     </ul>
   </div>
 </section>
-
-<!-- Nosso jeito de fazer (faixa escura, encosta na faixa rosa) -->
-<app-steps-band
-  [titleLines]="['Seu caminho ganha', 'forma na prática.']"
-  intro="Cada criador tem um momento. A participação em programas e projetos depende dos critérios de cada iniciativa."
-  [steps]="steps"
-/>
 
 <!-- Formação e experiências -->
 <section class="education">
@@ -150,12 +143,48 @@
               <p>{{ testimonial.quote }}</p>
             </blockquote>
             <figcaption>
-              @if (testimonial.name) {
-                <strong>{{ testimonial.name }}</strong>
-                <span>Creator da {{ testimonial.program }}</span>
-              } @else {
-                <strong>Creator da {{ testimonial.program }}</strong>
+              @if (testimonial.photo) {
+                <img
+                  class="testimonial-photo"
+                  [src]="testimonial.photo"
+                  [alt]="'Foto de ' + testimonial.name"
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                />
               }
+              <div class="testimonial-author">
+                @if (testimonial.name) {
+                  <strong>{{ testimonial.name }}</strong>
+                  <span>{{ testimonial.program }}</span>
+                } @else {
+                  <strong>{{ testimonial.program }}</strong>
+                }
+                @if (testimonial.instagram || testimonial.tiktok) {
+                  <ul class="testimonial-socials" role="list">
+                    @if (testimonial.instagram) {
+                      <li>
+                        <a
+                          [href]="instagramUrl(testimonial.instagram)"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >Instagram: <strong>{{ testimonial.instagram }}</strong></a
+                        >
+                      </li>
+                    }
+                    @if (testimonial.tiktok) {
+                      <li>
+                        <a
+                          [href]="tiktokUrl(testimonial.tiktok)"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >TikTok: <strong>{{ testimonial.tiktok }}</strong></a
+                        >
+                      </li>
+                    }
+                  </ul>
+                }
+              </div>
             </figcaption>
           </figure>
         </li>

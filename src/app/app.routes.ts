@@ -30,7 +30,8 @@ export const routes: Routes = [
       {
         path: 'carreiras',
         title: 'Carreiras na Comu | Nosso propósito e oportunidades',
-        loadComponent: () => import('./features/carreiras/carreiras.page').then((m) => m.CarreirasPage),
+        loadComponent: () =>
+          import('./features/carreiras/carreiras.page').then((m) => m.CarreirasPage),
       },
       /*{
         path: 'na-midia',

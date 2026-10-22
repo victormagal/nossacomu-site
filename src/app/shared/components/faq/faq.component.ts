@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-/** Trecho de resposta: texto simples ou link interno. */
 export type FaqAnswerPart = string | { path: string; text: string };
 
 export interface FaqItem {
@@ -9,7 +8,6 @@ export interface FaqItem {
   question: string;
 }
 
-/** Seção "Perguntas frequentes" (SEM RODEIOS) com respostas recolhíveis. */
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'faq' },
