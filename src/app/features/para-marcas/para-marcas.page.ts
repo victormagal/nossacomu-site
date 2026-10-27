@@ -73,6 +73,13 @@ export class ForBrandsPage {
       quote:
         'Na Ciclo, acreditamos no poder das conexões autênticas e no protagonismo das criadoras de conteúdo na transformação do mercado. Encontramos na COMU uma parceira que compartilha dessa visão, valorizando talentos, desenvolvendo oportunidades e aproximando marcas e criadoras de forma estratégica. É muito bom construir essa parceria com quem entende que o futuro do social commerce passa por pessoas, criatividade e relações genuínas. Temos orgulho de fazer parte desse movimento ao lado da COMU!',
     },
+    {
+      name: 'Thais Feitosa',
+      photo: '/images/depoimentos/thais-feitosa.webp',
+      program: 'Analisa de Marketing - Sallve e Contém1g',
+      quote:
+        'Trabalhar com a COMU tem sido incrível. Hoje é a nossa principal agência de afiliados na Sallve e na Contém1g, e o que faz a diferença é a combinação de proximidade com visão de negócio: o time entende o nosso jeito de comunicar, cuida da relação com os afiliados com muito carinho e está sempre trazendo ideias novas. É uma parceria que a gente vem fortalecendo cada vez mais.',
+    },
   ];
 
   protected instagramUrl(handle: string): string {
