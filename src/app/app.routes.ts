@@ -33,6 +33,14 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/carreiras/carreiras.page').then((m) => m.CarreirasPage),
       },
+      {
+        path: 'politica-de-privacidade',
+        title: 'Política de privacidade | Comu',
+        loadComponent: () =>
+          import('./features/politica-de-privacidade/politica-de-privacidade.page').then(
+            (m) => m.PoliticaDePrivacidadePage,
+          ),
+      },
       /*{
         path: 'na-midia',
         title: 'Comu na Mídia | Reportagens e entrevistas',
