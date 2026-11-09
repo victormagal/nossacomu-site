@@ -153,21 +153,23 @@
     }
   }
 
-  .suffix {
-    input {
-      padding-right: 2.75rem;
-    }
+  // Os paddings dos prefixos/sufixos precisam de mais especificidade que o padrão
+  // de `.field input`, senão o R$ e o % ficam por cima do texto.
+  .field .suffix input:not([type='radio']):not([type='checkbox']) {
+    padding-right: 2.75rem;
+  }
 
+  .suffix {
     span {
       right: 0.875rem;
     }
   }
 
-  .prefix {
-    input {
-      padding-left: 3rem;
-    }
+  .field .prefix input:not([type='radio']):not([type='checkbox']) {
+    padding-left: 3rem;
+  }
 
+  .prefix {
     span {
       left: 0.875rem;
     }
