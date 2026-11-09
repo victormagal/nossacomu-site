@@ -1,0 +1,355 @@
+<!-- Intro -->
+<section class="campaign-intro" aria-labelledby="campaign-title">
+  <div class="container">
+    <p class="eyebrow">CAMPANHA NO TIKTOK SHOP</p>
+    <h1 id="campaign-title">
+      Cadastre sua loja para a campanha com os <em>creators da Comu.</em>
+    </h1>
+    <p class="page-lead">
+      Preencha os dados abaixo. A Comu cria a campanha no TikTok Shop e você recebe um e-mail com
+      o próximo passo: inscrever os produtos no Seller Center.
+    </p>
+  </div>
+</section>
+
+<!-- Formulário -->
+<section class="campaign-form" aria-label="Cadastro da loja para campanha no TikTok Shop">
+  <div class="container">
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate [attr.aria-busy]="loading()">
+      @if (loading()) {
+        <div class="skeleton" aria-hidden="true">
+          <div class="group">
+            <span class="sk sk-title"></span>
+            <div class="grid">
+              <div class="sk-field span-4 md-span-4 lg-span-6">
+                <span class="sk sk-label"></span>
+                <span class="sk sk-input"></span>
+              </div>
+              <div class="sk-field span-4 md-span-4 lg-span-6">
+                <span class="sk sk-label"></span>
+                <span class="sk sk-input"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <span class="sk sk-title"></span>
+            <div class="grid">
+              <div class="sk-field span-4 md-span-4 lg-span-4">
+                <span class="sk sk-label"></span>
+                <span class="sk sk-input"></span>
+              </div>
+              <div class="sk-field span-4 md-span-4 lg-span-4">
+                <span class="sk sk-label"></span>
+                <span class="sk sk-input"></span>
+              </div>
+              <div class="sk-field span-4 md-span-8 lg-span-4">
+                <span class="sk sk-label"></span>
+                <span class="sk sk-input"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="group">
+            <span class="sk sk-title"></span>
+            <div class="grid">
+              <div class="sk-field span-4 md-span-8 lg-span-4">
+                <span class="sk sk-label"></span>
+                <span class="sk sk-input"></span>
+              </div>
+              <div class="sk-field span-4 md-span-4 lg-span-4">
+                <span class="sk sk-label"></span>
+                <span class="sk sk-input"></span>
+              </div>
+              <div class="sk-field span-4 md-span-4 lg-span-4">
+                <span class="sk sk-label"></span>
+                <span class="sk sk-input"></span>
+              </div>
+              <div class="sk-field span-4 md-span-8 lg-span-12">
+                <span class="sk sk-label"></span>
+                <span class="sk sk-input sk-textarea"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sk-consent">
+            <span class="sk sk-check"></span>
+            <span class="sk sk-text"></span>
+          </div>
+        </div>
+      } @else {
+        <!-- Sua loja -->
+        <section class="group" aria-labelledby="group-shop">
+          <p class="group-title" id="group-shop">Sua loja</p>
+          <div class="grid">
+            <div class="field span-4 md-span-4 lg-span-6">
+              <label for="shopName"
+                >Nome da loja no TikTok Shop <span class="req" aria-hidden="true">*</span></label
+              >
+              <input
+                id="shopName"
+                formControlName="shopName"
+                type="text"
+                autocomplete="organization"
+                maxlength="60"
+                [attr.aria-invalid]="error('shopName') ? true : null"
+                aria-describedby="shopName-error"
+              />
+              @if (error('shopName'); as message) {
+                <span class="err" id="shopName-error">{{ message }}</span>
+              }
+            </div>
+
+            <div class="field span-4 md-span-4 lg-span-6">
+              <label for="shopCode"
+                >Código da loja <span class="req" aria-hidden="true">*</span></label
+              >
+              <input
+                id="shopCode"
+                class="code-input"
+                formControlName="shopCode"
+                type="text"
+                placeholder="BRLCD7L2QD"
+                maxlength="24"
+                autocapitalize="characters"
+                spellcheck="false"
+                aria-describedby="shopCode-hint shopCode-error"
+                [attr.aria-invalid]="error('shopCode') ? true : null"
+              />
+              <span class="hint" id="shopCode-hint"
+                >Seller Center › ícone de perfil (canto superior direito). Não é o Shop ID.</span
+              >
+              @if (error('shopCode'); as message) {
+                <span class="err" id="shopCode-error">{{ message }}</span>
+              }
+            </div>
+          </div>
+        </section>
+
+        <!-- Campanha -->
+        <section class="group" aria-labelledby="group-campaign">
+          <p class="group-title" id="group-campaign">Campanha</p>
+          <div class="grid">
+            <div class="field span-4 md-span-4 lg-span-4">
+              <label for="rate"
+                >Comissão da campanha <span class="req" aria-hidden="true">*</span></label
+              >
+              <div class="suffix">
+                <input
+                  id="rate"
+                  formControlName="rate"
+                  type="text"
+                  inputmode="decimal"
+                  placeholder="15"
+                  aria-describedby="rate-hint rate-error"
+                  [attr.aria-invalid]="error('rate') ? true : null"
+                />
+                <span aria-hidden="true">%</span>
+              </div>
+              <span class="hint" id="rate-hint"
+                >Quanto mais passar da comissão normal dos produtos, mais creators se interessam.</span
+              >
+              @if (error('rate'); as message) {
+                <span class="err" id="rate-error">{{ message }}</span>
+              }
+            </div>
+
+            <div class="field span-4 md-span-4 lg-span-4">
+              <label for="months"
+                >Duração <span class="req" aria-hidden="true">*</span></label
+              >
+              <select id="months" formControlName="months">
+                @for (option of monthOptions; track option.value) {
+                  <option [value]="option.value">{{ option.label }}</option>
+                }
+              </select>
+            </div>
+
+            <div class="field span-4 md-span-8 lg-span-4" role="radiogroup" aria-labelledby="samples-label">
+              <span class="choice-label" id="samples-label"
+                >Vai oferecer amostras para os creators? <span class="req" aria-hidden="true">*</span></span
+              >
+              <div class="choices">
+                <label class="choice">
+                  <input type="radio" formControlName="samples" value="sim" />
+                  <span>Sim</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" formControlName="samples" value="nao" />
+                  <span>Não</span>
+                </label>
+              </div>
+            </div>
+
+            @if (samplesYes()) {
+              <div class="samples span-4 md-span-8 lg-span-12">
+                <p>
+                  Critérios para aprovar os pedidos de amostra. Eles aparecem para os creators no app
+                  e você aplica ao aprovar no Seller Center.
+                </p>
+                <div class="grid">
+                  <div class="field span-4 md-span-4 lg-span-6">
+                    <label for="gmv"
+                      >GMV mínimo do creator <span class="opt">(opcional)</span></label
+                    >
+                    <div class="prefix">
+                      <span aria-hidden="true">R$</span>
+                      <input
+                        id="gmv"
+                        formControlName="gmv"
+                        type="text"
+                        inputmode="numeric"
+                        placeholder="5.000"
+                        aria-describedby="gmv-hint gmv-error"
+                        [attr.aria-invalid]="error('gmv') ? true : null"
+                      />
+                    </div>
+                    <span class="hint" id="gmv-hint">Vendas do creator nos últimos 30 dias.</span>
+                    @if (error('gmv'); as message) {
+                      <span class="err" id="gmv-error">{{ message }}</span>
+                    }
+                  </div>
+
+                  <div class="field span-4 md-span-4 lg-span-6">
+                    <label for="postRate"
+                      >Post rate mínimo <span class="opt">(opcional)</span></label
+                    >
+                    <div class="suffix">
+                      <input
+                        id="postRate"
+                        formControlName="postRate"
+                        type="text"
+                        inputmode="numeric"
+                        placeholder="70"
+                        aria-describedby="postRate-hint postRate-error"
+                        [attr.aria-invalid]="error('postRate') ? true : null"
+                      />
+                      <span aria-hidden="true">%</span>
+                    </div>
+                    <span class="hint" id="postRate-hint"
+                      >De cada 100 amostras recebidas, quantas o creator transformou em post.</span
+                    >
+                    @if (error('postRate'); as message) {
+                      <span class="err" id="postRate-error">{{ message }}</span>
+                    }
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </section>
+
+        <!-- Contato -->
+        <section class="group" aria-labelledby="group-contact">
+          <p class="group-title" id="group-contact">Contato</p>
+          <div class="grid">
+            <div class="field span-4 md-span-8 lg-span-4">
+              <label for="name">Seu nome <span class="req" aria-hidden="true">*</span></label>
+              <input
+                id="name"
+                formControlName="name"
+                type="text"
+                autocomplete="name"
+                maxlength="80"
+                [attr.aria-invalid]="error('name') ? true : null"
+                aria-describedby="name-error"
+              />
+              @if (error('name'); as message) {
+                <span class="err" id="name-error">{{ message }}</span>
+              }
+            </div>
+
+            <div class="field span-4 md-span-4 lg-span-4">
+              <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+              <input
+                id="email"
+                formControlName="email"
+                type="email"
+                autocomplete="email"
+                maxlength="120"
+                aria-describedby="email-hint email-error"
+                [attr.aria-invalid]="error('email') ? true : null"
+              />
+              <span class="hint" id="email-hint">É para cá que vai o e-mail com o próximo passo.</span>
+              @if (error('email'); as message) {
+                <span class="err" id="email-error">{{ message }}</span>
+              }
+            </div>
+
+            <div class="field span-4 md-span-4 lg-span-4">
+              <label for="phone">WhatsApp <span class="req" aria-hidden="true">*</span></label>
+              <input
+                id="phone"
+                formControlName="phone"
+                type="tel"
+                autocomplete="tel"
+                placeholder="+55 11 99999-9999"
+                maxlength="20"
+                aria-describedby="phone-error"
+                [attr.aria-invalid]="error('phone') ? true : null"
+              />
+              @if (error('phone'); as message) {
+                <span class="err" id="phone-error">{{ message }}</span>
+              }
+            </div>
+
+            <div class="field span-4 md-span-8 lg-span-12">
+              <label for="message"
+                >Mensagem <span class="opt">(opcional)</span></label
+              >
+              <textarea
+                id="message"
+                formControlName="message"
+                maxlength="1000"
+                placeholder="Produtos em destaque, perfil de creator que vocês buscam, datas importantes."
+                aria-describedby="message-error"
+                [attr.aria-invalid]="error('message') ? true : null"
+              ></textarea>
+              @if (error('message'); as message) {
+                <span class="err" id="message-error">{{ message }}</span>
+              }
+            </div>
+          </div>
+        </section>
+
+        <!-- Consentimento -->
+        <div class="consent-block">
+          <label class="consent">
+            <input type="checkbox" formControlName="consent" aria-describedby="consent-error" />
+            <span
+              >Aceito que a Comu use estes dados para falar comigo sobre esta campanha, conforme a
+              <a routerLink="/politica-de-privacidade">Política de privacidade</a>.</span
+            >
+          </label>
+          @if (error('consent'); as message) {
+            <span class="err" id="consent-error">{{ message }}</span>
+          }
+        </div>
+      }
+
+      <!-- Envio -->
+      <div class="submit-area">
+        @if (submitted() && form.invalid && !loading()) {
+          <p class="err form-error" role="alert">Confira os campos marcados.</p>
+        }
+        <div class="submit-row">
+          <button
+            class="comu-btn submit-button"
+            type="submit"
+            [disabled]="loading()"
+          >
+            @if (loading()) {
+              <span class="spinner" aria-hidden="true"></span>
+              <span>Enviando…</span>
+            } @else {
+              Enviar cadastro
+            }
+          </button>
+          <span class="note">Respondemos em até 2 dias úteis.</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<app-toast [message]="toast()" (dismissed)="toast.set(null)" />

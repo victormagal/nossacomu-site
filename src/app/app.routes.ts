@@ -23,6 +23,12 @@ export const routes: Routes = [
           import('./features/para-marcas/para-marcas.page').then((m) => m.ForBrandsPage),
       },
       {
+        path: 'solucoes-para-marcas/criar-campanha',
+        title: 'Criar campanha no TikTok Shop | Comu para marcas',
+        loadComponent: () =>
+          import('./features/criar-campanha/criar-campanha.page').then((m) => m.CampaignPage),
+      },
+      {
         path: 'eventos',
         title: 'Eventos Comu | Encontros, experiências e comunidade',
         loadComponent: () => import('./features/eventos/eventos.page').then((m) => m.EventsPage),

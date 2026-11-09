@@ -1,6 +1,8 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { filter, map } from 'rxjs';
 
 interface NavItem {
   label: string;
@@ -15,12 +17,23 @@ interface NavItem {
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
+  private readonly router = inject(Router);
+
   protected readonly isMenuOpen = signal(false);
+  protected readonly isBrandsOpen = signal(false);
+
+  // "Para marcas" não é link: fica destacado quando a rota atual é de marcas.
+  protected readonly isBrandsActive = toSignal(
+    this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map(() => this.router.url.startsWith('/solucoes-para-marcas')),
+    ),
+    { initialValue: this.router.url.startsWith('/solucoes-para-marcas') },
+  );
 
   protected readonly navItems: NavItem[] = [
     { label: 'A Comu', path: '/' },
     { label: 'Para criadores', path: '/solucoes-para-criadores' },
-    { label: 'Para marcas', path: '/solucoes-para-marcas' },
     { label: 'Eventos', path: '/eventos' },
     { label: 'Carreiras', path: '/carreiras' },
   ];
@@ -29,7 +42,12 @@ export class HeaderComponent {
     this.isMenuOpen.update((isOpen) => !isOpen);
   }
 
+  protected toggleBrands(): void {
+    this.isBrandsOpen.update((isOpen) => !isOpen);
+  }
+
   protected closeMenu(): void {
     this.isMenuOpen.set(false);
+    this.isBrandsOpen.set(false);
   }
 }

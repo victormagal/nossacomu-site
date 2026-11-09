@@ -1,0 +1,31 @@
+@if (message(); as toast) {
+  <div
+    class="toast"
+    [class.toast--error]="toast.kind === 'error'"
+    [attr.role]="toast.kind === 'error' ? 'alert' : 'status'"
+  >
+    <span class="toast-icon" aria-hidden="true">
+      @if (toast.kind === 'success') {
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+      } @else {
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+          <path d="M12 7v7" />
+          <circle cx="12" cy="18" r="1.2" fill="currentColor" />
+        </svg>
+      }
+    </span>
+
+    <div class="toast-text">
+      <strong>{{ toast.title }}</strong>
+      <p>{{ toast.message }}</p>
+    </div>
+
+    <button class="toast-close" type="button" aria-label="Fechar aviso" (click)="dismissed.emit()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+}

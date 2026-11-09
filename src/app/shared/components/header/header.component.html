@@ -21,16 +21,71 @@
       aria-label="Navegação principal"
       [class.is-open]="isMenuOpen()"
     >
-      @for (item of navItems; track item.path) {
-        <a
-          [routerLink]="item.path"
-          [routerLinkActiveOptions]="{ exact: true }"
-          ariaCurrentWhenActive="page"
-          routerLinkActive="is-active"
-          (click)="closeMenu()"
-          >{{ item.label }}</a
+      <a
+        routerLink="/"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        routerLinkActive="is-active"
+        (click)="closeMenu()"
+        >A Comu</a
+      >
+      <a
+        routerLink="/solucoes-para-criadores"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        routerLinkActive="is-active"
+        (click)="closeMenu()"
+        >Para criadores</a
+      >
+
+      <div class="nav-group" [class.is-open]="isBrandsOpen()">
+        <button
+          class="nav-trigger"
+          type="button"
+          [class.is-active]="isBrandsActive()"
+          [attr.aria-expanded]="isBrandsOpen()"
+          aria-controls="brands-submenu"
+          (click)="toggleBrands()"
         >
-      }
+          Para marcas
+        </button>
+        <div class="submenu" id="brands-submenu">
+          <a
+            routerLink="/solucoes-para-marcas"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            routerLinkActive="is-active"
+            (click)="closeMenu()"
+            >Saiba mais</a
+          >
+          <a
+            routerLink="/solucoes-para-marcas/criar-campanha"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            routerLinkActive="is-active"
+            (click)="closeMenu()"
+            >Criar campanha</a
+          >
+        </div>
+      </div>
+
+      <a
+        routerLink="/eventos"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        routerLinkActive="is-active"
+        (click)="closeMenu()"
+        >Eventos</a
+      >
+      <a
+        routerLink="/carreiras"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        routerLinkActive="is-active"
+        (click)="closeMenu()"
+        >Carreiras</a
+      >
+
       <div class="header-cta header-cta--mobile">
         <a
           class="comu-btn comu-btn--dark"

@@ -150,7 +150,8 @@
     gap: 1.625rem;
   }
 
-  a {
+  a,
+  .nav-trigger {
     font-size: 0.82rem;
     line-height: 1.4;
     min-height: 2.75rem;
@@ -183,6 +184,95 @@
     &.is-active::after {
       right: 0;
     }
+  }
+}
+
+// "Para marcas" é um botão que abre/fecha o submenu (sem navegar).
+// Mobile: clique abre a lista indentada dentro do menu.
+// Desktop: abre no hover/foco ou ao clicar, como dropdown.
+.nav-trigger {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding-inline: 0;
+  text-align: left;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  flex-direction: column;
+  padding-left: 1rem;
+
+  a {
+    font-size: 0.8rem;
+    min-height: 2.5rem;
+    padding-block: 0.5rem;
+
+    &::after {
+      display: none;
+    }
+
+    &.is-active {
+      color: var(--color-ink);
+    }
+  }
+
+  @media (min-width: 768px) {
+    background-color: var(--color-white);
+    border: 1px solid rgba(var(--color-ink-rgb), 0.125);
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(var(--color-ink-rgb), 0.12);
+    display: none;
+    left: -0.75rem;
+    min-width: 13.5rem;
+    padding: 0.5rem;
+    position: absolute;
+    top: 100%;
+    z-index: 110;
+
+    a {
+      border-radius: 8px;
+      font-size: 0.875rem;
+      min-height: auto;
+      padding: 0.625rem 0.75rem;
+
+      &:hover {
+        background-color: var(--color-cream);
+      }
+    }
+  }
+}
+
+.nav-group.is-open .submenu {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .nav-group:hover .submenu,
+  .nav-group:focus-within .submenu {
+    display: flex;
+  }
+
+  // Ponte invisível entre o item e o submenu: o mouse não sai do grupo ao descer.
+  .nav-group:hover::after,
+  .nav-group:focus-within::after {
+    content: '';
+    display: block;
+    height: 0.5rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
   }
 }
 
