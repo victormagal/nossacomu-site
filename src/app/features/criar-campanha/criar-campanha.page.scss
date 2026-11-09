@@ -81,6 +81,15 @@
     line-height: 1.4;
   }
 
+  // Campo anti-robô (honeypot): escondido visualmente e para leitores de tela
+  .hp-field {
+    height: 1px;
+    left: -10000px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+  }
+
   // Inputs, select e textarea
   .field input:not([type='radio']):not([type='checkbox']),
   .field select,

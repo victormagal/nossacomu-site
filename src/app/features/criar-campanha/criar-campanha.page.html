@@ -16,6 +16,12 @@
 <section class="campaign-form" aria-label="Cadastro da loja para campanha no TikTok Shop">
   <div class="container">
     <form [formGroup]="form" (ngSubmit)="submit()" novalidate [attr.aria-busy]="loading()">
+      <!-- Campo anti-robô: fica fora da tela e de leitores de tela; deve ficar vazio. -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="website">Site</label>
+        <input id="website" formControlName="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+
       @if (loading()) {
         <div class="skeleton" aria-hidden="true">
           <div class="group">
@@ -117,7 +123,7 @@
                 [attr.aria-invalid]="error('shopCode') ? true : null"
               />
               <span class="hint" id="shopCode-hint"
-                >Seller Center › ícone de perfil (canto superior direito). Não é o Shop ID.</span
+                >Seller Center › ícone de perfil, no canto superior direito. Não é o Shop ID.</span
               >
               @if (error('shopCode'); as message) {
                 <span class="err" id="shopCode-error">{{ message }}</span>
@@ -147,7 +153,7 @@
                 <span aria-hidden="true">%</span>
               </div>
               <span class="hint" id="rate-hint"
-                >Quanto mais passar da comissão normal dos produtos, mais creators se interessam.</span
+                >Sugestão: de 3 a 4 pontos acima da comissão aberta (open collab) dos seus produtos. Ex.: se a aberta é 10%, use 13% ou 14%.</span
               >
               @if (error('rate'); as message) {
                 <span class="err" id="rate-error">{{ message }}</span>
@@ -329,7 +335,7 @@
 
       <!-- Envio -->
       <div class="submit-area">
-        @if (submitted() && form.invalid && !loading()) {
+        @if (((submitted() && form.invalid) || hasServerErrors()) && !loading()) {
           <p class="err form-error" role="alert">Confira os campos marcados.</p>
         }
         <div class="submit-row">
