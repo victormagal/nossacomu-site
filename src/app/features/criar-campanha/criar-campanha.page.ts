@@ -71,10 +71,8 @@ const API_FIELD_MAP: Record<string, FieldName> = {
   message: 'message',
 };
 
-const MONTH_OPTIONS = Array.from({ length: 11 }, (_, index) => ({
-  label: index === 0 ? '1 mês' : `${index + 1} meses`,
-  value: String(index + 1),
-}));
+// Duração fixa: a campanha sempre dura 12 meses.
+const MONTH_OPTIONS = [{ label: '12 meses', value: '12' }];
 
 const DEFAULT_ERROR_MESSAGE =
   'Verifique sua conexão e tente de novo. Se o erro continuar, fale com a gente pelo e-mail.';
@@ -197,7 +195,8 @@ export class CampaignPage {
     shopName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
     shopCode: ['', [Validators.required, shopCodeValidator]],
     rate: ['', [Validators.required, rateValidator]],
-    months: ['6', [Validators.required]],
+    // Bloqueado em 12 meses: desabilitado, mas o valor segue no getRawValue().
+    months: [{ value: '12', disabled: true }, [Validators.required]],
     samples: ['nao' as SampleChoice],
     gmv: ['', [onlyWhenSamples(gmvValidator)]],
     postRate: ['', [onlyWhenSamples(postRateValidator)]],
