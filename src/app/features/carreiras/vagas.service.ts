@@ -23,7 +23,7 @@ export interface Vaga {
   slug: string;
   /** Data da última atualização, no formato ISO do WordPress. */
   modified: string;
-  camposDeVaga: { conteudo: string | null } | null;
+  camposDeVaga: { descritivo: string | null } | null;
 }
 
 const DETALHE_VAGA = `query VagaPorSlug($slug: ID!) {
@@ -32,13 +32,14 @@ const DETALHE_VAGA = `query VagaPorSlug($slug: ID!) {
     slug
     modified
     camposDeVaga {
+      descritivo
       conteudo
     }
   }
 }`;
 
 export interface VagaDetalhe extends Omit<Vaga, 'camposDeVaga'> {
-  camposDeVaga: { conteudo: string | null } | null;
+  camposDeVaga: { descritivo: string | null; conteudo: string | null } | null;
 }
 
 interface VagaResponse {
