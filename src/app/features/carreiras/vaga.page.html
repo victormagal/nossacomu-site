@@ -1,0 +1,33 @@
+@if (vaga(); as item) {
+  <section class="vaga-intro" aria-labelledby="vaga-title">
+    <div class="container">
+      <p class="eyebrow">VAGA NA Comu</p>
+      <time class="vaga-date" [attr.datetime]="item.modified"
+      >Atualizada em {{ formatarData(item.modified) }}</time
+      >
+      <h1 id="vaga-title">{{ item.title }}</h1>
+    </div>
+  </section>
+
+  @if (item.camposDeVaga?.conteudo; as conteudo) {
+    <section class="vaga-content" aria-label="Detalhes da vaga">
+      <div class="container">
+        <div class="prose" [innerHTML]="conteudo"></div>
+      </div>
+    </section>
+  }
+} @else if (vaga() === null) {
+  <section class="vaga-intro" aria-labelledby="vaga-title">
+    <div class="container">
+      <p class="eyebrow">VAGA NÃO ENCONTRADA</p>
+      <h1 id="vaga-title">Esta vaga não está mais disponível.</h1>
+      <p class="page-lead">Veja as oportunidades que estão abertas no momento.</p>
+    </div>
+  </section>
+}
+
+<section class="vaga-back">
+  <div class="container">
+    <a class="vacancy-read" routerLink="/carreiras" fragment="vagas">Ver todas as vagas</a>
+  </div>
+</section>

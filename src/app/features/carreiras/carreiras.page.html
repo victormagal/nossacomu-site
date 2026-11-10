@@ -59,28 +59,39 @@
 <!-- Vagas (faixa rosa) -->
 <section class="vacancies" id="vagas" aria-labelledby="vacancies-title">
   <div class="container">
+    <p class="eyebrow" id="vacancies-title">OPORTUNIDADES NO TIME</p>
     <div class="grid vacancies-grid">
-      <div class="span-4 md-span-4 lg-span-6">
-        <p class="eyebrow">OPORTUNIDADES NO TIME</p>
-        <h2 id="vacancies-title">
-          Novos caminhos<br />
-          começam com <em>gente.</em>
-        </h2>
-      </div>
-      <div class="vacancy-status span-4 md-span-4 lg-span-6">
-        <span class="status-label">NO MOMENTO</span>
-        <h3>
-          Ainda não temos<br />
-          vagas abertas.
-        </h3>
-        <p>
-          Quando uma nova oportunidade surgir, ela estará aqui, com os detalhes da posição e as
-          orientações para se candidatar.
-        </p>
-        <p class="small">
-          Não estamos recebendo currículos ou inscrições para banco de talentos neste momento.
-        </p>
-      </div>
+      @if (vagas().length > 0) {
+        @for (vaga of vagas(); track vaga.slug) {
+          <article class="vacancy-item span-4 md-span-4 lg-span-6">
+            <div class="vacancy-meta">
+              <time [attr.datetime]="vaga.modified">{{ formatarData(vaga.modified) }}</time>
+            </div>
+            <h3>{{ vaga.title }}</h3>
+            @if (vaga.camposDeVaga?.descritivo; as descritivo) {
+              <p>{{ descritivo }}</p>
+            }
+            <a class="vacancy-read" [routerLink]="['/carreiras', vaga.slug]"
+              >Saiba mais<span class="sr-only"> sobre a vaga {{ vaga.title }}</span></a
+            >
+          </article>
+        }
+      } @else {
+        <div class="vacancy-status span-4 md-span-4 lg-span-6">
+          <span class="status-label">NO MOMENTO</span>
+          <h3>
+            Ainda não temos<br />
+            vagas abertas.
+          </h3>
+          <p>
+            Quando uma nova oportunidade surgir, ela estará aqui, com os detalhes da posição e as
+            orientações para se candidatar.
+          </p>
+          <p class="small">
+            Não estamos recebendo currículos ou inscrições para banco de talentos neste momento.
+          </p>
+        </div>
+      }
     </div>
   </div>
 </section>

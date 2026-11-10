@@ -1,6 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
+import { catchError, of } from 'rxjs';
 import { FaqComponent, FaqItem } from '../../shared/components/faq/faq.component';
+import { formatarDataCard, Vaga, VagasService } from './vagas.service';
 
 interface Value {
   text: string;
@@ -15,6 +18,15 @@ interface Value {
   templateUrl: './carreiras.page.html',
 })
 export class CarreirasPage {
+  private readonly vagasService = inject(VagasService);
+  protected readonly formatarData = formatarDataCard;
+
+  // Sem vagas ou com o WordPress fora do ar, a página mostra o aviso de "sem vagas abertas".
+  protected readonly vagas = toSignal(
+    this.vagasService.listar().pipe(catchError(() => of([] as Vaga[]))),
+    { initialValue: [] as Vaga[] },
+  );
+
   protected readonly values: Value[] = [
     {
       text: 'Autenticidade para encontrar caminhos próprios e dar forma a novas possibilidades.',
@@ -34,7 +46,7 @@ export class CarreirasPage {
   protected readonly faq: FaqItem[] = [
     {
       answer: [
-        'No momento, não temos vagas abertas. Quando houver novas oportunidades, você poderá consultá-las nesta página.',
+        'As vagas abertas aparecem nesta página, com a descrição de cada posição e as orientações para se candidatar.',
       ],
       question: 'Há vagas abertas na Comu?',
     },

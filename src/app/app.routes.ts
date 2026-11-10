@@ -40,6 +40,11 @@ export const routes: Routes = [
           import('./features/carreiras/carreiras.page').then((m) => m.CarreirasPage),
       },
       {
+        path: 'carreiras/:slug',
+        title: 'Vaga | Carreiras na Comu',
+        loadComponent: () => import('./features/carreiras/vaga.page').then((m) => m.VagaPage),
+      },
+      {
         path: 'politica-de-privacidade',
         title: 'Política de privacidade | Comu',
         loadComponent: () =>
