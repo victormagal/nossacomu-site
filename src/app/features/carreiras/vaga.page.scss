@@ -134,6 +134,16 @@
   }
 }
 
+// CTA ao final do conteúdo, só no mobile (substitui o card lateral)
+.vaga-mobile-cta {
+  display: none;
+
+  @media (max-width: 1000px) {
+    display: block;
+    margin-top: 2.5rem;
+  }
+}
+
 .summary {
   background-color: var(--color-white);
   border-radius: 20px;
@@ -336,6 +346,11 @@
     b,
     strong {
       font-weight: inherit;
+    }
+
+    // Primeiro título do conteúdo cola no topo, sem espaço acima
+    &:first-child {
+      margin-top: 0;
     }
   }
 
