@@ -109,6 +109,11 @@
 
 .vaga-content {
   padding-bottom: 2.5rem;
+
+  // Espaço para a barra fixa não cobrir o final do conteúdo
+  @media (max-width: 1000px) {
+    padding-bottom: 6rem;
+  }
 }
 
 // Conteúdo + sidebar (card de resumo), como na referência
@@ -134,13 +139,39 @@
   }
 }
 
-// CTA ao final do conteúdo, só no mobile (substitui o card lateral)
-.vaga-mobile-cta {
+// Barra fixa no bottom, só no mobile (substitui o CTA ao final do conteúdo)
+.vaga-bottom-bar {
+  align-items: center;
+  background-color: var(--color-white);
+  border-top: 1px solid rgba(15, 14, 14, 0.125);
+  bottom: 0;
+  box-shadow: 0 -8px 24px rgba(15, 14, 14, 0.06);
   display: none;
+  gap: 1rem;
+  left: 0;
+  padding: 0.875rem 16px calc(0.875rem + env(safe-area-inset-bottom));
+  position: fixed;
+  right: 0;
+  z-index: 50;
 
   @media (max-width: 1000px) {
-    display: block;
-    margin-top: 2.5rem;
+    display: flex;
+  }
+
+  .vaga-bottom-bar-title {
+    color: var(--color-ink);
+    flex: 1;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .comu-btn {
+    flex-shrink: 0;
   }
 }
 
@@ -282,11 +313,10 @@
     }
   }
 
-  // Títulos de seção: "01 - O DESAFIO". Número e hífen em rosa, título escuro.
+  // Títulos de seção: "01 - O desafio". Número e hífen em rosa, título escuro.
   h2 {
     color: var(--color-ink);
     counter-increment: secao-vaga;
-    text-transform: uppercase;
 
     &::before {
       color: var(--color-pink);

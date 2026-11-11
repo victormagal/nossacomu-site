@@ -22,11 +22,6 @@
       <div class="container vaga-layout">
         <div class="prose" [innerHTML]="conteudo"></div>
 
-        <!-- Mobile: o card lateral some abaixo de 1000px, então o CTA fica ao final do conteúdo -->
-        <div class="vaga-mobile-cta">
-          <a class="comu-btn comu-btn--pink comu-btn--block" href="#">Candidatar-se</a>
-        </div>
-
         <aside class="vaga-aside" aria-label="Resumo da vaga">
           <div class="summary">
             <span class="summary-label">VAGA NA COMU</span>
@@ -48,6 +43,12 @@
       </div>
     </section>
   }
+
+  <!-- Barra fixa no bottom (mobile): título da vaga + candidatura, sempre visível -->
+  <div class="vaga-bottom-bar" aria-label="Candidatura">
+    <p class="vaga-bottom-bar-title">{{ item.title }}</p>
+    <a class="comu-btn comu-btn--pink" href="#">Candidatar-se</a>
+  </div>
 } @else if (vaga() === null) {
   <section class="vaga-intro" aria-labelledby="vaga-title">
     <div class="container">
