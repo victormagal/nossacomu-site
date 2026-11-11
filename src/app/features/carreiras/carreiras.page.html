@@ -1,4 +1,4 @@
-<!-- Hero (faixa escura) -->
+<!-- Hero (faixa escura): propósito + âncora para as vagas -->
 <section class="careers-hero is-flush">
   <div class="container">
     <div class="grid careers-hero-grid">
@@ -10,12 +10,12 @@
           <em>criação.</em>
         </h1>
         <p class="page-lead">
-          Esse é o propósito que move a Comu. Conheça o que nos orienta e acompanhe as oportunidades
-          de fazer parte do nosso time.
+          Esse é o propósito que move a Comu. Veja as vagas abertas e conheça o que orienta o nosso
+          time.
         </p>
         <div class="actions">
-          <a class="comu-btn comu-btn--light" routerLink="/carreiras" fragment="vagas"
-            >Ver oportunidades</a
+          <a class="comu-btn comu-btn--pink" routerLink="/carreiras" fragment="vagas"
+            >Ver vagas abertas</a
           >
         </div>
       </div>
@@ -28,9 +28,70 @@
           height="513"
           fetchpriority="high"
         />
-        <figcaption>Criação aproxima pessoas.<span>Encontro do ecossistema Comu.</span></figcaption>
       </figure>
     </div>
+  </div>
+</section>
+
+<!-- Vagas (faixa rosa): é o motivo da página, por isso fica logo depois do hero -->
+<section class="vacancies is-flush" id="vagas" aria-labelledby="vacancies-title">
+  <div class="container">
+    <div class="vacancies-head">
+      <div>
+        <p class="eyebrow" id="vacancies-eyebrow">OPORTUNIDADES NO TIME</p>
+        <h2 id="vacancies-title">Vagas <em>abertas.</em></h2>
+      </div>
+      @if (vagas().length > 0) {
+        <span class="jobs-count"
+          >{{ vagas().length }} {{ vagas().length === 1 ? 'vaga' : 'vagas' }}</span
+        >
+      }
+    </div>
+
+    @if (vagas().length > 0) {
+      <ul class="job-list">
+        @for (vaga of vagas(); track vaga.slug) {
+          <li>
+            <a class="job-card" [routerLink]="['/carreiras', vaga.slug]">
+              <div>
+                <h3>{{ vaga.title }}</h3>
+                @if (vaga.camposDeVaga?.descritivo; as descritivo) {
+                  <p>{{ descritivo }}</p>
+                }
+                <ul class="job-tags">
+                  <li class="date">
+                    <time [attr.datetime]="vaga.modified"
+                      >Atualizada em {{ formatarData(vaga.modified) }}</time
+                    >
+                  </li>
+                </ul>
+              </div>
+              <span class="go"
+                >Ver vaga <span aria-hidden="true">→</span
+                ><span class="sr-only"> sobre a vaga {{ vaga.title }}</span></span
+              >
+            </a>
+          </li>
+        }
+      </ul>
+    } @else {
+      <div class="grid vacancies-grid">
+        <div class="vacancy-status span-4 md-span-4 lg-span-6">
+          <span class="status-label">NO MOMENTO</span>
+          <h3>
+            Ainda não temos<br />
+            vagas abertas.
+          </h3>
+          <p>
+            Quando uma nova oportunidade surgir, ela estará aqui, com os detalhes da posição e as
+            orientações para se candidatar.
+          </p>
+          <p class="small">
+            Não estamos recebendo currículos ou inscrições para banco de talentos neste momento.
+          </p>
+        </div>
+      </div>
+    }
   </div>
 </section>
 
@@ -56,42 +117,26 @@
   </div>
 </section>
 
-<!-- Vagas (faixa rosa) -->
-<section class="vacancies" id="vagas" aria-labelledby="vacancies-title">
+<!-- Como funciona a candidatura -->
+<section class="process">
   <div class="container">
-    <p class="eyebrow" id="vacancies-title">OPORTUNIDADES NO TIME</p>
-    <div class="grid vacancies-grid">
-      @if (vagas().length > 0) {
-        @for (vaga of vagas(); track vaga.slug) {
-          <article class="vacancy-item span-4 md-span-4 lg-span-6">
-            <div class="vacancy-meta">
-              <time [attr.datetime]="vaga.modified">{{ formatarData(vaga.modified) }}</time>
-            </div>
-            <h3>{{ vaga.title }}</h3>
-            @if (vaga.camposDeVaga?.descritivo; as descritivo) {
-              <p>{{ descritivo }}</p>
-            }
-            <a class="vacancy-read" [routerLink]="['/carreiras', vaga.slug]"
-              >Saiba mais<span class="sr-only"> sobre a vaga {{ vaga.title }}</span></a
-            >
-          </article>
-        }
-      } @else {
-        <div class="vacancy-status span-4 md-span-4 lg-span-6">
-          <span class="status-label">NO MOMENTO</span>
-          <h3>
-            Ainda não temos<br />
-            vagas abertas.
-          </h3>
-          <p>
-            Quando uma nova oportunidade surgir, ela estará aqui, com os detalhes da posição e as
-            orientações para se candidatar.
-          </p>
-          <p class="small">
-            Não estamos recebendo currículos ou inscrições para banco de talentos neste momento.
-          </p>
-        </div>
-      }
+    <div class="process-box">
+      <p class="eyebrow">Candidatura</p>
+      <h2>Como funciona.</h2>
+      <ol class="steps">
+        <li>
+          <h3>Escolha a vaga.</h3>
+          <p>Leia a descrição, os requisitos e o modelo de trabalho de cada posição.</p>
+        </li>
+        <li>
+          <h3>Candidate-se.</h3>
+          <p>Use o botão Candidatar-se na página da vaga. É o único canal de candidatura.</p>
+        </li>
+        <li>
+          <h3>Acompanhe o retorno.</h3>
+          <p>O time entra em contato com as pessoas selecionadas para as próximas etapas.</p>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
@@ -99,25 +144,23 @@
 <!-- Perguntas frequentes -->
 <app-faq [items]="faq" />
 
-<!-- CTA final -->
+<!-- CTA final: volta para as vagas; criadores como saída secundária -->
 <section class="closing">
   <div class="container">
     <p class="eyebrow">SEJA INCOMUM.</p>
     <h2>
-      Sua criação também<br />
-      tem espaço aqui.
+      Seu próximo passo pode ser<br />
+      no nosso time.
     </h2>
-    <p>
-      Quer se conectar com criadores e conhecer nosso ecossistema? Entre na comunidade gratuita da
-      Comu.
-    </p>
+    <p>Confira as vagas abertas e candidate-se pela página de cada posição.</p>
     <div class="actions">
-      <a class="comu-btn comu-btn--light-pink" routerLink="/" fragment="aplicativo"
-        >Conhecer a comunidade</a
-      >
-      <a class="comu-btn comu-btn--outline-light" routerLink="/solucoes-para-criadores"
-        >Soluções para criadores</a
+      <a class="comu-btn comu-btn--pink" routerLink="/carreiras" fragment="vagas"
+        >Ver vagas abertas</a
       >
     </div>
+    <p class="closing-aside">
+      É criador?
+      <a routerLink="/para-criadores">Conheça o caminho para criadores</a>.
+    </p>
   </div>
 </section>
