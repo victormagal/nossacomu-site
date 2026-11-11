@@ -1,18 +1,45 @@
 @if (vaga(); as item) {
-  <section class="vaga-intro" aria-labelledby="vaga-title">
+  <!-- Hero escuro: título da vaga, pílula de atualização e ações -->
+  <section class="vaga-hero is-flush" aria-labelledby="vaga-title">
     <div class="container">
+      <p class="crumbs"><a routerLink="/carreiras">Carreiras</a> &nbsp;/&nbsp; {{ item.title }}</p>
       <p class="eyebrow">VAGA NA Comu</p>
-      <time class="vaga-date" [attr.datetime]="item.modified"
-      >Atualizada em {{ formatarData(item.modified) }}</time
-      >
       <h1 id="vaga-title">{{ item.title }}</h1>
+      <ul class="facts" aria-label="Resumo da vaga">
+        <li class="fact">
+          Atualizada em
+          <time [attr.datetime]="item.modified"><b>{{ formatarData(item.modified) }}</b></time>
+        </li>
+      </ul>
+      <div class="hero-actions">
+        <a class="comu-btn comu-btn--pink" href="#">Candidatar-se</a>
+      </div>
     </div>
   </section>
 
   @if (item.camposDeVaga?.conteudo; as conteudo) {
-    <section class="vaga-content" aria-label="Detalhes da vaga">
-      <div class="container">
+    <section class="vaga-content" id="vaga-conteudo" aria-label="Detalhes da vaga">
+      <div class="container vaga-layout">
         <div class="prose" [innerHTML]="conteudo"></div>
+
+        <aside class="vaga-aside" aria-label="Resumo da vaga">
+          <div class="summary">
+            <span class="summary-label">VAGA NA COMU</span>
+            <h3>{{ item.title }}</h3>
+            <dl>
+              <div>
+                <dt>Atualizada em</dt>
+                <dd><time [attr.datetime]="item.modified">{{ formatarData(item.modified) }}</time></dd>
+              </div>
+            </dl>
+            <div class="summary-actions">
+              <a class="comu-btn comu-btn--pink comu-btn--block" href="#">Candidatar-se</a>
+              <a class="comu-btn comu-btn--outline comu-btn--block" routerLink="/carreiras" fragment="vagas"
+                >Ver todas as vagas</a
+              >
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   }
@@ -25,9 +52,3 @@
     </div>
   </section>
 }
-
-<section class="vaga-back">
-  <div class="container">
-    <a class="vacancy-read" routerLink="/carreiras" fragment="vagas">Ver todas as vagas</a>
-  </div>
-</section>

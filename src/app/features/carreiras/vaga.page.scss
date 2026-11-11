@@ -2,6 +2,11 @@
 
 @include site.page-base;
 
+// Fundo creme da referência da vaga (sobrescreve o branco padrão da página)
+:host {
+  background-color: var(--color-cream);
+}
+
 .vaga-intro {
   padding: 0 !important;
 
@@ -19,16 +24,164 @@
   }
 }
 
-.vaga-date {
-  color: #656565;
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.045em;
-  margin-top: 1.5rem;
+// Hero escuro, mesmo padrão da página de Carreiras
+.vaga-hero {
+  @include site.hero-band;
+
+  background-color: var(--color-ink);
+  color: var(--color-white);
+
+  .eyebrow {
+    color: var(--color-pink);
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 2.89rem;
+    letter-spacing: -0.06em;
+    line-height: 1.03;
+    max-width: 14ch;
+
+    @include site.md {
+      font-size: clamp(3.2rem, 5vw, 4.5rem);
+      letter-spacing: -0.055em;
+      line-height: 1.04;
+    }
+  }
+}
+
+.crumbs {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  margin-bottom: 3.5rem;
+  overflow-wrap: anywhere;
+
+  a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+}
+
+// Pílulas de resumo da vaga
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin-top: 2.25rem;
+  padding: 0;
+}
+
+.fact {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.875rem;
+  padding: 0.5rem 0.875rem;
+
+  b {
+    color: var(--color-white);
+    font-weight: 600;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+// Botão rosa com texto branco (hero)
+.comu-btn--pink {
+  background-color: var(--color-pink);
+  color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-pink-dark);
+  }
 }
 
 .vaga-content {
   padding-bottom: 2.5rem;
+}
+
+// Conteúdo + sidebar (card de resumo), como na referência
+.vaga-layout {
+  align-items: start;
+  display: grid;
+  gap: 4.5rem;
+  grid-template-columns: minmax(0, 1fr) 320px;
+
+  @media (max-width: 1000px) {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+}
+
+.vaga-aside {
+  // Abaixo do header sticky (altura estimada pelo padding e pela logo)
+  position: sticky;
+  top: 6rem;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
+}
+
+.summary {
+  background-color: var(--color-white);
+  border-radius: 20px;
+  padding: 28px;
+
+  h3 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+  }
+
+  dl {
+    display: grid;
+    font-size: 0.875rem;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  dt {
+    color: #666;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    font-weight: 500;
+  }
+}
+
+.summary-label {
+  color: var(--color-muted);
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.summary-actions {
+  display: grid;
+  gap: 8px;
+}
+
+.comu-btn--block {
+  justify-content: center;
+  width: 100%;
 }
 
 .vaga-back {
@@ -56,13 +209,25 @@
 // Via [innerHTML] os elementos filhos não recebem o atributo _ngcontent do Angular,
 // por isso os seletores descendentes usam ::ng-deep (escopados ao .prose).
 .prose {
+  // Contador dos títulos de seção (01, 02, 03...)
+  counter-reset: secao-vaga;
   color: var(--color-gray-700);
   font-size: 1.0625rem;
   line-height: 1.7;
 }
 
 .prose ::ng-deep {
-  p { margin-bottom: 1rem; }
+  // Parágrafos no estilo do bloco "O desafio" da referência: 18px, cinza-700, 640px
+  p {
+    color: var(--color-gray-700);
+    font-size: 1.125rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: 1rem;
+  }
 
   ul,
   ol {
@@ -71,17 +236,107 @@
 
   ul,
   ol {
-    padding-left: 1.25rem;
+    padding-left: 0;
   }
 
-  li + li {
-    margin-top: 0.4rem;
+  // Lista numerada: "01 · texto", no estilo de "Principais responsabilidades" da referência
+  ol {
+    column-gap: 2.5rem;
+    counter-reset: item-vaga;
+    display: grid;
+    grid-template-columns: 1fr;
+    list-style: none;
+
+    @media (min-width: 700px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    li {
+      border-top: 1px solid var(--line);
+      color: var(--color-gray-700);
+      counter-increment: item-vaga;
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: 2.25rem 1fr;
+      padding: 1.25rem 0;
+
+      &::before {
+        color: var(--color-muted);
+        content: counter(item-vaga, decimal-leading-zero);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        padding-top: 0.1875rem;
+      }
+    }
   }
 
+  // Lista com marcador: check preto, no estilo de "Requisitos" da referência
+  ul {
+    list-style: none;
+
+    li {
+      color: var(--color-gray-700);
+      padding-left: 1.75rem;
+      position: relative;
+
+      + li {
+        margin-top: 0.875rem;
+      }
+
+      // Círculo de 14px centralizado verticalmente no texto do item
+      &::before {
+        // Preto do projeto com 80% de opacidade: um pouco menos escuro
+        background: rgba(15, 14, 14, 0.8);
+        border-radius: 50%;
+        content: "";
+        height: 0.875rem;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.875rem;
+      }
+
+      // Check centralizado no círculo (o centro do pseudo coincide com o centro do círculo)
+      &::after {
+        border-bottom: 1.5px solid #fff;
+        border-left: 1.5px solid #fff;
+        content: "";
+        height: 3px;
+        left: 0.4375rem;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        width: 5px;
+      }
+    }
+  }
+
+
+  // Títulos de seção: "01 - O DESAFIO". Número e hífen em rosa, título escuro.
   h2 {
     color: var(--color-ink);
-    font-size: 1.75rem;
-    margin: 2.5rem 0 1rem;
+    counter-increment: secao-vaga;
+    text-transform: uppercase;
+
+    &::before {
+      color: var(--color-pink);
+      content: counter(secao-vaga, decimal-leading-zero) " - ";
+    }
+
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.055em;
+    line-height: 1.04;
+    margin: 3.5rem 0 1.5rem;
+
+    // O WordPress envolve o texto do título em <b>, e a UA aplica
+    // font-weight: bolder nele (sobe para 700). Forçamos a herança.
+    b,
+    strong {
+      font-weight: inherit;
+    }
   }
 
   h3 {
