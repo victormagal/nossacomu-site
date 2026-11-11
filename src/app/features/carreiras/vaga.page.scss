@@ -249,8 +249,9 @@
     padding-left: 0;
   }
 
-  // Lista numerada: "01 · texto", no estilo de "Principais responsabilidades" da referência
-  ol {
+  // Listas numeradas (ol e ul do conteúdo): "01 · texto", no estilo de "Principais responsabilidades" da referência
+  ol,
+  ul {
     column-gap: 2.5rem;
     counter-reset: item-vaga;
     display: grid;
@@ -262,7 +263,7 @@
     }
 
     li {
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(15, 14, 14, 0.125);
       color: var(--color-gray-700);
       counter-increment: item-vaga;
       display: grid;
@@ -280,49 +281,6 @@
       }
     }
   }
-
-  // Lista com marcador: check preto, no estilo de "Requisitos" da referência
-  ul {
-    list-style: none;
-
-    li {
-      color: var(--color-gray-700);
-      padding-left: 1.75rem;
-      position: relative;
-
-      + li {
-        margin-top: 0.875rem;
-      }
-
-      // Círculo de 14px centralizado verticalmente no texto do item
-      &::before {
-        // Preto do projeto com 80% de opacidade: um pouco menos escuro
-        background: rgba(15, 14, 14, 0.8);
-        border-radius: 50%;
-        content: "";
-        height: 0.875rem;
-        left: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 0.875rem;
-      }
-
-      // Check centralizado no círculo (o centro do pseudo coincide com o centro do círculo)
-      &::after {
-        border-bottom: 1.5px solid #fff;
-        border-left: 1.5px solid #fff;
-        content: "";
-        height: 3px;
-        left: 0.4375rem;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        width: 5px;
-      }
-    }
-  }
-
 
   // Títulos de seção: "01 - O DESAFIO". Número e hífen em rosa, título escuro.
   h2 {
