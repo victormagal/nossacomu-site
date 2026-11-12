@@ -318,10 +318,19 @@
     color: var(--color-ink);
     counter-increment: secao-vaga;
 
+    // Teste: corte horizontal de cor (50% ink / 50% pink) pela largura do texto
     &::before {
       color: var(--color-pink);
+      -webkit-text-fill-color: var(--color-pink);
       content: counter(secao-vaga, decimal-leading-zero) " - ";
     }
+
+    background: linear-gradient(90deg, var(--color-ink) 65%, var(--color-pink) 65%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    max-width: 100%;
 
     font-size: 1.6rem;
     font-weight: 600;
