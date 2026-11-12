@@ -250,8 +250,6 @@
 // Via [innerHTML] os elementos filhos não recebem o atributo _ngcontent do Angular,
 // por isso os seletores descendentes usam ::ng-deep (escopados ao .prose).
 .prose {
-  // Contador dos títulos de seção (01, 02, 03...)
-  counter-reset: secao-vaga;
   color: var(--color-gray-700);
   font-size: 1.0625rem;
   line-height: 1.7;
@@ -313,20 +311,9 @@
     }
   }
 
-  // Títulos de seção: "01 O desafio". Número e hífen em rosa, título escuro.
+  // Títulos de seção: "O desafio", sem numeração.
   h2 {
     color: var(--color-ink);
-    counter-increment: secao-vaga;
-
-    // Teste: corte horizontal de cor (50% ink / 50% pink) pela largura do texto
-    &::before {
-      color: var(--color-pink);
-      -webkit-text-fill-color: var(--color-pink);
-      content: counter(secao-vaga, decimal-leading-zero) " ";
-      font-size: 0.7em;
-      margin-right: 0.4em;
-      vertical-align: baseline;
-    }
 
     background: linear-gradient(90deg, var(--color-ink) 65%, var(--color-pink) 65%);
     -webkit-background-clip: text;
