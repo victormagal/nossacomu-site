@@ -1,0 +1,60 @@
+@if (vaga(); as item) {
+  <!-- Hero escuro: título da vaga, pílula de atualização e ações -->
+  <section class="vaga-hero is-flush" aria-labelledby="vaga-title">
+    <div class="container">
+      <p class="crumbs"><a routerLink="/carreiras">Carreiras</a> &nbsp;/&nbsp; {{ item.title }}</p>
+      <p class="eyebrow">VAGA NA Comu</p>
+      <h1 id="vaga-title">{{ item.title }}</h1>
+      <ul class="facts" aria-label="Resumo da vaga">
+        <li class="fact">
+          Atualizada em
+          <time [attr.datetime]="item.modified"><b>{{ formatarData(item.modified) }}</b></time>
+        </li>
+      </ul>
+      <div class="hero-actions">
+        <a class="comu-btn comu-btn--pink" href="https://forms.gle/W13PEMKDcZ8nVwyr7" target="_blank">Candidatar-se</a>
+      </div>
+    </div>
+  </section>
+
+  @if (item.camposDeVaga?.conteudo; as conteudo) {
+    <section class="vaga-content" id="vaga-conteudo" aria-label="Detalhes da vaga">
+      <div class="container vaga-layout">
+        <div class="prose" [innerHTML]="conteudo"></div>
+
+        <aside class="vaga-aside" aria-label="Resumo da vaga">
+          <div class="summary">
+            <span class="summary-label">VAGA NA COMU</span>
+            <h3>{{ item.title }}</h3>
+            <dl>
+              <div>
+                <dt>Atualizada em</dt>
+                <dd><time [attr.datetime]="item.modified">{{ formatarData(item.modified) }}</time></dd>
+              </div>
+            </dl>
+            <div class="summary-actions">
+              <a class="comu-btn comu-btn--pink comu-btn--block" href="https://forms.gle/W13PEMKDcZ8nVwyr7" target="_blank">Candidatar-se</a>
+              <a class="comu-btn comu-btn--outline comu-btn--block" routerLink="/carreiras" fragment="vagas"
+                >Ver todas as vagas</a
+              >
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  }
+
+  <!-- Barra fixa no bottom (mobile): título da vaga + candidatura, sempre visível -->
+  <div class="vaga-bottom-bar" aria-label="Candidatura">
+    <p class="vaga-bottom-bar-title">{{ item.title }}</p>
+    <a class="comu-btn comu-btn--pink" href="https://forms.gle/W13PEMKDcZ8nVwyr7" target="_blank">Candidatar-se</a>
+  </div>
+} @else if (vaga() === null) {
+  <section class="vaga-intro" aria-labelledby="vaga-title">
+    <div class="container">
+      <p class="eyebrow">VAGA NÃO ENCONTRADA</p>
+      <h1 id="vaga-title">Esta vaga não está mais disponível.</h1>
+      <p class="page-lead">Veja as oportunidades que estão abertas no momento.</p>
+    </div>
+  </section>
+}

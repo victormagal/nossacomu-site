@@ -6,6 +6,11 @@
   display: block;
 }
 
+// Cor do eyebrow ("SEM RODEIOS") pode ser trocada por página, via --faq-eyebrow-color
+.faq-heading .eyebrow {
+  color: var(--faq-eyebrow-color, var(--color-ink));
+}
+
 .faq-heading {
   margin-bottom: 0.5rem;
 
